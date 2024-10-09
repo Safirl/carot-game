@@ -1,0 +1,26 @@
+[gd_scene load_steps=5 format=3 uid="uid://raghvv2anqjp"]
+
+[ext_resource type="PackedScene" uid="uid://bfi53d2w8wfac" path="res://TileMap/TileMap2D.tscn" id="1_yjw01"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_radg4"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_wnwai"]
+material = SubResource("StandardMaterial3D_radg4")
+
+[sub_resource type="Skin" id="Skin_nxs41"]
+
+[node name="Node3D" type="Node3D"]
+
+[node name="SubViewport" type="SubViewport" parent="."]
+
+[node name="Node2D" parent="SubViewport" instance=ExtResource("1_yjw01")]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.319786, -0.94749, 0, 0.94749, 0.319786, 0, 0, -2.43331)
+mesh = SubResource("PlaneMesh_wnwai")
+skin = SubResource("Skin_nxs41")
+skeleton = NodePath("../SubViewport")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0.000158252, 0.000313305, -0.00015815, 1, -0.000259227, -0.000313356, 0.000259165, 1, 0, 0, 0)
+current = true
