@@ -1,6 +1,6 @@
 [gd_scene load_steps=9 format=3 uid="uid://raghvv2anqjp"]
 
-[ext_resource type="MeshLibrary" uid="uid://okhklcqb1uct" path="res://TileMap/baseMeshLibrary3.tres" id="1_jy1c5"]
+[ext_resource type="MeshLibrary" uid="uid://c7vgd7qhx40pg" path="res://TileMap/baseMeshLibrary.tres" id="1_y27j4"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_w8j3g"]
 sky_top_color = Color(0.572549, 0.729412, 0.988235, 1)
@@ -55,9 +55,9 @@ shadow_enabled = true
 navigation_mesh = SubResource("NavigationMesh_tma6c")
 
 [node name="GridMap" type="GridMap" parent="NavigationRegion3D"]
-mesh_library = ExtResource("1_jy1c5")
+mesh_library = ExtResource("1_y27j4")
 physics_material = SubResource("PhysicsMaterial_450jh")
 data = {
-"cells": PackedInt32Array(65535, 65535, 1, 0, 65535, 0, 65535, 0, 1, 0, 0, 1, 65535, 1, 1, 0, 1, 1, 1, 1, 1, 1, 0, 1, 1, 65534, 1, 0, 65534, 1, 65535, 65534, 1, 65534, 65534, 1, 65534, 65535, 1, 65534, 0, 1, 65534, 1, 1)
+"cells": PackedInt32Array(65535, 65535, 1, 0, 65535, 0, 65535, 0, 1, 0, 0, 1, 65535, 1, 1, 0, 1, 1, 1, 1, 1, 1, 0, 1, 1, 65534, 1, 0, 65534, 1, 65535, 65534, 1, 65534, 65534, 1, 65534, 65535, 1, 65534, 0, 1, 65534, 1, 1, 3, 65535, 0, 2, 65535, 0, 1, 65535, 0)
 }
 metadata/_editor_floor_ = Vector3(0, 0, 0)
