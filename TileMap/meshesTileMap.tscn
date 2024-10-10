@@ -1,9 +1,9 @@
-[gd_scene load_steps=11 format=3 uid="uid://dcigctpiipcl8"]
+[gd_scene load_steps=13 format=3 uid="uid://dcigctpiipcl8"]
 
 [ext_resource type="Texture2D" uid="uid://v4m6vdei8if5" path="res://TileMap/Textures/Grass/Tuiles_1_01.png" id="1_nnpx3"]
+[ext_resource type="Texture2D" uid="uid://d4jqtnhgtjj7f" path="res://TileMap/Textures/Grass/Tuiles_1_02.png" id="2_jwm3o"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6wi2v"]
-albedo_color = Color(0.453232, 0.453232, 0.453232, 1)
 albedo_texture = ExtResource("1_nnpx3")
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_pi3eg"]
@@ -12,14 +12,17 @@ material = SubResource("StandardMaterial3D_6wi2v")
 [sub_resource type="BoxShape3D" id="BoxShape3D_lj2s0"]
 size = Vector3(1.99536, 0.203979, 2)
 
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_rys1l"]
-load_path = "res://.godot/imported/bande2.png-2520839a24e2538139b90f6652eb7f62.s3tc.ctex"
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_f0dwc"]
+albedo_texture = ExtResource("2_jwm3o")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wtwko"]
-albedo_texture = SubResource("CompressedTexture2D_rys1l")
+[sub_resource type="PlaneMesh" id="PlaneMesh_4hcfo"]
+material = SubResource("StandardMaterial3D_f0dwc")
 
-[sub_resource type="PlaneMesh" id="PlaneMesh_dfdhd"]
-material = SubResource("StandardMaterial3D_wtwko")
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0qukw"]
+albedo_texture = ExtResource("1_nnpx3")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_xpo2b"]
+material = SubResource("StandardMaterial3D_0qukw")
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_6yr06"]
 load_path = "res://.godot/imported/bande9.png-a1a2a50a8d2d7a3e0b5bb7ea5b6a982a.s3tc.ctex"
@@ -43,7 +46,7 @@ shape = SubResource("BoxShape3D_lj2s0")
 
 [node name="baseMesh3" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2)
-mesh = SubResource("PlaneMesh_dfdhd")
+mesh = SubResource("PlaneMesh_4hcfo")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="baseMesh3"]
 
@@ -53,7 +56,7 @@ shape = SubResource("BoxShape3D_lj2s0")
 
 [node name="baseMesh4" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -4)
-mesh = SubResource("PlaneMesh_r4o02")
+mesh = SubResource("PlaneMesh_xpo2b")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="baseMesh4"]
 
