@@ -1,10 +1,10 @@
 [gd_scene load_steps=92 format=3 uid="uid://dcigctpiipcl8"]
 
-[ext_resource type="Texture2D" path="res://TileMap/Textures/Grass/Tuiles_1_01.png" id="1_nnpx3"]
-[ext_resource type="Texture2D" path="res://TileMap/Textures/Grass/Tuiles_1_02.png" id="2_jwm3o"]
-[ext_resource type="Texture2D" path="res://TileMap/Textures/Grass/Tuiles_1_03.png" id="3_xccvy"]
-[ext_resource type="Texture2D" path="res://TileMap/Textures/Grass/Tuiles_1_04.png" id="4_7eaql"]
-[ext_resource type="Texture2D" path="res://TileMap/Textures/Grass/Tuiles_1_05.png" id="5_bpq34"]
+[ext_resource type="Texture2D" uid="uid://cmehomajjbnll" path="res://TileMap/Textures/Grass/Tuiles_4.png" id="1_jw8wk"]
+[ext_resource type="Texture2D" uid="uid://bum32ryw86iv" path="res://TileMap/Textures/Grass/Tuiles_1_02.png" id="2_jwm3o"]
+[ext_resource type="Texture2D" uid="uid://c83eunyevhj1k" path="res://TileMap/Textures/Grass/Tuiles_1_03.png" id="3_xccvy"]
+[ext_resource type="Texture2D" uid="uid://s5h0sl0h8l23" path="res://TileMap/Textures/Grass/Tuiles_1_04.png" id="4_7eaql"]
+[ext_resource type="Texture2D" uid="uid://cdwlmxj03204f" path="res://TileMap/Textures/Grass/Tuiles_1_05.png" id="5_bpq34"]
 [ext_resource type="Texture2D" uid="uid://oqymol3bvewp" path="res://TileMap/Textures/Grass/Tuiles_1_16.png" id="6_irey4"]
 [ext_resource type="Texture2D" uid="uid://br25eteygb7tx" path="res://TileMap/Textures/Grass/Tuiles_1_17.png" id="7_8uono"]
 [ext_resource type="Texture2D" uid="uid://clpntwirsagnm" path="res://TileMap/Textures/Grass/Tuiles_1_18.png" id="8_in2dt"]
@@ -34,7 +34,7 @@
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8l0qx"]
 transparency = 1
 shading_mode = 0
-albedo_texture = ExtResource("1_nnpx3")
+albedo_texture = ExtResource("1_jw8wk")
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_t01sn"]
 material = SubResource("StandardMaterial3D_8l0qx")
@@ -358,16 +358,6 @@ mesh = SubResource("PlaneMesh_s61ws")
 [node name="StaticBody3D" type="StaticBody3D" parent="baseMesh10"]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="baseMesh10/StaticBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00012207, -0.0957611, -0.00219727)
-shape = SubResource("BoxShape3D_lj2s0")
-
-[node name="baseMesh11" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 0)
-mesh = SubResource("PlaneMesh_c1476")
-
-[node name="StaticBody3D" type="StaticBody3D" parent="baseMesh11"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="baseMesh11/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00012207, -0.0957611, -0.00219727)
 shape = SubResource("BoxShape3D_lj2s0")
 
