@@ -1,0 +1,42 @@
+[gd_scene load_steps=8 format=3 uid="uid://dcigctpiipcl8"]
+
+[ext_resource type="Texture2D" uid="uid://hv87hd1lbwuf" path="res://TileMap/Textures/bande1.png" id="1_cw6ld"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_e5yhd"]
+load_path = "res://.godot/imported/bande9.png-a1a2a50a8d2d7a3e0b5bb7ea5b6a982a.s3tc.ctex"
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_j0f6e"]
+albedo_texture = SubResource("CompressedTexture2D_e5yhd")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_iiiaq"]
+material = SubResource("StandardMaterial3D_j0f6e")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_lj2s0"]
+size = Vector3(1.99536, 0.203979, 2)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_b15q4"]
+albedo_texture = ExtResource("1_cw6ld")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_7athg"]
+material = SubResource("StandardMaterial3D_b15q4")
+
+[node name="Node3D" type="Node3D"]
+
+[node name="baseMesh2" type="MeshInstance3D" parent="."]
+mesh = SubResource("PlaneMesh_iiiaq")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="baseMesh2"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="baseMesh2/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00012207, -0.0957611, -0.00219727)
+shape = SubResource("BoxShape3D_lj2s0")
+
+[node name="baseMesh3" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2)
+mesh = SubResource("PlaneMesh_7athg")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="baseMesh3"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="baseMesh3/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00012207, -0.0957611, -0.00219727)
+shape = SubResource("BoxShape3D_lj2s0")

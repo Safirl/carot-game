@@ -1,21 +1,55 @@
-[gd_scene load_steps=4 format=3 uid="uid://raghvv2anqjp"]
+[gd_scene load_steps=8 format=3 uid="uid://raghvv2anqjp"]
 
-[ext_resource type="Texture2D" uid="uid://c4vykxq65uput" path="res://TileMap/Scénario.png" id="1_ca5sj"]
+[ext_resource type="MeshLibrary" uid="uid://ctwcfa8etxbwf" path="res://TileMap/baseMeshLibrary2.tres" id="1_dhws7"]
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_iqs13"]
-texture = ExtResource("1_ca5sj")
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_450jh"]
 
-[sub_resource type="TileSet" id="TileSet_cj7ow"]
-sources/1 = SubResource("TileSetAtlasSource_iqs13")
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_w8j3g"]
+sky_top_color = Color(0.868043, 0.916353, 0.995627, 1)
+sky_horizon_color = Color(0.493386, 0.670335, 0.871769, 1)
+ground_bottom_color = Color(0.494118, 0.670588, 0.870588, 1)
+ground_horizon_color = Color(0.494118, 0.670588, 0.870588, 1)
+sun_angle_max = 32.22
+sun_curve = 0.166435
+
+[sub_resource type="Sky" id="Sky_vppph"]
+sky_material = SubResource("ProceduralSkyMaterial_w8j3g")
+
+[sub_resource type="Environment" id="Environment_bk51v"]
+background_mode = 2
+sky = SubResource("Sky_vppph")
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_hca7e"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_l5ynm"]
 
 [node name="Node3D" type="Node3D"]
 
 [node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(1, 0.000158252, 0.000313305, -0.00015815, 1, -0.000259227, -0.000313356, 0.000259165, 1, 0, 0, 0)
+transform = Transform3D(1, 0.000158231, 0.000313315, -0.000247303, 0.951061, 0.309003, -0.000249088, -0.309003, 0.951061, 0, 4.08484, 5.27127)
 current = true
 
 [node name="GridMap" type="GridMap" parent="."]
+mesh_library = ExtResource("1_dhws7")
+physics_material = SubResource("PhysicsMaterial_450jh")
+data = {
+"cells": PackedInt32Array(0, 0, 0, 65535, 0, 0, 65535, 65535, 1, 0, 65535, 0)
+}
 metadata/_editor_floor_ = Vector3(0, 0, 0)
 
-[node name="TileMapLayer" type="TileMapLayer" parent="."]
-tile_set = SubResource("TileSet_cj7ow")
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_bk51v")
+
+[node name="RigidBody3D" type="RigidBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.74724, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D"]
+shape = SubResource("SphereShape3D_hca7e")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="RigidBody3D"]
+mesh = SubResource("SphereMesh_l5ynm")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.703482, 0.710714, 0, -0.710714, 0.703482, -2.75291, 13.29, 9.15188)
+light_energy = 2.354
+shadow_enabled = true
