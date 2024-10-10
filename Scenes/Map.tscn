@@ -1,6 +1,6 @@
 [gd_scene load_steps=9 format=3 uid="uid://raghvv2anqjp"]
 
-[ext_resource type="MeshLibrary" uid="uid://ctwcfa8etxbwf" path="res://TileMap/baseMeshLibrary2.tres" id="1_dhws7"]
+[ext_resource type="MeshLibrary" uid="uid://okhklcqb1uct" path="res://TileMap/baseMeshLibrary3.tres" id="1_jy1c5"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_w8j3g"]
 sky_top_color = Color(0.572549, 0.729412, 0.988235, 1)
@@ -21,9 +21,9 @@ sky = SubResource("Sky_vppph")
 
 [sub_resource type="SphereMesh" id="SphereMesh_l5ynm"]
 
-[sub_resource type="NavigationMesh" id="NavigationMesh_stkte"]
-vertices = PackedVector3Array(-3.5, 1.5, -3.5, -3.5, 1.5, 3.5, 3.5, 1.5, 3.5, 3.5, 1.5, -3.5)
-polygons = [PackedInt32Array(3, 2, 0), PackedInt32Array(0, 2, 1)]
+[sub_resource type="NavigationMesh" id="NavigationMesh_tma6c"]
+vertices = PackedVector3Array(1.5, 1.5, -2.25, 3.5, 1.5, -2.5, 3.5, 1.5, -3.5, -3.5, 1.5, -3.5, 3.5, 1.5, 3.5, 3.5, 1.5, 0.5, 1.5, 1.5, 0.25, -3.5, 1.5, 3.5)
+polygons = [PackedInt32Array(1, 0, 2), PackedInt32Array(2, 0, 3), PackedInt32Array(5, 4, 6), PackedInt32Array(6, 4, 7), PackedInt32Array(0, 6, 3), PackedInt32Array(3, 6, 7)]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_450jh"]
 
@@ -52,12 +52,12 @@ light_energy = 2.354
 shadow_enabled = true
 
 [node name="NavigationRegion3D" type="NavigationRegion3D" parent="."]
-navigation_mesh = SubResource("NavigationMesh_stkte")
+navigation_mesh = SubResource("NavigationMesh_tma6c")
 
 [node name="GridMap" type="GridMap" parent="NavigationRegion3D"]
-mesh_library = ExtResource("1_dhws7")
+mesh_library = ExtResource("1_jy1c5")
 physics_material = SubResource("PhysicsMaterial_450jh")
 data = {
-"cells": PackedInt32Array(65535, 65535, 1, 0, 65535, 0, 65535, 0, 1, 0, 0, 1, 65535, 1, 1, 0, 1, 1, 1, 1, 1, 1, 0, 1, 1, 65535, 1, 1, 65534, 1, 0, 65534, 1, 65535, 65534, 1, 65534, 65534, 1, 65534, 65535, 1, 65534, 0, 1, 65534, 1, 1)
+"cells": PackedInt32Array(65535, 65535, 1, 0, 65535, 0, 65535, 0, 1, 0, 0, 1, 65535, 1, 1, 0, 1, 1, 1, 1, 1, 1, 0, 1, 1, 65534, 1, 0, 65534, 1, 65535, 65534, 1, 65534, 65534, 1, 65534, 65535, 1, 65534, 0, 1, 65534, 1, 1)
 }
 metadata/_editor_floor_ = Vector3(0, 0, 0)
