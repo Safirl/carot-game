@@ -16,7 +16,6 @@ func _update_material():
 
 	if not Engine.is_editor_hint():
 		return
-
 	# Si une texture est assignée, on crée ou met à jour le matériau
 	if texture:
 		# Vérifie si le mesh a déjà un matériau sinon on en crée un nouveau
@@ -25,6 +24,7 @@ func _update_material():
 		material.shading_mode = BaseMaterial3D.SHADING_MODE_UNSHADED
 		material.transparency = BaseMaterial3D.TRANSPARENCY_ALPHA_SCISSOR
 		material.albedo_texture = texture
-		material_override = material
+		mesh = mesh.duplicate()
+		mesh.surface_set_material(0, material)
 	else:
-		material_override = null
+		mesh.surface_set_material(0, null)
