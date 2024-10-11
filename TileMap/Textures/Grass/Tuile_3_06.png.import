@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bpkt74ba0gwfl"
-path.s3tc="res://.godot/imported/bande9.png-a1a2a50a8d2d7a3e0b5bb7ea5b6a982a.s3tc.ctex"
+uid="uid://dgks4j00qi5ic"
+path.s3tc="res://.godot/imported/Tuile_3_06.png-08d2e22c0b7690e98de51c24af26f675.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://TileMap/Textures/bande9.png"
-dest_files=["res://.godot/imported/bande9.png-a1a2a50a8d2d7a3e0b5bb7ea5b6a982a.s3tc.ctex"]
+source_file="res://TileMap/Textures/Grass/Tuile_3_06.png"
+dest_files=["res://.godot/imported/Tuile_3_06.png-08d2e22c0b7690e98de51c24af26f675.s3tc.ctex"]
 
 [params]
 
