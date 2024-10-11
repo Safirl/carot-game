@@ -1,0 +1,187 @@
+[gd_scene load_steps=33 format=3 uid="uid://bhr635oauf4nk"]
+
+[ext_resource type="Texture2D" uid="uid://c1b4och55uc8q" path="res://sprites/character.png" id="1_1pdg6"]
+[ext_resource type="Script" path="res://script/player.gd" id="1_byvo4"]
+[ext_resource type="Texture2D" uid="uid://cfqmvelourrw1" path="res://sprites/coteG1.png" id="3_7srnr"]
+[ext_resource type="Texture2D" uid="uid://cd476jcp0ppus" path="res://sprites/luc1.png" id="3_megag"]
+[ext_resource type="Texture2D" uid="uid://s0obvacgtmvf" path="res://sprites/luc2.png" id="4_0huqk"]
+[ext_resource type="Texture2D" uid="uid://vdg3u7t81s4w" path="res://sprites/coteD1.png" id="4_ofdo4"]
+[ext_resource type="Texture2D" uid="uid://djrk1r1whjhhn" path="res://sprites/dos7.png" id="5_0ji3i"]
+[ext_resource type="Texture2D" uid="uid://b8vojvp6sr0x2" path="res://sprites/luc13 2.png" id="5_aawvy"]
+[ext_resource type="Texture2D" uid="uid://bm431eujfwq67" path="res://sprites/luc3.png" id="6_338k3"]
+[ext_resource type="Texture2D" uid="uid://cd4ty1373tc7t" path="res://sprites/portait/portant-droite-1.png" id="6_e1hyr"]
+[ext_resource type="Texture2D" uid="uid://ft6ba0pictj7" path="res://sprites/portait/portant-face-2.png" id="6_qtu1l"]
+[ext_resource type="Texture2D" uid="uid://cdqq2xammyhnd" path="res://sprites/coteG2.png" id="7_aa1fb"]
+[ext_resource type="Texture2D" uid="uid://bvk1tujaq72l8" path="res://sprites/portait/portant-face-3.png" id="7_g7vqd"]
+[ext_resource type="Texture2D" uid="uid://bkwkkuq5wkp0q" path="res://sprites/portait/portant-droite-3.png" id="7_hasta"]
+[ext_resource type="Texture2D" uid="uid://bbwtmypomgpi0" path="res://sprites/coteG3.png" id="8_4vtd1"]
+[ext_resource type="Texture2D" uid="uid://bg7er5dtdfttx" path="res://sprites/portait/portant-face-4.png" id="8_34tqy"]
+[ext_resource type="Texture2D" uid="uid://x7fwhyeikftv" path="res://sprites/portait/portant-droite-4.png" id="8_rkby8"]
+[ext_resource type="Texture2D" uid="uid://cqxgoxqwjxg7v" path="res://sprites/coteG4.png" id="9_h64be"]
+[ext_resource type="Texture2D" uid="uid://ctmi46cgy2ohc" path="res://sprites/portait/portant-droite-5.png" id="9_rs1e5"]
+[ext_resource type="Texture2D" uid="uid://do21dytt4g2ta" path="res://sprites/portait/portant-face-5.png" id="9_ynuwy"]
+[ext_resource type="Texture2D" uid="uid://qg4atvgbx347" path="res://sprites/coteG5.png" id="10_5n8gd"]
+[ext_resource type="Texture2D" uid="uid://b74l21hs6m6f0" path="res://sprites/coteD2.png" id="11_alp88"]
+[ext_resource type="Texture2D" uid="uid://be5yds8hq8sp" path="res://sprites/coteD3.png" id="12_pg2uj"]
+[ext_resource type="Texture2D" uid="uid://c1mjv63amafxf" path="res://sprites/coteD4.png" id="13_mtq6u"]
+[ext_resource type="Texture2D" uid="uid://cgfvdjuew28y5" path="res://sprites/coteD5.png" id="14_2bobr"]
+[ext_resource type="Texture2D" uid="uid://bskvjb8olkwrw" path="res://sprites/dos6.png" id="15_as8m8"]
+[ext_resource type="Texture2D" uid="uid://ba1bnmeadt4n7" path="res://sprites/dos8.png" id="16_sy2d4"]
+[ext_resource type="Texture2D" uid="uid://keywqrxc7tpm" path="res://sprites/dos9.png" id="17_725kt"]
+[ext_resource type="Texture2D" uid="uid://brvxiyymkchx7" path="res://sprites/dos10.png" id="18_a57a0"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_b1l44"]
+size = Vector3(2.25034, 6.11438, 0.0254517)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jvwik"]
+atlas = ExtResource("1_1pdg6")
+region = Rect2(0, 10, 422, 830)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_g6r7p"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jvwik")
+}],
+"loop": true,
+"name": &"DefaultDown",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_7srnr")
+}],
+"loop": true,
+"name": &"DefaultLeft",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_ofdo4")
+}],
+"loop": true,
+"name": &"DefaultRight",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_0ji3i")
+}],
+"loop": true,
+"name": &"DefaultUp",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_qtu1l")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_g7vqd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_34tqy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_ynuwy")
+}],
+"loop": true,
+"name": &"portaitFace",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_e1hyr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_hasta")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_rkby8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_rs1e5")
+}],
+"loop": true,
+"name": &"portaitRight",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_megag")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_0huqk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_338k3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_aawvy")
+}],
+"loop": true,
+"name": &"walkDown",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_aa1fb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_4vtd1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_h64be")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_5n8gd")
+}],
+"loop": true,
+"name": &"walkLeft",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("11_alp88")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_pg2uj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_mtq6u")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_2bobr")
+}],
+"loop": true,
+"name": &"walkRight",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("15_as8m8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_sy2d4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_725kt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_a57a0")
+}],
+"loop": true,
+"name": &"walkUp",
+"speed": 5.0
+}]
+
+[node name="Player" type="CharacterBody3D"]
+script = ExtResource("1_byvo4")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0457612, 2.37986, -0.0154065)
+shape = SubResource("BoxShape3D_b1l44")
+
+[node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="."]
+sprite_frames = SubResource("SpriteFrames_g6r7p")
+animation = &"portaitRight"
+frame_progress = 0.266587
