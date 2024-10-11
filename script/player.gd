@@ -2,18 +2,18 @@ class_name Player extends CharacterBody3D
 
 var move_speed : float = 10.0
 var state : String = "idle"
+
 @onready var anim_player = $AnimatedSprite3D
 
 func _ready():
 	pass
 
-func _process(_delta):
-	pass
+
 	
 func _physics_process(delta):
 	var direction : Vector3 = Vector3.ZERO
-	direction.x = Input.get_action_strength("right") - Input.get_action_strength("left")
-	direction.z = Input.get_action_strength("down") - Input.get_action_strength("up")
+	direction.x = Input.get_action_strength("left") - Input.get_action_strength("right")
+	direction.z = Input.get_action_strength("up") - Input.get_action_strength("down")
 	direction = direction.normalized()
 
 	# Déterminer l'état en fonction de la direction
@@ -39,6 +39,7 @@ func _physics_process(delta):
 			anim_player.play("walkDown")
 		"walkleft":
 			anim_player.play("walkDown")
+			anim_player
 		"idle":
 			anim_player.play("Default")
 

@@ -1,0 +1,36 @@
+[gd_scene load_steps=5 format=3 uid="uid://ktvdn67qt7if"]
+
+[ext_resource type="PackedScene" uid="uid://bhr635oauf4nk" path="res://Scenes/player.tscn" id="1_v60dv"]
+[ext_resource type="Script" path="res://script/orientation.gd" id="2_rk7b1"]
+[ext_resource type="Script" path="res://Scenes/camera_3d.gd" id="3_uhk8j"]
+[ext_resource type="Texture2D" uid="uid://ddou1ei2tas51" path="res://sprites/pngtree-grass-green-messy-realism-png-image_3975826.png" id="4_8pbv8"]
+
+[node name="TestScenePlayer" type="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.014389)
+
+[node name="CharacterBody3D" parent="." instance=ExtResource("1_v60dv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.09214, 0)
+
+[node name="Node3D" type="Node3D" parent="CharacterBody3D"]
+script = ExtResource("2_rk7b1")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.538874, 0.842387, 0, -0.842387, 0.538874, 0.0188551, 10.1432, -0.0148186)
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(-0.861549, -0.24076, 0.446953, 0, 0.880395, 0.474242, -0.507674, 0.408583, -0.758503, 0.559258, 19.2491, -66.476)
+current = true
+script = ExtResource("3_uhk8j")
+
+[node name="Node3D2" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.8342, 0, 14.6164)
+
+[node name="Sprite3D" type="Sprite3D" parent="Node3D2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.42915, 2.02751, 1.46555)
+texture = ExtResource("4_8pbv8")
+
+[node name="Node3D" type="Node3D" parent="."]
+
+[node name="Sprite3D" type="Sprite3D" parent="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.42915, 2.02751, 1.46555)
+texture = ExtResource("4_8pbv8")
