@@ -53,7 +53,6 @@ mesh = SubResource("SphereMesh_l5ynm")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.703482, 0.710714, 0, -0.710714, 0.703482, -2.75291, 13.29, 9.15188)
-light_color = Color(0.229112, 0.229112, 0.229112, 1)
 light_energy = 2.354
 shadow_enabled = true
 
