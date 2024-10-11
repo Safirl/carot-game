@@ -1,6 +1,7 @@
-[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://biyq45f2s6a3"]
-
-[ext_resource type="Texture2D" uid="uid://bpkt74ba0gwfl" path="res://TileMap/Textures/bande9.png" id="1_66ylv"]
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://biyq45f2s6a3"]
 
 [resource]
-albedo_texture = ExtResource("1_66ylv")
+transparency = 2
+alpha_scissor_threshold = 0.5
+alpha_antialiasing_mode = 0
+shading_mode = 0

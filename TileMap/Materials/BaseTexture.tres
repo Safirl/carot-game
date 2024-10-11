@@ -1,0 +1,10 @@
+[gd_resource type="ImageTexture" load_steps=2 format=3 uid="uid://6umtphvm3t43"]
+
+[sub_resource type="GDScript" id="GDScript_kj5vs"]
+script/source = "@tool
+extends Texture2D
+
+"
+
+[resource]
+script = SubResource("GDScript_kj5vs")
