@@ -15,3 +15,5 @@ data_*/
 mono_crash.*.json
 
 /android/
+TileMap/Textures/Grass/.DS_Store
+TileMap/Textures/.DS_Store
