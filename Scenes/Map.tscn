@@ -1,26 +1,63 @@
-[gd_scene load_steps=5 format=3 uid="uid://raghvv2anqjp"]
+[gd_scene load_steps=9 format=3 uid="uid://raghvv2anqjp"]
 
-[ext_resource type="PackedScene" uid="uid://bfi53d2w8wfac" path="res://TileMap/TileMap2D.tscn" id="1_yjw01"]
+[ext_resource type="MeshLibrary" uid="uid://hr32e216nyjj" path="res://TileMap/baseMeshLibrary.tres" id="1_y27j4"]
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_radg4"]
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_w8j3g"]
+sky_top_color = Color(0.572549, 0.729412, 0.988235, 1)
+sky_horizon_color = Color(0.680673, 0.796583, 0.930607, 1)
+ground_bottom_color = Color(0.570958, 0.729682, 0.988911, 1)
+ground_horizon_color = Color(0.682353, 0.796078, 0.929412, 1)
+sun_angle_max = 32.22
+sun_curve = 0.166435
 
-[sub_resource type="PlaneMesh" id="PlaneMesh_wnwai"]
-material = SubResource("StandardMaterial3D_radg4")
+[sub_resource type="Sky" id="Sky_vppph"]
+sky_material = SubResource("ProceduralSkyMaterial_w8j3g")
 
-[sub_resource type="Skin" id="Skin_nxs41"]
+[sub_resource type="Environment" id="Environment_bk51v"]
+background_mode = 2
+sky = SubResource("Sky_vppph")
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_hca7e"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_l5ynm"]
+
+[sub_resource type="NavigationMesh" id="NavigationMesh_tma6c"]
+vertices = PackedVector3Array(1.5, 1.5, -2.25, 3.5, 1.5, -2.5, 3.5, 1.5, -3.5, -3.5, 1.5, -3.5, 3.5, 1.5, 3.5, 3.5, 1.5, 0.5, 1.5, 1.5, 0.25, -3.5, 1.5, 3.5)
+polygons = [PackedInt32Array(1, 0, 2), PackedInt32Array(2, 0, 3), PackedInt32Array(5, 4, 6), PackedInt32Array(6, 4, 7), PackedInt32Array(0, 6, 3), PackedInt32Array(3, 6, 7)]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_450jh"]
 
 [node name="Node3D" type="Node3D"]
 
-[node name="SubViewport" type="SubViewport" parent="."]
-
-[node name="Node2D" parent="SubViewport" instance=ExtResource("1_yjw01")]
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.319786, -0.94749, 0, 0.94749, 0.319786, 0, 0, -2.43331)
-mesh = SubResource("PlaneMesh_wnwai")
-skin = SubResource("Skin_nxs41")
-skeleton = NodePath("../SubViewport")
-
 [node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(1, 0.000158252, 0.000313305, -0.00015815, 1, -0.000259227, -0.000313356, 0.000259165, 1, 0, 0, 0)
+transform = Transform3D(1, 0.000158231, 0.000313315, -0.000247303, 0.951061, 0.309003, -0.000249088, -0.309003, 0.951061, 0, 4.08484, 5.27127)
 current = true
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_bk51v")
+
+[node name="RigidBody3D" type="RigidBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.74724, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D"]
+shape = SubResource("SphereShape3D_hca7e")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="RigidBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.437036, 0)
+mesh = SubResource("SphereMesh_l5ynm")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.703482, 0.710714, 0, -0.710714, 0.703482, -2.75291, 13.29, 9.15188)
+light_energy = 2.354
+shadow_enabled = true
+
+[node name="NavigationRegion3D" type="NavigationRegion3D" parent="."]
+navigation_mesh = SubResource("NavigationMesh_tma6c")
+
+[node name="GridMap" type="GridMap" parent="NavigationRegion3D"]
+mesh_library = ExtResource("1_y27j4")
+physics_material = SubResource("PhysicsMaterial_450jh")
+data = {
+"cells": PackedInt32Array(0, 65535, 2, 65535, 0, 1, 0, 0, 1, 65535, 1, 2, 0, 1, 2, 1, 1, 1, 1, 0, 1, 1, 65534, 1, 0, 65534, 1, 65534, 65534, 1, 65534, 65535, 1, 65534, 0, 2, 65534, 1, 1, 3, 65535, 0, 2, 65535, 0, 1, 65535, 0, 65535, 65533, 1, 65535, 65534, 1, 65535, 65535, 1, 65532, 65534, 3, 65532, 65535, 3, 65532, 0, 2, 65533, 0, 2, 65533, 65535, 3, 65533, 65534, 2, 0, 3, 3, 0, 2, 3, 65533, 2, 3, 1, 65531, 1, 65534, 65533, 3, 65532, 65530, 3, 65535, 65531, 3, 65532, 65531, 3, 65530, 65535, 3, 65530, 1, 3, 1, 65533, 2, 0, 65532, 2, 65534, 65532, 2, 65532, 65533, 2, 65530, 65533, 4, 65531, 0, 2, 65531, 2, 4, 65533, 1, 2, 65534, 2, 2, 65534, 3, 2, 2, 2, 2, 1, 3, 2, 2, 0, 2, 1, 65532, 3, 0, 65533, 3, 65533, 65531, 3, 65533, 65533, 3, 65531, 65534, 3, 65530, 0, 3, 65531, 1, 3, 65532, 1, 3, 65533, 3, 3, 65535, 2, 3, 1, 2, 3, 3, 1, 3, 3, 3, 3, 3, 65533, 3, 2, 65532, 3, 2, 65534, 3, 2, 65533, 4, 3, 65534, 4, 2, 65531, 4, 3, 65532, 4, 3, 0, 4, 2, 1, 4, 2, 3, 4, 3, 2, 4, 65535, 3, 4, 65531, 65535, 4, 65532, 3, 4, 65532, 2, 4, 65529, 65534, 1, 65531, 65533, 4, 65532, 65532, 2, 65530, 65532, 2, 65531, 65532, 3, 65533, 65532, 3, 65535, 65532, 3, 0, 65531, 1, 65534, 65531, 1, 65530, 65534, 1, 65531, 3, 1, 65530, 2, 1, 65528, 65534, 1, 65529, 65533, 1, 65528, 0, 1, 65529, 1, 1, 65528, 2, 2, 65529, 65535, 1, 65529, 3, 1, 65529, 0, 2, 65528, 1, 2, 65530, 3, 2, 65528, 65531, 3, 65528, 65532, 3, 65531, 65530, 3, 65530, 65531, 3, 65529, 65531, 3, 0, 65530, 3, 65534, 65530, 3, 3, 65530, 3, 65535, 65530, 1, 3, 65531, 1, 65529, 65532, 1, 65533, 65530, 3, 2, 65530, 4, 1, 65530, 2, 65529, 2, 2, 65531, 65531, 0, 65530, 65530, 0, 65529, 65530, 3, 65528, 65533, 0, 65528, 65535, 0, 65528, 65530, 2, 65528, 3, 4)
+}
+metadata/_editor_floor_ = Vector3(0, 0, 0)
