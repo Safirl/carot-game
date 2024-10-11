@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bg41mychc46lv"
-path.s3tc="res://.godot/imported/Face-Marche-1.png-570496524ac8262f7ac83b9f1ea72c54.s3tc.ctex"
+uid="uid://x7fwhyeikftv"
+path.s3tc="res://.godot/imported/portant-droite-4.png-f89b05b900543dfedf6436728c24e139.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://sprites/Face-Marche-1.png"
-dest_files=["res://.godot/imported/Face-Marche-1.png-570496524ac8262f7ac83b9f1ea72c54.s3tc.ctex"]
+source_file="res://sprites/portait/portant-droite-4.png"
+dest_files=["res://.godot/imported/portant-droite-4.png-f89b05b900543dfedf6436728c24e139.s3tc.ctex"]
 
 [params]
 
