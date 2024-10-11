@@ -1,0 +1,29 @@
+[gd_scene load_steps=5 format=3 uid="uid://cq4sd6vf18ipa"]
+
+[ext_resource type="MeshLibrary" uid="uid://hr32e216nyjj" path="res://TileMap/baseMeshLibrary.tres" id="1_fnaju"]
+[ext_resource type="Script" path="res://script/PickableObject.gd" id="2_41ven"]
+[ext_resource type="Texture2D" uid="uid://c5l27lkn2n5t4" path="res://sprites/trash/th.jpeg" id="3_yufnd"]
+[ext_resource type="PackedScene" uid="uid://bhr635oauf4nk" path="res://Scenes/character_body_3d.tscn" id="4_bj7j4"]
+
+[node name="TestObject" type="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.25731, 0)
+
+[node name="GridMap" type="GridMap" parent="."]
+mesh_library = ExtResource("1_fnaju")
+data = {
+"cells": PackedInt32Array(1, 1, 0, 1, 2, 0, 0, 2, 0, 65535, 2, 0, 65534, 2, 0, 65534, 1, 0, 65533, 1, 0, 65533, 0, 0, 65534, 0, 0, 65535, 0, 0, 0, 0, 0, 1, 0, 0, 2, 1, 0, 2, 2, 0, 0, 1, 0, 65535, 1, 0, 65532, 0, 0, 65532, 65535, 0, 65531, 65535, 0, 65531, 65534, 0, 65531, 65533, 0, 65532, 65533, 0, 65533, 65533, 0, 65534, 65533, 0, 65535, 65533, 0, 0, 65534, 0, 1, 65534, 0, 1, 65535, 0, 2, 65535, 0, 2, 0, 0, 65534, 65535, 0, 65533, 65535, 0, 65533, 65534, 0, 65534, 65534, 0, 65535, 65534, 0, 0, 65535, 0, 65535, 65535, 0, 65532, 65534, 0, 65530, 65533, 0, 65529, 65533, 0, 65529, 65532, 0, 65530, 65532, 0, 65531, 65532, 0, 65533, 65532, 0, 65534, 65532, 0, 65535, 65532, 0, 0, 65532, 0, 1, 65532, 0, 2, 65532, 0, 2, 65533, 0, 3, 65533, 0, 3, 65534, 0, 2, 65534, 0, 1, 65533, 0, 3, 65535, 0, 3, 0, 0, 3, 1, 0, 3, 2, 0, 65533, 2, 0, 65535, 3, 0, 0, 3, 0, 1, 3, 0, 65532, 2, 0, 65532, 3, 0, 65533, 3, 0, 65534, 3, 0, 2, 3, 0, 3, 3, 0, 4, 3, 0)
+}
+
+[node name="Object" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.07115, 0)
+
+[node name="Sprite3D" type="Sprite3D" parent="Object"]
+transform = Transform3D(0.24, 0, 0, 0, 0.24, 0, 0, 0, 0.24, 0, 0, 0)
+texture = ExtResource("3_yufnd")
+script = ExtResource("2_41ven")
+
+[node name="CharacterBody3D" parent="." instance=ExtResource("4_bj7j4")]
+transform = Transform3D(0.16, 0, 0, 0, 0.16, 0, 0, 0, 0.16, 2.6836, 2.37435, -0.318945)
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(-0.94892, 0, -0.315517, 0, 1, 0, 0.315517, 0, -0.94892, 1.0929, 2.37435, -3.14261)

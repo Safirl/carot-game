@@ -2,6 +2,7 @@ extends CharacterBody3D
 
 var move_speed : float = 10.0
 var state : String = "idle"
+@onready var ray_length = 100.0
 var last_direction : String = "idle"  # Garde en mémoire la dernière direction du mouvement
 
 @onready var anim_player = $AnimatedSprite3D
@@ -54,3 +55,29 @@ func _physics_process(delta):
 	# Applique la vitesse de mouvement
 	velocity = direction * move_speed
 	move_and_slide()
+
+func interact():
+	
+	pass
+
+func pickObject():
+	pass
+	
+func throwObject():
+	pass
+
+func dropObject():
+	pass
+
+func _input(event: InputEvent) -> void:
+	if !Input.is_action_just_pressed("Interact"):
+		return
+#	Get space state and player origin
+	var space_state = get_world_3d().space
+	var ray_origin = global_transform.origin
+	var ray_end = ray_origin + global_transform.basis.z * -ray_length
+	
+#	Throw raycast
+	var PhysicQuery : PhysicsRayQueryParameters3D
+	var result = space_state.intersect_ray()
+	
