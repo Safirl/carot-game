@@ -2,7 +2,7 @@ extends CharacterBody3D
 
 var move_speed : float = 10.0
 var state : String = "idle"
-@onready var ray_length = 100.0
+@onready var interaction_radius = 100.0
 var last_direction : String = "idle"  # Garde en mémoire la dernière direction du mouvement
 
 @onready var anim_player = $AnimatedSprite3D
@@ -56,10 +56,6 @@ func _physics_process(delta):
 	velocity = direction * move_speed
 	move_and_slide()
 
-func interact():
-	
-	pass
-
 func pickObject():
 	pass
 	
@@ -70,14 +66,49 @@ func dropObject():
 	pass
 
 func _input(event: InputEvent) -> void:
-	if !Input.is_action_just_pressed("Interact"):
-		return
-#	Get space state and player origin
-	var space_state = get_world_3d().space
-	var ray_origin = global_transform.origin
-	var ray_end = ray_origin + global_transform.basis.z * -ray_length
+	if Input.is_action_just_pressed("Interact"):
+		interact()
+
+func interact():
+	var space_state = get_world_3d().direct_space_state
+		
+	var sphere_shape = SphereShape3D.new()
+	sphere_shape.radius = interaction_radius
 	
-#	Throw raycast
-	var PhysicQuery : PhysicsRayQueryParameters3D
-	var result = space_state.intersect_ray()
+	var query_params = PhysicsShapeQueryParameters3D.new()
+	query_params.shape = sphere_shape
+	query_params.transform = global_transform  
+	query_params.collision_mask = 1  
+	
+	var result = space_state.intersect_shape(query_params, 32) 
+
+	if result.size() < 1:
+		return
+		
+	var closestObject = _getClosestObject(result)
+	if !closestObject:
+		return
+	print(closestObject.name)
+	
+		
+
+func _getClosestObject(hitResult) -> PickableObject:
+	var closestObject : PickableObject = null
+	for hit in hitResult:
+		var object = hit.collider
+		if !(object && object == PickableObject):
+			continue
+		if !closestObject:
+			closestObject = object
+			continue
+		
+		var object_position = object.global_position
+		if global_transform.origin.distance_to(object_position) <  global_transform.origin.distance_to(closestObject.global_position):
+			closestObject = object
+
+	return closestObject
+
+func _checkObjectReachability(object):
+	if !object:
+		return
 	
