@@ -20,10 +20,8 @@ func _update_material():
 	# Si une texture est assignée, on crée ou met à jour le matériau
 	if texture:
 		# Vérifie si le mesh a déjà un matériau sinon on en crée un nouveau
-		var material = material_override
-		if not material:
-			material = StandardMaterial3D.new()
-			print("new Material")
+		var material = StandardMaterial3D.new()
+		print("new Material")
 		material.shading_mode = BaseMaterial3D.SHADING_MODE_UNSHADED
 		material.transparency = BaseMaterial3D.TRANSPARENCY_ALPHA_SCISSOR
 		material.albedo_texture = texture
