@@ -2,8 +2,9 @@ extends CharacterBody3D
 
 var move_speed : float = 10.0
 var state : String = "idle"
-@onready var interaction_radius = 100.0
-var last_direction : String = "idle"  # Garde en mémoire la dernière direction du mouvement
+var interactionState = "none"
+var last_direction : String = "idle"
+@export var carrotsNumber = 0  # Garde en mémoire la dernière direction du mouvement
 
 @onready var anim_player = $AnimatedSprite3D
 
@@ -57,6 +58,9 @@ func _physics_process(delta):
 	move_and_slide()
 
 func pickObject():
+	if $ShapeCast3D.ClosestObject.weight <= carrotsNumber:
+		$ShapeCast3D.ClosestObject.isPicked = true
+		interactionState = "holding"
 	pass
 	
 func throwObject():
@@ -70,45 +74,11 @@ func _input(event: InputEvent) -> void:
 		interact()
 
 func interact():
-	var space_state = get_world_3d().direct_space_state
-		
-	var sphere_shape = SphereShape3D.new()
-	sphere_shape.radius = interaction_radius
-	
-	var query_params = PhysicsShapeQueryParameters3D.new()
-	query_params.shape = sphere_shape
-	query_params.transform = global_transform  
-	query_params.collision_mask = 1  
-	
-	var result = space_state.intersect_shape(query_params, 32) 
-
-	if result.size() < 1:
-		return
-		
-	var closestObject = _getClosestObject(result)
-	if !closestObject:
-		return
-	print(closestObject.name)
-	
-		
-
-func _getClosestObject(hitResult) -> PickableObject:
-	var closestObject : PickableObject = null
-	for hit in hitResult:
-		var object = hit.collider
-		if !(object && object == PickableObject):
-			continue
-		if !closestObject:
-			closestObject = object
-			continue
-		
-		var object_position = object.global_position
-		if global_transform.origin.distance_to(object_position) <  global_transform.origin.distance_to(closestObject.global_position):
-			closestObject = object
-
-	return closestObject
-
-func _checkObjectReachability(object):
-	if !object:
-		return
-	
+	match interactionState:
+			"none":
+				if $ShapeCast3D.ClosestObject != null:
+					pickObject()
+			"holding":
+				pass
+			"throwing":
+				pass

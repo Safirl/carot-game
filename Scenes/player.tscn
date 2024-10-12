@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=3 uid="uid://bhr635oauf4nk"]
+[gd_scene load_steps=35 format=3 uid="uid://7lb5qlebgjbl"]
 
 [ext_resource type="Texture2D" uid="uid://c1b4och55uc8q" path="res://sprites/character.png" id="1_1pdg6"]
 [ext_resource type="Script" path="res://script/player.gd" id="1_byvo4"]
@@ -29,9 +29,11 @@
 [ext_resource type="Texture2D" uid="uid://ba1bnmeadt4n7" path="res://sprites/dos8.png" id="16_sy2d4"]
 [ext_resource type="Texture2D" uid="uid://keywqrxc7tpm" path="res://sprites/dos9.png" id="17_725kt"]
 [ext_resource type="Texture2D" uid="uid://brvxiyymkchx7" path="res://sprites/dos10.png" id="18_a57a0"]
+[ext_resource type="Script" path="res://script/PlayerShapeCast.gd" id="30_3e68u"]
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_b1l44"]
-size = Vector3(2.25034, 6.11438, 0.0254517)
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_60v5n"]
+radius = 1.09686
+height = 5.50714
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_jvwik"]
 atlas = ExtResource("1_1pdg6")
@@ -174,14 +176,23 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="SphereShape3D" id="SphereShape3D_beqvw"]
+
 [node name="Player" type="CharacterBody3D"]
+collision_layer = 2
+collision_mask = 2
 script = ExtResource("1_byvo4")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0457612, 2.37986, -0.0154065)
-shape = SubResource("BoxShape3D_b1l44")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.169656, -0.0261307, -0.0154065)
+shape = SubResource("CapsuleShape3D_60v5n")
 
 [node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="."]
 sprite_frames = SubResource("SpriteFrames_g6r7p")
 animation = &"portaitRight"
 frame_progress = 0.266587
+
+[node name="ShapeCast3D" type="ShapeCast3D" parent="."]
+transform = Transform3D(3.17, 0, 0, 0, 3.17, 0, 0, 0, 3.17, 0, 3.29, 0)
+shape = SubResource("SphereShape3D_beqvw")
+script = ExtResource("30_3e68u")
