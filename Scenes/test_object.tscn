@@ -22,7 +22,7 @@ mesh_library = ExtResource("1_fnaju")
 transform = Transform3D(-0.998303, 0, -0.0582266, -0.0323431, 0.831537, 0.554526, 0.0484176, 0.555469, -0.830127, -0.408058, 5.58492, -5.32232)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.197828, 0, 0, 0, 2.2917, 0, 0, 0, 1.4, -0.12812, 2.14958, -0.121439)
+transform = Transform3D(0.197828, 0, 0, 0, 2.2917, 0, 0, 0, 1.4, -0.12812, 2.67777, -0.121439)
 mesh = SubResource("BoxMesh_mmtff")
 skeleton = NodePath("StaticBody3D3")
 
@@ -34,10 +34,10 @@ collision_mask = 3
 shape = SubResource("ConvexPolygonShape3D_35urc")
 
 [node name="Player" parent="." instance=ExtResource("4_4myes")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.43123, 2.2595, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.526109, 2.2595, 0)
 
 [node name="Sprite3D" type="Sprite3D" parent="."]
-transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, -0.951125, 2.07546, 0)
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, -2.171, 2.07546, 0)
 texture = ExtResource("3_yufnd")
 script = ExtResource("2_41ven")
 
@@ -45,5 +45,17 @@ script = ExtResource("2_41ven")
 transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 0, 0, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Sprite3D/StaticBody3D"]
+transform = Transform3D(1.435, 0, 0, 0, 1.435, 0, 0, 0, 1.435, 0, 0, 0)
+shape = SubResource("SphereShape3D_pai7d")
+
+[node name="Sprite3D2" type="Sprite3D" parent="."]
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0.721616, 2.07546, 0)
+texture = ExtResource("3_yufnd")
+script = ExtResource("2_41ven")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Sprite3D2"]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Sprite3D2/StaticBody3D"]
 transform = Transform3D(1.435, 0, 0, 0, 1.435, 0, 0, 0, 1.435, 0, 0, 0)
 shape = SubResource("SphereShape3D_pai7d")

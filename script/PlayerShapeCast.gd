@@ -44,7 +44,6 @@ func _checkObjectReachability(object) -> bool:
 	raycast.target_position = direction * 100
 	raycast.enabled = true
 	raycast.force_raycast_update()
-	print(object.find_child("StaticBody3D"))
 	
 	if !raycast.is_colliding() or (raycast.is_colliding() and raycast.get_collider() == object.find_child("StaticBody3D")):
 		return true
