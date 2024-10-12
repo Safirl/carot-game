@@ -68,13 +68,11 @@ func _physics_process(delta):
 	move_and_slide()
 
 func pickObject():
-	print("pick")
 	if $ShapeCast3D.ClosestObject.weight <= carrotsNumber:
 		$ShapeCast3D.ClosestObject.isPicked = true
 		interactionState = "holding"
 	
 func throwObject():
-	print("throw")
 	is_holding_input = false
 	holding_time = 0.
 	interactionState = "none"
@@ -94,7 +92,6 @@ func throwObject():
 
 
 func dropObject():
-	print("drop")
 	is_holding_input = false
 	holding_time = 0.
 	$ShapeCast3D.ClosestObject.isPicked = false

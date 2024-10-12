@@ -3,6 +3,8 @@ extends ShapeCast3D
 var ClosestObject: PickableObject
 
 func _process(delta: float) -> void:
+	if get_parent().interactionState != "none":
+		return
 	if collision_result.size() < 1 || !collision_result.find(ClosestObject):
 		if ClosestObject:
 			ClosestObject.highlight(false)

@@ -43,3 +43,9 @@ metadata/_editor_floor_ = Vector3(0, -2, 0)
 
 [node name="PickableObject" parent="." instance=ExtResource("3_3cpvd")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 2.00121, 0)
+
+[node name="PickableObject2" parent="." instance=ExtResource("3_3cpvd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 2.00121, 0)
+
+[node name="PickableObject3" parent="." instance=ExtResource("3_3cpvd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 2.00121, 0)
