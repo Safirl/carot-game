@@ -5,12 +5,12 @@
 [ext_resource type="Texture2D" uid="uid://c5l27lkn2n5t4" path="res://sprites/trash/th.jpeg" id="3_yufnd"]
 [ext_resource type="PackedScene" uid="uid://7lb5qlebgjbl" path="res://Scenes/player.tscn" id="4_4myes"]
 
-[sub_resource type="SphereShape3D" id="SphereShape3D_pai7d"]
-
 [sub_resource type="BoxMesh" id="BoxMesh_mmtff"]
 
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_35urc"]
 points = PackedVector3Array(0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5)
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_pai7d"]
 
 [node name="TestObject" type="Node3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.25731, 0)
@@ -19,34 +19,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.25731, 0)
 mesh_library = ExtResource("1_fnaju")
 
 [node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(-0.998303, 0, -0.0582266, 0, 1, 0, 0.0582266, 0, -0.998303, -0.408058, 2.37435, -5.6603)
-
-[node name="Player" parent="." instance=ExtResource("4_4myes")]
-transform = Transform3D(0.28, 0, 0, 0, 0.28, 0, 0, 0, 0.28, 2.95568, 2.17533, -3.39451)
-
-[node name="StaticBody3D" type="StaticBody3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.876529, 0, 0)
-script = ExtResource("2_41ven")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
-transform = Transform3D(1.435, 0, 0, 0, 1.435, 0, 0, 0, 1.435, 0, 2.29966, 0)
-shape = SubResource("SphereShape3D_pai7d")
-
-[node name="Sprite3D" type="Sprite3D" parent="StaticBody3D"]
-transform = Transform3D(0.24, 0, 0, 0, 0.24, 0, 0, 0, 0.24, 0, 2.29966, 0)
-texture = ExtResource("3_yufnd")
-
-[node name="StaticBody3D2" type="StaticBody3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.36536, 0, 0)
-script = ExtResource("2_41ven")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D2"]
-transform = Transform3D(1.435, 0, 0, 0, 1.435, 0, 0, 0, 1.435, 0, 2.29966, 0)
-shape = SubResource("SphereShape3D_pai7d")
-
-[node name="Sprite3D" type="Sprite3D" parent="StaticBody3D2"]
-transform = Transform3D(0.24, 0, 0, 0, 0.24, 0, 0, 0, 0.24, 0, 2.29966, 0)
-texture = ExtResource("3_yufnd")
+transform = Transform3D(-0.998303, 0, -0.0582266, -0.0323431, 0.831537, 0.554526, 0.0484176, 0.555469, -0.830127, -0.408058, 5.58492, -5.32232)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 transform = Transform3D(0.197828, 0, 0, 0, 2.2917, 0, 0, 0, 1.4, -0.12812, 2.14958, -0.121439)
@@ -59,3 +32,18 @@ collision_mask = 3
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D/StaticBody3D3"]
 shape = SubResource("ConvexPolygonShape3D_35urc")
+
+[node name="Player" parent="." instance=ExtResource("4_4myes")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.43123, 2.2595, 0)
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, -0.951125, 2.07546, 0)
+texture = ExtResource("3_yufnd")
+script = ExtResource("2_41ven")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Sprite3D"]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Sprite3D/StaticBody3D"]
+transform = Transform3D(1.435, 0, 0, 0, 1.435, 0, 0, 0, 1.435, 0, 0, 0)
+shape = SubResource("SphereShape3D_pai7d")
