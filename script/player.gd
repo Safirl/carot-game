@@ -4,12 +4,22 @@ var move_speed : float = 10.0
 var state : String = "idle"
 var interactionState = "none"
 var last_direction : String = "idle"
-@export var carrotsNumber = 0  # Garde en mémoire la dernière direction du mouvement
+@export var carrotsNumber = 0 
+
+#Holding input
+var holding_time = 0.0
+var is_holding_input = false
+var hold_time_threshold = 0.5
 
 @onready var anim_player = $AnimatedSprite3D
 
 func _ready():
 	pass
+	
+func _process(delta: float) -> void:
+	if is_holding_input:
+		holding_time += delta
+		
 
 func _physics_process(delta):
 	var direction : Vector3 = Vector3.ZERO
@@ -58,27 +68,63 @@ func _physics_process(delta):
 	move_and_slide()
 
 func pickObject():
+	print("pick")
 	if $ShapeCast3D.ClosestObject.weight <= carrotsNumber:
 		$ShapeCast3D.ClosestObject.isPicked = true
 		interactionState = "holding"
-	pass
 	
 func throwObject():
-	pass
+	print("throw")
+	is_holding_input = false
+	holding_time = 0.
+	interactionState = "none"
+	$ShapeCast3D.ClosestObject.isPicked = false
+	var throw_direction
+	match last_direction:
+		"walkdown":
+			throw_direction = self.global_transform.basis.z.normalized() * -1
+		"walkup":
+			throw_direction = self.global_transform.basis.z.normalized() * 1
+		"walkright":
+			throw_direction = self.global_transform.basis.x.normalized() * 1
+		"walkleft":
+			throw_direction = self.global_transform.basis.x.normalized() * -1
+	var throw_force = 5.0
+	$ShapeCast3D.ClosestObject.apply_central_impulse(throw_direction * throw_force)
+
 
 func dropObject():
-	pass
+	print("drop")
+	is_holding_input = false
+	holding_time = 0.
+	$ShapeCast3D.ClosestObject.isPicked = false
+	interactionState = "none"
 
 func _input(event: InputEvent) -> void:
-	if Input.is_action_just_pressed("Interact"):
+	if event.is_action_pressed("Interact"):
 		interact()
+	if event.is_action_released("Interact"):
+		_onRelease()
 
 func interact():
-	match interactionState:
-			"none":
-				if $ShapeCast3D.ClosestObject != null:
+	if $ShapeCast3D.ClosestObject != null:
+		match interactionState:
+				"none":
 					pickObject()
+				"holding":
+					if is_holding_input == false:
+						is_holding_input = true
+						holding_time = 0.0
+
+func _onRelease():
+	if $ShapeCast3D.ClosestObject != null:
+		match interactionState:
+			"none":
+				pass
 			"holding":
-				pass
-			"throwing":
-				pass
+				if is_holding_input == false:
+					pass
+				elif is_holding_input == true && holding_time <= hold_time_threshold:
+					dropObject()
+				else:
+					throwObject()

@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://d4qbm4vesv64"]
+
+[ext_resource type="Script" path="res://script/PickableObject.gd" id="1_u24jt"]
+[ext_resource type="Texture2D" uid="uid://c5l27lkn2n5t4" path="res://sprites/trash/th.jpeg" id="2_hapqw"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_lf11s"]
+size = Vector3(0.977539, 0.900146, 0.140259)
+
+[node name="PickableObject" type="RigidBody3D"]
+collision_layer = 5
+collision_mask = 5
+constant_force = Vector3(0, -1, 0)
+script = ExtResource("1_u24jt")
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0, 0)
+texture = ExtResource("2_hapqw")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00708008, 0.0228271, 0.026062)
+shape = SubResource("BoxShape3D_lf11s")

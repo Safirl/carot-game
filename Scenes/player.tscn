@@ -190,11 +190,11 @@ shape = SubResource("CapsuleShape3D_60v5n")
 [node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="."]
 transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0, 0)
 sprite_frames = SubResource("SpriteFrames_g6r7p")
-animation = &"portaitRight"
-frame_progress = 0.266587
+animation = &"walkRight"
 
 [node name="ShapeCast3D" type="ShapeCast3D" parent="."]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
 shape = SubResource("SphereShape3D_beqvw")
 target_position = Vector3(0, 0, 0)
+collision_mask = 4
 script = ExtResource("30_3e68u")

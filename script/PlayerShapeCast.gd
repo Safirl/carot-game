@@ -20,10 +20,10 @@ func _getClosestObject(hitResult) -> PickableObject:
 	var closestObject : PickableObject = null
 	for hit in hitResult:
 		var object = hit.collider
-		if !object || object.get_parent().get_script() != PickableObject:
+		if !object || object.get_script() != PickableObject:
 			continue
 		if !closestObject:
-			closestObject = object.get_parent()
+			closestObject = object
 			continue
 		
 		var object_position = object.global_position
@@ -45,7 +45,7 @@ func _checkObjectReachability(object) -> bool:
 	raycast.enabled = true
 	raycast.force_raycast_update()
 	
-	if !raycast.is_colliding() or (raycast.is_colliding() and raycast.get_collider() == object.find_child("StaticBody3D")):
+	if !raycast.is_colliding() or (raycast.is_colliding() and raycast.get_collider() == object):
 		return true
 	else:
 		return false
