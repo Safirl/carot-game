@@ -1,0 +1,189 @@
+[gd_scene load_steps=33 format=3 uid="uid://dua2oubaha4yv"]
+
+[ext_resource type="Script" path="res://AI/Carot/CarotAIController.gd" id="1_veyp6"]
+[ext_resource type="Texture2D" uid="uid://c1b4och55uc8q" path="res://sprites/character.png" id="2_lt835"]
+[ext_resource type="Texture2D" uid="uid://cfqmvelourrw1" path="res://sprites/coteG1.png" id="3_0vlpx"]
+[ext_resource type="Texture2D" uid="uid://vdg3u7t81s4w" path="res://sprites/coteD1.png" id="4_vfx2x"]
+[ext_resource type="Texture2D" uid="uid://djrk1r1whjhhn" path="res://sprites/dos7.png" id="5_eee4e"]
+[ext_resource type="Texture2D" uid="uid://ft6ba0pictj7" path="res://sprites/portait/portant-face-2.png" id="6_den53"]
+[ext_resource type="Texture2D" uid="uid://bvk1tujaq72l8" path="res://sprites/portait/portant-face-3.png" id="7_d8ti2"]
+[ext_resource type="Texture2D" uid="uid://bg7er5dtdfttx" path="res://sprites/portait/portant-face-4.png" id="8_iw3g4"]
+[ext_resource type="Texture2D" uid="uid://do21dytt4g2ta" path="res://sprites/portait/portant-face-5.png" id="9_hwd5p"]
+[ext_resource type="Texture2D" uid="uid://cd4ty1373tc7t" path="res://sprites/portait/portant-droite-1.png" id="10_6pk0e"]
+[ext_resource type="Texture2D" uid="uid://bkwkkuq5wkp0q" path="res://sprites/portait/portant-droite-3.png" id="11_1dcn5"]
+[ext_resource type="Texture2D" uid="uid://x7fwhyeikftv" path="res://sprites/portait/portant-droite-4.png" id="12_06j87"]
+[ext_resource type="Texture2D" uid="uid://ctmi46cgy2ohc" path="res://sprites/portait/portant-droite-5.png" id="13_ljkuw"]
+[ext_resource type="Texture2D" uid="uid://cd476jcp0ppus" path="res://sprites/luc1.png" id="14_xf0pr"]
+[ext_resource type="Texture2D" uid="uid://s0obvacgtmvf" path="res://sprites/luc2.png" id="15_uxk0q"]
+[ext_resource type="Texture2D" uid="uid://bm431eujfwq67" path="res://sprites/luc3.png" id="16_4q08r"]
+[ext_resource type="Texture2D" uid="uid://b8vojvp6sr0x2" path="res://sprites/luc13 2.png" id="17_mdi4o"]
+[ext_resource type="Texture2D" uid="uid://cdqq2xammyhnd" path="res://sprites/coteG2.png" id="18_pngn4"]
+[ext_resource type="Texture2D" uid="uid://bbwtmypomgpi0" path="res://sprites/coteG3.png" id="19_eyhfj"]
+[ext_resource type="Texture2D" uid="uid://cqxgoxqwjxg7v" path="res://sprites/coteG4.png" id="20_nvsna"]
+[ext_resource type="Texture2D" uid="uid://qg4atvgbx347" path="res://sprites/coteG5.png" id="21_mf41p"]
+[ext_resource type="Texture2D" uid="uid://b74l21hs6m6f0" path="res://sprites/coteD2.png" id="22_fewbl"]
+[ext_resource type="Texture2D" uid="uid://be5yds8hq8sp" path="res://sprites/coteD3.png" id="23_ybf14"]
+[ext_resource type="Texture2D" uid="uid://c1mjv63amafxf" path="res://sprites/coteD4.png" id="24_f1jin"]
+[ext_resource type="Texture2D" uid="uid://cgfvdjuew28y5" path="res://sprites/coteD5.png" id="25_ip16f"]
+[ext_resource type="Texture2D" uid="uid://bskvjb8olkwrw" path="res://sprites/dos6.png" id="26_fjhaf"]
+[ext_resource type="Texture2D" uid="uid://ba1bnmeadt4n7" path="res://sprites/dos8.png" id="27_2g0pn"]
+[ext_resource type="Texture2D" uid="uid://keywqrxc7tpm" path="res://sprites/dos9.png" id="28_uj7nl"]
+[ext_resource type="Texture2D" uid="uid://brvxiyymkchx7" path="res://sprites/dos10.png" id="29_87pjq"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_jm4ql"]
+radius = 0.152998
+height = 0.556573
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jvwik"]
+atlas = ExtResource("2_lt835")
+region = Rect2(0, 10, 422, 830)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_itccw"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jvwik")
+}],
+"loop": true,
+"name": &"DefaultDown",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_0vlpx")
+}],
+"loop": true,
+"name": &"DefaultLeft",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_vfx2x")
+}],
+"loop": true,
+"name": &"DefaultRight",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_eee4e")
+}],
+"loop": true,
+"name": &"DefaultUp",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_den53")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_d8ti2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_iw3g4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_hwd5p")
+}],
+"loop": true,
+"name": &"portaitFace",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("10_6pk0e")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_1dcn5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_06j87")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_ljkuw")
+}],
+"loop": true,
+"name": &"portaitRight",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("14_xf0pr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_uxk0q")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_4q08r")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_mdi4o")
+}],
+"loop": true,
+"name": &"walkDown",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("18_pngn4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_eyhfj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_nvsna")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_mf41p")
+}],
+"loop": true,
+"name": &"walkLeft",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("22_fewbl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_ybf14")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_f1jin")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_ip16f")
+}],
+"loop": true,
+"name": &"walkRight",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("26_fjhaf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_2g0pn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_uj7nl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("29_87pjq")
+}],
+"loop": true,
+"name": &"walkUp",
+"speed": 5.0
+}]
+
+[node name="CarotAI" type="CharacterBody3D"]
+script = ExtResource("1_veyp6")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("CapsuleShape3D_jm4ql")
+
+[node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
+
+[node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="."]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0, 0)
+sprite_frames = SubResource("SpriteFrames_itccw")
+animation = &"walkRight"

@@ -1,28 +1,29 @@
 extends ShapeCast3D
 
-var ClosestObject: PickableObject
+var OldClosestObject
 
 func _process(delta: float) -> void:
 	if get_parent().interactionState != "none":
 		return
-	if collision_result.size() < 1 || !collision_result.find(ClosestObject):
-		if ClosestObject:
-			ClosestObject.highlight(false)
+	if collision_result.size() < 1 || !collision_result.find(OldClosestObject):
+		if OldClosestObject:
+			OldClosestObject.highlight(false)
+		OldClosestObject = null
 		return
-	var closestObject : PickableObject = _getClosestObject(collision_result)
+	var closestObject = _getClosestObject(collision_result)
 	if closestObject == null:
 		return
 	if _checkObjectReachability(closestObject):
-		if ClosestObject:
-			ClosestObject.highlight(false)
-		ClosestObject = closestObject
-		ClosestObject.highlight(true)
+		if OldClosestObject:
+			OldClosestObject.highlight(false)
+		OldClosestObject = closestObject
+		OldClosestObject.highlight(true)
 
-func _getClosestObject(hitResult) -> PickableObject:
-	var closestObject : PickableObject = null
+func _getClosestObject(hitResult):
+	var closestObject = null
 	for hit in hitResult:
 		var object = hit.collider
-		if !object || object.get_script() != PickableObject:
+		if !object || !object.get_node("PickableObjectComponent"):
 			continue
 		if !closestObject:
 			closestObject = object

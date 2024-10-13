@@ -1,0 +1,28 @@
+[gd_scene load_steps=6 format=3 uid="uid://d4qbm4vesv64"]
+
+[ext_resource type="Script" path="res://script/pickable_object.gd" id="1_cgfik"]
+[ext_resource type="PackedScene" uid="uid://ciiqcf5oeyq8s" path="res://Scenes/pickable_object_component.tscn" id="2_1d021"]
+[ext_resource type="Texture2D" uid="uid://c5l27lkn2n5t4" path="res://sprites/trash/th.jpeg" id="2_hapqw"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_fdf1o"]
+bounce = 0.3
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_lf11s"]
+size = Vector3(0.977539, 0.900146, 0.140259)
+
+[node name="PickableObject" type="RigidBody3D"]
+collision_layer = 5
+collision_mask = 5
+physics_material_override = SubResource("PhysicsMaterial_fdf1o")
+constant_force = Vector3(0, -1, 0)
+script = ExtResource("1_cgfik")
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0, 0)
+texture = ExtResource("2_hapqw")
+
+[node name="PickableObjectComponent" parent="." instance=ExtResource("2_1d021")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00708008, 0.0228271, 0.026062)
+shape = SubResource("BoxShape3D_lf11s")

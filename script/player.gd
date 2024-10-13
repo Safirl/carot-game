@@ -6,11 +6,12 @@ var state : String = "idle"
 var interactionState = "none"
 var last_direction : String = "idle"
 @export var carrotsNumber = 0 
+var direction : Vector3 = Vector3.ZERO
 
 #Holding input
 var holding_time = 0.0
 var is_holding_input = false
-var hold_time_threshold = 0.5
+var hold_time_threshold = 0.2
 var actived : bool = false
 
 @onready var anim_player = $AnimatedSprite3D
@@ -24,7 +25,7 @@ func _process(delta: float) -> void:
 		
 
 func _physics_process(delta):
-	var direction : Vector3 = Vector3.ZERO
+	direction = Vector3.ZERO
 	direction.x = Input.get_action_strength("left") - Input.get_action_strength("right")
 	direction.z = Input.get_action_strength("up") - Input.get_action_strength("down")
 	direction = direction.normalized()
@@ -80,15 +81,16 @@ func isActiveMecanism():
 	return actived
 
 func pickObject():
-	if $ShapeCast3D.ClosestObject.weight <= carrotsNumber:
-		$ShapeCast3D.ClosestObject.isPicked = true
+	#print($ShapeCast3D.OldClosestObject.get_node("PickableObjectComponent"))
+	if $ShapeCast3D.OldClosestObject.get_node("PickableObjectComponent").weight <= carrotsNumber:
+		$ShapeCast3D.OldClosestObject.get_node("PickableObjectComponent").isPicked = true
 		interactionState = "holding"
 	
 func throwObject():
 	is_holding_input = false
 	holding_time = 0.
 	interactionState = "none"
-	$ShapeCast3D.ClosestObject.isPicked = false
+	$ShapeCast3D.OldClosestObject.get_node("PickableObjectComponent").isPicked = false
 	var throw_direction
 	match last_direction:
 		"walkdown":
@@ -100,13 +102,13 @@ func throwObject():
 		"walkleft":
 			throw_direction = self.global_transform.basis.x.normalized() * -1
 	var throw_force = 5.0
-	$ShapeCast3D.ClosestObject.apply_central_impulse(throw_direction * throw_force)
+	$ShapeCast3D.OldClosestObject.apply_central_impulse(throw_direction * throw_force)
 
 
 func dropObject():
 	is_holding_input = false
 	holding_time = 0.
-	$ShapeCast3D.ClosestObject.isPicked = false
+	$ShapeCast3D.OldClosestObject.get_node("PickableObjectComponent").isPicked = false
 	interactionState = "none"
 
 func _input(event: InputEvent) -> void:
@@ -116,7 +118,7 @@ func _input(event: InputEvent) -> void:
 		_onRelease()
 
 func interact():
-	if $ShapeCast3D.ClosestObject != null:
+	if $ShapeCast3D.OldClosestObject != null:
 		match interactionState:
 				"none":
 					pickObject()
@@ -126,7 +128,7 @@ func interact():
 						holding_time = 0.0
 
 func _onRelease():
-	if $ShapeCast3D.ClosestObject != null:
+	if $ShapeCast3D.OldClosestObject != null:
 		match interactionState:
 			"none":
 				pass
