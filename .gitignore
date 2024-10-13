@@ -17,3 +17,4 @@ mono_crash.*.json
 /android/
 
 .DS_Store
+.vscode

@@ -1,10 +1,12 @@
 extends CharacterBody3D
 
-enum States { IDLE, CHASING, HOLDED, DEAD, UNDERGROUND, HOLDING }
+enum States { IDLE, CHASING, HOLDED, DEAD, UNDERGROUND, HOLDING, THROWN }
 var current_state = States.CHASING
 var state : String = "idle"
 var last_direction : String = "idle"
 
+var impulse_direction: Vector3
+var impulse: float = 3
 @export var gravity = 9.8
 
 var speed = 1.
@@ -15,7 +17,12 @@ var accel = 1.
 
 # Cette fonction est appelée chaque frame pour déplacer l'IA
 func _physics_process(delta):
+	if !target:
+		return
+	NavigationAgent.target_position = target.global_transform.origin
 	match current_state:
+		States.IDLE:
+			_idle()
 		States.CHASING:
 			_chasing()
 		States.HOLDED:
@@ -24,18 +31,18 @@ func _physics_process(delta):
 			_dead()
 		States.UNDERGROUND:
 			_underground()
+		States.THROWN:
+			_thrown()
 			
 	if not is_on_floor():
 		velocity.y -= gravity * delta
 			
 func _chasing():
-	if !target:
-		return
 	var direction: Vector3
-	NavigationAgent.target_position = target.global_transform.origin
 	if !global_transform.origin.distance_to(NavigationAgent.target_position) > NavigationAgent.target_desired_distance:
 		direction = Vector3.ZERO
 		velocity = Vector3.ZERO
+		current_state = States.IDLE
 	else:
 		direction = (NavigationAgent.get_next_path_position() - global_position).normalized()
 		velocity = velocity.lerp(direction * speed, accel * get_physics_process_delta_time())
@@ -87,13 +94,18 @@ func _dead():
 func _underground():
 	pass
 	
-	
+func _idle():
+	if !global_transform.origin.distance_to(NavigationAgent.target_position) < NavigationAgent.target_desired_distance:
+		current_state = States.CHASING
 #pickable object interface to implement
 func setFreeze(bfreeze: bool):
 	if bfreeze:
 		gravity = 0.
+		current_state = States.HOLDED
 	else:
 		gravity = 9.8
+		current_state = States.THROWN
+	
 
 func highlight(bhighlight: bool):
 	if bhighlight:
@@ -101,3 +113,17 @@ func highlight(bhighlight: bool):
 	else:
 		$AnimatedSprite3D.modulate = Color(1, 1, 1, 1)
 	pass
+	
+#called when object is throw
+func throw(impulse = Vector3(0, 0, 0)):
+	impulse_direction = impulse
+	current_state = States.THROWN
+	
+func _thrown():
+	velocity = velocity.lerp(impulse_direction * impulse, get_physics_process_delta_time())
+	impulse_direction.y -= .2
+	move_and_slide()
+	if is_on_floor():
+		velocity = Vector3.ZERO
+		current_state = States.IDLE
+		impulse_direction = Vector3.ZERO

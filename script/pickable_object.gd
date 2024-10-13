@@ -9,4 +9,6 @@ func highlight(bhighlight):
 		$Sprite3D.modulate = Color(1, 0, 0, 1)
 	else:
 		$Sprite3D.modulate = Color(1, 1, 1, 1)
-	
+
+func throw(impulse: Vector3):
+	apply_central_impulse(impulse)

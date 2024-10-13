@@ -108,4 +108,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.65731, 2.62932, -1.69409)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.66065, 2.91569, 0.329154)
 
 [node name="CarotAI" parent="." instance=ExtResource("6_yvb4t")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.49937, 8.3784, -1.86729)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.49937, 4.45412, -1.86729)
+
+[node name="CarotAI2" parent="." instance=ExtResource("6_yvb4t")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.95534, 3.49828, -1.71948)
