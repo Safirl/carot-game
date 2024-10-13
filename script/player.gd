@@ -1,6 +1,7 @@
 extends CharacterBody3D
 
-var move_speed : float = 2.0
+var move_speed : float = 3.0
+var accel = 5
 var state : String = "idle"
 var interactionState = "none"
 var last_direction : String = "idle"
@@ -63,8 +64,8 @@ func _physics_process(delta):
 				"walkleft":
 					anim_player.play("DefaultLeft")
 
-	
-	velocity = direction * move_speed
+	# Applique la vitesse de mouvement
+	velocity = velocity.lerp(direction * move_speed, accel * delta)
 	move_and_slide()
 
 
