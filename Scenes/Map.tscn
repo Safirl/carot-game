@@ -1,7 +1,10 @@
-[gd_scene load_steps=12 format=3 uid="uid://raghvv2anqjp"]
+[gd_scene load_steps=15 format=3 uid="uid://raghvv2anqjp"]
 
+[ext_resource type="Script" path="res://Scenes/camera_3d.gd" id="1_u7fxj"]
 [ext_resource type="MeshLibrary" uid="uid://43w0jugh65ow" path="res://TileMap/baseMeshLibrary.tres" id="1_uqno7"]
 [ext_resource type="PackedScene" uid="uid://7lb5qlebgjbl" path="res://Scenes/player.tscn" id="2_5qt3q"]
+[ext_resource type="Shader" path="res://script/Vignette.gdshader" id="4_keinb"]
+[ext_resource type="PackedScene" uid="uid://d4qbm4vesv64" path="res://Scenes/pickable_object.tscn" id="5_6xdsi"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_w8j3g"]
 sky_top_color = Color(0.572549, 0.729412, 0.988235, 1)
@@ -17,33 +20,36 @@ sky_material = SubResource("ProceduralSkyMaterial_w8j3g")
 [sub_resource type="Environment" id="Environment_bk51v"]
 background_mode = 2
 sky = SubResource("Sky_vppph")
+fog_enabled = true
+adjustment_enabled = true
+adjustment_contrast = 1.22
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_hca7e"]
 
 [sub_resource type="SphereMesh" id="SphereMesh_l5ynm"]
 
 [sub_resource type="NavigationMesh" id="NavigationMesh_tma6c"]
-vertices = PackedVector3Array(-0.5, 1.49093, 1, -1.5, 1.49093, 1.25, -1.5, 1.49093, 3.5, 5.5, 1.49093, 3.5, -0.5, 1.49093, -0.75, 5.5, 1.49093, -7.5, -5.5, 1.49093, -7.5, -5.5, 1.49093, -1.25, -2.25, 1.49093, -1, -2.75, 1.49093, 1, -2.75, 1.49093, -0.75, -5.5, 1.49093, 3.5)
-polygons = [PackedInt32Array(1, 0, 2), PackedInt32Array(2, 0, 3), PackedInt32Array(3, 4, 5), PackedInt32Array(5, 4, 6), PackedInt32Array(8, 7, 6), PackedInt32Array(3, 0, 4), PackedInt32Array(4, 8, 6), PackedInt32Array(9, 1, 2), PackedInt32Array(10, 7, 8), PackedInt32Array(7, 10, 9), PackedInt32Array(2, 11, 9), PackedInt32Array(9, 11, 7)]
-
-[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_450jh"]
+vertices = PackedVector3Array(6.97389, 2.74093, 3.75, 8.97389, 2.74093, 3.5, 8.97389, 2.74093, -1.5, 6.97389, 2.74093, -1.75, -0.276109, 2.74093, 5.5, -0.0261087, 2.74093, 7.5, 6.97389, 2.74093, 7.5, -6.02611, 2.74093, -3.5, -6.02611, 2.74093, 5.5, 6.97389, 2.74093, -3.5)
+polygons = [PackedInt32Array(1, 0, 2), PackedInt32Array(2, 0, 3), PackedInt32Array(3, 0, 4), PackedInt32Array(5, 4, 6), PackedInt32Array(6, 4, 0), PackedInt32Array(3, 4, 9), PackedInt32Array(9, 4, 8), PackedInt32Array(9, 8, 7)]
 
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_bmhnt"]
 data = PackedVector3Array(-0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, -0.5)
 
 [sub_resource type="BoxMesh" id="BoxMesh_3dl1i"]
 
-[node name="Node3D" type="Node3D"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_oyx8v"]
+shader = ExtResource("4_keinb")
+shader_parameter/color = Color(0, 0, 0, 1)
+shader_parameter/multiplier = 0.04
+shader_parameter/softness = 1.195
 
-[node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(1, 0.000158231, 0.000313315, -0.000247303, 0.951061, 0.309003, -0.000249088, -0.309003, 0.951061, 0, 4.08484, 5.27127)
-current = true
+[node name="Node3D" type="Node3D"]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_bk51v")
 
 [node name="RigidBody3D" type="RigidBody3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.74724, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.97715, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D"]
 shape = SubResource("SphereShape3D_hca7e")
@@ -53,23 +59,15 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.437036, 0)
 mesh = SubResource("SphereMesh_l5ynm")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.703482, 0.710714, 0, -0.710714, 0.703482, -2.75291, 13.29, 9.15188)
+transform = Transform3D(1, 0, 0, 0, 0.703482, 0.710714, 0, -0.710714, 0.703482, -2.75291, 14.5199, 9.15188)
 light_energy = 1.676
 
 [node name="NavigationRegion3D" type="NavigationRegion3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0308323, -0.188156, 0.0134048)
 navigation_mesh = SubResource("NavigationMesh_tma6c")
 
-[node name="GridMap" type="GridMap" parent="NavigationRegion3D"]
-mesh_library = ExtResource("1_uqno7")
-physics_material = SubResource("PhysicsMaterial_450jh")
-data = {
-"cells": PackedInt32Array(2, 1, 0, 1, 1, 0, 0, 1, 0, 65535, 1, 0, 65534, 1, 0, 65533, 1, 0, 65533, 0, 0, 65534, 0, 0, 65535, 0, 0, 0, 0, 0, 1, 0, 0, 2, 0, 0, 2, 65535, 0, 1, 65535, 0, 0, 65535, 0, 65533, 65535, 0, 65533, 65534, 0, 65534, 65534, 0, 65535, 65534, 0, 0, 65534, 0, 1, 65534, 0, 2, 65534, 0, 2, 65533, 0, 1, 65533, 0, 0, 65533, 0, 65533, 65533, 0, 65533, 65532, 0, 0, 65532, 0, 1, 65532, 0, 2, 65532, 0, 65535, 65532, 0, 65535, 65533, 0, 65534, 65533, 0, 65534, 65532, 0, 65535, 65535, 0, 65534, 65535, 0)
-}
-metadata/_editor_floor_ = Vector3(0, 0, 0)
-
 [node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.66326, 1.24093, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.66326, 2.61707, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_bmhnt")
@@ -77,5 +75,33 @@ shape = SubResource("ConcavePolygonShape3D_bmhnt")
 [node name="MeshInstance3D" type="MeshInstance3D" parent="NavigationRegion3D/StaticBody3D"]
 mesh = SubResource("BoxMesh_3dl1i")
 
+[node name="GridMap2" type="GridMap" parent="NavigationRegion3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.526109, 3.27338, 0)
+mesh_library = ExtResource("1_uqno7")
+data = {
+"cells": PackedInt32Array(-65533, 65534, 0, -65534, 65534, 0, -65535, 65534, 0, -65536, 65534, 0, -1, 65534, 0, -2, 65534, 0, -3, 65534, 0, -3, 65535, 0, -2, 65535, 0, -1, 65535, 0, -65536, 65535, 0, -65535, 65535, 0, -65534, 65535, 0, -65534, 0, 0, -65533, 0, 0, -65532, 0, 0, -65532, 1, 0, -65533, 1, 0, -65534, 1, 0, -65535, 0, 0, -65536, 0, 0, -65536, 1, 0, -1, 1, 0, -2, 1, 0, -2, 0, 0, -3, 0, 0, -3, 1, 0, -1, 0, 0, -65535, 1, 0, -65532, 65535, 0, -65533, 65535, 0, -65533, 2, 0, -65533, 3, 0, -65534, 3, 0, -65535, 3, 0, -65536, 3, 0, -65536, 2, 0, -1, 2, 0, -2, 2, 0, -3, 2, 0, -65534, 2, 0, -65535, 2, 0)
+}
+metadata/_editor_floor_ = Vector3(0, -1, 0)
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(-1, 2.99004e-08, -8.21505e-08, 0, 0.939693, 0.34202, 8.74228e-08, 0.34202, -0.939693, 0, 3.79875, -4.83042)
+size = 0.495
+script = ExtResource("1_u7fxj")
+offset = Vector3(0, 1, -3)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+follow_viewport_enabled = true
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+material = SubResource("ShaderMaterial_oyx8v")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PickableObject" parent="." instance=ExtResource("5_6xdsi")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.65731, 2.62932, -1.69409)
+
 [node name="Player" parent="." instance=ExtResource("2_5qt3q")]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 3, 5, -2)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.66065, 2.91569, 0.329154)

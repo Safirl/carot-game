@@ -1,6 +1,6 @@
 extends CharacterBody3D
 
-var move_speed : float = 10.0
+var move_speed : float = 2.0
 var state : String = "idle"
 var interactionState = "none"
 var last_direction : String = "idle"

@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://cq4sd6vf18ipa"]
+[gd_scene load_steps=7 format=3 uid="uid://cq4sd6vf18ipa"]
 
 [ext_resource type="MeshLibrary" uid="uid://43w0jugh65ow" path="res://TileMap/baseMeshLibrary.tres" id="1_fnaju"]
 [ext_resource type="PackedScene" uid="uid://d4qbm4vesv64" path="res://Scenes/pickable_object.tscn" id="3_3cpvd"]
@@ -9,11 +9,12 @@
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_35urc"]
 points = PackedVector3Array(0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5)
 
+[sub_resource type="NavigationMesh" id="NavigationMesh_g8n4n"]
+vertices = PackedVector3Array(-4.77611, 0.77338, -8.5, -5.52611, 0.77338, -9.5, -6.02611, 0.77338, -9.5, -6.27611, 0.77338, -7.5, -4.77611, 0.77338, -5.5, 0.973891, 0.77338, -9.5, 0.473891, 0.77338, -9.5, -0.276109, 0.77338, -8.5, -0.276109, 0.77338, -5.5, 1.22389, 0.77338, -7.5, -4.02611, 0.77338, 1.75, -4.02611, 0.77338, 5.5, 1.72389, 0.77338, 5.5, 4.97389, 0.77338, 3.75, 1.97389, 0.77338, 7.5, 4.97389, 0.77338, 7.5, 5.22389, 0.77338, -7.5, 4.97389, 0.77338, -9.5, 3.97389, 0.77338, -9.5, 3.72389, 0.77338, -7.5, 6.97389, 0.77338, -7.5, 6.97389, 0.77338, 3.5, -6.27611, 0.77338, -0.5, -6.02611, 0.77338, 1.5, -8.02611, 0.77338, -7.5, -8.02611, 0.77338, -0.5)
+polygons = [PackedInt32Array(1, 0, 2), PackedInt32Array(2, 0, 3), PackedInt32Array(3, 0, 4), PackedInt32Array(6, 5, 7), PackedInt32Array(7, 5, 9), PackedInt32Array(7, 9, 8), PackedInt32Array(11, 10, 12), PackedInt32Array(12, 10, 13), PackedInt32Array(14, 12, 15), PackedInt32Array(15, 12, 13), PackedInt32Array(17, 16, 18), PackedInt32Array(18, 16, 19), PackedInt32Array(16, 20, 8), PackedInt32Array(8, 20, 10), PackedInt32Array(10, 20, 13), PackedInt32Array(13, 20, 21), PackedInt32Array(8, 19, 16), PackedInt32Array(8, 9, 19), PackedInt32Array(23, 22, 10), PackedInt32Array(10, 22, 4), PackedInt32Array(10, 4, 8), PackedInt32Array(3, 4, 24), PackedInt32Array(24, 4, 22), PackedInt32Array(24, 22, 25), PackedInt32Array(0, 1, 7), PackedInt32Array(7, 1, 6)]
+
 [node name="TestObject" type="Node3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.25731, 0)
-
-[node name="GridMap" type="GridMap" parent="."]
-mesh_library = ExtResource("1_fnaju")
 
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(-0.998303, 0, -0.0582266, -0.0323431, 0.831537, 0.554526, 0.0484176, 0.555469, -0.830127, -0.408058, 5.58492, -5.32232)
@@ -33,14 +34,6 @@ shape = SubResource("ConvexPolygonShape3D_35urc")
 [node name="Player" parent="." instance=ExtResource("4_4myes")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.73185, 1.06615, 0)
 
-[node name="GridMap2" type="GridMap" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.526109, 3.27338, 0)
-mesh_library = ExtResource("1_fnaju")
-data = {
-"cells": PackedInt32Array(-131070, 65535, 0, -131071, 65535, 0, -131072, 65535, 0, -65537, 65535, 0, -65537, 0, 0, -131072, 0, 0, -131071, 0, 0, -131070, 0, 0, -131069, 0, 0, -131069, 1, 0, -131070, 2, 0, -131071, 2, 0, -131072, 2, 0, -131072, 1, 0, -65537, 1, 0, -65538, 1, 0, -131071, 1, 0, -131070, 1, 0, -131071, 3, 0, -131072, 3, 0, -65537, 3, 0, -65538, 3, 0, -65538, 2, 0, -65537, 2, 0, -65538, 0, 0, -65538, 65535, 0, -131072, 65534, 0, -131071, 65534, 0, -131070, 65534, 0, -65537, 65534, 0, -65538, 65534, 0)
-}
-metadata/_editor_floor_ = Vector3(0, -2, 0)
-
 [node name="PickableObject" parent="." instance=ExtResource("3_3cpvd")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 2.00121, 0)
 
@@ -49,3 +42,15 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 2.00121, 0)
 
 [node name="PickableObject3" parent="." instance=ExtResource("3_3cpvd")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 2.00121, 0)
+
+[node name="NavigationRegion3D" type="NavigationRegion3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0308323, -0.188156, 0.0134048)
+navigation_mesh = SubResource("NavigationMesh_g8n4n")
+
+[node name="GridMap2" type="GridMap" parent="NavigationRegion3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.526109, 3.27338, 0)
+mesh_library = ExtResource("1_fnaju")
+data = {
+"cells": PackedInt32Array(-131072, 0, 0, -131072, 1, 0, -65537, 1, 0, -65537, 2, 0, -65538, 2, 0, -65538, 1, 0, -65538, 0, 0, -65538, 65535, 0, -65537, 65535, 0, -65539, 65535, 0, -65539, 0, 0, -65537, 0, 0, -131072, 65535, 0, -131071, 65535, 0, -131071, 0, 0, -131071, 1, 0, -131072, 2, 0, -131071, 2, 0, -131071, 65534, 0, -131071, 65533, 0, -131071, 65532, 0, -131072, 65533, 0, -131072, 65534, 0, -65537, 65534, 0, -65539, 65534, 0, -65539, 65533, 0, -65538, 65533, 0, -65537, 65533, 0, -65540, 65534, 0, -65540, 65533, 0, -65540, 65532, 0, -65539, 65532, 0, -65540, 65535, 0, -65538, 65534, 0, -65539, 65531, 0, -65538, 65531, 0, -65537, 65531, 0, -131072, 65531, 0, -131072, 65532, 0, -131071, 3, 0, -131070, 2, 0, -131070, 1, 0, -131070, 0, 0, -131069, 0, 0, -131069, 65535, 0, -131069, 65534, 0, -131069, 65533, 0, -131069, 65532, 0, -131070, 65532, 0, -131070, 65531, 0, -131070, 65533, 0, -131070, 65534, 0, -131070, 65535, 0, -131070, 3, 0, -131069, 1, 0)
+}
+metadata/_editor_floor_ = Vector3(0, -2, 0)

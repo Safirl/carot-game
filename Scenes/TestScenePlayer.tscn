@@ -1,9 +1,9 @@
 [gd_scene load_steps=8 format=3 uid="uid://ktvdn67qt7if"]
 
-[ext_resource type="PackedScene" uid="uid://bhr635oauf4nk" path="res://Scenes/player.tscn" id="1_v60dv"]
+[ext_resource type="PackedScene" uid="uid://7lb5qlebgjbl" path="res://Scenes/player.tscn" id="1_v60dv"]
 [ext_resource type="Script" path="res://script/orientation.gd" id="2_rk7b1"]
 [ext_resource type="Script" path="res://Scenes/camera_3d.gd" id="3_uhk8j"]
-[ext_resource type="MeshLibrary" uid="uid://bwkgebgytu1ve" path="res://TileMap/baseMeshLibrary.tres" id="5_buxar"]
+[ext_resource type="MeshLibrary" uid="uid://43w0jugh65ow" path="res://TileMap/baseMeshLibrary.tres" id="5_buxar"]
 [ext_resource type="Script" path="res://Scenes/FadeZone.gd" id="7_8m0vu"]
 [ext_resource type="Texture2D" uid="uid://cua2oluggopr7" path="res://sprites/house/wall.png" id="9_xgx25"]
 
