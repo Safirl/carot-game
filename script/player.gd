@@ -70,15 +70,8 @@ func _physics_process(delta):
 	move_and_slide()
 
 
-func _on_area_3d_body_entered(body: Node3D) -> void:
-	if body.name == "CharacterBody3D":	
-		pass
-		
-func activeMecanism():
-	actived = true
-	return actived
-func isActiveMecanism():
-	return actived
+
+
 
 func pickObject():
 	#print($ShapeCast3D.OldClosestObject.get_node("PickableObjectComponent"))
@@ -140,3 +133,11 @@ func _onRelease():
 					dropObject()
 				else:
 					throwObject()
+
+
+func _on_area_3d_body_entered(body: Node3D) -> void:
+	if body.name == "Player":
+		#isCollidin
+		pass
+	
+	pass 

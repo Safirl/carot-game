@@ -30,10 +30,10 @@ func fade_in(delta: float) -> void:
 
 # Fonction appelée lorsqu'un corps entre dans l'Area3D
 func _on_body_entered(body: Node3D) -> void:
-	if body.name == "CharacterBody3D":
+	if body.name == "Player":
 		is_fading_out = true  # Commence à faire disparaître le mur
 
 # Fonction appelée lorsqu'un corps sort de l'Area3D
 func _on_body_exited(body: Node3D) -> void:
-	if body.name == "CharacterBody3D":
+	if body.name == "Player":
 		is_fading_in = true  # Commence à faire réapparaître le mur
