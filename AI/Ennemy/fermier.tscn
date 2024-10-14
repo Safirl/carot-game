@@ -1,57 +1,19 @@
-[gd_scene load_steps=14 format=3 uid="uid://ioa2pcdgle2y"]
+[gd_scene load_steps=7 format=3 uid="uid://ioa2pcdgle2y"]
 
 [ext_resource type="PackedScene" uid="uid://bhr635oauf4nk" path="res://Scenes/player.tscn" id="1_a1yr3"]
 [ext_resource type="MeshLibrary" uid="uid://cn26txaafv2nq" path="res://TileMap/baseMeshLibrary.tres" id="2_5eb5s"]
 [ext_resource type="PackedScene" uid="uid://dua2oubaha4yv" path="res://AI/Carot/CarotAI.tscn" id="3_61gqv"]
-[ext_resource type="Texture2D" uid="uid://c13al1rt132gf" path="res://sprites/fermier/jambes-1.png" id="4_txbsm"]
-[ext_resource type="Script" path="res://AI/Ennemy/enemiIA.gd" id="4_u4pym"]
-[ext_resource type="Texture2D" uid="uid://14xgp6ft07pt" path="res://sprites/fermier/jambes-2.png" id="5_7m3t8"]
-[ext_resource type="Texture2D" uid="uid://dvq3psg4y2mr3" path="res://sprites/fermier/jambes-3.png" id="6_wnuem"]
-[ext_resource type="Texture2D" uid="uid://3lvp78icscph" path="res://sprites/fermier/jambes-4.png" id="7_guvqd"]
-[ext_resource type="Texture2D" uid="uid://kbdk0ja61861" path="res://sprites/fermier/jambes-5.png" id="8_mkjup"]
-[ext_resource type="Texture2D" uid="uid://cu4ksf84f7nob" path="res://sprites/fermier/jambes-6.png" id="9_r3ff1"]
+[ext_resource type="PackedScene" uid="uid://byepc6q4d58ep" path="res://AI/Ennemy/farmerAI.tscn" id="4_3dmwx"]
+[ext_resource type="Script" path="res://Scenes/camera_3d.gd" id="5_jddgn"]
 
 [sub_resource type="NavigationMesh" id="NavigationMesh_dgft6"]
 vertices = PackedVector3Array(-23.75, 1.5, -53.5, -25.5, 1.5, -53.5, -25.5, 1.5, -49.75, -21.5, 1.5, -4.25, -21.5, 1.5, -0.5, -19.75, 1.5, -0.5, -19.5, 1.5, 1.5, -15.75, 1.5, 1.5, -17.75, 1.5, -55.5, -23.5, 1.5, -55.5, -23.5, 1.5, -10.25, -23.5, 1.5, -4.5, -15.5, 1.5, 3.5, -9.75, 1.5, 3.5, -27.5, 1.5, -32.5, -25.5, 1.5, -32.25, -0.25, 1.5, -55.5, -9.5, 1.5, 5.5, 3.5, 1.5, 5.5, 3.75, 1.5, 3.5, -25.5, 1.5, -10.5, -0.5, 1.5, -57.5, -17.5, 1.5, -57.5, -27.5, 1.5, -49.5, 14.25, 1.5, 3.5, 14.25, 1.5, -55.5, 45.5, 1.5, -53.75, 45.5, 1.5, -55.5, 41.75, 1.5, -55.5, 49.5, 1.5, -45.75, 49.5, 1.5, -49.5, 47.5, 1.5, -49.75, 47.5, 1.5, -53.5, 41.75, 1.5, 3.5, 45.5, 1.5, 3.5, 45.5, 1.5, -0.25, 47.5, 1.5, -0.5, 47.5, 1.5, -6.25, 49.5, 1.5, -6.5, 49.5, 1.5, -14.25, 16.25, 1.5, 3.5, 24.5, 1.5, -57.5, 24.25, 1.5, -55.5, 41.5, 1.5, -57.5, 51.5, 1.5, -14.5, 51.5, 1.5, -45.5, 16.5, 1.5, 5.5, 41.5, 1.5, 5.5)
 polygons = [PackedInt32Array(2, 1, 0), PackedInt32Array(5, 4, 3), PackedInt32Array(7, 6, 5), PackedInt32Array(0, 9, 8), PackedInt32Array(3, 11, 10), PackedInt32Array(13, 12, 7), PackedInt32Array(3, 7, 5), PackedInt32Array(0, 8, 2), PackedInt32Array(2, 8, 14), PackedInt32Array(14, 8, 15), PackedInt32Array(15, 8, 16), PackedInt32Array(18, 17, 13), PackedInt32Array(7, 3, 13), PackedInt32Array(13, 3, 10), PackedInt32Array(13, 10, 19), PackedInt32Array(13, 19, 18), PackedInt32Array(10, 20, 15), PackedInt32Array(21, 16, 22), PackedInt32Array(22, 16, 8), PackedInt32Array(14, 23, 2), PackedInt32Array(19, 10, 24), PackedInt32Array(24, 10, 15), PackedInt32Array(24, 15, 16), PackedInt32Array(24, 16, 25), PackedInt32Array(28, 27, 26), PackedInt32Array(29, 31, 30), PackedInt32Array(31, 26, 32), PackedInt32Array(35, 34, 33), PackedInt32Array(37, 36, 35), PackedInt32Array(28, 26, 31), PackedInt32Array(39, 38, 37), PackedInt32Array(35, 33, 37), PackedInt32Array(37, 33, 39), PackedInt32Array(39, 33, 40), PackedInt32Array(31, 29, 28), PackedInt32Array(28, 29, 42), PackedInt32Array(28, 42, 41), PackedInt32Array(41, 43, 28), PackedInt32Array(44, 39, 45), PackedInt32Array(45, 39, 29), PackedInt32Array(42, 29, 25), PackedInt32Array(25, 29, 39), PackedInt32Array(25, 39, 40), PackedInt32Array(25, 40, 24), PackedInt32Array(46, 40, 47), PackedInt32Array(47, 40, 33)]
 
-[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_jptb6"]
-radius = 0.152998
-height = 0.798531
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_tr7j0"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("4_txbsm")
-}, {
-"duration": 1.0,
-"texture": ExtResource("5_7m3t8")
-}, {
-"duration": 1.0,
-"texture": ExtResource("6_wnuem")
-}, {
-"duration": 1.0,
-"texture": ExtResource("7_guvqd")
-}, {
-"duration": 1.0,
-"texture": ExtResource("8_mkjup")
-}, {
-"duration": 1.0,
-"texture": ExtResource("9_r3ff1")
-}],
-"loop": true,
-"name": &"walkingRight",
-"speed": 5.0
-}]
-
 [node name="Node3D" type="Node3D"]
 
 [node name="Player" parent="." instance=ExtResource("1_a1yr3")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.20433, 1.9555, -15.6257)
-
-[node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.992881, 0.119114, 0, -0.119114, 0.992881, 0.5436, 3.3029, -5.62337)
 
 [node name="NavigationRegion3D" type="NavigationRegion3D" parent="."]
 navigation_mesh = SubResource("NavigationMesh_dgft6")
@@ -65,16 +27,10 @@ data = {
 [node name="CarotAI" parent="." instance=ExtResource("3_61gqv")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.69411, -17.6049)
 
-[node name="FarmerAI" type="CharacterBody3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.42337, -16.641)
-script = ExtResource("4_u4pym")
+[node name="FarmerAI" parent="." instance=ExtResource("4_3dmwx")]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="FarmerAI"]
-shape = SubResource("CapsuleShape3D_jptb6")
-
-[node name="NavigationAgent3D" type="NavigationAgent3D" parent="FarmerAI"]
-
-[node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="FarmerAI"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.36266, 0)
-sprite_frames = SubResource("SpriteFrames_tr7j0")
-animation = &"walkingRight"
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(-1, 2.99004e-08, -8.21505e-08, 0, 0.939693, 0.34202, 8.74228e-08, 0.34202, -0.939693, 0, 3.79875, -4.83042)
+size = 0.495
+script = ExtResource("5_jddgn")
+offset = Vector3(0, 1, -3)
