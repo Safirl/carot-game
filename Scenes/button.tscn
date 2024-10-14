@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://bmrg8qrbxslf"]
+[gd_scene load_steps=5 format=3 uid="uid://bmrg8qrbxslf"]
 
 [ext_resource type="Script" path="res://script/button.gd" id="1_vixjh"]
 [ext_resource type="Texture2D" uid="uid://c5l27lkn2n5t4" path="res://sprites/trash/th.jpeg" id="2_mllfs"]
+[ext_resource type="PackedScene" uid="uid://ciiqcf5oeyq8s" path="res://Scenes/pickable_object_component.tscn" id="3_4dx0d"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_0y4i6"]
 
@@ -18,5 +19,7 @@ shape = SubResource("SphereShape3D_0y4i6")
 [node name="Sprite3D" type="Sprite3D" parent="."]
 transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0, 0)
 texture = ExtResource("2_mllfs")
+
+[node name="PickableObjectComponent" parent="." instance=ExtResource("3_4dx0d")]
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

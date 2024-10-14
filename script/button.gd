@@ -8,7 +8,7 @@ func _on_body_entered(body: Node) -> void:
 		activate()
 
 func activate():
-	$Sprite3D.modulate = Color(1, 0, 0, 1)
+	#$Sprite3D.modulate = Color(1, 0, 0, 1)
 	if isActivated:
 		return
-	emit_signal("on_button_activated")
+	on_button_activated.emit()
