@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://nx6bhg8hmmys"
-path.s3tc="res://.godot/imported/portant-dos-1.png-ff089b6c5df1feeac92daf2c166959e6.s3tc.ctex"
+uid="uid://do4jjsnre1lrg"
+path.s3tc="res://.godot/imported/jambes-6.png-c4455f2c8e66fc0a88b5ab325a473b47.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://sprites/portait/portant-dos-1.png"
-dest_files=["res://.godot/imported/portant-dos-1.png-ff089b6c5df1feeac92daf2c166959e6.s3tc.ctex"]
+source_file="res://sprites/fermier/Push/jambes-6.png"
+dest_files=["res://.godot/imported/jambes-6.png-c4455f2c8e66fc0a88b5ab325a473b47.s3tc.ctex"]
 
 [params]
 

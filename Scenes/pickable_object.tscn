@@ -5,10 +5,12 @@
 [ext_resource type="Texture2D" uid="uid://c5l27lkn2n5t4" path="res://sprites/trash/th.jpeg" id="2_hapqw"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_fdf1o"]
-bounce = 0.3
+friction = 100.0
+rough = true
+bounce = 0.31
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_lf11s"]
-size = Vector3(0.977539, 0.900146, 0.140259)
+[sub_resource type="BoxShape3D" id="BoxShape3D_bol70"]
+size = Vector3(1, 0.934082, 0.592896)
 
 [node name="PickableObject" type="RigidBody3D"]
 collision_layer = 5
@@ -24,5 +26,5 @@ texture = ExtResource("2_hapqw")
 [node name="PickableObjectComponent" parent="." instance=ExtResource("2_1d021")]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00708008, 0.0228271, 0.026062)
-shape = SubResource("BoxShape3D_lf11s")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00708008, -0.0101319, -0.0368225)
+shape = SubResource("BoxShape3D_bol70")
