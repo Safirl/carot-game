@@ -1,0 +1,29 @@
+[gd_scene load_steps=5 format=3 uid="uid://c7wgfrwfcaf7t"]
+
+[ext_resource type="MeshLibrary" uid="uid://hr32e216nyjj" path="res://TileMap/baseMeshLibrary.tres" id="1_88orc"]
+[ext_resource type="PackedScene" uid="uid://7lb5qlebgjbl" path="res://Scenes/player.tscn" id="2_2e8fr"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_5ebn0"]
+size = Vector3(0.3, 0.3, 0.3)
+
+[sub_resource type="BoxMesh" id="BoxMesh_g05fc"]
+
+[node name="lvl1-blockout" type="Node3D"]
+
+[node name="GridMap" type="GridMap" parent="."]
+mesh_library = ExtResource("1_88orc")
+data = {
+"cells": PackedInt32Array(1, 1, 0, 1, 0, 0, 1, 65535, 78, 65534, 1, 77, 65534, 0, 79, 65534, 65535, 78, 65534, 65534, 78, 0, 65534, 78, 1, 65534, 77, 2, 65534, 0, 2, 65535, 78, 2, 0, 77, 2, 1, 77, 2, 2, 1, 1, 2, 79, 0, 2, 78, 65535, 2, 79, 65534, 2, 77, 65533, 2, 78, 65533, 1, 77, 65533, 0, 78, 65533, 65535, 78, 65533, 65534, 77, 65533, 65533, 79, 65533, 65532, 79, 65533, 65531, 78, 65533, 65530, 79, 65534, 65530, 78, 65535, 65530, 79, 0, 65530, 78, 1, 65530, 79, 2, 65530, 1, 2, 65531, 1, 2, 65532, 77, 2, 65533, 78, 1, 65533, 0, 0, 65533, 79, 65535, 65533, 0, 65534, 65533, 78, 65534, 65532, 1, 65534, 65531, 78, 65535, 65531, 79, 0, 65531, 0, 1, 65531, 77, 1, 65532, 78, 0, 65532, 1, 65535, 65532, 79, 65535, 65534, 78, 0, 0, 15, 0, 65535, 79, 65535, 65535, 79, 65535, 1, 655372, 0, 1, 1441804, 65535, 0, 1048591)
+}
+metadata/_editor_floor_ = Vector3(0, 0, 0)
+
+[node name="Player" parent="." instance=ExtResource("2_2e8fr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.10199, 1.79371, 2.18674)
+
+[node name="Caillou" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.02617, 1.15246, -9.08111)
+mesh = SubResource("BoxMesh_5ebn0")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
+mesh = SubResource("BoxMesh_g05fc")
