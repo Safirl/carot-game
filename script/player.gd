@@ -40,30 +40,54 @@ func _physics_process(delta):
 			state = "walkright"
 		elif direction.x < 0:
 			state = "walkleft"
-		last_direction = state  
-	else:
+		last_direction = state
+		
+		
+	else :
 		state = "idle"
-
-	match state:
-		"walkdown":
-			anim_player.play("portaitFace")
-		"walkup":
-			anim_player.play("portaitUp")
-		"walkright":
-			anim_player.play("portaitRight")
-		"walkleft":
-			anim_player.play("walkLeft")
-		"idle":
-	
-			match last_direction:
-				"walkdown":
-					anim_player.play("DefaultDown")
-				"walkup":
-					anim_player.play("DefaultUp")
-				"walkright":
-					anim_player.play("DefaultRight")
-				"walkleft":
-					anim_player.play("DefaultLeft")
+	if interactionState == "none":
+		match state:
+			"walkdown":
+				anim_player.play("walkDown")
+			"walkup":
+				anim_player.play("walkUp")
+			"walkright":
+				anim_player.play("walkRight")
+			"walkleft":
+				anim_player.play("walkLeft")
+				
+			"idle":
+				match last_direction:
+					"walkdown":
+						anim_player.play("DefaultDown")
+					"walkup":
+						anim_player.play("DefaultUp")
+					"walkright":
+						anim_player.play("DefaultRight")
+					"walkleft":
+						anim_player.play("DefaultLeft")
+	else:
+		match state:
+			"walkdown":
+				anim_player.play("portaitDown")
+			"walkup":
+				anim_player.play("portaitUp")
+			"walkright":
+				anim_player.play("portaitRight")
+			"walkleft":
+				anim_player.play("portaitLeft")
+			"idle":
+		
+				match last_direction:
+					"walkdown":
+						anim_player.play("DefaultPortaitDown")
+					"walkup":
+						anim_player.play("DefaultPortaitUp")
+					"walkright":
+						anim_player.play("DefaultPortaitRight")
+					"walkleft":
+						anim_player.play("DefaultPortaitLeft")
+			
 
 	# Applique la vitesse de mouvement
 	velocity = velocity.lerp(direction * move_speed, accel * delta)
@@ -85,6 +109,7 @@ func pickObject():
 	if $ShapeCast3D.OldClosestObject.get_node("PickableObjectComponent").weight <= carrotsNumber:
 		$ShapeCast3D.OldClosestObject.get_node("PickableObjectComponent").isPicked = true
 		interactionState = "holding"
+		state="holding"
 	
 func throwObject():
 	is_holding_input = false
@@ -94,6 +119,7 @@ func throwObject():
 	var throw_direction
 	match last_direction:
 		"walkdown":
+			
 			throw_direction = self.global_transform.basis.z.normalized() * -1
 		"walkup":
 			throw_direction = self.global_transform.basis.z.normalized() * 1
