@@ -1,4 +1,4 @@
-[gd_scene load_steps=269 format=3 uid="uid://dcigctpiipcl8"]
+[gd_scene load_steps=272 format=3 uid="uid://dcigctpiipcl8"]
 
 [ext_resource type="Texture2D" uid="uid://s5h0sl0h8l23" path="res://TileMap/Textures/Grass/Tuiles_1_04.png" id="1_afuxq"]
 [ext_resource type="Texture2D" uid="uid://bum32ryw86iv" path="res://TileMap/Textures/Grass/Tuiles_1_02.png" id="1_yd4vq"]
@@ -82,6 +82,7 @@
 [ext_resource type="Texture2D" uid="uid://cdwlmxj03204f" path="res://TileMap/Textures/Grass/Tuiles_1_05.png" id="56_7wxp5"]
 [ext_resource type="Texture2D" uid="uid://bqqb1mx3eswot" path="res://TileMap/Textures/Soil/Tuiles_1-2_11.png" id="82_10oxr"]
 [ext_resource type="Texture2D" uid="uid://b3uuus8q28kic" path="res://TileMap/Textures/Soil/Tuiles_1-2_06.png" id="83_xs6ek"]
+[ext_resource type="Texture2D" uid="uid://85gmxw7hr465" path="res://TileMap/Textures/Water/Tuile-5.png" id="84_8d72j"]
 [ext_resource type="Texture2D" uid="uid://csb7l4232xf51" path="res://TileMap/Textures/Soil/Tuiles_1-2_01.png" id="84_h53fc"]
 [ext_resource type="Texture2D" uid="uid://dk86hl7hv653k" path="res://TileMap/Textures/Soil/Tuiles_1-2_02.png" id="85_tgx2s"]
 [ext_resource type="Texture2D" uid="uid://cubb3xl0xyldf" path="res://TileMap/Textures/Soil/Tuiles_1-2_07.png" id="86_372ii"]
@@ -90,903 +91,913 @@
 [ext_resource type="Texture2D" uid="uid://cjlkcfh4w6ylu" path="res://TileMap/Textures/Soil/Tuiles_1-2_08.png" id="89_kc7q6"]
 [ext_resource type="Texture2D" uid="uid://dqnk50d5nhp3c" path="res://TileMap/Textures/Soil/Tuiles_1-2_03.png" id="90_atqxl"]
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qjgid"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_060m5"]
 transparency = 2
 alpha_scissor_threshold = 0.5
 alpha_antialiasing_mode = 0
 shading_mode = 0
 albedo_texture = ExtResource("1_yd4vq")
 
-[sub_resource type="PlaneMesh" id="PlaneMesh_vnem4"]
-material = SubResource("StandardMaterial3D_qjgid")
+[sub_resource type="PlaneMesh" id="PlaneMesh_8g1ee"]
+material = SubResource("StandardMaterial3D_060m5")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_lj2s0"]
 size = Vector3(1.99536, 0.203979, 2)
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ax7qv"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bco8n"]
 transparency = 2
 alpha_scissor_threshold = 0.5
 alpha_antialiasing_mode = 0
 shading_mode = 0
 albedo_texture = ExtResource("3_nyl7s")
 
-[sub_resource type="PlaneMesh" id="PlaneMesh_d1u53"]
-material = SubResource("StandardMaterial3D_ax7qv")
+[sub_resource type="PlaneMesh" id="PlaneMesh_5fkr6"]
+material = SubResource("StandardMaterial3D_bco8n")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5olgu"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tdb8s"]
 transparency = 2
 alpha_scissor_threshold = 0.5
 alpha_antialiasing_mode = 0
 shading_mode = 0
 albedo_texture = ExtResource("4_585l3")
 
-[sub_resource type="PlaneMesh" id="PlaneMesh_1g7d7"]
-material = SubResource("StandardMaterial3D_5olgu")
+[sub_resource type="PlaneMesh" id="PlaneMesh_x55yq"]
+material = SubResource("StandardMaterial3D_tdb8s")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_147xp"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_y7gno"]
 transparency = 2
 alpha_scissor_threshold = 0.5
 alpha_antialiasing_mode = 0
 shading_mode = 0
 albedo_texture = ExtResource("5_tktx4")
 
-[sub_resource type="PlaneMesh" id="PlaneMesh_cyb38"]
-material = SubResource("StandardMaterial3D_147xp")
+[sub_resource type="PlaneMesh" id="PlaneMesh_k5aim"]
+material = SubResource("StandardMaterial3D_y7gno")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_q2w1m"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_g5w1k"]
 transparency = 2
 alpha_scissor_threshold = 0.5
 alpha_antialiasing_mode = 0
 shading_mode = 0
 albedo_texture = ExtResource("6_k6mg2")
 
-[sub_resource type="PlaneMesh" id="PlaneMesh_a8miq"]
-material = SubResource("StandardMaterial3D_q2w1m")
+[sub_resource type="PlaneMesh" id="PlaneMesh_6qpmm"]
+material = SubResource("StandardMaterial3D_g5w1k")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8kqlh"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5em47"]
 transparency = 2
 alpha_scissor_threshold = 0.5
 alpha_antialiasing_mode = 0
 shading_mode = 0
 albedo_texture = ExtResource("7_lqtk4")
 
-[sub_resource type="PlaneMesh" id="PlaneMesh_27qgl"]
-material = SubResource("StandardMaterial3D_8kqlh")
+[sub_resource type="PlaneMesh" id="PlaneMesh_o2lse"]
+material = SubResource("StandardMaterial3D_5em47")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qby80"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tgtwr"]
 transparency = 2
 alpha_scissor_threshold = 0.5
 alpha_antialiasing_mode = 0
 shading_mode = 0
 albedo_texture = ExtResource("8_p176n")
 
-[sub_resource type="PlaneMesh" id="PlaneMesh_faisq"]
-material = SubResource("StandardMaterial3D_qby80")
+[sub_resource type="PlaneMesh" id="PlaneMesh_snjki"]
+material = SubResource("StandardMaterial3D_tgtwr")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ow3nk"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wocp3"]
 transparency = 2
 alpha_scissor_threshold = 0.5
 alpha_antialiasing_mode = 0
 shading_mode = 0
 albedo_texture = ExtResource("9_0e8i5")
 
-[sub_resource type="PlaneMesh" id="PlaneMesh_5mq6e"]
-material = SubResource("StandardMaterial3D_ow3nk")
+[sub_resource type="PlaneMesh" id="PlaneMesh_v3d4l"]
+material = SubResource("StandardMaterial3D_wocp3")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rtnvf"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_y4qqj"]
 transparency = 2
 alpha_scissor_threshold = 0.5
 alpha_antialiasing_mode = 0
 shading_mode = 0
 albedo_texture = ExtResource("10_p24lh")
 
-[sub_resource type="PlaneMesh" id="PlaneMesh_lw3fo"]
-material = SubResource("StandardMaterial3D_rtnvf")
+[sub_resource type="PlaneMesh" id="PlaneMesh_4m5cw"]
+material = SubResource("StandardMaterial3D_y4qqj")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1cksq"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3jydq"]
 transparency = 2
 alpha_scissor_threshold = 0.5
 alpha_antialiasing_mode = 0
 shading_mode = 0
 albedo_texture = ExtResource("11_l6s3l")
 
-[sub_resource type="PlaneMesh" id="PlaneMesh_kwp7o"]
-material = SubResource("StandardMaterial3D_1cksq")
+[sub_resource type="PlaneMesh" id="PlaneMesh_5x35o"]
+material = SubResource("StandardMaterial3D_3jydq")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ycgxq"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rcqb4"]
 transparency = 2
 alpha_scissor_threshold = 0.5
 alpha_antialiasing_mode = 0
 shading_mode = 0
 albedo_texture = ExtResource("12_73073")
 
-[sub_resource type="PlaneMesh" id="PlaneMesh_r6mop"]
-material = SubResource("StandardMaterial3D_ycgxq")
+[sub_resource type="PlaneMesh" id="PlaneMesh_422ao"]
+material = SubResource("StandardMaterial3D_rcqb4")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_k2shl"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dug5o"]
 transparency = 2
 alpha_scissor_threshold = 0.5
 alpha_antialiasing_mode = 0
 shading_mode = 0
 albedo_texture = ExtResource("13_4h1c0")
 
-[sub_resource type="PlaneMesh" id="PlaneMesh_j5vrf"]
-material = SubResource("StandardMaterial3D_k2shl")
+[sub_resource type="PlaneMesh" id="PlaneMesh_4bhry"]
+material = SubResource("StandardMaterial3D_dug5o")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hh26g"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ckgue"]
 transparency = 2
 alpha_scissor_threshold = 0.5
 alpha_antialiasing_mode = 0
 shading_mode = 0
 albedo_texture = ExtResource("14_prbyp")
 
-[sub_resource type="PlaneMesh" id="PlaneMesh_2dt2l"]
-material = SubResource("StandardMaterial3D_hh26g")
+[sub_resource type="PlaneMesh" id="PlaneMesh_yckw1"]
+material = SubResource("StandardMaterial3D_ckgue")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8r3lb"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qobpe"]
 transparency = 2
 alpha_scissor_threshold = 0.5
 alpha_antialiasing_mode = 0
 shading_mode = 0
 albedo_texture = ExtResource("15_4h2p7")
 
-[sub_resource type="PlaneMesh" id="PlaneMesh_pngar"]
-material = SubResource("StandardMaterial3D_8r3lb")
+[sub_resource type="PlaneMesh" id="PlaneMesh_tl1nr"]
+material = SubResource("StandardMaterial3D_qobpe")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ojkm0"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_q67gk"]
 transparency = 2
 alpha_scissor_threshold = 0.5
 alpha_antialiasing_mode = 0
 shading_mode = 0
 albedo_texture = ExtResource("16_wu2m3")
 
-[sub_resource type="PlaneMesh" id="PlaneMesh_6dsnn"]
-material = SubResource("StandardMaterial3D_ojkm0")
+[sub_resource type="PlaneMesh" id="PlaneMesh_nqx3x"]
+material = SubResource("StandardMaterial3D_q67gk")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_64ha7"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_etqi0"]
 transparency = 2
 alpha_scissor_threshold = 0.5
 alpha_antialiasing_mode = 0
 shading_mode = 0
 albedo_texture = ExtResource("17_rt8p5")
 
-[sub_resource type="PlaneMesh" id="PlaneMesh_4tua1"]
-material = SubResource("StandardMaterial3D_64ha7")
+[sub_resource type="PlaneMesh" id="PlaneMesh_ssx36"]
+material = SubResource("StandardMaterial3D_etqi0")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_447jj"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ky7bk"]
 transparency = 2
 alpha_scissor_threshold = 0.5
 alpha_antialiasing_mode = 0
 shading_mode = 0
 albedo_texture = ExtResource("18_8poon")
 
-[sub_resource type="PlaneMesh" id="PlaneMesh_wx70l"]
-material = SubResource("StandardMaterial3D_447jj")
+[sub_resource type="PlaneMesh" id="PlaneMesh_jnik2"]
+material = SubResource("StandardMaterial3D_ky7bk")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_lxtf2"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ws1u3"]
 transparency = 2
 alpha_scissor_threshold = 0.5
 alpha_antialiasing_mode = 0
 shading_mode = 0
 albedo_texture = ExtResource("19_ae1cp")
 
-[sub_resource type="PlaneMesh" id="PlaneMesh_8xdt2"]
-material = SubResource("StandardMaterial3D_lxtf2")
+[sub_resource type="PlaneMesh" id="PlaneMesh_o2yyf"]
+material = SubResource("StandardMaterial3D_ws1u3")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_x5yy6"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_32rrt"]
 transparency = 2
 alpha_scissor_threshold = 0.5
 alpha_antialiasing_mode = 0
 shading_mode = 0
 albedo_texture = ExtResource("20_fivyc")
 
-[sub_resource type="PlaneMesh" id="PlaneMesh_d0dd0"]
-material = SubResource("StandardMaterial3D_x5yy6")
+[sub_resource type="PlaneMesh" id="PlaneMesh_p1qr4"]
+material = SubResource("StandardMaterial3D_32rrt")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fynow"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dlgn1"]
 transparency = 2
 alpha_scissor_threshold = 0.5
 alpha_antialiasing_mode = 0
 shading_mode = 0
 albedo_texture = ExtResource("21_fwh0e")
 
-[sub_resource type="PlaneMesh" id="PlaneMesh_ckarr"]
-material = SubResource("StandardMaterial3D_fynow")
+[sub_resource type="PlaneMesh" id="PlaneMesh_bj8cq"]
+material = SubResource("StandardMaterial3D_dlgn1")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ir7er"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_x1dye"]
 transparency = 2
 alpha_scissor_threshold = 0.5
 alpha_antialiasing_mode = 0
 shading_mode = 0
 albedo_texture = ExtResource("22_t6gan")
 
-[sub_resource type="PlaneMesh" id="PlaneMesh_3ulv2"]
-material = SubResource("StandardMaterial3D_ir7er")
+[sub_resource type="PlaneMesh" id="PlaneMesh_4b408"]
+material = SubResource("StandardMaterial3D_x1dye")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_njefb"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_aucgw"]
 transparency = 2
 alpha_scissor_threshold = 0.5
 alpha_antialiasing_mode = 0
 shading_mode = 0
 albedo_texture = ExtResource("23_vu5fp")
 
-[sub_resource type="PlaneMesh" id="PlaneMesh_f3l0f"]
-material = SubResource("StandardMaterial3D_njefb")
+[sub_resource type="PlaneMesh" id="PlaneMesh_clo5f"]
+material = SubResource("StandardMaterial3D_aucgw")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dno2l"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mtmqf"]
 transparency = 2
 alpha_scissor_threshold = 0.5
 alpha_antialiasing_mode = 0
 shading_mode = 0
 albedo_texture = ExtResource("24_fvys7")
 
-[sub_resource type="PlaneMesh" id="PlaneMesh_w0vjh"]
-material = SubResource("StandardMaterial3D_dno2l")
+[sub_resource type="PlaneMesh" id="PlaneMesh_1yguw"]
+material = SubResource("StandardMaterial3D_mtmqf")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7fcwy"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_shxax"]
 transparency = 2
 alpha_scissor_threshold = 0.5
 alpha_antialiasing_mode = 0
 shading_mode = 0
 albedo_texture = ExtResource("25_exdcn")
 
-[sub_resource type="PlaneMesh" id="PlaneMesh_sslms"]
-material = SubResource("StandardMaterial3D_7fcwy")
+[sub_resource type="PlaneMesh" id="PlaneMesh_e6127"]
+material = SubResource("StandardMaterial3D_shxax")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rsdqb"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wjr7l"]
 transparency = 2
 alpha_scissor_threshold = 0.5
 alpha_antialiasing_mode = 0
 shading_mode = 0
 albedo_texture = ExtResource("26_ocvk5")
 
-[sub_resource type="PlaneMesh" id="PlaneMesh_ollb1"]
-material = SubResource("StandardMaterial3D_rsdqb")
+[sub_resource type="PlaneMesh" id="PlaneMesh_wkaiv"]
+material = SubResource("StandardMaterial3D_wjr7l")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3f8g3"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fwhdl"]
 transparency = 2
 alpha_scissor_threshold = 0.5
 alpha_antialiasing_mode = 0
 shading_mode = 0
 albedo_texture = ExtResource("27_qk0lb")
 
-[sub_resource type="PlaneMesh" id="PlaneMesh_pgnp7"]
-material = SubResource("StandardMaterial3D_3f8g3")
+[sub_resource type="PlaneMesh" id="PlaneMesh_kmkoo"]
+material = SubResource("StandardMaterial3D_fwhdl")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_043dx"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_d11hb"]
 transparency = 2
 alpha_scissor_threshold = 0.5
 alpha_antialiasing_mode = 0
 shading_mode = 0
 albedo_texture = ExtResource("28_kb225")
 
-[sub_resource type="PlaneMesh" id="PlaneMesh_fyuc0"]
-material = SubResource("StandardMaterial3D_043dx")
+[sub_resource type="PlaneMesh" id="PlaneMesh_yi6ly"]
+material = SubResource("StandardMaterial3D_d11hb")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_uidth"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xxjhd"]
 transparency = 2
 alpha_scissor_threshold = 0.5
 alpha_antialiasing_mode = 0
 shading_mode = 0
 albedo_texture = ExtResource("29_qmxs3")
 
-[sub_resource type="PlaneMesh" id="PlaneMesh_ves4n"]
-material = SubResource("StandardMaterial3D_uidth")
+[sub_resource type="PlaneMesh" id="PlaneMesh_kivkw"]
+material = SubResource("StandardMaterial3D_xxjhd")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_yteyb"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bkl0d"]
 transparency = 2
 alpha_scissor_threshold = 0.5
 alpha_antialiasing_mode = 0
 shading_mode = 0
 albedo_texture = ExtResource("30_hef6b")
 
-[sub_resource type="PlaneMesh" id="PlaneMesh_6lajs"]
-material = SubResource("StandardMaterial3D_yteyb")
+[sub_resource type="PlaneMesh" id="PlaneMesh_gun6n"]
+material = SubResource("StandardMaterial3D_bkl0d")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_x3rei"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_edlbj"]
 transparency = 2
 alpha_scissor_threshold = 0.5
 alpha_antialiasing_mode = 0
 shading_mode = 0
 albedo_texture = ExtResource("31_0spdf")
 
-[sub_resource type="PlaneMesh" id="PlaneMesh_pq4gv"]
-material = SubResource("StandardMaterial3D_x3rei")
+[sub_resource type="PlaneMesh" id="PlaneMesh_x3yu0"]
+material = SubResource("StandardMaterial3D_edlbj")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_15e3e"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_uweyd"]
 transparency = 2
 alpha_scissor_threshold = 0.5
 alpha_antialiasing_mode = 0
 shading_mode = 0
 albedo_texture = ExtResource("32_sn8j6")
 
-[sub_resource type="PlaneMesh" id="PlaneMesh_2w2q6"]
-material = SubResource("StandardMaterial3D_15e3e")
+[sub_resource type="PlaneMesh" id="PlaneMesh_4ln5y"]
+material = SubResource("StandardMaterial3D_uweyd")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_l5l65"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_edd8b"]
 transparency = 2
 alpha_scissor_threshold = 0.5
 alpha_antialiasing_mode = 0
 shading_mode = 0
 albedo_texture = ExtResource("33_ylnkw")
 
-[sub_resource type="PlaneMesh" id="PlaneMesh_m7tds"]
-material = SubResource("StandardMaterial3D_l5l65")
+[sub_resource type="PlaneMesh" id="PlaneMesh_drcyx"]
+material = SubResource("StandardMaterial3D_edd8b")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_il40q"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mfqct"]
 transparency = 2
 alpha_scissor_threshold = 0.5
 alpha_antialiasing_mode = 0
 shading_mode = 0
 albedo_texture = ExtResource("34_1kgeu")
 
-[sub_resource type="PlaneMesh" id="PlaneMesh_tbrg6"]
-material = SubResource("StandardMaterial3D_il40q")
+[sub_resource type="PlaneMesh" id="PlaneMesh_hfd1j"]
+material = SubResource("StandardMaterial3D_mfqct")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_s250b"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3i2vv"]
 transparency = 2
 alpha_scissor_threshold = 0.5
 alpha_antialiasing_mode = 0
 shading_mode = 0
 albedo_texture = ExtResource("35_8ljsu")
 
-[sub_resource type="PlaneMesh" id="PlaneMesh_8pmjo"]
-material = SubResource("StandardMaterial3D_s250b")
+[sub_resource type="PlaneMesh" id="PlaneMesh_gjyj0"]
+material = SubResource("StandardMaterial3D_3i2vv")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_yed26"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jp777"]
 transparency = 2
 alpha_scissor_threshold = 0.5
 alpha_antialiasing_mode = 0
 shading_mode = 0
 albedo_texture = ExtResource("36_3aeka")
 
-[sub_resource type="PlaneMesh" id="PlaneMesh_qfdt2"]
-material = SubResource("StandardMaterial3D_yed26")
+[sub_resource type="PlaneMesh" id="PlaneMesh_2ftvq"]
+material = SubResource("StandardMaterial3D_jp777")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_go0ur"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kqo8j"]
 transparency = 2
 alpha_scissor_threshold = 0.5
 alpha_antialiasing_mode = 0
 shading_mode = 0
 albedo_texture = ExtResource("37_h0uoc")
 
-[sub_resource type="PlaneMesh" id="PlaneMesh_3vui3"]
-material = SubResource("StandardMaterial3D_go0ur")
+[sub_resource type="PlaneMesh" id="PlaneMesh_6ldb4"]
+material = SubResource("StandardMaterial3D_kqo8j")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7naf4"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3wjkg"]
 transparency = 2
 alpha_scissor_threshold = 0.5
 alpha_antialiasing_mode = 0
 shading_mode = 0
 albedo_texture = ExtResource("38_dxbhs")
 
-[sub_resource type="PlaneMesh" id="PlaneMesh_kqcmp"]
-material = SubResource("StandardMaterial3D_7naf4")
+[sub_resource type="PlaneMesh" id="PlaneMesh_55rff"]
+material = SubResource("StandardMaterial3D_3wjkg")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_oxtut"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_to7rn"]
 transparency = 2
 alpha_scissor_threshold = 0.5
 alpha_antialiasing_mode = 0
 shading_mode = 0
 albedo_texture = ExtResource("14_odh7i")
 
-[sub_resource type="PlaneMesh" id="PlaneMesh_di7ka"]
-material = SubResource("StandardMaterial3D_oxtut")
+[sub_resource type="PlaneMesh" id="PlaneMesh_xlwla"]
+material = SubResource("StandardMaterial3D_to7rn")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_nth51"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_chemr"]
 transparency = 2
 alpha_scissor_threshold = 0.5
 alpha_antialiasing_mode = 0
 shading_mode = 0
 albedo_texture = ExtResource("15_3ys6r")
 
-[sub_resource type="PlaneMesh" id="PlaneMesh_1oxam"]
-material = SubResource("StandardMaterial3D_nth51")
+[sub_resource type="PlaneMesh" id="PlaneMesh_ug73j"]
+material = SubResource("StandardMaterial3D_chemr")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1phme"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wo127"]
 transparency = 2
 alpha_scissor_threshold = 0.5
 alpha_antialiasing_mode = 0
 shading_mode = 0
 albedo_texture = ExtResource("16_ml7in")
 
-[sub_resource type="PlaneMesh" id="PlaneMesh_8eypn"]
-material = SubResource("StandardMaterial3D_1phme")
+[sub_resource type="PlaneMesh" id="PlaneMesh_2ydrm"]
+material = SubResource("StandardMaterial3D_wo127")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8v7eu"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mhtky"]
 transparency = 2
 alpha_scissor_threshold = 0.5
 alpha_antialiasing_mode = 0
 shading_mode = 0
 albedo_texture = ExtResource("17_l4tvn")
 
-[sub_resource type="PlaneMesh" id="PlaneMesh_hk203"]
-material = SubResource("StandardMaterial3D_8v7eu")
+[sub_resource type="PlaneMesh" id="PlaneMesh_ogbwc"]
+material = SubResource("StandardMaterial3D_mhtky")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0tsok"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xb3cv"]
 transparency = 2
 alpha_scissor_threshold = 0.5
 alpha_antialiasing_mode = 0
 shading_mode = 0
 albedo_texture = ExtResource("18_mq10f")
 
-[sub_resource type="PlaneMesh" id="PlaneMesh_ujcbh"]
-material = SubResource("StandardMaterial3D_0tsok")
+[sub_resource type="PlaneMesh" id="PlaneMesh_hjcn0"]
+material = SubResource("StandardMaterial3D_xb3cv")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_alxud"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fbjuh"]
 transparency = 2
 alpha_scissor_threshold = 0.5
 alpha_antialiasing_mode = 0
 shading_mode = 0
 albedo_texture = ExtResource("19_f7vai")
 
-[sub_resource type="PlaneMesh" id="PlaneMesh_1jfoj"]
-material = SubResource("StandardMaterial3D_alxud")
+[sub_resource type="PlaneMesh" id="PlaneMesh_erg6w"]
+material = SubResource("StandardMaterial3D_fbjuh")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_r23hw"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_x1qs2"]
 transparency = 2
 alpha_scissor_threshold = 0.5
 alpha_antialiasing_mode = 0
 shading_mode = 0
 albedo_texture = ExtResource("20_lubs0")
 
-[sub_resource type="PlaneMesh" id="PlaneMesh_5iucr"]
-material = SubResource("StandardMaterial3D_r23hw")
+[sub_resource type="PlaneMesh" id="PlaneMesh_kpdca"]
+material = SubResource("StandardMaterial3D_x1qs2")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_e0376"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_abyff"]
 transparency = 2
 alpha_scissor_threshold = 0.5
 alpha_antialiasing_mode = 0
 shading_mode = 0
 albedo_texture = ExtResource("21_ydhwq")
 
-[sub_resource type="PlaneMesh" id="PlaneMesh_cwt43"]
-material = SubResource("StandardMaterial3D_e0376")
+[sub_resource type="PlaneMesh" id="PlaneMesh_d6el6"]
+material = SubResource("StandardMaterial3D_abyff")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_758kf"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rpks3"]
 transparency = 2
 alpha_scissor_threshold = 0.5
 alpha_antialiasing_mode = 0
 shading_mode = 0
 albedo_texture = ExtResource("22_g41ro")
 
-[sub_resource type="PlaneMesh" id="PlaneMesh_avbxw"]
-material = SubResource("StandardMaterial3D_758kf")
+[sub_resource type="PlaneMesh" id="PlaneMesh_3twt1"]
+material = SubResource("StandardMaterial3D_rpks3")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_q247n"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gn1qt"]
 transparency = 2
 alpha_scissor_threshold = 0.5
 alpha_antialiasing_mode = 0
 shading_mode = 0
 albedo_texture = ExtResource("23_3jhu5")
 
-[sub_resource type="PlaneMesh" id="PlaneMesh_ofigc"]
-material = SubResource("StandardMaterial3D_q247n")
+[sub_resource type="PlaneMesh" id="PlaneMesh_t1d28"]
+material = SubResource("StandardMaterial3D_gn1qt")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_y1bjm"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mxtl2"]
 transparency = 2
 alpha_scissor_threshold = 0.5
 alpha_antialiasing_mode = 0
 shading_mode = 0
 albedo_texture = ExtResource("24_krg7s")
 
-[sub_resource type="PlaneMesh" id="PlaneMesh_rlg8v"]
-material = SubResource("StandardMaterial3D_y1bjm")
+[sub_resource type="PlaneMesh" id="PlaneMesh_fveog"]
+material = SubResource("StandardMaterial3D_mxtl2")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_40rxq"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wya4x"]
 transparency = 2
 alpha_scissor_threshold = 0.5
 alpha_antialiasing_mode = 0
 shading_mode = 0
 albedo_texture = ExtResource("25_dp8vj")
 
-[sub_resource type="PlaneMesh" id="PlaneMesh_xql8p"]
-material = SubResource("StandardMaterial3D_40rxq")
+[sub_resource type="PlaneMesh" id="PlaneMesh_44upd"]
+material = SubResource("StandardMaterial3D_wya4x")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ak537"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jq6bn"]
 transparency = 2
 alpha_scissor_threshold = 0.5
 alpha_antialiasing_mode = 0
 shading_mode = 0
 albedo_texture = ExtResource("26_lxsx1")
 
-[sub_resource type="PlaneMesh" id="PlaneMesh_kdqud"]
-material = SubResource("StandardMaterial3D_ak537")
+[sub_resource type="PlaneMesh" id="PlaneMesh_t65q6"]
+material = SubResource("StandardMaterial3D_jq6bn")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rq1f3"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_21u47"]
 transparency = 2
 alpha_scissor_threshold = 0.5
 alpha_antialiasing_mode = 0
 shading_mode = 0
 albedo_texture = ExtResource("27_oona5")
 
-[sub_resource type="PlaneMesh" id="PlaneMesh_1abpe"]
-material = SubResource("StandardMaterial3D_rq1f3")
+[sub_resource type="PlaneMesh" id="PlaneMesh_u2g1l"]
+material = SubResource("StandardMaterial3D_21u47")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_yyerx"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5kci6"]
 transparency = 2
 alpha_scissor_threshold = 0.5
 alpha_antialiasing_mode = 0
 shading_mode = 0
 albedo_texture = ExtResource("28_0ogbi")
 
-[sub_resource type="PlaneMesh" id="PlaneMesh_ybfsp"]
-material = SubResource("StandardMaterial3D_yyerx")
+[sub_resource type="PlaneMesh" id="PlaneMesh_rk3bu"]
+material = SubResource("StandardMaterial3D_5kci6")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_71nsi"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bc08j"]
 transparency = 2
 alpha_scissor_threshold = 0.5
 alpha_antialiasing_mode = 0
 shading_mode = 0
 albedo_texture = ExtResource("29_6eg2d")
 
-[sub_resource type="PlaneMesh" id="PlaneMesh_0deg0"]
-material = SubResource("StandardMaterial3D_71nsi")
+[sub_resource type="PlaneMesh" id="PlaneMesh_gr0tp"]
+material = SubResource("StandardMaterial3D_bc08j")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_v4onu"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5hc4t"]
 transparency = 2
 alpha_scissor_threshold = 0.5
 alpha_antialiasing_mode = 0
 shading_mode = 0
 albedo_texture = ExtResource("30_adf8f")
 
-[sub_resource type="PlaneMesh" id="PlaneMesh_ygqj8"]
-material = SubResource("StandardMaterial3D_v4onu")
+[sub_resource type="PlaneMesh" id="PlaneMesh_oa7rr"]
+material = SubResource("StandardMaterial3D_5hc4t")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_nnom7"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8trni"]
 transparency = 2
 alpha_scissor_threshold = 0.5
 alpha_antialiasing_mode = 0
 shading_mode = 0
 albedo_texture = ExtResource("31_ranuk")
 
-[sub_resource type="PlaneMesh" id="PlaneMesh_wy4ex"]
-material = SubResource("StandardMaterial3D_nnom7")
+[sub_resource type="PlaneMesh" id="PlaneMesh_pkev4"]
+material = SubResource("StandardMaterial3D_8trni")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_do61g"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mvexl"]
 transparency = 2
 alpha_scissor_threshold = 0.5
 alpha_antialiasing_mode = 0
 shading_mode = 0
 albedo_texture = ExtResource("32_efrwa")
 
-[sub_resource type="PlaneMesh" id="PlaneMesh_v8xt3"]
-material = SubResource("StandardMaterial3D_do61g")
+[sub_resource type="PlaneMesh" id="PlaneMesh_xy63a"]
+material = SubResource("StandardMaterial3D_mvexl")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ntnrv"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_w4exc"]
 transparency = 2
 alpha_scissor_threshold = 0.5
 alpha_antialiasing_mode = 0
 shading_mode = 0
 albedo_texture = ExtResource("33_7k8ny")
 
-[sub_resource type="PlaneMesh" id="PlaneMesh_ru6e2"]
-material = SubResource("StandardMaterial3D_ntnrv")
+[sub_resource type="PlaneMesh" id="PlaneMesh_r7saf"]
+material = SubResource("StandardMaterial3D_w4exc")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ufu1n"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hqdi4"]
 transparency = 2
 alpha_scissor_threshold = 0.5
 alpha_antialiasing_mode = 0
 shading_mode = 0
 albedo_texture = ExtResource("34_qeu5u")
 
-[sub_resource type="PlaneMesh" id="PlaneMesh_n0q8w"]
-material = SubResource("StandardMaterial3D_ufu1n")
+[sub_resource type="PlaneMesh" id="PlaneMesh_ltveb"]
+material = SubResource("StandardMaterial3D_hqdi4")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_w7u7h"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4unu7"]
 transparency = 2
 alpha_scissor_threshold = 0.5
 alpha_antialiasing_mode = 0
 shading_mode = 0
 albedo_texture = ExtResource("35_ytt7l")
 
-[sub_resource type="PlaneMesh" id="PlaneMesh_8r3ii"]
-material = SubResource("StandardMaterial3D_w7u7h")
+[sub_resource type="PlaneMesh" id="PlaneMesh_tiumc"]
+material = SubResource("StandardMaterial3D_4unu7")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mkfdb"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0e3at"]
 transparency = 2
 alpha_scissor_threshold = 0.5
 alpha_antialiasing_mode = 0
 shading_mode = 0
 albedo_texture = ExtResource("36_beof3")
 
-[sub_resource type="PlaneMesh" id="PlaneMesh_ag34w"]
-material = SubResource("StandardMaterial3D_mkfdb")
+[sub_resource type="PlaneMesh" id="PlaneMesh_tj3v1"]
+material = SubResource("StandardMaterial3D_0e3at")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_r7fix"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_oo1ob"]
 transparency = 2
 alpha_scissor_threshold = 0.5
 alpha_antialiasing_mode = 0
 shading_mode = 0
 albedo_texture = ExtResource("37_ipq3y")
 
-[sub_resource type="PlaneMesh" id="PlaneMesh_mu5ev"]
-material = SubResource("StandardMaterial3D_r7fix")
+[sub_resource type="PlaneMesh" id="PlaneMesh_1dlkv"]
+material = SubResource("StandardMaterial3D_oo1ob")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0s0m8"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fpey2"]
 transparency = 2
 alpha_scissor_threshold = 0.5
 alpha_antialiasing_mode = 0
 shading_mode = 0
 albedo_texture = ExtResource("38_7ey34")
 
-[sub_resource type="PlaneMesh" id="PlaneMesh_g35th"]
-material = SubResource("StandardMaterial3D_0s0m8")
+[sub_resource type="PlaneMesh" id="PlaneMesh_krdme"]
+material = SubResource("StandardMaterial3D_fpey2")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0bd55"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xxsl5"]
 transparency = 2
 alpha_scissor_threshold = 0.5
 alpha_antialiasing_mode = 0
 shading_mode = 0
 albedo_texture = ExtResource("39_ebxud")
 
-[sub_resource type="PlaneMesh" id="PlaneMesh_0ij0q"]
-material = SubResource("StandardMaterial3D_0bd55")
+[sub_resource type="PlaneMesh" id="PlaneMesh_gen43"]
+material = SubResource("StandardMaterial3D_xxsl5")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mbl01"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_t5nev"]
 transparency = 2
 alpha_scissor_threshold = 0.5
 alpha_antialiasing_mode = 0
 shading_mode = 0
 albedo_texture = ExtResource("40_idik5")
 
-[sub_resource type="PlaneMesh" id="PlaneMesh_vd5m3"]
-material = SubResource("StandardMaterial3D_mbl01")
+[sub_resource type="PlaneMesh" id="PlaneMesh_8att4"]
+material = SubResource("StandardMaterial3D_t5nev")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_51k3q"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dfbe5"]
 transparency = 2
 alpha_scissor_threshold = 0.5
 alpha_antialiasing_mode = 0
 shading_mode = 0
 albedo_texture = ExtResource("41_68a8f")
 
-[sub_resource type="PlaneMesh" id="PlaneMesh_i4sms"]
-material = SubResource("StandardMaterial3D_51k3q")
+[sub_resource type="PlaneMesh" id="PlaneMesh_e8i36"]
+material = SubResource("StandardMaterial3D_dfbe5")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fm562"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qi43c"]
 transparency = 2
 alpha_scissor_threshold = 0.5
 alpha_antialiasing_mode = 0
 shading_mode = 0
 albedo_texture = ExtResource("42_bcaua")
 
-[sub_resource type="PlaneMesh" id="PlaneMesh_qcclo"]
-material = SubResource("StandardMaterial3D_fm562")
+[sub_resource type="PlaneMesh" id="PlaneMesh_gq65h"]
+material = SubResource("StandardMaterial3D_qi43c")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_duioi"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qi2j4"]
 transparency = 2
 alpha_scissor_threshold = 0.5
 alpha_antialiasing_mode = 0
 shading_mode = 0
 albedo_texture = ExtResource("50_hpysi")
 
-[sub_resource type="PlaneMesh" id="PlaneMesh_bb8ho"]
-material = SubResource("StandardMaterial3D_duioi")
+[sub_resource type="PlaneMesh" id="PlaneMesh_0gfjr"]
+material = SubResource("StandardMaterial3D_qi2j4")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jag48"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gj0oj"]
 transparency = 2
 alpha_scissor_threshold = 0.5
 alpha_antialiasing_mode = 0
 shading_mode = 0
 albedo_texture = ExtResource("44_cljkm")
 
-[sub_resource type="PlaneMesh" id="PlaneMesh_oiteh"]
-material = SubResource("StandardMaterial3D_jag48")
+[sub_resource type="PlaneMesh" id="PlaneMesh_nygrc"]
+material = SubResource("StandardMaterial3D_gj0oj")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hvh3r"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_46x12"]
 transparency = 2
 alpha_scissor_threshold = 0.5
 alpha_antialiasing_mode = 0
 shading_mode = 0
 albedo_texture = ExtResource("45_nosmk")
 
-[sub_resource type="PlaneMesh" id="PlaneMesh_46j3k"]
-material = SubResource("StandardMaterial3D_hvh3r")
+[sub_resource type="PlaneMesh" id="PlaneMesh_io2io"]
+material = SubResource("StandardMaterial3D_46x12")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ifwfi"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_lbcs3"]
 transparency = 2
 alpha_scissor_threshold = 0.5
 alpha_antialiasing_mode = 0
 shading_mode = 0
 albedo_texture = ExtResource("46_mvs8a")
 
-[sub_resource type="PlaneMesh" id="PlaneMesh_kdksw"]
-material = SubResource("StandardMaterial3D_ifwfi")
+[sub_resource type="PlaneMesh" id="PlaneMesh_y7pdy"]
+material = SubResource("StandardMaterial3D_lbcs3")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1moyn"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_j43gk"]
 transparency = 2
 alpha_scissor_threshold = 0.5
 alpha_antialiasing_mode = 0
 shading_mode = 0
 albedo_texture = ExtResource("47_o43e8")
 
-[sub_resource type="PlaneMesh" id="PlaneMesh_ew1yh"]
-material = SubResource("StandardMaterial3D_1moyn")
+[sub_resource type="PlaneMesh" id="PlaneMesh_xo8yd"]
+material = SubResource("StandardMaterial3D_j43gk")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4trcv"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ip56i"]
 transparency = 2
 alpha_scissor_threshold = 0.5
 alpha_antialiasing_mode = 0
 shading_mode = 0
 albedo_texture = ExtResource("48_x08t7")
 
-[sub_resource type="PlaneMesh" id="PlaneMesh_nuaed"]
-material = SubResource("StandardMaterial3D_4trcv")
+[sub_resource type="PlaneMesh" id="PlaneMesh_slfd8"]
+material = SubResource("StandardMaterial3D_ip56i")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kjk1l"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8x1nl"]
 transparency = 2
 alpha_scissor_threshold = 0.5
 alpha_antialiasing_mode = 0
 shading_mode = 0
 albedo_texture = ExtResource("49_6mrvf")
 
-[sub_resource type="PlaneMesh" id="PlaneMesh_wce0l"]
-material = SubResource("StandardMaterial3D_kjk1l")
+[sub_resource type="PlaneMesh" id="PlaneMesh_ktwj1"]
+material = SubResource("StandardMaterial3D_8x1nl")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_stgc1"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7ffmf"]
 transparency = 2
 alpha_scissor_threshold = 0.5
 alpha_antialiasing_mode = 0
 shading_mode = 0
 albedo_texture = ExtResource("50_hpysi")
 
-[sub_resource type="PlaneMesh" id="PlaneMesh_w6qal"]
-material = SubResource("StandardMaterial3D_stgc1")
+[sub_resource type="PlaneMesh" id="PlaneMesh_1pmvw"]
+material = SubResource("StandardMaterial3D_7ffmf")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dlvkg"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_20eqk"]
 transparency = 2
 alpha_scissor_threshold = 0.5
 alpha_antialiasing_mode = 0
 shading_mode = 0
 albedo_texture = ExtResource("51_qgt8d")
 
-[sub_resource type="PlaneMesh" id="PlaneMesh_v21si"]
-material = SubResource("StandardMaterial3D_dlvkg")
+[sub_resource type="PlaneMesh" id="PlaneMesh_rxwc8"]
+material = SubResource("StandardMaterial3D_20eqk")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_lv4t8"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vflq3"]
 transparency = 2
 alpha_scissor_threshold = 0.5
 alpha_antialiasing_mode = 0
 shading_mode = 0
 albedo_texture = ExtResource("52_5gh7x")
 
-[sub_resource type="PlaneMesh" id="PlaneMesh_w1stw"]
-material = SubResource("StandardMaterial3D_lv4t8")
+[sub_resource type="PlaneMesh" id="PlaneMesh_u4w4w"]
+material = SubResource("StandardMaterial3D_vflq3")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ulgcb"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0vt24"]
 transparency = 2
 alpha_scissor_threshold = 0.5
 alpha_antialiasing_mode = 0
 shading_mode = 0
 albedo_texture = ExtResource("53_abg66")
 
-[sub_resource type="PlaneMesh" id="PlaneMesh_8nwq6"]
-material = SubResource("StandardMaterial3D_ulgcb")
+[sub_resource type="PlaneMesh" id="PlaneMesh_ap0qy"]
+material = SubResource("StandardMaterial3D_0vt24")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7m1mu"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_87xrc"]
 transparency = 2
 alpha_scissor_threshold = 0.5
 alpha_antialiasing_mode = 0
 shading_mode = 0
 albedo_texture = ExtResource("54_qi7sf")
 
-[sub_resource type="PlaneMesh" id="PlaneMesh_338l4"]
-material = SubResource("StandardMaterial3D_7m1mu")
+[sub_resource type="PlaneMesh" id="PlaneMesh_txgs6"]
+material = SubResource("StandardMaterial3D_87xrc")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_axbxx"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dyhlf"]
 transparency = 2
 alpha_scissor_threshold = 0.5
 alpha_antialiasing_mode = 0
 shading_mode = 0
 albedo_texture = ExtResource("1_afuxq")
 
-[sub_resource type="PlaneMesh" id="PlaneMesh_i84bt"]
-material = SubResource("StandardMaterial3D_axbxx")
+[sub_resource type="PlaneMesh" id="PlaneMesh_mmb6q"]
+material = SubResource("StandardMaterial3D_dyhlf")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cqmwb"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ye85w"]
 transparency = 2
 alpha_scissor_threshold = 0.5
 alpha_antialiasing_mode = 0
 shading_mode = 0
 albedo_texture = ExtResource("56_7wxp5")
 
-[sub_resource type="PlaneMesh" id="PlaneMesh_l3e27"]
-material = SubResource("StandardMaterial3D_cqmwb")
+[sub_resource type="PlaneMesh" id="PlaneMesh_vmhqd"]
+material = SubResource("StandardMaterial3D_ye85w")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3be6t"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_487ek"]
 transparency = 2
 alpha_scissor_threshold = 0.5
 alpha_antialiasing_mode = 0
 shading_mode = 0
 albedo_texture = ExtResource("82_10oxr")
 
-[sub_resource type="PlaneMesh" id="PlaneMesh_ux3se"]
-material = SubResource("StandardMaterial3D_3be6t")
+[sub_resource type="PlaneMesh" id="PlaneMesh_45uq5"]
+material = SubResource("StandardMaterial3D_487ek")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6wwa4"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fdabk"]
 transparency = 2
 alpha_scissor_threshold = 0.5
 alpha_antialiasing_mode = 0
 shading_mode = 0
 albedo_texture = ExtResource("83_xs6ek")
 
-[sub_resource type="PlaneMesh" id="PlaneMesh_s6o2d"]
-material = SubResource("StandardMaterial3D_6wwa4")
+[sub_resource type="PlaneMesh" id="PlaneMesh_wivcd"]
+material = SubResource("StandardMaterial3D_fdabk")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_yakta"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_syor3"]
 transparency = 2
 alpha_scissor_threshold = 0.5
 alpha_antialiasing_mode = 0
 shading_mode = 0
 albedo_texture = ExtResource("84_h53fc")
 
-[sub_resource type="PlaneMesh" id="PlaneMesh_y776e"]
-material = SubResource("StandardMaterial3D_yakta")
+[sub_resource type="PlaneMesh" id="PlaneMesh_5l76d"]
+material = SubResource("StandardMaterial3D_syor3")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ir6ar"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_54txp"]
+transparency = 2
+alpha_scissor_threshold = 0.5
+alpha_antialiasing_mode = 0
+shading_mode = 0
+albedo_texture = ExtResource("84_8d72j")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_uoo4w"]
+material = SubResource("StandardMaterial3D_54txp")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kp6ml"]
 transparency = 2
 alpha_scissor_threshold = 0.5
 alpha_antialiasing_mode = 0
 shading_mode = 0
 albedo_texture = ExtResource("85_tgx2s")
 
-[sub_resource type="PlaneMesh" id="PlaneMesh_2crbk"]
-material = SubResource("StandardMaterial3D_ir6ar")
+[sub_resource type="PlaneMesh" id="PlaneMesh_nnebt"]
+material = SubResource("StandardMaterial3D_kp6ml")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rh5sv"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rj3ri"]
 transparency = 2
 alpha_scissor_threshold = 0.5
 alpha_antialiasing_mode = 0
 shading_mode = 0
 albedo_texture = ExtResource("86_372ii")
 
-[sub_resource type="PlaneMesh" id="PlaneMesh_b5la0"]
-material = SubResource("StandardMaterial3D_rh5sv")
+[sub_resource type="PlaneMesh" id="PlaneMesh_uwwps"]
+material = SubResource("StandardMaterial3D_rj3ri")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vwtby"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mojhg"]
 transparency = 2
 alpha_scissor_threshold = 0.5
 alpha_antialiasing_mode = 0
 shading_mode = 0
 albedo_texture = ExtResource("87_8kw5n")
 
-[sub_resource type="PlaneMesh" id="PlaneMesh_mehbb"]
-material = SubResource("StandardMaterial3D_vwtby")
+[sub_resource type="PlaneMesh" id="PlaneMesh_hdauf"]
+material = SubResource("StandardMaterial3D_mojhg")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_u6cic"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4vpqw"]
 transparency = 2
 alpha_scissor_threshold = 0.5
 alpha_antialiasing_mode = 0
 shading_mode = 0
 albedo_texture = ExtResource("88_5nhqb")
 
-[sub_resource type="PlaneMesh" id="PlaneMesh_w4px5"]
-material = SubResource("StandardMaterial3D_u6cic")
+[sub_resource type="PlaneMesh" id="PlaneMesh_m2sj5"]
+material = SubResource("StandardMaterial3D_4vpqw")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_log3u"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_c3kce"]
 transparency = 2
 alpha_scissor_threshold = 0.5
 alpha_antialiasing_mode = 0
 shading_mode = 0
 albedo_texture = ExtResource("89_kc7q6")
 
-[sub_resource type="PlaneMesh" id="PlaneMesh_cwey5"]
-material = SubResource("StandardMaterial3D_log3u")
+[sub_resource type="PlaneMesh" id="PlaneMesh_8e7m3"]
+material = SubResource("StandardMaterial3D_c3kce")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5fpvk"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8x0d7"]
 transparency = 2
 alpha_scissor_threshold = 0.5
 alpha_antialiasing_mode = 0
 shading_mode = 0
 albedo_texture = ExtResource("90_atqxl")
 
-[sub_resource type="PlaneMesh" id="PlaneMesh_6w14y"]
-material = SubResource("StandardMaterial3D_5fpvk")
+[sub_resource type="PlaneMesh" id="PlaneMesh_lke5r"]
+material = SubResource("StandardMaterial3D_8x0d7")
 
 [node name="Node3D" type="Node3D"]
 
 [node name="baseMesh2" type="MeshInstance3D" parent="."]
-mesh = SubResource("PlaneMesh_vnem4")
+mesh = SubResource("PlaneMesh_8g1ee")
 script = ExtResource("2_f21bd")
 texture = ExtResource("1_yd4vq")
 
@@ -998,7 +1009,7 @@ shape = SubResource("BoxShape3D_lj2s0")
 
 [node name="baseMesh6" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2)
-mesh = SubResource("PlaneMesh_d1u53")
+mesh = SubResource("PlaneMesh_5fkr6")
 script = ExtResource("2_f21bd")
 texture = ExtResource("3_nyl7s")
 
@@ -1010,7 +1021,7 @@ shape = SubResource("BoxShape3D_lj2s0")
 
 [node name="baseMesh7" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 2)
-mesh = SubResource("PlaneMesh_1g7d7")
+mesh = SubResource("PlaneMesh_x55yq")
 script = ExtResource("2_f21bd")
 texture = ExtResource("4_585l3")
 
@@ -1022,7 +1033,7 @@ shape = SubResource("BoxShape3D_lj2s0")
 
 [node name="baseMesh12" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 2)
-mesh = SubResource("PlaneMesh_cyb38")
+mesh = SubResource("PlaneMesh_k5aim")
 script = ExtResource("2_f21bd")
 texture = ExtResource("5_tktx4")
 
@@ -1034,7 +1045,7 @@ shape = SubResource("BoxShape3D_lj2s0")
 
 [node name="baseMesh17" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, 2)
-mesh = SubResource("PlaneMesh_a8miq")
+mesh = SubResource("PlaneMesh_6qpmm")
 script = ExtResource("2_f21bd")
 texture = ExtResource("6_k6mg2")
 
@@ -1046,7 +1057,7 @@ shape = SubResource("BoxShape3D_lj2s0")
 
 [node name="baseMesh22" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, 2)
-mesh = SubResource("PlaneMesh_27qgl")
+mesh = SubResource("PlaneMesh_o2lse")
 script = ExtResource("2_f21bd")
 texture = ExtResource("7_lqtk4")
 
@@ -1058,7 +1069,7 @@ shape = SubResource("BoxShape3D_lj2s0")
 
 [node name="baseMesh27" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, 2)
-mesh = SubResource("PlaneMesh_faisq")
+mesh = SubResource("PlaneMesh_snjki")
 script = ExtResource("2_f21bd")
 texture = ExtResource("8_p176n")
 
@@ -1070,7 +1081,7 @@ shape = SubResource("BoxShape3D_lj2s0")
 
 [node name="baseMesh32" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0, 2)
-mesh = SubResource("PlaneMesh_5mq6e")
+mesh = SubResource("PlaneMesh_v3d4l")
 script = ExtResource("2_f21bd")
 texture = ExtResource("9_0e8i5")
 
@@ -1082,7 +1093,7 @@ shape = SubResource("BoxShape3D_lj2s0")
 
 [node name="baseMesh37" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14, 0, 2)
-mesh = SubResource("PlaneMesh_lw3fo")
+mesh = SubResource("PlaneMesh_4m5cw")
 script = ExtResource("2_f21bd")
 texture = ExtResource("10_p24lh")
 
@@ -1094,7 +1105,7 @@ shape = SubResource("BoxShape3D_lj2s0")
 
 [node name="baseMesh42" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16, 0, 2)
-mesh = SubResource("PlaneMesh_kwp7o")
+mesh = SubResource("PlaneMesh_5x35o")
 script = ExtResource("2_f21bd")
 texture = ExtResource("11_l6s3l")
 
@@ -1106,7 +1117,7 @@ shape = SubResource("BoxShape3D_lj2s0")
 
 [node name="baseMesh47" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18, 0, 2)
-mesh = SubResource("PlaneMesh_r6mop")
+mesh = SubResource("PlaneMesh_422ao")
 script = ExtResource("2_f21bd")
 texture = ExtResource("12_73073")
 
@@ -1118,7 +1129,7 @@ shape = SubResource("BoxShape3D_lj2s0")
 
 [node name="baseMesh52" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 0, 2)
-mesh = SubResource("PlaneMesh_j5vrf")
+mesh = SubResource("PlaneMesh_4bhry")
 script = ExtResource("2_f21bd")
 texture = ExtResource("13_4h1c0")
 
@@ -1130,7 +1141,7 @@ shape = SubResource("BoxShape3D_lj2s0")
 
 [node name="baseMesh57" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22, 0, 2)
-mesh = SubResource("PlaneMesh_2dt2l")
+mesh = SubResource("PlaneMesh_yckw1")
 script = ExtResource("2_f21bd")
 texture = ExtResource("14_prbyp")
 
@@ -1142,7 +1153,7 @@ shape = SubResource("BoxShape3D_lj2s0")
 
 [node name="baseMesh62" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24, 0, 2)
-mesh = SubResource("PlaneMesh_pngar")
+mesh = SubResource("PlaneMesh_tl1nr")
 script = ExtResource("2_f21bd")
 texture = ExtResource("15_4h2p7")
 
@@ -1158,7 +1169,7 @@ shape = SubResource("BoxShape3D_lj2s0")
 
 [node name="baseMesh67" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 26, 0, 2)
-mesh = SubResource("PlaneMesh_6dsnn")
+mesh = SubResource("PlaneMesh_nqx3x")
 script = ExtResource("2_f21bd")
 texture = ExtResource("16_wu2m3")
 
@@ -1174,7 +1185,7 @@ shape = SubResource("BoxShape3D_lj2s0")
 
 [node name="baseMesh72" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 28, 0, 2)
-mesh = SubResource("PlaneMesh_4tua1")
+mesh = SubResource("PlaneMesh_ssx36")
 script = ExtResource("2_f21bd")
 texture = ExtResource("17_rt8p5")
 
@@ -1190,7 +1201,7 @@ shape = SubResource("BoxShape3D_lj2s0")
 
 [node name="baseMesh77" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30, 0, 2)
-mesh = SubResource("PlaneMesh_wx70l")
+mesh = SubResource("PlaneMesh_jnik2")
 script = ExtResource("2_f21bd")
 texture = ExtResource("18_8poon")
 
@@ -1206,7 +1217,7 @@ shape = SubResource("BoxShape3D_lj2s0")
 
 [node name="baseMesh78" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30, 0, 0)
-mesh = SubResource("PlaneMesh_8xdt2")
+mesh = SubResource("PlaneMesh_o2yyf")
 script = ExtResource("2_f21bd")
 texture = ExtResource("19_ae1cp")
 
@@ -1222,7 +1233,7 @@ shape = SubResource("BoxShape3D_lj2s0")
 
 [node name="baseMesh79" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30, 0, -2)
-mesh = SubResource("PlaneMesh_d0dd0")
+mesh = SubResource("PlaneMesh_p1qr4")
 script = ExtResource("2_f21bd")
 texture = ExtResource("20_fivyc")
 
@@ -1238,7 +1249,7 @@ shape = SubResource("BoxShape3D_lj2s0")
 
 [node name="baseMesh80" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30, 0, -4)
-mesh = SubResource("PlaneMesh_ckarr")
+mesh = SubResource("PlaneMesh_bj8cq")
 script = ExtResource("2_f21bd")
 texture = ExtResource("21_fwh0e")
 
@@ -1254,7 +1265,7 @@ shape = SubResource("BoxShape3D_lj2s0")
 
 [node name="baseMesh81" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30, 0, -6)
-mesh = SubResource("PlaneMesh_3ulv2")
+mesh = SubResource("PlaneMesh_4b408")
 script = ExtResource("2_f21bd")
 texture = ExtResource("22_t6gan")
 
@@ -1270,7 +1281,7 @@ shape = SubResource("BoxShape3D_lj2s0")
 
 [node name="baseMesh73" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 28, 0, 0)
-mesh = SubResource("PlaneMesh_f3l0f")
+mesh = SubResource("PlaneMesh_clo5f")
 script = ExtResource("2_f21bd")
 texture = ExtResource("23_vu5fp")
 
@@ -1286,7 +1297,7 @@ shape = SubResource("BoxShape3D_lj2s0")
 
 [node name="baseMesh74" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 28, 0, -2)
-mesh = SubResource("PlaneMesh_w0vjh")
+mesh = SubResource("PlaneMesh_1yguw")
 script = ExtResource("2_f21bd")
 texture = ExtResource("24_fvys7")
 
@@ -1302,7 +1313,7 @@ shape = SubResource("BoxShape3D_lj2s0")
 
 [node name="baseMesh75" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 28, 0, -4)
-mesh = SubResource("PlaneMesh_sslms")
+mesh = SubResource("PlaneMesh_e6127")
 script = ExtResource("2_f21bd")
 texture = ExtResource("25_exdcn")
 
@@ -1318,7 +1329,7 @@ shape = SubResource("BoxShape3D_lj2s0")
 
 [node name="baseMesh76" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 28, 0, -6)
-mesh = SubResource("PlaneMesh_ollb1")
+mesh = SubResource("PlaneMesh_wkaiv")
 script = ExtResource("2_f21bd")
 texture = ExtResource("26_ocvk5")
 
@@ -1334,7 +1345,7 @@ shape = SubResource("BoxShape3D_lj2s0")
 
 [node name="baseMesh68" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 26, 0, 0)
-mesh = SubResource("PlaneMesh_pgnp7")
+mesh = SubResource("PlaneMesh_kmkoo")
 script = ExtResource("2_f21bd")
 texture = ExtResource("27_qk0lb")
 
@@ -1350,7 +1361,7 @@ shape = SubResource("BoxShape3D_lj2s0")
 
 [node name="baseMesh69" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 26, 0, -2)
-mesh = SubResource("PlaneMesh_fyuc0")
+mesh = SubResource("PlaneMesh_yi6ly")
 script = ExtResource("2_f21bd")
 texture = ExtResource("28_kb225")
 
@@ -1366,7 +1377,7 @@ shape = SubResource("BoxShape3D_lj2s0")
 
 [node name="baseMesh70" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 26, 0, -4)
-mesh = SubResource("PlaneMesh_ves4n")
+mesh = SubResource("PlaneMesh_kivkw")
 script = ExtResource("2_f21bd")
 texture = ExtResource("29_qmxs3")
 
@@ -1382,7 +1393,7 @@ shape = SubResource("BoxShape3D_lj2s0")
 
 [node name="baseMesh71" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 26, 0, -6)
-mesh = SubResource("PlaneMesh_6lajs")
+mesh = SubResource("PlaneMesh_gun6n")
 script = ExtResource("2_f21bd")
 texture = ExtResource("30_hef6b")
 
@@ -1398,7 +1409,7 @@ shape = SubResource("BoxShape3D_lj2s0")
 
 [node name="baseMesh63" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24, 0, 0)
-mesh = SubResource("PlaneMesh_pq4gv")
+mesh = SubResource("PlaneMesh_x3yu0")
 script = ExtResource("2_f21bd")
 texture = ExtResource("31_0spdf")
 
@@ -1410,7 +1421,7 @@ shape = SubResource("BoxShape3D_lj2s0")
 
 [node name="baseMesh64" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24, 0, -2)
-mesh = SubResource("PlaneMesh_2w2q6")
+mesh = SubResource("PlaneMesh_4ln5y")
 script = ExtResource("2_f21bd")
 texture = ExtResource("32_sn8j6")
 
@@ -1422,7 +1433,7 @@ shape = SubResource("BoxShape3D_lj2s0")
 
 [node name="baseMesh65" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24, 0, -4)
-mesh = SubResource("PlaneMesh_m7tds")
+mesh = SubResource("PlaneMesh_drcyx")
 script = ExtResource("2_f21bd")
 texture = ExtResource("33_ylnkw")
 
@@ -1434,7 +1445,7 @@ shape = SubResource("BoxShape3D_lj2s0")
 
 [node name="baseMesh66" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24, 0, -6)
-mesh = SubResource("PlaneMesh_tbrg6")
+mesh = SubResource("PlaneMesh_hfd1j")
 script = ExtResource("2_f21bd")
 texture = ExtResource("34_1kgeu")
 
@@ -1446,7 +1457,7 @@ shape = SubResource("BoxShape3D_lj2s0")
 
 [node name="baseMesh58" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22, 0, 0)
-mesh = SubResource("PlaneMesh_8pmjo")
+mesh = SubResource("PlaneMesh_gjyj0")
 script = ExtResource("2_f21bd")
 texture = ExtResource("35_8ljsu")
 
@@ -1458,7 +1469,7 @@ shape = SubResource("BoxShape3D_lj2s0")
 
 [node name="baseMesh59" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22, 0, -2)
-mesh = SubResource("PlaneMesh_qfdt2")
+mesh = SubResource("PlaneMesh_2ftvq")
 script = ExtResource("2_f21bd")
 texture = ExtResource("36_3aeka")
 
@@ -1470,7 +1481,7 @@ shape = SubResource("BoxShape3D_lj2s0")
 
 [node name="baseMesh60" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22, 0, -4)
-mesh = SubResource("PlaneMesh_3vui3")
+mesh = SubResource("PlaneMesh_6ldb4")
 script = ExtResource("2_f21bd")
 texture = ExtResource("37_h0uoc")
 
@@ -1482,7 +1493,7 @@ shape = SubResource("BoxShape3D_lj2s0")
 
 [node name="baseMesh61" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22, 0, -6)
-mesh = SubResource("PlaneMesh_kqcmp")
+mesh = SubResource("PlaneMesh_55rff")
 script = ExtResource("2_f21bd")
 texture = ExtResource("38_dxbhs")
 
@@ -1494,7 +1505,7 @@ shape = SubResource("BoxShape3D_lj2s0")
 
 [node name="baseMesh53" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 0, 0)
-mesh = SubResource("PlaneMesh_di7ka")
+mesh = SubResource("PlaneMesh_xlwla")
 script = ExtResource("2_f21bd")
 texture = ExtResource("14_odh7i")
 
@@ -1506,7 +1517,7 @@ shape = SubResource("BoxShape3D_lj2s0")
 
 [node name="baseMesh54" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 0, -2)
-mesh = SubResource("PlaneMesh_1oxam")
+mesh = SubResource("PlaneMesh_ug73j")
 script = ExtResource("2_f21bd")
 texture = ExtResource("15_3ys6r")
 
@@ -1518,7 +1529,7 @@ shape = SubResource("BoxShape3D_lj2s0")
 
 [node name="baseMesh55" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 0, -4)
-mesh = SubResource("PlaneMesh_8eypn")
+mesh = SubResource("PlaneMesh_2ydrm")
 script = ExtResource("2_f21bd")
 texture = ExtResource("16_ml7in")
 
@@ -1530,7 +1541,7 @@ shape = SubResource("BoxShape3D_lj2s0")
 
 [node name="baseMesh56" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 0, -6)
-mesh = SubResource("PlaneMesh_hk203")
+mesh = SubResource("PlaneMesh_ogbwc")
 script = ExtResource("2_f21bd")
 texture = ExtResource("17_l4tvn")
 
@@ -1542,7 +1553,7 @@ shape = SubResource("BoxShape3D_lj2s0")
 
 [node name="baseMesh48" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18, 0, 0)
-mesh = SubResource("PlaneMesh_ujcbh")
+mesh = SubResource("PlaneMesh_hjcn0")
 script = ExtResource("2_f21bd")
 texture = ExtResource("18_mq10f")
 
@@ -1554,7 +1565,7 @@ shape = SubResource("BoxShape3D_lj2s0")
 
 [node name="baseMesh49" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18, 0, -2)
-mesh = SubResource("PlaneMesh_1jfoj")
+mesh = SubResource("PlaneMesh_erg6w")
 script = ExtResource("2_f21bd")
 texture = ExtResource("19_f7vai")
 
@@ -1566,7 +1577,7 @@ shape = SubResource("BoxShape3D_lj2s0")
 
 [node name="baseMesh50" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18, 0, -4)
-mesh = SubResource("PlaneMesh_5iucr")
+mesh = SubResource("PlaneMesh_kpdca")
 script = ExtResource("2_f21bd")
 texture = ExtResource("20_lubs0")
 
@@ -1578,7 +1589,7 @@ shape = SubResource("BoxShape3D_lj2s0")
 
 [node name="baseMesh51" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18, 0, -6)
-mesh = SubResource("PlaneMesh_cwt43")
+mesh = SubResource("PlaneMesh_d6el6")
 script = ExtResource("2_f21bd")
 texture = ExtResource("21_ydhwq")
 
@@ -1590,7 +1601,7 @@ shape = SubResource("BoxShape3D_lj2s0")
 
 [node name="baseMesh43" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16, 0, 0)
-mesh = SubResource("PlaneMesh_avbxw")
+mesh = SubResource("PlaneMesh_3twt1")
 script = ExtResource("2_f21bd")
 texture = ExtResource("22_g41ro")
 
@@ -1602,7 +1613,7 @@ shape = SubResource("BoxShape3D_lj2s0")
 
 [node name="baseMesh44" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16, 0, -2)
-mesh = SubResource("PlaneMesh_ofigc")
+mesh = SubResource("PlaneMesh_t1d28")
 script = ExtResource("2_f21bd")
 texture = ExtResource("23_3jhu5")
 
@@ -1614,7 +1625,7 @@ shape = SubResource("BoxShape3D_lj2s0")
 
 [node name="baseMesh45" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16, 0, -4)
-mesh = SubResource("PlaneMesh_rlg8v")
+mesh = SubResource("PlaneMesh_fveog")
 script = ExtResource("2_f21bd")
 texture = ExtResource("24_krg7s")
 
@@ -1626,7 +1637,7 @@ shape = SubResource("BoxShape3D_lj2s0")
 
 [node name="baseMesh46" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16, 0, -6)
-mesh = SubResource("PlaneMesh_xql8p")
+mesh = SubResource("PlaneMesh_44upd")
 script = ExtResource("2_f21bd")
 texture = ExtResource("25_dp8vj")
 
@@ -1638,7 +1649,7 @@ shape = SubResource("BoxShape3D_lj2s0")
 
 [node name="baseMesh38" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14, 0, 0)
-mesh = SubResource("PlaneMesh_kdqud")
+mesh = SubResource("PlaneMesh_t65q6")
 script = ExtResource("2_f21bd")
 texture = ExtResource("26_lxsx1")
 
@@ -1650,7 +1661,7 @@ shape = SubResource("BoxShape3D_lj2s0")
 
 [node name="baseMesh39" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14, 0, -2)
-mesh = SubResource("PlaneMesh_1abpe")
+mesh = SubResource("PlaneMesh_u2g1l")
 script = ExtResource("2_f21bd")
 texture = ExtResource("27_oona5")
 
@@ -1662,7 +1673,7 @@ shape = SubResource("BoxShape3D_lj2s0")
 
 [node name="baseMesh40" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14, 0, -4)
-mesh = SubResource("PlaneMesh_ybfsp")
+mesh = SubResource("PlaneMesh_rk3bu")
 script = ExtResource("2_f21bd")
 texture = ExtResource("28_0ogbi")
 
@@ -1674,7 +1685,7 @@ shape = SubResource("BoxShape3D_lj2s0")
 
 [node name="baseMesh41" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14, 0, -6)
-mesh = SubResource("PlaneMesh_0deg0")
+mesh = SubResource("PlaneMesh_gr0tp")
 script = ExtResource("2_f21bd")
 texture = ExtResource("29_6eg2d")
 
@@ -1686,7 +1697,7 @@ shape = SubResource("BoxShape3D_lj2s0")
 
 [node name="baseMesh33" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0, 0)
-mesh = SubResource("PlaneMesh_ygqj8")
+mesh = SubResource("PlaneMesh_oa7rr")
 script = ExtResource("2_f21bd")
 texture = ExtResource("30_adf8f")
 
@@ -1698,7 +1709,7 @@ shape = SubResource("BoxShape3D_lj2s0")
 
 [node name="baseMesh34" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0, -2)
-mesh = SubResource("PlaneMesh_wy4ex")
+mesh = SubResource("PlaneMesh_pkev4")
 script = ExtResource("2_f21bd")
 texture = ExtResource("31_ranuk")
 
@@ -1710,7 +1721,7 @@ shape = SubResource("BoxShape3D_lj2s0")
 
 [node name="baseMesh35" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0, -4)
-mesh = SubResource("PlaneMesh_v8xt3")
+mesh = SubResource("PlaneMesh_xy63a")
 script = ExtResource("2_f21bd")
 texture = ExtResource("32_efrwa")
 
@@ -1722,7 +1733,7 @@ shape = SubResource("BoxShape3D_lj2s0")
 
 [node name="baseMesh36" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0, -6)
-mesh = SubResource("PlaneMesh_ru6e2")
+mesh = SubResource("PlaneMesh_r7saf")
 script = ExtResource("2_f21bd")
 texture = ExtResource("33_7k8ny")
 
@@ -1734,7 +1745,7 @@ shape = SubResource("BoxShape3D_lj2s0")
 
 [node name="baseMesh28" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, 0)
-mesh = SubResource("PlaneMesh_n0q8w")
+mesh = SubResource("PlaneMesh_ltveb")
 script = ExtResource("2_f21bd")
 texture = ExtResource("34_qeu5u")
 
@@ -1746,7 +1757,7 @@ shape = SubResource("BoxShape3D_lj2s0")
 
 [node name="baseMesh29" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, -2)
-mesh = SubResource("PlaneMesh_8r3ii")
+mesh = SubResource("PlaneMesh_tiumc")
 script = ExtResource("2_f21bd")
 texture = ExtResource("35_ytt7l")
 
@@ -1758,7 +1769,7 @@ shape = SubResource("BoxShape3D_lj2s0")
 
 [node name="baseMesh30" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, -4)
-mesh = SubResource("PlaneMesh_ag34w")
+mesh = SubResource("PlaneMesh_tj3v1")
 script = ExtResource("2_f21bd")
 texture = ExtResource("36_beof3")
 
@@ -1770,7 +1781,7 @@ shape = SubResource("BoxShape3D_lj2s0")
 
 [node name="baseMesh31" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, -6)
-mesh = SubResource("PlaneMesh_mu5ev")
+mesh = SubResource("PlaneMesh_1dlkv")
 script = ExtResource("2_f21bd")
 texture = ExtResource("37_ipq3y")
 
@@ -1782,7 +1793,7 @@ shape = SubResource("BoxShape3D_lj2s0")
 
 [node name="baseMesh23" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, 0)
-mesh = SubResource("PlaneMesh_g35th")
+mesh = SubResource("PlaneMesh_krdme")
 script = ExtResource("2_f21bd")
 texture = ExtResource("38_7ey34")
 
@@ -1794,7 +1805,7 @@ shape = SubResource("BoxShape3D_lj2s0")
 
 [node name="baseMesh24" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, -2)
-mesh = SubResource("PlaneMesh_0ij0q")
+mesh = SubResource("PlaneMesh_gen43")
 script = ExtResource("2_f21bd")
 texture = ExtResource("39_ebxud")
 
@@ -1806,7 +1817,7 @@ shape = SubResource("BoxShape3D_lj2s0")
 
 [node name="baseMesh25" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, -4)
-mesh = SubResource("PlaneMesh_vd5m3")
+mesh = SubResource("PlaneMesh_8att4")
 script = ExtResource("2_f21bd")
 texture = ExtResource("40_idik5")
 
@@ -1818,7 +1829,7 @@ shape = SubResource("BoxShape3D_lj2s0")
 
 [node name="baseMesh26" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, -6)
-mesh = SubResource("PlaneMesh_i4sms")
+mesh = SubResource("PlaneMesh_e8i36")
 script = ExtResource("2_f21bd")
 texture = ExtResource("41_68a8f")
 
@@ -1830,7 +1841,7 @@ shape = SubResource("BoxShape3D_lj2s0")
 
 [node name="baseMesh18" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, 0)
-mesh = SubResource("PlaneMesh_qcclo")
+mesh = SubResource("PlaneMesh_gq65h")
 script = ExtResource("2_f21bd")
 texture = ExtResource("42_bcaua")
 
@@ -1842,7 +1853,7 @@ shape = SubResource("BoxShape3D_lj2s0")
 
 [node name="baseMesh19" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, -2)
-mesh = SubResource("PlaneMesh_bb8ho")
+mesh = SubResource("PlaneMesh_0gfjr")
 script = ExtResource("2_f21bd")
 texture = ExtResource("50_hpysi")
 
@@ -1854,7 +1865,7 @@ shape = SubResource("BoxShape3D_lj2s0")
 
 [node name="baseMesh20" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, -4)
-mesh = SubResource("PlaneMesh_oiteh")
+mesh = SubResource("PlaneMesh_nygrc")
 script = ExtResource("2_f21bd")
 texture = ExtResource("44_cljkm")
 
@@ -1866,7 +1877,7 @@ shape = SubResource("BoxShape3D_lj2s0")
 
 [node name="baseMesh21" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, -6)
-mesh = SubResource("PlaneMesh_46j3k")
+mesh = SubResource("PlaneMesh_io2io")
 script = ExtResource("2_f21bd")
 texture = ExtResource("45_nosmk")
 
@@ -1878,7 +1889,7 @@ shape = SubResource("BoxShape3D_lj2s0")
 
 [node name="baseMesh13" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 0)
-mesh = SubResource("PlaneMesh_kdksw")
+mesh = SubResource("PlaneMesh_y7pdy")
 script = ExtResource("2_f21bd")
 texture = ExtResource("46_mvs8a")
 
@@ -1890,7 +1901,7 @@ shape = SubResource("BoxShape3D_lj2s0")
 
 [node name="baseMesh14" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, -2)
-mesh = SubResource("PlaneMesh_ew1yh")
+mesh = SubResource("PlaneMesh_xo8yd")
 script = ExtResource("2_f21bd")
 texture = ExtResource("47_o43e8")
 
@@ -1902,7 +1913,7 @@ shape = SubResource("BoxShape3D_lj2s0")
 
 [node name="baseMesh15" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, -4)
-mesh = SubResource("PlaneMesh_nuaed")
+mesh = SubResource("PlaneMesh_slfd8")
 script = ExtResource("2_f21bd")
 texture = ExtResource("48_x08t7")
 
@@ -1914,7 +1925,7 @@ shape = SubResource("BoxShape3D_lj2s0")
 
 [node name="baseMesh16" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, -6)
-mesh = SubResource("PlaneMesh_wce0l")
+mesh = SubResource("PlaneMesh_ktwj1")
 script = ExtResource("2_f21bd")
 texture = ExtResource("49_6mrvf")
 
@@ -1926,7 +1937,7 @@ shape = SubResource("BoxShape3D_lj2s0")
 
 [node name="baseMesh8" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 0)
-mesh = SubResource("PlaneMesh_w6qal")
+mesh = SubResource("PlaneMesh_1pmvw")
 script = ExtResource("2_f21bd")
 texture = ExtResource("50_hpysi")
 
@@ -1938,7 +1949,7 @@ shape = SubResource("BoxShape3D_lj2s0")
 
 [node name="baseMesh9" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, -2)
-mesh = SubResource("PlaneMesh_v21si")
+mesh = SubResource("PlaneMesh_rxwc8")
 script = ExtResource("2_f21bd")
 texture = ExtResource("51_qgt8d")
 
@@ -1950,7 +1961,7 @@ shape = SubResource("BoxShape3D_lj2s0")
 
 [node name="baseMesh10" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, -4)
-mesh = SubResource("PlaneMesh_w1stw")
+mesh = SubResource("PlaneMesh_u4w4w")
 script = ExtResource("2_f21bd")
 texture = ExtResource("52_5gh7x")
 
@@ -1962,7 +1973,7 @@ shape = SubResource("BoxShape3D_lj2s0")
 
 [node name="baseMesh11" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, -6)
-mesh = SubResource("PlaneMesh_8nwq6")
+mesh = SubResource("PlaneMesh_ap0qy")
 script = ExtResource("2_f21bd")
 texture = ExtResource("53_abg66")
 
@@ -1974,7 +1985,7 @@ shape = SubResource("BoxShape3D_lj2s0")
 
 [node name="baseMesh3" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2)
-mesh = SubResource("PlaneMesh_338l4")
+mesh = SubResource("PlaneMesh_txgs6")
 script = ExtResource("2_f21bd")
 texture = ExtResource("54_qi7sf")
 
@@ -1986,7 +1997,7 @@ shape = SubResource("BoxShape3D_lj2s0")
 
 [node name="baseMesh4" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -4)
-mesh = SubResource("PlaneMesh_i84bt")
+mesh = SubResource("PlaneMesh_mmb6q")
 script = ExtResource("2_f21bd")
 texture = ExtResource("1_afuxq")
 
@@ -1998,7 +2009,7 @@ shape = SubResource("BoxShape3D_lj2s0")
 
 [node name="baseMesh5" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -6)
-mesh = SubResource("PlaneMesh_l3e27")
+mesh = SubResource("PlaneMesh_vmhqd")
 script = ExtResource("2_f21bd")
 texture = ExtResource("56_7wxp5")
 
@@ -2010,7 +2021,7 @@ shape = SubResource("BoxShape3D_lj2s0")
 
 [node name="baseMesh82" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -10)
-mesh = SubResource("PlaneMesh_ux3se")
+mesh = SubResource("PlaneMesh_45uq5")
 script = ExtResource("2_f21bd")
 texture = ExtResource("82_10oxr")
 
@@ -2022,7 +2033,7 @@ shape = SubResource("BoxShape3D_lj2s0")
 
 [node name="baseMesh83" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -12)
-mesh = SubResource("PlaneMesh_s6o2d")
+mesh = SubResource("PlaneMesh_wivcd")
 script = ExtResource("2_f21bd")
 texture = ExtResource("83_xs6ek")
 
@@ -2034,7 +2045,7 @@ shape = SubResource("BoxShape3D_lj2s0")
 
 [node name="baseMesh84" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -14)
-mesh = SubResource("PlaneMesh_y776e")
+mesh = SubResource("PlaneMesh_5l76d")
 script = ExtResource("2_f21bd")
 texture = ExtResource("84_h53fc")
 
@@ -2044,9 +2055,21 @@ texture = ExtResource("84_h53fc")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00012207, -0.0957611, -0.00219727)
 shape = SubResource("BoxShape3D_lj2s0")
 
+[node name="baseMesh91" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -18)
+mesh = SubResource("PlaneMesh_uoo4w")
+script = ExtResource("2_f21bd")
+texture = ExtResource("84_8d72j")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="baseMesh91"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="baseMesh91/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00012207, -0.0957611, -0.00219727)
+shape = SubResource("BoxShape3D_lj2s0")
+
 [node name="baseMesh85" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, -14)
-mesh = SubResource("PlaneMesh_2crbk")
+mesh = SubResource("PlaneMesh_nnebt")
 script = ExtResource("2_f21bd")
 texture = ExtResource("85_tgx2s")
 
@@ -2058,7 +2081,7 @@ shape = SubResource("BoxShape3D_lj2s0")
 
 [node name="baseMesh86" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, -12)
-mesh = SubResource("PlaneMesh_b5la0")
+mesh = SubResource("PlaneMesh_uwwps")
 script = ExtResource("2_f21bd")
 texture = ExtResource("86_372ii")
 
@@ -2070,7 +2093,7 @@ shape = SubResource("BoxShape3D_lj2s0")
 
 [node name="baseMesh87" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, -10)
-mesh = SubResource("PlaneMesh_mehbb")
+mesh = SubResource("PlaneMesh_hdauf")
 script = ExtResource("2_f21bd")
 texture = ExtResource("87_8kw5n")
 
@@ -2082,7 +2105,7 @@ shape = SubResource("BoxShape3D_lj2s0")
 
 [node name="baseMesh88" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, -10)
-mesh = SubResource("PlaneMesh_w4px5")
+mesh = SubResource("PlaneMesh_m2sj5")
 script = ExtResource("2_f21bd")
 texture = ExtResource("88_5nhqb")
 
@@ -2094,7 +2117,7 @@ shape = SubResource("BoxShape3D_lj2s0")
 
 [node name="baseMesh89" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, -12)
-mesh = SubResource("PlaneMesh_cwey5")
+mesh = SubResource("PlaneMesh_8e7m3")
 script = ExtResource("2_f21bd")
 texture = ExtResource("89_kc7q6")
 
@@ -2106,7 +2129,7 @@ shape = SubResource("BoxShape3D_lj2s0")
 
 [node name="baseMesh90" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, -14)
-mesh = SubResource("PlaneMesh_6w14y")
+mesh = SubResource("PlaneMesh_lke5r")
 script = ExtResource("2_f21bd")
 texture = ExtResource("90_atqxl")
 
