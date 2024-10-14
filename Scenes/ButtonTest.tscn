@@ -1,9 +1,9 @@
 [gd_scene load_steps=8 format=3 uid="uid://dmetyl8fo5yhn"]
 
-[ext_resource type="MeshLibrary" uid="uid://43w0jugh65ow" path="res://TileMap/baseMeshLibrary.tres" id="1_5v43c"]
+[ext_resource type="MeshLibrary" uid="uid://du7f3e40giy1u" path="res://TileMap/base_mesh_library.tres" id="1_osqim"]
 [ext_resource type="PackedScene" uid="uid://bmrg8qrbxslf" path="res://Scenes/button.tscn" id="2_obpxk"]
 [ext_resource type="Script" path="res://Scenes/camera_3d.gd" id="3_a2nnt"]
-[ext_resource type="PackedScene" uid="uid://7lb5qlebgjbl" path="res://Scenes/player.tscn" id="4_sptam"]
+[ext_resource type="PackedScene" uid="uid://bhr635oauf4nk" path="res://Scenes/player.tscn" id="4_sptam"]
 [ext_resource type="PackedScene" uid="uid://d4qbm4vesv64" path="res://Scenes/pickable_object.tscn" id="5_op00m"]
 [ext_resource type="PackedScene" uid="uid://b8r5lwoi0v86g" path="res://Scenes/animation_button_component.tscn" id="6_n5kbc"]
 [ext_resource type="Script" path="res://script/animationButtonValve.gd" id="7_ata68"]
@@ -11,7 +11,7 @@
 [node name="Node3D" type="Node3D"]
 
 [node name="GridMap" type="GridMap" parent="."]
-mesh_library = ExtResource("1_5v43c")
+mesh_library = ExtResource("1_osqim")
 data = {
 "cells": PackedInt32Array(0, 0, 0, 65535, 0, 0, 65534, 0, 0, 65535, 65535, 0, 0, 65535, 0, 1, 0, 0, 1, 65535, 0, 1, 1, 0, 0, 1, 0, 65535, 1, 0, 65534, 1, 0, 65534, 65535, 0, 2, 0, 0, 2, 65535, 0, 2, 65534, 0, 1, 65534, 0, 0, 65534, 0, 65535, 65534, 0, 65534, 65534, 0, 2, 1, 0)
 }
