@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://14xgp6ft07pt"
-path.s3tc="res://.godot/imported/jambes-2.png-639d94c0f88058328cca5b5789a229a3.s3tc.ctex"
+uid="uid://dvjqwe4xttjhp"
+path.s3tc="res://.godot/imported/jambes-7.png-4d66b1513ed1aaad9fd7b240a850f11a.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://sprites/fermier/jambes-2.png"
-dest_files=["res://.godot/imported/jambes-2.png-639d94c0f88058328cca5b5789a229a3.s3tc.ctex"]
+source_file="res://sprites/fermier/Push/jambes-7.png"
+dest_files=["res://.godot/imported/jambes-7.png-4d66b1513ed1aaad9fd7b240a850f11a.s3tc.ctex"]
 
 [params]
 
