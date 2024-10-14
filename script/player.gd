@@ -104,7 +104,10 @@ func isActiveMecanism():
 	return actived
 
 func pickObject():
-	#print($ShapeCast3D.OldClosestObject.get_node("PickableObjectComponent"))
+	#if its a button, we want to interact it, otherwise we want to pick it.
+	if $ShapeCast3D.OldClosestObject.get_node("AnimationButtonComponent"):
+		$ShapeCast3D.OldClosestObject.activate()
+		return
 	if $ShapeCast3D.OldClosestObject.get_node("PickableObjectComponent").weight <= carrotsNumber:
 		$ShapeCast3D.OldClosestObject.get_node("PickableObjectComponent").isPicked = true
 		interactionState = "holding"

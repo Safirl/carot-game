@@ -1,0 +1,3 @@
+[gd_scene format=3 uid="uid://b8r5lwoi0v86g"]
+
+[node name="AnimationButtonComponent" type="Node3D"]

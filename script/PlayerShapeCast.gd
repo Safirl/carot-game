@@ -23,7 +23,7 @@ func _getClosestObject(hitResult):
 	var closestObject = null
 	for hit in hitResult:
 		var object = hit.collider
-		if !object || !object.get_node("PickableObjectComponent"):
+		if !object || (!object.get_node("PickableObjectComponent") && !object.get_node("AnimationButtonComponent")):
 			continue
 		if !closestObject:
 			closestObject = object
