@@ -10,6 +10,7 @@ var last_direction : String = "idle"
 var holding_time = 0.0
 var is_holding_input = false
 var hold_time_threshold = 0.5
+var actived : bool = false
 
 @onready var anim_player = $AnimatedSprite3D
 
@@ -27,7 +28,7 @@ func _physics_process(delta):
 	direction.z = Input.get_action_strength("up") - Input.get_action_strength("down")
 	direction = direction.normalized()
 
-	# Déterminer l'état en fonction de la direction
+	
 	if direction != Vector3.ZERO:
 		if direction.z > 0:
 			state = "walkup"
@@ -37,22 +38,21 @@ func _physics_process(delta):
 			state = "walkright"
 		elif direction.x < 0:
 			state = "walkleft"
-		last_direction = state  # Met à jour la dernière direction
+		last_direction = state  
 	else:
 		state = "idle"
 
-	# Jouer l'animation en fonction de l'état
 	match state:
 		"walkdown":
 			anim_player.play("portaitFace")
 		"walkup":
-			anim_player.play("walkUp")
+			anim_player.play("portaitUp")
 		"walkright":
 			anim_player.play("portaitRight")
 		"walkleft":
 			anim_player.play("walkLeft")
 		"idle":
-			# Choisir l'animation idle en fonction de la dernière direction de mouvement
+	
 			match last_direction:
 				"walkdown":
 					anim_player.play("DefaultDown")
@@ -63,9 +63,20 @@ func _physics_process(delta):
 				"walkleft":
 					anim_player.play("DefaultLeft")
 
-	# Applique la vitesse de mouvement
+	
 	velocity = direction * move_speed
 	move_and_slide()
+
+
+func _on_area_3d_body_entered(body: Node3D) -> void:
+	if body.name == "CharacterBody3D":	
+		pass
+		
+func activeMecanism():
+	actived = true
+	return actived
+func isActiveMecanism():
+	return actived
 
 func pickObject():
 	if $ShapeCast3D.ClosestObject.weight <= carrotsNumber:

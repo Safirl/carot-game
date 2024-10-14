@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ddou1ei2tas51"
-path.s3tc="res://.godot/imported/pngtree-grass-green-messy-realism-png-image_3975826.png-c2f46ec830840fd30f4d638b22e34b58.s3tc.ctex"
+uid="uid://lpihltna5o4y"
+path.s3tc="res://.godot/imported/portant-dos-2.png-c2677191226ba920fa40d9e3370d3ec3.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://sprites/pngtree-grass-green-messy-realism-png-image_3975826.png"
-dest_files=["res://.godot/imported/pngtree-grass-green-messy-realism-png-image_3975826.png-c2f46ec830840fd30f4d638b22e34b58.s3tc.ctex"]
+source_file="res://sprites/portait/portant-dos-2.png"
+dest_files=["res://.godot/imported/portant-dos-2.png-c2677191226ba920fa40d9e3370d3ec3.s3tc.ctex"]
 
 [params]
 

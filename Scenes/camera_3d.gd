@@ -12,8 +12,5 @@ var smooth_speed : float = .2
 # Appelée chaque frame
 func _physics_process(delta: float) -> void:
 	if player:
-		# Position cible de la caméra : position du joueur + offset
 		var target_position : Vector3 = player.global_transform.origin + offset
-
-		# Interpolation lissée entre la position actuelle de la caméra et la position cible
 		global_transform.origin = global_transform.origin.lerp(target_position, smooth_speed)

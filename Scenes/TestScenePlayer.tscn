@@ -1,14 +1,24 @@
-[gd_scene load_steps=8 format=3 uid="uid://ktvdn67qt7if"]
+[gd_scene load_steps=14 format=3 uid="uid://ktvdn67qt7if"]
 
 [ext_resource type="PackedScene" uid="uid://7lb5qlebgjbl" path="res://Scenes/player.tscn" id="1_v60dv"]
 [ext_resource type="Script" path="res://script/orientation.gd" id="2_rk7b1"]
 [ext_resource type="Script" path="res://Scenes/camera_3d.gd" id="3_uhk8j"]
-[ext_resource type="MeshLibrary" uid="uid://43w0jugh65ow" path="res://TileMap/baseMeshLibrary.tres" id="5_buxar"]
+[ext_resource type="MeshLibrary" uid="uid://cn26txaafv2nq" path="res://TileMap/baseMeshLibrary.tres" id="5_buxar"]
+[ext_resource type="Texture2D" uid="uid://ueo2atd2f82t" path="res://sprites/deadZone.png" id="7_1x7ko"]
 [ext_resource type="Script" path="res://Scenes/FadeZone.gd" id="7_8m0vu"]
+[ext_resource type="Script" path="res://Scenes/collisionStop.gd" id="7_67mwc"]
+[ext_resource type="Script" path="res://Scenes/levers.gd" id="9_mp67o"]
 [ext_resource type="Texture2D" uid="uid://cua2oluggopr7" path="res://sprites/house/wall.png" id="9_xgx25"]
+[ext_resource type="Texture2D" uid="uid://bskp8xkbtjkjh" path="res://sprites/Group 2.png" id="10_ktvpi"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_0tt7b"]
-size = Vector3(12.6074, 17.8232, 11.5204)
+size = Vector3(19.6719, 6.86461, 17.526)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_8l02h"]
+size = Vector3(51.1537, 24.0735, 42.2753)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_mowbw"]
+size = Vector3(7.94116, 7.24048, 2.66516)
 
 [node name="TestScenePlayer" type="Node3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.014389)
@@ -21,19 +31,19 @@ transform = Transform3D(-0.861549, -0.24076, 0.446953, 0, 0.880395, 0.474242, -0
 current = true
 script = ExtResource("3_uhk8j")
 
-[node name="Area3D" type="Area3D" parent="."]
+[node name="House" type="Area3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24.588, 4.82613, 7.25104)
 script = ExtResource("7_8m0vu")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.37121, 0.948306, 2.08151)
+[node name="CollisionShape3D" type="CollisionShape3D" parent="House"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.90687, -5.16819, 0.197338)
 shape = SubResource("BoxShape3D_0tt7b")
 
-[node name="WallFront" type="Sprite3D" parent="Area3D"]
+[node name="WallFront" type="Sprite3D" parent="House"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.901863, -9.50613)
 texture = ExtResource("9_xgx25")
 
-[node name="Sprite3D" type="Sprite3D" parent="Area3D"]
+[node name="Sprite3D" type="Sprite3D" parent="House"]
 transform = Transform3D(0.0297883, 0, -0.999556, 0, 1, 0, 0.999556, 0, 0.0297883, -9.63474, 0.881919, 0.130001)
 texture = ExtResource("9_xgx25")
 
@@ -49,5 +59,35 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.60262, 6.31994, 6.04611)
 [node name="Node3D" type="Node3D" parent="CharacterBody3D"]
 script = ExtResource("2_rk7b1")
 
+[node name="Area3D" type="Area3D" parent="."]
+script = ExtResource("7_67mwc")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+physics_interpolation_mode = 1
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.0026, 5.29172, -25.0802)
+shape = SubResource("BoxShape3D_8l02h")
+
+[node name="Sprite3D" type="Sprite3D" parent="Area3D"]
+transform = Transform3D(-0.0551808, -1.99924, 0.000128895, 0.0158721, -0.000567025, -1.99994, 1.99918, -0.055178, 0.0158817, 11.5311, 2.24466, -17.2988)
+texture = ExtResource("7_1x7ko")
+
+[node name="levier" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -33.2252, 0, 8.75372)
+script = ExtResource("9_mp67o")
+
+[node name="Sprite3D" type="Sprite3D" parent="levier"]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 4.77336, 7.5799, 0)
+texture = ExtResource("10_ktvpi")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="levier"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.02694, 8.11073, 0.315008)
+shape = SubResource("BoxShape3D_mowbw")
+
+[connection signal="body_entered" from="House" to="House" method="_on_body_entered"]
+[connection signal="body_exited" from="House" to="House" method="_on_body_exited"]
+[connection signal="body_entered" from="Area3D" to="CharacterBody3D" method="_on_area_3d_body_entered"]
 [connection signal="body_entered" from="Area3D" to="Area3D" method="_on_body_entered"]
-[connection signal="body_exited" from="Area3D" to="Area3D" method="_on_body_exited"]
+[connection signal="body_exited" from="Area3D" to="CharacterBody3D" method="_on_area_3d_body_exited"]
+[connection signal="area_entered" from="levier" to="levier" method="_on_area_entered"]
+[connection signal="body_entered" from="levier" to="Camera3D" method="_on_levier_body_entered"]
+[connection signal="body_entered" from="levier" to="levier" method="_on_body_entered"]
