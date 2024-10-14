@@ -15,6 +15,10 @@ run/main_scene="res://Scenes/Map.tscn"
 config/features=PackedStringArray("4.3", "GL Compatibility")
 config/icon="res://icon.svg"
 
+[autoload]
+
+AudioStreamManager="*res://script/music/audio_stream_manager.gd"
+
 [dotnet]
 
 project/assembly_name="CarotGame"
