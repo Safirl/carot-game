@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://bhr635oauf4nk" path="res://Scenes/player.tscn" id="1_v60dv"]
 [ext_resource type="Script" path="res://Scenes/camera_3d.gd" id="3_uhk8j"]
-[ext_resource type="MeshLibrary" uid="uid://cn26txaafv2nq" path="res://TileMap/baseMeshLibrary.tres" id="5_buxar"]
+[ext_resource type="MeshLibrary" uid="uid://43w0jugh65ow" path="res://TileMap/baseMeshLibrary.tres" id="5_buxar"]
 [ext_resource type="Texture2D" uid="uid://ueo2atd2f82t" path="res://sprites/deadZone.png" id="7_1x7ko"]
 [ext_resource type="Script" path="res://Scenes/collisionStop.gd" id="7_67mwc"]
 [ext_resource type="Script" path="res://Scenes/levers.gd" id="9_mp67o"]

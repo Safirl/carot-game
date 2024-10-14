@@ -1,0 +1,30 @@
+[gd_scene load_steps=6 format=3 uid="uid://dmetyl8fo5yhn"]
+
+[ext_resource type="MeshLibrary" uid="uid://43w0jugh65ow" path="res://TileMap/baseMeshLibrary.tres" id="1_5v43c"]
+[ext_resource type="PackedScene" uid="uid://bmrg8qrbxslf" path="res://Scenes/button.tscn" id="2_obpxk"]
+[ext_resource type="Script" path="res://Scenes/camera_3d.gd" id="3_a2nnt"]
+[ext_resource type="PackedScene" uid="uid://7lb5qlebgjbl" path="res://Scenes/player.tscn" id="4_sptam"]
+[ext_resource type="PackedScene" uid="uid://d4qbm4vesv64" path="res://Scenes/pickable_object.tscn" id="5_op00m"]
+
+[node name="Node3D" type="Node3D"]
+
+[node name="GridMap" type="GridMap" parent="."]
+mesh_library = ExtResource("1_5v43c")
+data = {
+"cells": PackedInt32Array(0, 0, 0, 65535, 0, 0, 65534, 0, 0, 65535, 65535, 0, 0, 65535, 0, 1, 0, 0, 1, 65535, 0, 1, 1, 0, 0, 1, 0, 65535, 1, 0, 65534, 1, 0, 65534, 65535, 0, 2, 0, 0, 2, 65535, 0, 2, 65534, 0, 1, 65534, 0, 0, 65534, 0, 65535, 65534, 0, 65534, 65534, 0, 2, 1, 0)
+}
+
+[node name="Button" parent="." instance=ExtResource("2_obpxk")]
+transform = Transform3D(-0.049181, 0, -0.99879, 0, 1, 0, 0.99879, 0, -0.049181, 0, 1.96751, 2.61539)
+
+[node name="Player" parent="." instance=ExtResource("4_sptam")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.50825, 1.81162, 0.701314)
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(-1, 2.99004e-08, -8.21505e-08, 0, 0.939693, 0.34202, 8.74228e-08, 0.34202, -0.939693, 0, 3.79875, -4.83042)
+size = 0.495
+script = ExtResource("3_a2nnt")
+offset = Vector3(0, 1, -3)
+
+[node name="PickableObject" parent="." instance=ExtResource("5_op00m")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.65731, 2.62932, 1.87798)

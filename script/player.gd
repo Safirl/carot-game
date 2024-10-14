@@ -93,7 +93,6 @@ func _physics_process(delta):
 	velocity = velocity.lerp(direction * move_speed, accel * delta)
 	move_and_slide()
 
-
 func _on_area_3d_body_entered(body: Node3D) -> void:
 	if body.name == "CharacterBody3D":	
 		pass
@@ -130,7 +129,6 @@ func throwObject():
 	var throw_force = 5.0
 	throw_direction.y = 1
 	$ShapeCast3D.OldClosestObject.throw(throw_direction * throw_force)
-
 
 func dropObject():
 	is_holding_input = false
