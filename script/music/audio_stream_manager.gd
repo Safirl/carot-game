@@ -11,11 +11,20 @@ func add_audio_stream_to_queue(pathToRes: String) -> AudioStreamPlayer:
 	if !new_audio_stream:
 		return null
 	queued_audio_streams.append(new_audio_stream)
+	print("stream added")
+	print(queued_audio_streams.size())
 	return new_audio_stream
 
 func remove_audio_stream(audioStreamToRemove: AudioStreamPlayer):
-	if audio_streams_to_remove.find(audioStreamToRemove):
+	if queued_audio_streams.find(audioStreamToRemove) != -1:
+		queued_audio_streams.erase(audioStreamToRemove)
+		audioStreamToRemove.queue_free()
+		print("removed")
 		return
+	if audio_streams_to_remove.find(audioStreamToRemove) != -1:
+		audioStreamToRemove.queue_free()
+		return
+	print("removed")
 	audio_streams_to_remove.append(audioStreamToRemove)
 
 ##Init default audioStream
@@ -43,7 +52,7 @@ func _init_new_audio_stream(pathToRes: String) -> AudioStreamPlayer:
 func _on_rythmic_audio_stream_finished() -> void:
 	print("finished")
 	for audio_stream in queued_audio_streams:
-		if !current_audio_streams.find(audio_stream):
+		if current_audio_streams.find(audio_stream) == -1:
 			current_audio_streams.append(audio_stream)
 			audio_stream.finished.connect(_on_any_audio_stream_finished)
 			audio_stream.play()
@@ -52,8 +61,10 @@ func _on_rythmic_audio_stream_finished() -> void:
 
 func _on_any_audio_stream_finished() -> void:
 	##First we want to delete old streams
-	var new_audio_stream_to_remove: Array
+	var new_audio_stream_to_remove: Array[AudioStreamPlayer]
 	for audio_stream in audio_streams_to_remove:
+		if queued_audio_streams.find(audio_stream):
+			queued_audio_streams.erase(audio_stream)
 		if !current_audio_streams.find(audio_stream):
 			audio_stream.queue_free()
 			continue

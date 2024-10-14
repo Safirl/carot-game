@@ -1,11 +1,12 @@
-[gd_scene load_steps=16 format=3 uid="uid://raghvv2anqjp"]
+[gd_scene load_steps=17 format=3 uid="uid://raghvv2anqjp"]
 
 [ext_resource type="Script" path="res://Scenes/camera_3d.gd" id="1_u7fxj"]
-[ext_resource type="MeshLibrary" uid="uid://cn26txaafv2nq" path="res://TileMap/baseMeshLibrary.tres" id="1_uqno7"]
+[ext_resource type="MeshLibrary" uid="uid://hr32e216nyjj" path="res://TileMap/baseMeshLibrary.tres" id="1_uqno7"]
 [ext_resource type="PackedScene" uid="uid://bhr635oauf4nk" path="res://Scenes/player.tscn" id="2_5qt3q"]
 [ext_resource type="Shader" path="res://script/Vignette.gdshader" id="4_keinb"]
 [ext_resource type="PackedScene" uid="uid://d4qbm4vesv64" path="res://Scenes/pickable_object.tscn" id="5_6xdsi"]
 [ext_resource type="PackedScene" uid="uid://dua2oubaha4yv" path="res://AI/Carot/CarotAI.tscn" id="6_yvb4t"]
+[ext_resource type="PackedScene" uid="uid://b4lponpe36cvq" path="res://Scenes/Music/MusicLayerZone.tscn" id="7_vlpm7"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_w8j3g"]
 sky_top_color = Color(0.572549, 0.729412, 0.988235, 1)
@@ -112,3 +113,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.49937, 4.45412, -1.86729)
 
 [node name="CarotAI2" parent="." instance=ExtResource("6_yvb4t")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.95534, 3.49828, -1.71948)
+
+[node name="MusicLayerZone" parent="." instance=ExtResource("7_vlpm7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 3, 0)
+pathToRessource = "res://Musics/Nature.mp3"
