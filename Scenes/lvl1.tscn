@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://c7wgfrwfcaf7t"]
+[gd_scene load_steps=13 format=3 uid="uid://c7wgfrwfcaf7t"]
 
 [ext_resource type="MeshLibrary" uid="uid://du7f3e40giy1u" path="res://TileMap/base_mesh_library.tres" id="1_21aki"]
 [ext_resource type="PackedScene" uid="uid://bmrg8qrbxslf" path="res://Scenes/button.tscn" id="5_6liij"]
@@ -11,10 +11,16 @@
 points = PackedVector3Array(0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_f2xbr"]
-size = Vector3(1, 7.35449, 12.1859)
+size = Vector3(1, 7.35449, 2.22404)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ecqej"]
+size = Vector3(1, 7.35449, 4.199)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_lbsgh"]
+size = Vector3(1, 7.35449, 4.95268)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_omqm8"]
-size = Vector3(1, 6.98035, 12.1859)
+size = Vector3(1, 6.98035, 10.1305)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_eclqa"]
 size = Vector3(1, 6.58545, 17.799)
@@ -28,7 +34,7 @@ size = Vector3(1, 6.18457, 17.799)
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 0)
 mesh_library = ExtResource("1_21aki")
 data = {
-"cells": PackedInt32Array(1, 1, 88, 1, 0, 88, 1, 65535, 89, 65534, 1, 81, 65534, 0, 81, 65534, 65535, 82, 65534, 65534, 78, 0, 65534, 78, 1, 65534, 77, 2, 65534, 0, 2, 65535, 78, 2, 0, 77, 2, 1, 77, 2, 2, 1, 1, 2, 87, 0, 2, 86, 65535, 2, 86, 65533, 2, 78, 65533, 1, 77, 65533, 0, 78, 65533, 65535, 78, 65533, 65534, 77, 65533, 65533, 79, 65533, 65532, 79, 65533, 65531, 78, 65533, 65530, 79, 65534, 65530, 78, 65535, 65530, 79, 0, 65530, 78, 1, 65530, 79, 2, 65530, 1, 2, 65531, 1, 2, 65532, 77, 2, 65533, 78, 1, 65533, 0, 0, 65533, 79, 65535, 65533, 0, 65534, 65533, 78, 65534, 65532, 1, 65534, 65531, 78, 65535, 65531, 79, 0, 65531, 0, 1, 65531, 77, 1, 65532, 78, 0, 65532, 1, 65535, 65532, 79, 65535, 65534, 78, 0, 0, 85, 0, 65535, 84, 65535, 65535, 84, 65535, 1, 85, 0, 1, 85, 65535, 0, 85, 65534, 2, 80)
+"cells": PackedInt32Array(1, 1, 88, 1, 0, 88, 1, 65535, 89, 65534, 1, 81, 65534, 0, 81, 65534, 65535, 82, 65534, 65534, 78, 0, 65534, 78, 1, 65534, 77, 1, 2, 87, 0, 2, 86, 65535, 2, 86, 65533, 2, 78, 65533, 1, 77, 65533, 0, 78, 65533, 65535, 78, 65533, 65534, 77, 65533, 65533, 79, 65533, 65532, 79, 65533, 65531, 78, 65533, 65530, 79, 65534, 65530, 78, 65535, 65530, 79, 0, 65530, 78, 1, 65530, 79, 1, 65533, 0, 0, 65533, 79, 65535, 65533, 0, 65534, 65533, 78, 65534, 65532, 1, 65534, 65531, 78, 65535, 65531, 79, 0, 65531, 0, 1, 65531, 77, 1, 65532, 78, 0, 65532, 1, 65535, 65532, 79, 65535, 65534, 78, 0, 0, 85, 0, 65535, 84, 65535, 65535, 84, 65535, 1, 85, 0, 1, 85, 65535, 0, 85, 65534, 2, 80)
 }
 metadata/_editor_floor_ = Vector3(0, 0, 0)
 
@@ -84,14 +90,22 @@ collision_mask = 3
 transform = Transform3D(1, 0, 0, 0, 1, 0, -3.55271e-15, 0, 1, 0, 0, 0)
 shape = SubResource("ConvexPolygonShape3D_wda3k")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="."]
+[node name="Door" type="StaticBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.44728, 1.42359, -0.365671)
 collision_layer = 3
 collision_mask = 3
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.243465, 3.17725, 0.358951)
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Door"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.243465, 3.17725, -2.18625)
 shape = SubResource("BoxShape3D_f2xbr")
+
+[node name="Door" type="CollisionShape3D" parent="Door"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.243465, 3.17725, 0.601962)
+shape = SubResource("BoxShape3D_ecqej")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="Door"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.243465, 3.17725, 3.95036)
+shape = SubResource("BoxShape3D_lbsgh")
 
 [node name="StaticBody3D2" type="StaticBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.9642, 1.4236, -0.342987)
@@ -99,7 +113,7 @@ collision_layer = 3
 collision_mask = 3
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D2"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.243465, 2.99017, 0.358951)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.243465, 2.99017, 1.38663)
 shape = SubResource("BoxShape3D_omqm8")
 
 [node name="StaticBody3D3" type="StaticBody3D" parent="."]
@@ -108,7 +122,7 @@ collision_layer = 3
 collision_mask = 3
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D3"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.243465, 2.79272, -0.384168)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.24514, 2.79272, -0.384168)
 shape = SubResource("BoxShape3D_eclqa")
 
 [node name="StaticBody3D4" type="StaticBody3D" parent="."]
@@ -121,7 +135,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.243465, 2.59228, -0.384168
 shape = SubResource("BoxShape3D_71njv")
 
 [node name="ButtonVerriere" parent="." instance=ExtResource("5_6liij")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.10019, 3.42554, 0.251964)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.10019, 2.17972, 0.251964)
 
 [node name="AnimationButtonComponent" parent="ButtonVerriere" instance=ExtResource("6_25vvg")]
 script = ExtResource("7_yjd2d")

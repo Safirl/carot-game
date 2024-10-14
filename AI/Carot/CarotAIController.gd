@@ -16,6 +16,7 @@ var accel = 1.
 @onready var NavigationAgent = $NavigationAgent3D
 @onready var anim_player = $AnimatedSprite3D
 @onready var target = owner.get_node("Player")
+var isMapLoadded: bool
 var _is_bumped
 var _is_holding
 var player
@@ -28,7 +29,8 @@ func _ready() -> void:
 
 # Cette fonction est appelée chaque frame pour déplacer l'IA
 func _physics_process(delta):
-	if !target:
+	if !target || !isMapLoadded:
+		isMapLoadded = true
 		return
 	NavigationAgent.target_position = target.global_transform.origin
 	match current_state:

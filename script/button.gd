@@ -11,7 +11,7 @@ signal on_button_activated
 var interaction_number = 0
 
 func _on_body_entered(body: Node) -> void:
-	if body.get_node("PickableObjectComponent"):
+	if body.has_node("PickableObjectComponent"):
 		activate()
 
 func activate():
