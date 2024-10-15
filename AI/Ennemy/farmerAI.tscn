@@ -43,21 +43,9 @@ animations = [{
 "texture": ExtResource("3_qcibi")
 }, {
 "duration": 1.0,
-"texture": ExtResource("3_qcibi")
-}, {
-"duration": 1.0,
-"texture": ExtResource("4_xrmqg")
-}, {
-"duration": 1.0,
-"texture": ExtResource("4_xrmqg")
-}, {
-"duration": 1.0,
-"texture": ExtResource("4_xrmqg")
-}, {
-"duration": 1.0,
 "texture": ExtResource("4_xrmqg")
 }],
-"loop": true,
+"loop": false,
 "name": &"AttackLeft",
 "speed": 5.0
 }, {
@@ -72,21 +60,9 @@ animations = [{
 "texture": ExtResource("6_30gqd")
 }, {
 "duration": 1.0,
-"texture": ExtResource("6_30gqd")
-}, {
-"duration": 1.0,
-"texture": ExtResource("7_jppie")
-}, {
-"duration": 1.0,
-"texture": ExtResource("7_jppie")
-}, {
-"duration": 1.0,
-"texture": ExtResource("7_jppie")
-}, {
-"duration": 1.0,
 "texture": ExtResource("7_jppie")
 }],
-"loop": true,
+"loop": false,
 "name": &"AttackRight",
 "speed": 5.0
 }, {
@@ -121,6 +97,40 @@ animations = [{
 "loop": true,
 "name": &"DefaultUp",
 "speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_xrmqg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_xrmqg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_xrmqg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_dqswp")
+}],
+"loop": false,
+"name": &"leftUpFeet",
+"speed": 4.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_jppie")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_jppie")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_jppie")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_thi6l")
+}],
+"loop": false,
+"name": &"rightUpFeet",
+"speed": 4.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -219,11 +229,10 @@ target_desired_distance = 2.0
 [node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.36266, 0)
 sprite_frames = SubResource("SpriteFrames_tr7j0")
-animation = &"AttackLeft"
-frame_progress = 0.0445668
+animation = &"leftUpFeet"
 
 [node name="ShapeCast3D" type="ShapeCast3D" parent="."]
-transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, 2.4595, -0.90846)
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 0, 2.4595, -0.90846)
 shape = SubResource("SphereShape3D_h2t0n")
 target_position = Vector3(0, -0.2, 1)
 collision_mask = 6

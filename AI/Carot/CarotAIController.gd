@@ -127,3 +127,7 @@ func _thrown():
 		velocity = Vector3.ZERO
 		current_state = States.IDLE
 		impulse_direction = Vector3.ZERO
+
+
+func _on_farmer_ai_on_touched_by_the_farmer() -> void:
+	pass # Replace with function body.

@@ -37,4 +37,3 @@ script = ExtResource("5_jddgn")
 offset = Vector3(0, 1, -3)
 
 [connection signal="OnTouchedByTheFarmer" from="FarmerAI" to="Player" method="_on_farmer_ai_on_touched_by_the_farmer"]
-[connection signal="OnTouchedByTheFarmer" from="FarmerAI" to="CarotAI" method="_on_farmer_ai_on_touched_by_the_farmer"]

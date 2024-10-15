@@ -1,6 +1,5 @@
 extends CharacterBody3D
 
-signal OnFarmerAttack
 signal OnTouchedByTheFarmer
 var spawn_position: Vector3
 
@@ -61,16 +60,17 @@ func _physics_process(delta):
 		"walkleft":
 			anim_player.play("walkLeft")
 		"idle":
-			# Choisir l'animation idle en fonction de la dernière direction de mouvement
-			match last_direction:
-				"walkdown":
-					anim_player.play("DefaultDown")
-				"walkup":
-					anim_player.play("DefaultUp")
-				"walkright":
-					anim_player.play("DefaultRight")
-				"walkleft":
-					anim_player.play("DefaultLeft")
+			if current_state != States.ATTACKING:
+				# Choisir l'animation idle en fonction de la dernière direction de mouvement
+				match last_direction:
+					"walkdown":
+						anim_player.play("DefaultDown")
+					"walkup":
+						anim_player.play("DefaultUp")
+					"walkright":
+						anim_player.play("DefaultRight")
+					"walkleft":
+						anim_player.play("DefaultLeft")
 
 func _chasing():
 	var current_target = ShapeCast.has_target()
@@ -91,23 +91,27 @@ func _idle():
 	if ShapeCast.has_target():
 		current_state = States.CHASING
 		return
-	print(global_transform.origin.distance_to(NavigationAgent.target_position))
 	if global_transform.origin.distance_to(NavigationAgent.target_position) < NavigationAgent.target_desired_distance || NavigationAgent.target_position == Vector3.ZERO:
 		NavigationAgent.target_position = choose_random_destination()
 	direction = (NavigationAgent.get_next_path_position() - global_position).normalized()
 	velocity = velocity.lerp(direction * speed, accel * get_physics_process_delta_time())
 	move_and_slide()
 
-func _attacking():
+func _attacking():	
+	if anim_player.animation_finished.is_connected(_on_attack_finished):
+		return
+	anim_player.animation_finished.connect(_on_attack_finished)
+	if last_direction == "walkdown" || last_direction == "walkright":
+		anim_player.play("AttackRight")
+	else:
+		anim_player.play("AttackLeft")
+
+func _on_attack_finished():
+	anim_player.animation_finished.disconnect(_on_attack_finished)
+	
 	current_state = States.CHASING
-	OnFarmerAttack.emit()
-	
-	if global_transform.origin.distance_to(NavigationAgent.target_position) < NavigationAgent.target_desired_distance  || NavigationAgent.target_position == Vector3.ZERO:
+	if global_transform.origin.distance_to(NavigationAgent.target_position) < NavigationAgent.target_desired_distance:
 		OnTouchedByTheFarmer.emit()
-		pass
-	
-	
-	pass
 
 func choose_random_destination() -> Vector3:
 	var random_destination = Vector3(
@@ -116,5 +120,4 @@ func choose_random_destination() -> Vector3:
 		randf_range(-1.0, 1.0)
 	).normalized()
 	random_destination = NavigationServer3D.map_get_random_point(NavigationAgent.get_navigation_map(), 1, false)
-	print(NavigationServer3D.map_get_random_point(NavigationAgent.get_navigation_map(), 1, false))
 	return random_destination
