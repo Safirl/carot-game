@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://c2tu88u06hlun"]
+
+[ext_resource type="Script" path="res://script/wave_manager.gd" id="1_am36v"]
+
+[node name="WaveManager" type="Node3D"]
+script = ExtResource("1_am36v")

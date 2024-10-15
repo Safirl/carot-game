@@ -123,7 +123,6 @@ func highlight(bhighlight: bool):
 		$AnimatedSprite3D.modulate = Color(1, 0, 0, 1)
 	else:
 		$AnimatedSprite3D.modulate = Color(1, 1, 1, 1)
-	pass
 	
 #called when object is throw
 func throw(impulse = Vector3(0, 0, 0)):
