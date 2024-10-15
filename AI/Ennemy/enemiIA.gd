@@ -2,14 +2,15 @@ extends CharacterBody3D
 
 signal OnFarmerAttack
 signal OnTouchedByTheFarmer
+var spawn_position: Vector3
 
 enum States { IDLE, CHASING, ATTACKING }
 var current_state = States.IDLE
 var state : String = "idle"
 var last_direction : String = "idle"
 var direction: Vector3
-@export var wander_radius: float = 10.
 
+@export var wander_radius: float = 10.
 @export var gravity = 9.8
 
 var speed = 1.5
@@ -17,6 +18,9 @@ var accel = 1.
 @onready var NavigationAgent = $NavigationAgent3D
 @onready var anim_player = $AnimatedSprite3D
 @onready var ShapeCast = $ShapeCast3D
+
+func _ready() -> void:
+	spawn_position = global_position
 
 # Cette fonction est appelée chaque frame pour déplacer l'IA
 func _physics_process(delta):
@@ -67,7 +71,7 @@ func _physics_process(delta):
 					anim_player.play("DefaultRight")
 				"walkleft":
 					anim_player.play("DefaultLeft")
-			
+
 func _chasing():
 	var current_target = ShapeCast.has_target()
 	if !current_target:
@@ -82,12 +86,12 @@ func _chasing():
 		direction = (NavigationAgent.get_next_path_position() - global_position).normalized()
 		velocity = velocity.lerp(direction * speed, accel * get_physics_process_delta_time())
 		move_and_slide()
-
  
 func _idle():
 	if ShapeCast.has_target():
 		current_state = States.CHASING
 		return
+	print(global_transform.origin.distance_to(NavigationAgent.target_position))
 	if global_transform.origin.distance_to(NavigationAgent.target_position) < NavigationAgent.target_desired_distance || NavigationAgent.target_position == Vector3.ZERO:
 		NavigationAgent.target_position = choose_random_destination()
 	direction = (NavigationAgent.get_next_path_position() - global_position).normalized()
@@ -110,6 +114,7 @@ func choose_random_destination() -> Vector3:
 		randf_range(-1.0, 1.0),
 		0, 
 		randf_range(-1.0, 1.0)
-	).normalized()  
-	random_destination = global_transform.origin + random_destination * wander_radius
+	).normalized()
+	random_destination = NavigationServer3D.map_get_random_point(NavigationAgent.get_navigation_map(), 1, false)
+	print(NavigationServer3D.map_get_random_point(NavigationAgent.get_navigation_map(), 1, false))
 	return random_destination

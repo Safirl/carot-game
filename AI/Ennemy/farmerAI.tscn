@@ -214,6 +214,7 @@ shape = SubResource("CapsuleShape3D_jptb6")
 
 [node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
 path_desired_distance = 0.75
+target_desired_distance = 2.0
 
 [node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.36266, 0)
@@ -222,7 +223,7 @@ animation = &"AttackLeft"
 frame_progress = 0.0445668
 
 [node name="ShapeCast3D" type="ShapeCast3D" parent="."]
-transform = Transform3D(5.93, 0, 0, 0, 5.93, 0, 0, 0, 5.93, 0, 2.4595, -0.90846)
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, 2.4595, -0.90846)
 shape = SubResource("SphereShape3D_h2t0n")
 target_position = Vector3(0, -0.2, 1)
 collision_mask = 6
