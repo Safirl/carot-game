@@ -1,6 +1,6 @@
 extends CharacterBody3D
 
-enum States { IDLE, CHASING, HOLDED, DEAD, UNDERGROUND, HOLDING, THROWN }
+enum States { IDLE, CHASING, HOLDED, DEAD, UNDERGROUND, HOLDING, THROWN, BUMPED }
 var current_state = States.CHASING
 var state : String = "idle"
 var last_direction : String = "idle"
@@ -14,6 +14,7 @@ var accel = 1.
 @onready var NavigationAgent = $NavigationAgent3D
 @onready var anim_player = $AnimatedSprite3D
 @onready var target = owner.get_node("Player")
+var _is_bumped
 
 # Cette fonction est appelée chaque frame pour déplacer l'IA
 func _physics_process(delta):
@@ -36,6 +37,7 @@ func _physics_process(delta):
 			
 	if not is_on_floor():
 		velocity.y -= gravity * delta
+	move_and_slide()
 			
 func _chasing():
 	var direction: Vector3
@@ -45,8 +47,12 @@ func _chasing():
 		current_state = States.IDLE
 	else:
 		direction = (NavigationAgent.get_next_path_position() - global_position).normalized()
-		velocity = velocity.lerp(direction * speed, accel * get_physics_process_delta_time())
-		move_and_slide()
+		if _is_bumped && is_on_floor():
+			direction.y += 4
+			_is_bumped = false
+			velocity = direction
+		else:
+			velocity = velocity.lerp(direction * speed, accel * get_physics_process_delta_time())
 	
 	# Déterminer l'état en fonction de la direction
 	if direction != Vector3.ZERO:
@@ -97,6 +103,11 @@ func _underground():
 func _idle():
 	if !global_transform.origin.distance_to(NavigationAgent.target_position) < NavigationAgent.target_desired_distance:
 		current_state = States.CHASING
+	if _is_bumped:
+		impulse_direction = Vector3.ZERO
+		impulse_direction.y += 2
+		velocity = impulse_direction * 2
+		_is_bumped = false
 #pickable object interface to implement
 func setFreeze(bfreeze: bool):
 	if bfreeze:
@@ -122,12 +133,14 @@ func throw(impulse = Vector3(0, 0, 0)):
 func _thrown():
 	velocity = velocity.lerp(impulse_direction * impulse, get_physics_process_delta_time())
 	impulse_direction.y -= .2
-	move_and_slide()
 	if is_on_floor():
 		velocity = Vector3.ZERO
 		current_state = States.IDLE
 		impulse_direction = Vector3.ZERO
 
+func hit() -> void:
+	pass
 
-func _on_farmer_ai_on_touched_by_the_farmer() -> void:
-	pass # Replace with function body.
+func _on_farmer_ai_on_farmer_attacked() -> void:
+	_is_bumped = true
+	print("bumped")

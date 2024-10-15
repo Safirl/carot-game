@@ -1,12 +1,13 @@
 extends CharacterBody3D
 
-signal OnTouchedByTheFarmer
+signal on_farmer_attacked
 var spawn_position: Vector3
 
 enum States { IDLE, CHASING, ATTACKING }
 var current_state = States.IDLE
 var state : String = "idle"
 var last_direction : String = "idle"
+@export var hit_distance: float = 1.
 var direction: Vector3
 
 @export var wander_radius: float = 10.
@@ -110,8 +111,9 @@ func _on_attack_finished():
 	anim_player.animation_finished.disconnect(_on_attack_finished)
 	
 	current_state = States.CHASING
-	if global_transform.origin.distance_to(NavigationAgent.target_position) < NavigationAgent.target_desired_distance:
-		OnTouchedByTheFarmer.emit()
+	on_farmer_attacked.emit()
+	if $ShapeCast3D.has_target() && global_transform.origin.distance_to(NavigationAgent.target_position) < NavigationAgent.target_desired_distance:
+		$ShapeCast3D.target.hit()
 
 func choose_random_destination() -> Vector3:
 	var random_destination = Vector3(

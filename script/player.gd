@@ -168,7 +168,5 @@ func _onRelease():
 				else:
 					throwObject()
 
-
-func _on_farmer_ai_on_touched_by_the_farmer() -> void:
-	print('mort')
-	pass # Replace with function body.
+func hit() -> void:
+	print('player mort')

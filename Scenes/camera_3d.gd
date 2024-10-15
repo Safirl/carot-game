@@ -14,3 +14,6 @@ func _physics_process(delta: float) -> void:
 	if player:
 		var target_position : Vector3 = player.global_transform.origin + offset
 		global_transform.origin = global_transform.origin.lerp(target_position, smooth_speed)
+
+func _on_farmer_ai_on_farmer_attacked() -> void:
+	pass # Replace with function body.
