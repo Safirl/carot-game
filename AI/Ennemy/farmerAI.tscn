@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://byepc6q4d58ep"]
+[gd_scene load_steps=12 format=3 uid="uid://byepc6q4d58ep"]
 
 [ext_resource type="Script" path="res://AI/Ennemy/enemiIA.gd" id="1_wkvh3"]
 [ext_resource type="Texture2D" uid="uid://c13al1rt132gf" path="res://sprites/fermier/jambes-1.png" id="2_plpb6"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://3lvp78icscph" path="res://sprites/fermier/jambes-4.png" id="5_60em0"]
 [ext_resource type="Texture2D" uid="uid://kbdk0ja61861" path="res://sprites/fermier/jambes-5.png" id="6_fvuin"]
 [ext_resource type="Texture2D" uid="uid://cu4ksf84f7nob" path="res://sprites/fermier/jambes-6.png" id="7_u2c7x"]
+[ext_resource type="Script" path="res://AI/Ennemy/shape_cast_3d.gd" id="8_skymh"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_jptb6"]
 radius = 0.152998
@@ -38,11 +39,13 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="SphereShape3D" id="SphereShape3D_h2t0n"]
+
 [node name="FarmerAI" type="CharacterBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.42337, -16.641)
 script = ExtResource("1_wkvh3")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0957736, 0)
 shape = SubResource("CapsuleShape3D_jptb6")
 
 [node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
@@ -52,3 +55,10 @@ target_desired_distance = 2.0
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.36266, 0)
 sprite_frames = SubResource("SpriteFrames_tr7j0")
 animation = &"walkingRight"
+
+[node name="ShapeCast3D" type="ShapeCast3D" parent="."]
+transform = Transform3D(5.93, 0, 0, 0, 5.93, 0, 0, 0, 5.93, 0, 2.4595, -0.90846)
+shape = SubResource("SphereShape3D_h2t0n")
+target_position = Vector3(0, -0.2, 1)
+collision_mask = 6
+script = ExtResource("8_skymh")

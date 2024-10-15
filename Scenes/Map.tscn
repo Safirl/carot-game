@@ -1,7 +1,7 @@
 [gd_scene load_steps=17 format=3 uid="uid://raghvv2anqjp"]
 
 [ext_resource type="Script" path="res://Scenes/camera_3d.gd" id="1_u7fxj"]
-[ext_resource type="MeshLibrary" uid="uid://hr32e216nyjj" path="res://TileMap/baseMeshLibrary.tres" id="1_uqno7"]
+[ext_resource type="MeshLibrary" uid="uid://cn26txaafv2nq" path="res://TileMap/baseMeshLibrary.tres" id="1_uqno7"]
 [ext_resource type="PackedScene" uid="uid://bhr635oauf4nk" path="res://Scenes/player.tscn" id="2_5qt3q"]
 [ext_resource type="Shader" path="res://script/Vignette.gdshader" id="4_keinb"]
 [ext_resource type="PackedScene" uid="uid://d4qbm4vesv64" path="res://Scenes/pickable_object.tscn" id="5_6xdsi"]
