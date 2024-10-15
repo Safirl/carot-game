@@ -1,6 +1,6 @@
 extends CharacterBody3D
 
-signal on_farmer_attacked
+signal on_farmer_attacked(sender)
 var spawn_position: Vector3
 
 enum States { IDLE, CHASING, ATTACKING }
@@ -111,7 +111,7 @@ func _on_attack_finished():
 	anim_player.animation_finished.disconnect(_on_attack_finished)
 	
 	current_state = States.CHASING
-	on_farmer_attacked.emit()
+	on_farmer_attacked.emit(self)
 	if $ShapeCast3D.has_target() && global_transform.origin.distance_to(NavigationAgent.target_position) < NavigationAgent.target_desired_distance:
 		$ShapeCast3D.target.hit()
 

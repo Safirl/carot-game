@@ -92,7 +92,7 @@ func _chasing():
 					anim_player.play("DefaultLeft")
 
 func _holded():
-	pass
+	velocity = Vector3.ZERO
 
 func _dead():
 	pass
@@ -141,6 +141,7 @@ func _thrown():
 func hit() -> void:
 	pass
 
-func _on_farmer_ai_on_farmer_attacked() -> void:
-	_is_bumped = true
-	print("bumped")
+func _on_farmer_ai_on_farmer_attacked(sender) -> void:
+	if global_transform.origin.distance_to(sender.global_position) < 5:
+		_is_bumped = true
+		print("bumped")
