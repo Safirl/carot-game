@@ -13,7 +13,7 @@ var speed = 1.5
 var accel = 1.
 @onready var NavigationAgent = $NavigationAgent3D
 @onready var anim_player = $AnimatedSprite3D
-@onready var target = owner.get_node("Player")
+@onready var ShapeCast = $ShapeCast3D
 
 # Cette fonction est appelée chaque frame pour déplacer l'IA
 func _physics_process(delta):
@@ -27,8 +27,25 @@ func _physics_process(delta):
 			
 	if not is_on_floor():
 		velocity.y -= gravity * delta
-	anim_player.play("walkingRight")
 		
+	# Déterminer l'état en fonction de la direction
+	if direction != Vector3.ZERO:
+		if abs(direction.x) < abs(direction.z):
+			if direction.z > 0:
+				state = "walkup"
+			elif direction.z < 0:
+				state = "walkdown"
+		else:
+			if direction.x > 0:
+				state = "walkright"
+			elif direction.x < 0:
+				state = "walkleft"
+		last_direction = state  # Met à jour la dernière direction
+	else:
+		state = "idle"
+		
+	anim_player.play("walkingRight")
+	
 	#match state:
 		#"walkdown":
 			#anim_player.play("portaitFace")
@@ -51,37 +68,24 @@ func _physics_process(delta):
 					#anim_player.play("DefaultLeft")
 			
 func _chasing():
-	##Replace with nearest target
-	if !target:
+	var current_target = ShapeCast.has_target()
+	if !current_target:
+		current_state = States.IDLE
 		return
-	NavigationAgent.target_position = target.global_transform.origin
-	##End of repalce
-	if !global_transform.origin.distance_to(NavigationAgent.target_position) > NavigationAgent.target_desired_distance:
+	NavigationAgent.target_position = current_target.global_transform.origin
+	if global_transform.origin.distance_to(NavigationAgent.target_position) < NavigationAgent.target_desired_distance:
 		direction = Vector3.ZERO
 		velocity = Vector3.ZERO
-		current_state = States.IDLE
+		current_state = States.ATTACKING
 	else:
 		direction = (NavigationAgent.get_next_path_position() - global_position).normalized()
 		velocity = velocity.lerp(direction * speed, accel * get_physics_process_delta_time())
 		move_and_slide()
 	
-	# Déterminer l'état en fonction de la direction
-	if direction != Vector3.ZERO:
-		if abs(direction.x) < abs(direction.z):
-			if direction.z > 0:
-				state = "walkup"
-			elif direction.z < 0:
-				state = "walkdown"
-		else:
-			if direction.x > 0:
-				state = "walkright"
-			elif direction.x < 0:
-				state = "walkleft"
-		last_direction = state  # Met à jour la dernière direction
-	else:
-		state = "idle"
-	
 func _idle():
+	if ShapeCast.has_target():
+		current_state = States.CHASING
+		return
 	if global_transform.origin.distance_to(NavigationAgent.target_position) < NavigationAgent.target_desired_distance || NavigationAgent.target_position == Vector3.ZERO:
 		NavigationAgent.target_position = choose_random_destination()
 	var direction: Vector3
@@ -91,6 +95,8 @@ func _idle():
 	
 
 func _attacking():
+	print("attacking")
+	current_state = States.CHASING
 	pass
 
 func choose_random_destination() -> Vector3:
