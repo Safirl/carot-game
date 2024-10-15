@@ -43,29 +43,27 @@ func _physics_process(delta):
 		last_direction = state  # Met à jour la dernière direction
 	else:
 		state = "idle"
-		
-	anim_player.play("walkingRight")
 	
-	#match state:
-		#"walkdown":
-			#anim_player.play("portaitFace")
-		#"walkup":
-			#anim_player.play("walkUp")
-		#"walkright":
-			#anim_player.play("portaitRight")
-		#"walkleft":
-			#anim_player.play("walkLeft")
-		#"idle":
-			## Choisir l'animation idle en fonction de la dernière direction de mouvement
-			#match last_direction:
-				#"walkdown":
-					#anim_player.play("DefaultDown")
-				#"walkup":
-					#anim_player.play("DefaultUp")
-				#"walkright":
-					#anim_player.play("DefaultRight")
-				#"walkleft":
-					#anim_player.play("DefaultLeft")
+	match state:
+		"walkdown":
+			anim_player.play("walkingDown")
+		"walkup":
+			anim_player.play("walkingUp")
+		"walkright":
+			anim_player.play("walkingRight")
+		"walkleft":
+			anim_player.play("walkLeft")
+		"idle":
+			# Choisir l'animation idle en fonction de la dernière direction de mouvement
+			match last_direction:
+				"walkdown":
+					anim_player.play("DefaultDown")
+				"walkup":
+					anim_player.play("DefaultUp")
+				"walkright":
+					anim_player.play("DefaultRight")
+				"walkleft":
+					anim_player.play("DefaultLeft")
 			
 func _chasing():
 	var current_target = ShapeCast.has_target()
@@ -88,7 +86,6 @@ func _idle():
 		return
 	if global_transform.origin.distance_to(NavigationAgent.target_position) < NavigationAgent.target_desired_distance || NavigationAgent.target_position == Vector3.ZERO:
 		NavigationAgent.target_position = choose_random_destination()
-	var direction: Vector3
 	direction = (NavigationAgent.get_next_path_position() - global_position).normalized()
 	velocity = velocity.lerp(direction * speed, accel * get_physics_process_delta_time())
 	move_and_slide()

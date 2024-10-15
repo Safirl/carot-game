@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://byepc6q4d58ep"]
+[gd_scene load_steps=23 format=3 uid="uid://byepc6q4d58ep"]
 
 [ext_resource type="Script" path="res://AI/Ennemy/enemiIA.gd" id="1_wkvh3"]
 [ext_resource type="Texture2D" uid="uid://c13al1rt132gf" path="res://sprites/fermier/jambes-1.png" id="2_plpb6"]
@@ -15,10 +15,10 @@
 [ext_resource type="Texture2D" uid="uid://di8cy54r5ix1l" path="res://sprites/fermier/walkleft/jambes-6.png" id="6_c3xoj"]
 [ext_resource type="Texture2D" uid="uid://kbdk0ja61861" path="res://sprites/fermier/jambes-5.png" id="6_fvuin"]
 [ext_resource type="Texture2D" uid="uid://cu4ksf84f7nob" path="res://sprites/fermier/jambes-6.png" id="7_u2c7x"]
+[ext_resource type="Script" path="res://AI/Ennemy/shape_cast_3d.gd" id="8_skymh"]
 [ext_resource type="Texture2D" uid="uid://lt5aj6ayyocd" path="res://sprites/fermier/walkdown/jambes-1 7.png" id="11_yu1ih"]
 [ext_resource type="Texture2D" uid="uid://da5yfu4su81rj" path="res://sprites/fermier/walkdown/jambes-2 7.png" id="12_cypj4"]
 [ext_resource type="Texture2D" uid="uid://damjenye2marn" path="res://sprites/fermier/walkdown/jambes-3 7.png" id="13_8nyc5"]
-[ext_resource type="Script" path="res://AI/Ennemy/shape_cast_3d.gd" id="8_skymh"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_jptb6"]
 radius = 0.152998
@@ -26,6 +26,38 @@ height = 0.798531
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_tr7j0"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_tmjot")
+}],
+"loop": true,
+"name": &"DefaultDown",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_udodn")
+}],
+"loop": true,
+"name": &"DefaultLeft",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_plpb6")
+}],
+"loop": true,
+"name": &"DefaultRight",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("11_yu1ih")
+}],
+"loop": true,
+"name": &"DefaultUp",
+"speed": 5.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": ExtResource("2_udodn")
@@ -122,8 +154,7 @@ target_desired_distance = 2.0
 [node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.36266, 0)
 sprite_frames = SubResource("SpriteFrames_tr7j0")
-animation = &"walkLeft"
-frame_progress = 0.0404849
+animation = &"DefaultUp"
 
 [node name="ShapeCast3D" type="ShapeCast3D" parent="."]
 transform = Transform3D(5.93, 0, 0, 0, 5.93, 0, 0, 0, 5.93, 0, 2.4595, -0.90846)
