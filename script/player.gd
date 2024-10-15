@@ -167,3 +167,8 @@ func _onRelease():
 					dropObject()
 				else:
 					throwObject()
+
+
+func _on_farmer_ai_on_touched_by_the_farmer() -> void:
+	print('mort')
+	pass # Replace with function body.

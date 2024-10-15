@@ -1,5 +1,8 @@
 extends CharacterBody3D
 
+signal OnFarmerAttack
+signal OnTouchedByTheFarmer
+
 enum States { IDLE, CHASING, ATTACKING }
 var current_state = States.IDLE
 var state : String = "idle"
@@ -79,7 +82,8 @@ func _chasing():
 		direction = (NavigationAgent.get_next_path_position() - global_position).normalized()
 		velocity = velocity.lerp(direction * speed, accel * get_physics_process_delta_time())
 		move_and_slide()
-	
+
+ 
 func _idle():
 	if ShapeCast.has_target():
 		current_state = States.CHASING
@@ -89,11 +93,16 @@ func _idle():
 	direction = (NavigationAgent.get_next_path_position() - global_position).normalized()
 	velocity = velocity.lerp(direction * speed, accel * get_physics_process_delta_time())
 	move_and_slide()
-	
 
 func _attacking():
-	print("attacking")
 	current_state = States.CHASING
+	OnFarmerAttack.emit()
+	
+	if global_transform.origin.distance_to(NavigationAgent.target_position) < NavigationAgent.target_desired_distance  || NavigationAgent.target_position == Vector3.ZERO:
+		OnTouchedByTheFarmer.emit()
+		pass
+	
+	
 	pass
 
 func choose_random_destination() -> Vector3:
