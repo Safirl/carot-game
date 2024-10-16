@@ -181,7 +181,7 @@ func hit() -> void:
 	interactionState = "dead"
 	anim_player.play("dead")
 	$AnimatedSprite3D.animation_finished.connect(_on_death_anim_finished)
-
+	$FlashComponent.start_flash(.2)
 func _on_death_anim_finished():
 	$AnimatedSprite3D.animation_finished.disconnect(_on_death_anim_finished)
 	global_transform.origin = Vector3(0, global_transform.origin.y,0)
