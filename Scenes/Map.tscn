@@ -114,5 +114,5 @@ pathToRessource = "res://Musics/Nature.mp3"
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_sernj")
 
-[node name="Area3D" parent="." instance=ExtResource("8_6l154")]
+[node name="PollutionZone" parent="." instance=ExtResource("8_6l154")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.05633, 2.09145, -0.463386)

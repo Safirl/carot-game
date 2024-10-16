@@ -16,14 +16,14 @@ var holding_time = 0.0
 var is_holding_input = false
 var hold_time_threshold = 0.2
 var actived : bool = false
+var spawn_position: Vector3
 
 @onready var anim_player = $AnimatedSprite3D
 
 signal _on_holding_state_changed(bisHolding)
 
 func _ready():
-	global_transform.origin = Vector3(0, global_transform.origin.y,0)
-	pass
+	spawn_position = global_position
 	
 func _process(delta: float) -> void:
 	if is_holding_input:
@@ -182,9 +182,10 @@ func hit() -> void:
 	anim_player.play("dead")
 	$AnimatedSprite3D.animation_finished.connect(_on_death_anim_finished)
 	$FlashComponent.start_flash(.2)
+
 func _on_death_anim_finished():
 	$AnimatedSprite3D.animation_finished.disconnect(_on_death_anim_finished)
-	global_transform.origin = Vector3(0, global_transform.origin.y,0)
+	global_transform.origin = spawn_position
 	_is_dead = false
 	interactionState = "none"
 

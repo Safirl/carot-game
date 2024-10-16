@@ -4,6 +4,7 @@ enum States { IDLE, CHASING, HOLDED, DEAD, UNDERGROUND, THROWN }
 var current_state = States.CHASING
 var state : String = "idle"
 var last_direction : String = "idle"
+var spawn_position: Vector3
 
 var impulse_direction: Vector3
 var impulse: float = 3
@@ -23,6 +24,7 @@ func _ready() -> void:
 	target._on_holding_state_changed.connect(_on_player_holding_state_changed)
 	player = target
 	speed = default_speed
+	spawn_position = global_position
 
 # Cette fonction est appelée chaque frame pour déplacer l'IA
 func _physics_process(delta):
