@@ -97,7 +97,6 @@ size = Vector3(10.3042, 3.77521, 12.3387)
 
 [node name="Player" parent="." instance=ExtResource("1_a1yr3")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.20433, 1.76315, -11.389)
-carrotsNumber = 0
 
 [node name="NavigationRegion3D" type="NavigationRegion3D" parent="."]
 navigation_mesh = SubResource("NavigationMesh_dgft6")

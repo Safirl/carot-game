@@ -1,0 +1,27 @@
+[gd_scene load_steps=5 format=3 uid="uid://bcqtax22kt8bm"]
+
+[ext_resource type="Texture2D" uid="uid://cubb3xl0xyldf" path="res://TileMap/Textures/Soil/Tuiles_1-2_07.png" id="1_7lwk1"]
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_puhto"]
+spread = 180.0
+initial_velocity_max = 77.11
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fxe8c"]
+albedo_texture = ExtResource("1_7lwk1")
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_v7yj7"]
+material = SubResource("StandardMaterial3D_fxe8c")
+radius = 0.25
+height = 1.0
+
+[node name="Node3D" type="Node3D"]
+
+[node name="durt" type="GPUParticles3D" parent="."]
+amount = 24
+lifetime = 0.5
+explosiveness = 1.0
+fixed_fps = 60
+process_material = SubResource("ParticleProcessMaterial_puhto")
+draw_pass_1 = SubResource("CapsuleMesh_v7yj7")
+
+[node name="CPUParticles3D" type="CPUParticles3D" parent="."]

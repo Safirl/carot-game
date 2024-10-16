@@ -51,7 +51,6 @@ atlas = ExtResource("2_lt835")
 region = Rect2(0, 10, 422, 830)
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_vv71c"]
-load_path = "res://.godot/imported/enterré_-1.png-2d0355c6a73874da4a63a20b884c8d39.s3tc.ctex"
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_tf6gy"]
 resource_local_to_scene = true

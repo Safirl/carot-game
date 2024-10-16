@@ -7,6 +7,9 @@ var interactionState = "underground"
 var last_direction : String = "idle"
 @export var carrotsNumber = 0 
 var direction : Vector3 = Vector3.ZERO
+var is_shaking : bool = false
+var original_position = Vector3(global_transform.origin.x, global_transform.origin.y +2,global_transform.origin.z)
+var durt_particles 
 
 var shake_amount: float = 0.1  # L'amplitude du tremblement
 var shake_duration: float = 0.5  # La durée du tremblement en secondes
@@ -29,6 +32,8 @@ signal _on_holding_state_changed(bisHolding)
 
 func _ready():
 	spawn_position = global_position
+	durt_particles = $durt
+	durt_particles.emitting = false # Désactiver l'émission au départ
 	
 func _process(delta: float) -> void:
 	if is_holding_input:
@@ -41,7 +46,11 @@ func _physics_process(delta):
 	direction.z = Input.get_action_strength("up") - Input.get_action_strength("down")
 	direction = direction.normalized()
 	
+	var target_position : Vector3
 	
+	if is_shaking:
+		apply_shake(delta)
+
 	if direction != Vector3.ZERO:
 		if direction.z > 0:
 			state = "walkup"
@@ -198,13 +207,34 @@ func _on_death_anim_finished():
 	global_transform.origin = spawn_position
 	interactionState = "underground"
 	_is_dead = false
-
+	
 
 	
 func control_underground() -> void:
-	_is_shaking = true
-	global_transform.origin = Vector3(global_transform.origin.x, global_transform.origin.y,global_transform.origin.z)
-	global_position.y =+ 2
+	# Activer le tremblement
+	is_shaking = true
+	shake_timer = 0.5 # Remet à zéro le timer de tremblement
+	durt_particles.emitting = true
+	# On peut appeler move_and_slide pour les autres mouvements
 	move_and_slide()
-	print('erv')
-	pass
+
+
+
+func apply_shake(delta: float) -> void:
+	if shake_timer > 0:
+		shake_timer -= delta
+		
+		# Générer un offset aléatoire autour de la position initiale
+		var shake_offset = Vector3(
+			randf_range(-shake_amount, shake_amount), # Tremblement sur l'axe X
+			randf_range(-shake_amount, shake_amount), # Tremblement sur l'axe Y
+			randf_range(-shake_amount, shake_amount)  # Tremblement sur l'axe Z
+		)
+		
+		# Appliquer le tremblement par rapport à la position initiale
+		global_transform.origin = original_position + shake_offset
+	else:
+		# Arrêter le tremblement et revenir à la position initiale
+		is_shaking = false
+		durt_particles.emitting = false
+		global_transform.origin = original_position
