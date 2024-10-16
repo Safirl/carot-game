@@ -1,6 +1,6 @@
 extends CharacterBody3D
 
-enum States { IDLE, CHASING, HOLDED, DEAD, UNDERGROUND, HOLDING, THROWN, BUMPED }
+enum States { IDLE, CHASING, HOLDED, DEAD, UNDERGROUND, THROWN }
 var current_state = States.CHASING
 var state : String = "idle"
 var last_direction : String = "idle"
@@ -9,12 +9,20 @@ var impulse_direction: Vector3
 var impulse: float = 3
 @export var gravity = 9.8
 
-var speed = 1.
+@export var default_speed: float = 1.
+var speed
 var accel = 1.
 @onready var NavigationAgent = $NavigationAgent3D
 @onready var anim_player = $AnimatedSprite3D
 @onready var target = owner.get_node("Player")
 var _is_bumped
+var _is_holding
+var player
+
+func _ready() -> void:
+	target._on_holding_state_changed.connect(_on_player_holding_state_changed)
+	player = target
+	speed = default_speed
 
 # Cette fonction est appelée chaque frame pour déplacer l'IA
 func _physics_process(delta):
@@ -69,27 +77,48 @@ func _chasing():
 		last_direction = state  # Met à jour la dernière direction
 	else:
 		state = "idle"
-	
-	match state:
-		"walkdown":
-			anim_player.play("portaitFace")
-		"walkup":
-			anim_player.play("walkUp")
-		"walkright":
-			anim_player.play("portaitRight")
-		"walkleft":
-			anim_player.play("walkLeft")
-		"idle":
-			# Choisir l'animation idle en fonction de la dernière direction de mouvement
-			match last_direction:
-				"walkdown":
-					anim_player.play("DefaultDown")
-				"walkup":
-					anim_player.play("DefaultUp")
-				"walkright":
-					anim_player.play("DefaultRight")
-				"walkleft":
-					anim_player.play("DefaultLeft")
+	if !_is_holding:
+		match state:
+			"walkdown":
+				anim_player.play("walkDown")
+			"walkup":
+				anim_player.play("walkUp")
+			"walkright":
+				anim_player.play("walkRight")
+			"walkleft":
+				anim_player.play("walkLeft")
+			"idle":
+				# Choisir l'animation idle en fonction de la dernière direction de mouvement
+				match last_direction:
+					"walkdown":
+						anim_player.play("DefaultDown")
+					"walkup":
+						anim_player.play("DefaultUp")
+					"walkright":
+						anim_player.play("DefaultRight")
+					"walkleft":
+						anim_player.play("DefaultLeft")
+	else:
+		match state:
+			"walkdown":
+				anim_player.play("portaitDown")
+			"walkup":
+				anim_player.play("portaitUp")
+			"walkright":
+				anim_player.play("portaitRight")
+			"walkleft":
+				anim_player.play("portaitLeft")
+			"idle":
+		
+				match last_direction:
+					"walkdown":
+						anim_player.play("DefaultPortaitDown")
+					"walkup":
+						anim_player.play("DefaultPortaitUp")
+					"walkright":
+						anim_player.play("DefaultPortaitRight")
+					"walkleft":
+						anim_player.play("DefaultPortaitLeft")
 
 func _holded():
 	velocity = Vector3.ZERO
@@ -98,6 +127,9 @@ func _dead():
 	pass
 
 func _underground():
+	pass
+
+func _holding():
 	pass
 	
 func _idle():
@@ -145,3 +177,14 @@ func _on_farmer_ai_on_farmer_attacked(sender) -> void:
 	if global_transform.origin.distance_to(sender.global_position) < 5:
 		_is_bumped = true
 		print("bumped")
+
+func _on_player_holding_state_changed(bisHolding: Variant) -> void:
+	if bisHolding == true && (current_state != States.UNDERGROUND || current_state != States.DEAD):
+		_is_holding = true
+		if owner.name != "Player":
+			target = owner.get_node("Player").get_node("ShapeCast3D").OldClosestObject
+		speed = player.move_speed
+	else:
+		_is_holding = false
+		target = owner.get_node("Player")
+		speed = default_speed

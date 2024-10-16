@@ -1,4 +1,4 @@
-extends CharacterBody3D
+class_name Player extends CharacterBody3D
 
 var move_speed : float = 3.0
 var accel = 5
@@ -15,6 +15,8 @@ var hold_time_threshold = 0.2
 var actived : bool = false
 
 @onready var anim_player = $AnimatedSprite3D
+
+signal _on_holding_state_changed(bisHolding)
 
 func _ready():
 	pass
@@ -104,14 +106,12 @@ func isActiveMecanism():
 	return actived
 
 func pickObject():
-	#if its a button, we want to interact it, otherwise we want to pick it.
-	if $ShapeCast3D.OldClosestObject.get_node("AnimationButtonComponent"):
-		$ShapeCast3D.OldClosestObject.activate()
-		return
 	if $ShapeCast3D.OldClosestObject.get_node("PickableObjectComponent").weight <= carrotsNumber:
 		$ShapeCast3D.OldClosestObject.get_node("PickableObjectComponent").isPicked = true
 		interactionState = "holding"
 		state="holding"
+		_on_holding_state_changed.emit(true)
+		
 	
 func throwObject():
 	is_holding_input = false
@@ -132,12 +132,14 @@ func throwObject():
 	var throw_force = 5.0
 	throw_direction.y = 1
 	$ShapeCast3D.OldClosestObject.throw(throw_direction * throw_force)
+	_on_holding_state_changed.emit(false)
 
 func dropObject():
 	is_holding_input = false
 	holding_time = 0.
 	$ShapeCast3D.OldClosestObject.get_node("PickableObjectComponent").isPicked = false
 	interactionState = "none"
+	_on_holding_state_changed.emit(false)
 
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("Interact"):

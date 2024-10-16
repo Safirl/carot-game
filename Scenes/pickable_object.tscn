@@ -13,8 +13,8 @@ bounce = 0.31
 size = Vector3(1, 0.934082, 0.592896)
 
 [node name="PickableObject" type="RigidBody3D"]
-collision_layer = 5
-collision_mask = 5
+collision_layer = 4
+collision_mask = 4
 physics_material_override = SubResource("PhysicsMaterial_fdf1o")
 max_contacts_reported = 5
 constant_force = Vector3(0, -1, 0)

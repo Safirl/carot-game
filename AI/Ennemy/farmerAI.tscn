@@ -218,24 +218,27 @@ animations = [{
 
 [node name="FarmerAI" type="CharacterBody3D"]
 script = ExtResource("1_wkvh3")
+hit_distance = 1.0
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0957736, 0)
 shape = SubResource("CapsuleShape3D_jptb6")
 
 [node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
-path_desired_distance = 0.75
-target_desired_distance = 2.0
+path_desired_distance = 0.5
+target_desired_distance = 0.75
 
 [node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.36266, 0)
 sprite_frames = SubResource("SpriteFrames_tr7j0")
-animation = &"leftUpFeet"
+animation = &"AttackLeft"
+frame = 3
+frame_progress = 1.0
 
 [node name="ShapeCast3D" type="ShapeCast3D" parent="."]
-transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 0, 2.4595, -0.90846)
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 0, 0, 0)
 shape = SubResource("SphereShape3D_h2t0n")
-target_position = Vector3(0, -0.2, 1)
+target_position = Vector3(0, 0, 0)
 collision_mask = 6
 script = ExtResource("8_skymh")
 

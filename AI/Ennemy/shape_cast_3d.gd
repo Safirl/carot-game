@@ -5,8 +5,8 @@ extends ShapeCast3D
 var target
 
 func _process(delta: float) -> void:
-	target_position = get_parent().get_node("NavigationAgent3D").get_next_path_position().normalized()
-	target_position.y = 0
+	#target_position = get_parent().get_node("NavigationAgent3D").get_next_path_position().normalized()
+	#target_position.y = 0
 	pass
 
 func has_target():
