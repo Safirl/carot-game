@@ -7,13 +7,13 @@ enum States { IDLE, CHASING, ATTACKING }
 var current_state = States.IDLE
 var state : String = "idle"
 var last_direction : String = "idle"
-@export var hit_distance: float = 1.
+@export var hit_distance: float = 1.5
 var direction: Vector3
 
 @export var wander_radius: float = 10.
 @export var gravity = 9.8
 
-var speed = 1.5
+@export var speed = 1.8
 var accel = 1.
 @onready var NavigationAgent = $NavigationAgent3D
 @onready var anim_player = $AnimatedSprite3D
@@ -112,7 +112,7 @@ func _on_attack_finished():
 	
 	current_state = States.CHASING
 	on_farmer_attacked.emit(self)
-	if $ShapeCast3D.has_target() && global_transform.origin.distance_to(NavigationAgent.target_position) < NavigationAgent.target_desired_distance:
+	if $ShapeCast3D.has_target() && global_transform.origin.distance_to($ShapeCast3D.target.global_position) < hit_distance:
 		$ShapeCast3D.target.hit()
 
 func choose_random_destination() -> Vector3:
