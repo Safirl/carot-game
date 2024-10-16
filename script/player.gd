@@ -103,8 +103,7 @@ func _physics_process(delta):
 		if !_is_projected :
 			velocity = velocity.lerp(direction * move_speed, accel * delta)
 		else:
-			#isProjected(hitObject)
-			pass
+			isProjected(hitObject)
 		move_and_slide()
 
 func _on_area_3d_body_entered(body: Node3D) -> void:

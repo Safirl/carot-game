@@ -237,9 +237,7 @@ target_desired_distance = 0.75
 [node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.36266, 0)
 sprite_frames = SubResource("SpriteFrames_tr7j0")
-animation = &"AttackLeft"
-frame = 3
-frame_progress = 1.0
+animation = &"walkLeft"
 
 [node name="ShapeCast3D" type="ShapeCast3D" parent="."]
 transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 0, 0, 0)
