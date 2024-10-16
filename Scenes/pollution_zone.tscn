@@ -1,0 +1,44 @@
+[gd_scene load_steps=6 format=3 uid="uid://bdnfxab00ytr2"]
+
+[ext_resource type="Script" path="res://Scenes/collisionStop.gd" id="1_d2wmd"]
+[ext_resource type="Texture2D" uid="uid://bq4r3l6wyoro" path="res://sprites/arrosage/Arrosage-2.png" id="2_yuqbs"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_wv64m"]
+size = Vector3(10.3042, 3.77521, 12.3387)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_t2cl8"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_yuqbs")
+}],
+"loop": true,
+"name": &"newWatering",
+"speed": 5.0
+}]
+
+[sub_resource type="FogMaterial" id="FogMaterial_sxabb"]
+albedo = Color(0.639216, 0.607843, 0.905882, 1)
+height_falloff = 2.80959
+edge_fade = 0.237841
+
+[node name="Area3D" type="Area3D"]
+collision_layer = 7
+collision_mask = 7
+script = ExtResource("1_d2wmd")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+physics_interpolation_mode = 1
+shape = SubResource("BoxShape3D_wv64m")
+
+[node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.15149, 0)
+sprite_frames = SubResource("SpriteFrames_t2cl8")
+animation = &"newWatering"
+
+[node name="FogVolume" type="FogVolume" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00351715, 0, 0.0217743)
+size = Vector3(10.3799, 2, 12.334)
+material = SubResource("FogMaterial_sxabb")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

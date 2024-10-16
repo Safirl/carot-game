@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://raghvv2anqjp"]
+[gd_scene load_steps=18 format=3 uid="uid://raghvv2anqjp"]
 
 [ext_resource type="Script" path="res://Scenes/camera_3d.gd" id="1_u7fxj"]
 [ext_resource type="MeshLibrary" uid="uid://hr32e216nyjj" path="res://TileMap/baseMeshLibrary.tres" id="1_uqno7"]
@@ -7,24 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://d4qbm4vesv64" path="res://Scenes/pickable_object.tscn" id="5_6xdsi"]
 [ext_resource type="PackedScene" uid="uid://dua2oubaha4yv" path="res://AI/Carot/CarotAI.tscn" id="6_yvb4t"]
 [ext_resource type="PackedScene" uid="uid://b4lponpe36cvq" path="res://Scenes/Music/MusicLayerZone.tscn" id="7_vlpm7"]
-
-[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_w8j3g"]
-sky_top_color = Color(0.572549, 0.729412, 0.988235, 1)
-sky_horizon_color = Color(0.680673, 0.796583, 0.930607, 1)
-ground_bottom_color = Color(0.570958, 0.729682, 0.988911, 1)
-ground_horizon_color = Color(0.682353, 0.796078, 0.929412, 1)
-sun_angle_max = 32.22
-sun_curve = 0.166435
-
-[sub_resource type="Sky" id="Sky_vppph"]
-sky_material = SubResource("ProceduralSkyMaterial_w8j3g")
-
-[sub_resource type="Environment" id="Environment_bk51v"]
-background_mode = 2
-sky = SubResource("Sky_vppph")
-fog_enabled = true
-adjustment_enabled = true
-adjustment_contrast = 1.22
+[ext_resource type="PackedScene" uid="uid://bdnfxab00ytr2" path="res://Scenes/pollution_zone.tscn" id="8_6l154"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_hca7e"]
 
@@ -45,10 +28,18 @@ shader_parameter/color = Color(0, 0, 0, 1)
 shader_parameter/multiplier = 0.04
 shader_parameter/softness = 1.195
 
-[node name="Node3D" type="Node3D"]
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_tl04v"]
 
-[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = SubResource("Environment_bk51v")
+[sub_resource type="Sky" id="Sky_ch4eh"]
+sky_material = SubResource("ProceduralSkyMaterial_tl04v")
+
+[sub_resource type="Environment" id="Environment_sernj"]
+background_mode = 2
+sky = SubResource("Sky_ch4eh")
+volumetric_fog_enabled = true
+volumetric_fog_density = 0.0
+
+[node name="Node3D" type="Node3D"]
 
 [node name="RigidBody3D" type="RigidBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.97715, 0)
@@ -119,3 +110,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.95534, 3.49828, -1.71948)
 [node name="MusicLayerZone" parent="." instance=ExtResource("7_vlpm7")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 3, 0)
 pathToRessource = "res://Musics/Nature.mp3"
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_sernj")
+
+[node name="Area3D" parent="." instance=ExtResource("8_6l154")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.05633, 2.09145, -0.463386)
