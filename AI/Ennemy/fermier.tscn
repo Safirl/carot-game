@@ -1,7 +1,7 @@
 [gd_scene load_steps=27 format=3 uid="uid://ioa2pcdgle2y"]
 
 [ext_resource type="PackedScene" uid="uid://bhr635oauf4nk" path="res://Scenes/player.tscn" id="1_a1yr3"]
-[ext_resource type="MeshLibrary" uid="uid://hr32e216nyjj" path="res://TileMap/baseMeshLibrary.tres" id="2_5eb5s"]
+[ext_resource type="MeshLibrary" uid="uid://cn26txaafv2nq" path="res://TileMap/baseMeshLibrary.tres" id="2_5eb5s"]
 [ext_resource type="PackedScene" uid="uid://dua2oubaha4yv" path="res://AI/Carot/CarotAI.tscn" id="3_61gqv"]
 [ext_resource type="PackedScene" uid="uid://byepc6q4d58ep" path="res://AI/Ennemy/farmerAI.tscn" id="4_3dmwx"]
 [ext_resource type="Script" path="res://Scenes/camera_3d.gd" id="5_jddgn"]
@@ -112,7 +112,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.46173, 2.69411, -13.7197)
 
 [node name="FarmerAI" parent="." instance=ExtResource("4_3dmwx")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.89925, 1.83348, -8.08273)
-hit_distance = 1.64
+hit_distance = 1.5
 
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(-1, 2.99004e-08, -8.21505e-08, 0, 0.939693, 0.34202, 8.74228e-08, 0.34202, -0.939693, 0, 3.79875, -4.83042)
