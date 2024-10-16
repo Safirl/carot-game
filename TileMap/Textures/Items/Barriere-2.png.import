@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bb3ayl8kqumi3"
-path="res://.godot/imported/Arrosage-cassee.png-76657ca62f16dc65dc17fd4c4e322c4c.ctex"
+uid="uid://ca2ju0lvmiem2"
+path="res://.godot/imported/Barriere-2.png-77f16fc32c1fce0909b0ad268b0ef2c6.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://TileMap/Textures/Items/Arrosage-cassee.png"
-dest_files=["res://.godot/imported/Arrosage-cassee.png-76657ca62f16dc65dc17fd4c4e322c4c.ctex"]
+source_file="res://TileMap/Textures/Items/Barriere-2.png"
+dest_files=["res://.godot/imported/Barriere-2.png-77f16fc32c1fce0909b0ad268b0ef2c6.ctex"]
 
 [params]
 

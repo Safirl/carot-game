@@ -2,27 +2,26 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cd7klmquo1u4q"
-path.s3tc="res://.godot/imported/Barrière.png-1f1fdf09d70befd3b305a1b2b6eb1ee3.s3tc.ctex"
+uid="uid://dr0q5h68rhtfu"
+path="res://.godot/imported/Barriere-4.png-de54c96e19314da540acc73acbf982b7.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
-"vram_texture": true
+"vram_texture": false
 }
 
 [deps]
 
-source_file="res://TileMap/Textures/Items/Barrière.png"
-dest_files=["res://.godot/imported/Barrière.png-1f1fdf09d70befd3b305a1b2b6eb1ee3.s3tc.ctex"]
+source_file="res://TileMap/Textures/Items/Barriere-4.png"
+dest_files=["res://.godot/imported/Barriere-4.png-de54c96e19314da540acc73acbf982b7.ctex"]
 
 [params]
 
-compress/mode=2
+compress/mode=0
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/hdr_compression=1
 compress/normal_map=0
 compress/channel_pack=0
-mipmaps/generate=true
+mipmaps/generate=false
 mipmaps/limit=-1
 roughness/mode=0
 roughness/src_normal=""
@@ -32,4 +31,4 @@ process/normal_map_invert_y=false
 process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
-detect_3d/compress_to=0
+detect_3d/compress_to=1
