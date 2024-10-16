@@ -13,5 +13,5 @@ func _process(delta: float) -> void:
 
 func _on_body_entered(body: Node3D) -> void: 
 	if body.name == "Player":
-		body.hit(self)
+		body.hit()
 	pass

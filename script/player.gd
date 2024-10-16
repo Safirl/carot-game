@@ -9,9 +9,7 @@ var last_direction : String = "idle"
 var direction : Vector3 = Vector3.ZERO
 
 var impulse_direction: Vector3
-var _is_projected : bool = false
 var _is_dead : bool = false
-var hitObject 
 
 #Holding input
 var holding_time = 0.0
@@ -96,16 +94,12 @@ func _physics_process(delta):
 						anim_player.play("DefaultPortaitRight")
 					"walkleft":
 						anim_player.play("DefaultPortaitLeft")
-			
-	if _is_dead == true: 
-		direction = Vector3.ZERO
-	else:
-		if !_is_projected :
-			velocity = velocity.lerp(direction * move_speed, accel * delta)
-		else:
-			#isProjected(hitObject)
-			pass
-		move_and_slide()
+
+	if !_is_dead :
+		velocity = velocity.lerp(direction * move_speed, accel * delta)
+	else : 
+		velocity = Vector3.ZERO
+	move_and_slide()
 
 func _on_area_3d_body_entered(body: Node3D) -> void:
 	if body.name == "CharacterBody3D":	
@@ -182,24 +176,17 @@ func _onRelease():
 				else:
 					throwObject()
 
-#func hit(sender) -> void:
-	#hitObject = sender
-	#velocity = Vector3.ZERO
-	#_is_dead = true
-	#interactionState = "dead"
-	#anim_player.play("dead")
-	#
-	#$AnimatedSprite3D.animation_finished.connect(_on_death_anim_finished)
-#
-#func _on_death_anim_finished():
-#
-	#$AnimatedSprite3D.animation_finished.disconnect(_on_death_anim_finished)
-	#global_transform.origin = Vector3(0, global_transform.origin.y,0)
-	#
-	#
-#func isProjected(sender):
-	#var direction = global_position - sender.global_position
-	#var impulse_strength : float = 10.0
-	#velocity += direction * impulse_strength
-	#_is_dead = false
-	#hitObject = null
+func hit() -> void:
+	_is_dead = true
+	interactionState = "dead"
+	anim_player.play("dead")
+	$AnimatedSprite3D.animation_finished.connect(_on_death_anim_finished)
+
+func _on_death_anim_finished():
+	$AnimatedSprite3D.animation_finished.disconnect(_on_death_anim_finished)
+	global_transform.origin = Vector3(0, global_transform.origin.y,0)
+	_is_dead = false
+	interactionState = "none"
+
+
+	
