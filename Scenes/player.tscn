@@ -22,6 +22,7 @@
 [ext_resource type="Texture2D" uid="uid://ctmi46cgy2ohc" path="res://sprites/portait/portant-droite-5.png" id="9_rs1e5"]
 [ext_resource type="Texture2D" uid="uid://do21dytt4g2ta" path="res://sprites/portait/portant-face-5.png" id="9_ynuwy"]
 [ext_resource type="Texture2D" uid="uid://qg4atvgbx347" path="res://sprites/coteG5.png" id="10_5n8gd"]
+[ext_resource type="Texture2D" uid="uid://b461x2bm83fee" path="res://sprites/écrasée.png" id="10_tl7bv"]
 [ext_resource type="Texture2D" uid="uid://b74l21hs6m6f0" path="res://sprites/coteD2.png" id="11_alp88"]
 [ext_resource type="Texture2D" uid="uid://be5yds8hq8sp" path="res://sprites/coteD3.png" id="12_pg2uj"]
 [ext_resource type="Texture2D" uid="uid://c1mjv63amafxf" path="res://sprites/coteD4.png" id="13_mtq6u"]
@@ -113,6 +114,26 @@ animations = [{
 }],
 "loop": true,
 "name": &"DefaultUp",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("10_tl7bv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_tl7bv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_tl7bv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_tl7bv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_tl7bv")
+}],
+"loop": false,
+"name": &"dead",
 "speed": 5.0
 }, {
 "frames": [{
@@ -266,7 +287,7 @@ shape = SubResource("CapsuleShape3D_60v5n")
 [node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="."]
 transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0, 0)
 sprite_frames = SubResource("SpriteFrames_g6r7p")
-animation = &"DefaultPortaitLeft"
+animation = &"dead"
 
 [node name="ShapeCast3D" type="ShapeCast3D" parent="."]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)

@@ -13,7 +13,7 @@
 size = Vector3(19.6719, 6.86461, 17.526)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_8l02h"]
-size = Vector3(51.1537, 24.0735, 42.2753)
+size = Vector3(46.9283, 15.0963, 40.1627)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_mowbw"]
 size = Vector3(7.94116, 7.24048, 2.66516)
@@ -22,7 +22,7 @@ size = Vector3(7.94116, 7.24048, 2.66516)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.014389)
 
 [node name="Player" parent="." instance=ExtResource("1_v60dv")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.29364, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.96638, 0)
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.538874, 0.842387, 0, -0.842387, 0.538874, 0.0188551, 10.1432, -0.0148186)
@@ -54,15 +54,19 @@ data = {
 }
 
 [node name="Area3D" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0481853, 0, 0.0217381)
+collision_layer = 7
+collision_mask = 7
 script = ExtResource("7_67mwc")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
 physics_interpolation_mode = 1
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.0026, 5.29172, -25.0802)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.38498, 0.0533094, -24.2836)
 shape = SubResource("BoxShape3D_8l02h")
 
 [node name="Sprite3D" type="Sprite3D" parent="Area3D"]
-transform = Transform3D(-0.0551808, -1.99924, 0.000128895, 0.0158721, -0.000567025, -1.99994, 1.99918, -0.055178, 0.0158817, 11.5311, 2.24466, -17.2988)
+transform = Transform3D(-0.0260698, -2.02835, 0.000128355, 0.00749865, -0.000575281, -1.99156, 0.944497, -0.0559814, 0.0158151, 11.5311, 2.24466, -17.2988)
+layers = 6
 texture = ExtResource("7_1x7ko")
 
 [node name="levier" type="Area3D" parent="."]

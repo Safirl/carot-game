@@ -155,7 +155,6 @@ func highlight(bhighlight: bool):
 		$AnimatedSprite3D.modulate = Color(1, 0, 0, 1)
 	else:
 		$AnimatedSprite3D.modulate = Color(1, 1, 1, 1)
-	pass
 	
 #called when object is throw
 func throw(impulse = Vector3(0, 0, 0)):
@@ -176,7 +175,7 @@ func hit() -> void:
 func _on_farmer_ai_on_farmer_attacked(sender) -> void:
 	if global_transform.origin.distance_to(sender.global_position) < 5:
 		_is_bumped = true
-		print("bumped")
+		#print("bumped")
 
 func _on_player_holding_state_changed(bisHolding: Variant) -> void:
 	if bisHolding == true && (current_state != States.UNDERGROUND || current_state != States.DEAD):

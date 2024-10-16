@@ -8,6 +8,11 @@ var last_direction : String = "idle"
 @export var carrotsNumber = 0 
 var direction : Vector3 = Vector3.ZERO
 
+var impulse_direction: Vector3
+var _is_projected : bool = false
+var _is_dead : bool = false
+var hitObject 
+
 #Holding input
 var holding_time = 0.0
 var is_holding_input = false
@@ -19,6 +24,7 @@ var actived : bool = false
 signal _on_holding_state_changed(bisHolding)
 
 func _ready():
+	global_transform.origin = Vector3(0, global_transform.origin.y,0)
 	pass
 	
 func _process(delta: float) -> void:
@@ -31,7 +37,7 @@ func _physics_process(delta):
 	direction.x = Input.get_action_strength("left") - Input.get_action_strength("right")
 	direction.z = Input.get_action_strength("up") - Input.get_action_strength("down")
 	direction = direction.normalized()
-
+	
 	
 	if direction != Vector3.ZERO:
 		if direction.z > 0:
@@ -43,10 +49,9 @@ func _physics_process(delta):
 		elif direction.x < 0:
 			state = "walkleft"
 		last_direction = state
-		
-		
 	else :
 		state = "idle"
+	
 	if interactionState == "none":
 		match state:
 			"walkdown":
@@ -68,6 +73,8 @@ func _physics_process(delta):
 						anim_player.play("DefaultRight")
 					"walkleft":
 						anim_player.play("DefaultLeft")
+	elif interactionState == "dead":
+		pass
 	else:
 		match state:
 			"walkdown":
@@ -90,10 +97,15 @@ func _physics_process(delta):
 					"walkleft":
 						anim_player.play("DefaultPortaitLeft")
 			
-
-	# Applique la vitesse de mouvement
-	velocity = velocity.lerp(direction * move_speed, accel * delta)
-	move_and_slide()
+	if _is_dead == true: 
+		direction = Vector3.ZERO
+	else:
+		if !_is_projected :
+			velocity = velocity.lerp(direction * move_speed, accel * delta)
+		else:
+			#isProjected(hitObject)
+			pass
+		move_and_slide()
 
 func _on_area_3d_body_entered(body: Node3D) -> void:
 	if body.name == "CharacterBody3D":	
@@ -170,6 +182,24 @@ func _onRelease():
 				else:
 					throwObject()
 
-func hit() -> void:
-	print('player mort')
-	$FlashComponent.start_flash(.1)
+#func hit(sender) -> void:
+	#hitObject = sender
+	#velocity = Vector3.ZERO
+	#_is_dead = true
+	#interactionState = "dead"
+	#anim_player.play("dead")
+	#
+	#$AnimatedSprite3D.animation_finished.connect(_on_death_anim_finished)
+#
+#func _on_death_anim_finished():
+#
+	#$AnimatedSprite3D.animation_finished.disconnect(_on_death_anim_finished)
+	#global_transform.origin = Vector3(0, global_transform.origin.y,0)
+	#
+	#
+#func isProjected(sender):
+	#var direction = global_position - sender.global_position
+	#var impulse_strength : float = 10.0
+	#velocity += direction * impulse_strength
+	#_is_dead = false
+	#hitObject = null

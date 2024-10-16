@@ -11,12 +11,7 @@ func _process(delta: float) -> void:
 	pass
 
 
-func _on_body_entered(body: Node3D) -> void:
-	
-	if body.name == "CharacterBody3D":
-		print(body.isActiveMecanism())
-		if body.isActiveMecanism() == false :
-			body.global_transform.origin = Vector3(20, body.global_transform.origin.y, 20) 
-		else :
-			print('sucess')
-	pass 
+func _on_body_entered(body: Node3D) -> void: 
+	if body.name == "Player":
+		body.hit(self)
+	pass
