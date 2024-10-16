@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://ioa2pcdgle2y"]
 
 [ext_resource type="PackedScene" uid="uid://bhr635oauf4nk" path="res://Scenes/player.tscn" id="1_a1yr3"]
-[ext_resource type="MeshLibrary" uid="uid://cn26txaafv2nq" path="res://TileMap/baseMeshLibrary.tres" id="2_5eb5s"]
+[ext_resource type="MeshLibrary" uid="uid://hr32e216nyjj" path="res://TileMap/baseMeshLibrary.tres" id="2_5eb5s"]
 [ext_resource type="PackedScene" uid="uid://dua2oubaha4yv" path="res://AI/Carot/CarotAI.tscn" id="3_61gqv"]
 [ext_resource type="PackedScene" uid="uid://byepc6q4d58ep" path="res://AI/Ennemy/farmerAI.tscn" id="4_3dmwx"]
 [ext_resource type="Script" path="res://Scenes/camera_3d.gd" id="5_jddgn"]

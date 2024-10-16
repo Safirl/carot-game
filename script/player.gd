@@ -170,3 +170,4 @@ func _onRelease():
 
 func hit() -> void:
 	print('player mort')
+	$FlashComponent.start_flash(.1)

@@ -1,4 +1,4 @@
-[gd_scene load_steps=44 format=3 uid="uid://bhr635oauf4nk"]
+[gd_scene load_steps=45 format=3 uid="uid://bhr635oauf4nk"]
 
 [ext_resource type="Texture2D" uid="uid://c1b4och55uc8q" path="res://sprites/character.png" id="1_1pdg6"]
 [ext_resource type="Script" path="res://script/player.gd" id="1_byvo4"]
@@ -39,6 +39,7 @@
 [ext_resource type="Texture2D" uid="uid://do3v534gkjme6" path="res://sprites/portait/portant-dos-5.png" id="17_xwm82"]
 [ext_resource type="Texture2D" uid="uid://brvxiyymkchx7" path="res://sprites/dos10.png" id="18_a57a0"]
 [ext_resource type="Script" path="res://script/PlayerShapeCast.gd" id="30_3e68u"]
+[ext_resource type="PackedScene" uid="uid://c6ml33d2tpcwk" path="res://Scenes/flash_component.tscn" id="40_64264"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_60v5n"]
 radius = 1.09686
@@ -273,3 +274,5 @@ shape = SubResource("SphereShape3D_beqvw")
 target_position = Vector3(0, 0, 0)
 collision_mask = 4
 script = ExtResource("30_3e68u")
+
+[node name="FlashComponent" parent="." instance=ExtResource("40_64264")]

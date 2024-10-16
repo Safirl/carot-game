@@ -139,7 +139,7 @@ func _thrown():
 		impulse_direction = Vector3.ZERO
 
 func hit() -> void:
-	pass
+	$FlashComponent.start_flash(.1)
 
 func _on_farmer_ai_on_farmer_attacked(sender) -> void:
 	if global_transform.origin.distance_to(sender.global_position) < 5:
