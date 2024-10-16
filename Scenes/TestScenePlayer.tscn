@@ -1,8 +1,9 @@
-[gd_scene load_steps=12 format=3 uid="uid://ktvdn67qt7if"]
+[gd_scene load_steps=13 format=3 uid="uid://ktvdn67qt7if"]
 
 [ext_resource type="PackedScene" uid="uid://bhr635oauf4nk" path="res://Scenes/player.tscn" id="1_v60dv"]
+[ext_resource type="Script" path="res://Scenes/FadeZone.gd" id="3_dfau4"]
 [ext_resource type="Script" path="res://Scenes/camera_3d.gd" id="3_uhk8j"]
-[ext_resource type="MeshLibrary" uid="uid://cn26txaafv2nq" path="res://TileMap/baseMeshLibrary.tres" id="5_buxar"]
+[ext_resource type="MeshLibrary" uid="uid://hr32e216nyjj" path="res://TileMap/baseMeshLibrary.tres" id="5_buxar"]
 [ext_resource type="Texture2D" uid="uid://ueo2atd2f82t" path="res://sprites/deadZone.png" id="7_1x7ko"]
 [ext_resource type="Script" path="res://Scenes/collisionStop.gd" id="7_67mwc"]
 [ext_resource type="Script" path="res://Scenes/levers.gd" id="9_mp67o"]
@@ -34,9 +35,12 @@ script = ExtResource("3_uhk8j")
 
 [node name="House" type="Area3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24.588, 4.82613, 7.25104)
+collision_layer = 7
+collision_mask = 7
+script = ExtResource("3_dfau4")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="House"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.90687, -5.16819, 0.197338)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.684708, -5.53556, 0.215424)
 shape = SubResource("BoxShape3D_0tt7b")
 
 [node name="WallFront" type="Sprite3D" parent="House"]

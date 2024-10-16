@@ -3,13 +3,18 @@ class_name Player extends CharacterBody3D
 var move_speed : float = 3.0
 var accel = 5
 var state : String = "idle"
-var interactionState = "none"
+var interactionState = "underground"
 var last_direction : String = "idle"
 @export var carrotsNumber = 0 
 var direction : Vector3 = Vector3.ZERO
 
+var shake_amount: float = 0.1  # L'amplitude du tremblement
+var shake_duration: float = 0.5  # La durée du tremblement en secondes
+var shake_timer: float = 0.0
+
 var impulse_direction: Vector3
 var _is_dead : bool = false
+var _is_shaking = false
 
 #Holding input
 var holding_time = 0.0
@@ -73,6 +78,9 @@ func _physics_process(delta):
 						anim_player.play("DefaultLeft")
 	elif interactionState == "dead":
 		pass
+	elif interactionState == "underground":
+		anim_player.play("underground")
+		
 	else:
 		match state:
 			"walkdown":
@@ -154,6 +162,9 @@ func _input(event: InputEvent) -> void:
 		_onRelease()
 
 func interact():
+	print(interactionState)
+	if interactionState == "underground":
+		control_underground()
 	if $ShapeCast3D.OldClosestObject != null:
 		match interactionState:
 				"none":
@@ -182,12 +193,18 @@ func hit() -> void:
 	anim_player.play("dead")
 	$AnimatedSprite3D.animation_finished.connect(_on_death_anim_finished)
 	$FlashComponent.start_flash(.2)
-
 func _on_death_anim_finished():
 	$AnimatedSprite3D.animation_finished.disconnect(_on_death_anim_finished)
 	global_transform.origin = spawn_position
+	interactionState = "underground"
 	_is_dead = false
-	interactionState = "none"
 
 
 	
+func control_underground() -> void:
+	_is_shaking = true
+	global_transform.origin = Vector3(global_transform.origin.x, global_transform.origin.y,global_transform.origin.z)
+	global_position.y =+ 2
+	move_and_slide()
+	print('erv')
+	pass
