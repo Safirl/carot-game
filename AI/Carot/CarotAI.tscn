@@ -1,4 +1,4 @@
-[gd_scene load_steps=66 format=3 uid="uid://dua2oubaha4yv"]
+[gd_scene load_steps=86 format=3 uid="uid://dua2oubaha4yv"]
 
 [ext_resource type="Script" path="res://AI/Carot/CarotAIController.gd" id="1_veyp6"]
 [ext_resource type="Script" path="res://script/PickableObjectComponent.gd" id="2_cprcl"]
@@ -41,7 +41,9 @@
 [ext_resource type="Texture2D" uid="uid://boojlt733hsj6" path="res://sprites/underground.png" id="26_gg753"]
 [ext_resource type="Texture2D" uid="uid://ba1bnmeadt4n7" path="res://sprites/Carrot/dos8.png" id="27_2g0pn"]
 [ext_resource type="Texture2D" uid="uid://nke3lfxl5rq0" path="res://sprites/Carrot/Selected/Portant/portant-1.png" id="27_dlyjv"]
+[ext_resource type="Texture2D" uid="uid://l7lec05i8htv" path="res://sprites/Carrot/Selected/neutral/Carrot_-_Luc_-_Neutre-1.png" id="27_qwume"]
 [ext_resource type="Texture2D" uid="uid://oo2md8qu50lk" path="res://sprites/Carrot/Selected/Portant/portant-2.png" id="28_0y7y4"]
+[ext_resource type="Texture2D" uid="uid://blodnctac7nnn" path="res://sprites/Carrot/Selected/neutral/g1.png" id="28_mlok2"]
 [ext_resource type="Texture2D" uid="uid://keywqrxc7tpm" path="res://sprites/Carrot/dos9.png" id="28_uj7nl"]
 [ext_resource type="Texture2D" uid="uid://brvxiyymkchx7" path="res://sprites/Carrot/dos10.png" id="29_87pjq"]
 [ext_resource type="Texture2D" uid="uid://bg2wq1xo3db0c" path="res://sprites/Carrot/Selected/Portant/portant-3.png" id="29_d2uen"]
@@ -49,6 +51,8 @@
 [ext_resource type="Texture2D" uid="uid://cixoac775txke" path="res://sprites/Carrot/Selected/Portant/portant-5.png" id="31_xn33p"]
 [ext_resource type="Texture2D" uid="uid://05412e44o5gi" path="res://sprites/Carrot/Selected/Portant/portant-g1.png" id="32_2dp0w"]
 [ext_resource type="Texture2D" uid="uid://cbiv71xbcn8ed" path="res://sprites/Carrot/Selected/Portant/portant-g2.png" id="33_4ysa6"]
+[ext_resource type="Texture2D" uid="uid://f6qtsk2tyo5v" path="res://sprites/Carrot/Selected/neutral/Carrot_-_Luc_-_Neutre-6.png" id="33_pydf0"]
+[ext_resource type="Texture2D" uid="uid://cvbbu6rsgi3eo" path="res://sprites/Carrot/Selected/neutral/Carrot_-_Luc_-_Neutre-11.png" id="34_bcfd1"]
 [ext_resource type="Texture2D" uid="uid://cydl8r5tln71f" path="res://sprites/Carrot/Selected/Portant/portant-g3.png" id="34_rcv5o"]
 [ext_resource type="Texture2D" uid="uid://cmovxkhqjyqer" path="res://sprites/Carrot/Selected/Portant/portant-g4.png" id="35_4yr1i"]
 [ext_resource type="Texture2D" uid="uid://b7bdukx00nino" path="res://sprites/Carrot/Selected/Portant/portant-g5.png" id="36_xf7yn"]
@@ -62,6 +66,22 @@
 [ext_resource type="Texture2D" uid="uid://wf3lbsc8y13k" path="res://sprites/Carrot/Selected/Portant/portant-dos3.png" id="44_tb63f"]
 [ext_resource type="Texture2D" uid="uid://d4h1f4k7xhs6y" path="res://sprites/Carrot/Selected/Portant/portant-dos4.png" id="45_on3rn"]
 [ext_resource type="Texture2D" uid="uid://dn72236u7ykr7" path="res://sprites/Carrot/Selected/Portant/portant-dos5.png" id="46_84h18"]
+[ext_resource type="Texture2D" uid="uid://dlurjjlas7g4v" path="res://sprites/Carrot/Selected/neutral/Carrot_-_Luc_-_Neutre-2.png" id="51_bdpwu"]
+[ext_resource type="Texture2D" uid="uid://wdv2aa73tnhn" path="res://sprites/Carrot/Selected/neutral/Carrot_-_Luc_-_Neutre-3.png" id="52_xkmcs"]
+[ext_resource type="Texture2D" uid="uid://5kks3vw6tc77" path="res://sprites/Carrot/Selected/neutral/Carrot_-_Luc_-_Neutre-4.png" id="53_ii572"]
+[ext_resource type="Texture2D" uid="uid://bgmxn0i5be3sw" path="res://sprites/Carrot/Selected/neutral/Carrot_-_Luc_-_Neutre-5.png" id="54_j6xwu"]
+[ext_resource type="Texture2D" uid="uid://bx8wepmov1xl7" path="res://sprites/Carrot/Selected/neutral/g2.png" id="55_2k8py"]
+[ext_resource type="Texture2D" uid="uid://d2dmufpiw282s" path="res://sprites/Carrot/Selected/neutral/g3.png" id="56_2ref7"]
+[ext_resource type="Texture2D" uid="uid://c3pbxrhmqrs8e" path="res://sprites/Carrot/Selected/neutral/g4.png" id="57_ujpmi"]
+[ext_resource type="Texture2D" uid="uid://c7gb4dtaeiqv4" path="res://sprites/Carrot/Selected/neutral/g5.png" id="58_r2r2h"]
+[ext_resource type="Texture2D" uid="uid://bxqre31sxmmyf" path="res://sprites/Carrot/Selected/neutral/Carrot_-_Luc_-_Neutre-7.png" id="59_iurpq"]
+[ext_resource type="Texture2D" uid="uid://2d5kpct5aak5" path="res://sprites/Carrot/Selected/neutral/Carrot_-_Luc_-_Neutre-8.png" id="60_oge0i"]
+[ext_resource type="Texture2D" uid="uid://bditwyrugitlc" path="res://sprites/Carrot/Selected/neutral/Carrot_-_Luc_-_Neutre-9.png" id="61_ld86s"]
+[ext_resource type="Texture2D" uid="uid://bncxebgieo1n0" path="res://sprites/Carrot/Selected/neutral/Carrot_-_Luc_-_Neutre-10.png" id="62_cgwsg"]
+[ext_resource type="Texture2D" uid="uid://coljya3rixvlg" path="res://sprites/Carrot/Selected/neutral/Carrot_-_Luc_-_Neutre-12.png" id="63_jyclq"]
+[ext_resource type="Texture2D" uid="uid://dankimto7juvd" path="res://sprites/Carrot/Selected/neutral/Carrot_-_Luc_-_Neutre-13.png" id="64_v76vh"]
+[ext_resource type="Texture2D" uid="uid://bco5w15tgvm8g" path="res://sprites/Carrot/Selected/neutral/Carrot_-_Luc_-_Neutre-14.png" id="65_3la5b"]
+[ext_resource type="Texture2D" uid="uid://d4kg5dug54cbs" path="res://sprites/Carrot/Selected/neutral/Carrot_-_Luc_-_Neutre-15.png" id="66_mubya"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_jm4ql"]
 resource_local_to_scene = true
@@ -229,6 +249,70 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": ExtResource("27_qwume")
+}],
+"loop": true,
+"name": &"selectedDefaultDown",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("28_mlok2")
+}],
+"loop": true,
+"name": &"selectedDefaultLeft",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("27_dlyjv")
+}],
+"loop": true,
+"name": &"selectedDefaultPortaitDown",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("32_2dp0w")
+}],
+"loop": true,
+"name": &"selectedDefaultPortaitLeft",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("37_58oph")
+}],
+"loop": true,
+"name": &"selectedDefaultPortaitRight",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("42_2w13y")
+}],
+"loop": true,
+"name": &"selectedDefaultPortaitUp",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("33_pydf0")
+}],
+"loop": true,
+"name": &"selectedDefaultRight",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("34_bcfd1")
+}],
+"loop": true,
+"name": &"selectedDefaultUp",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": ExtResource("27_dlyjv")
 }, {
 "duration": 1.0,
@@ -307,22 +391,70 @@ animations = [{
 "name": &"selectedportraitUp",
 "speed": 5.0
 }, {
-"frames": [],
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("51_bdpwu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("52_xkmcs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("53_ii572")
+}, {
+"duration": 1.0,
+"texture": ExtResource("54_j6xwu")
+}],
 "loop": true,
 "name": &"selectedwalkDown",
 "speed": 5.0
 }, {
-"frames": [],
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("55_2k8py")
+}, {
+"duration": 1.0,
+"texture": ExtResource("56_2ref7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("57_ujpmi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("58_r2r2h")
+}],
 "loop": true,
 "name": &"selectedwalkLeft",
 "speed": 5.0
 }, {
-"frames": [],
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("59_iurpq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("60_oge0i")
+}, {
+"duration": 1.0,
+"texture": ExtResource("61_ld86s")
+}, {
+"duration": 1.0,
+"texture": ExtResource("62_cgwsg")
+}],
 "loop": true,
 "name": &"selectedwalkRight",
 "speed": 5.0
 }, {
-"frames": [],
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("63_jyclq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("64_v76vh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("65_3la5b")
+}, {
+"duration": 1.0,
+"texture": ExtResource("66_mubya")
+}],
 "loop": true,
 "name": &"selectedwalkUp",
 "speed": 5.0
@@ -406,7 +538,6 @@ animations = [{
 
 [node name="CarotAI" type="CharacterBody3D" groups=["Carrot"]]
 collision_layer = 4
-collision_mask = 3
 script = ExtResource("1_veyp6")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
@@ -423,4 +554,4 @@ script = ExtResource("3_eprs2")
 [node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="."]
 transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0, 0)
 sprite_frames = SubResource("SpriteFrames_tf6gy")
-animation = &"selectedportraitDown"
+animation = &"underground"

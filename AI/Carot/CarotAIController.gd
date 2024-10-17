@@ -2,7 +2,7 @@ extends CharacterBody3D
 
 enum States { IDLE, CHASING, HOLDED, DEAD, UNDERGROUND, THROWN }
 var current_state = States.CHASING
-var state : String = "idle"
+var state : String = "underground"
 var last_direction : String = "idle"
 var spawn_position: Vector3
 
@@ -30,7 +30,6 @@ var is_selected = false
 
 func _ready() -> void:
 	
-	print('target', target)
 	target._on_holding_state_changed.connect(_on_player_holding_state_changed)
 	
 	player = target
@@ -42,7 +41,6 @@ func _ready() -> void:
 
 # Cette fonction est appelée chaque frame pour déplacer l'IA
 func _physics_process(delta):
-	print(state)
 	if !target || !isMapLoadded:
 		isMapLoadded = true
 		return
@@ -126,18 +124,13 @@ func _chasing():
 						anim_player.play(selected + "DefaultRight")
 					"walkleft":
 						anim_player.play(selected + "DefaultLeft")
-						
-	elif state == "dead":
-		_dead()
-		
-		
-	elif state == "underground":
-		print('is underground')
-		has_target = false
-		anim_player.play("underground")
-		_underground()
+			"dead":
+				_dead()
+			"underground":
+				has_target = false
+				anim_player.play("underground")
+				_underground()
 	else:
-		
 		match state:
 			"walkdown":
 				anim_player.play(selected + "portaitDown")
@@ -148,7 +141,6 @@ func _chasing():
 			"walkleft":
 				anim_player.play(selected + "portaitLeft")
 			"idle":
-		
 				match last_direction:
 					"walkdown":
 						anim_player.play(selected + "DefaultPortaitDown")
@@ -163,7 +155,6 @@ func _holded():
 	velocity = Vector3.ZERO
 
 func _dead():
-	print('dead')
 	has_target = false
 	anim_player.play("dead")
 	$AnimatedSprite3D.animation_finished.connect(_on_death_anim_finished)
@@ -181,7 +172,6 @@ func _on_death_anim_finished():
 func _underground():
 	
 	if !has_target : 
-		print('is underground')
 		velocity = Vector3.ZERO
 		anim_player.play('underground')
 		
