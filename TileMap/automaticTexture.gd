@@ -22,7 +22,7 @@ func _update_material():
 		var material = StandardMaterial3D.new()
 		print("new Material")
 		material.shading_mode = BaseMaterial3D.SHADING_MODE_UNSHADED
-		material.transparency = BaseMaterial3D.TRANSPARENCY_ALPHA_SCISSOR
+		material.transparency = BaseMaterial3D.TRANSPARENCY_ALPHA_DEPTH_PRE_PASS
 		material.albedo_texture = texture
 		mesh = mesh.duplicate()
 		mesh.surface_set_material(0, material)

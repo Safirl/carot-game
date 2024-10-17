@@ -18,7 +18,6 @@ config/icon="res://icon.svg"
 [autoload]
 
 AudioStreamManager="*res://script/music/audio_stream_manager.gd"
-GameManager="*res://script/game_manager.gd"
 
 [dotnet]
 

@@ -1,6 +1,6 @@
 [gd_scene load_steps=10 format=3 uid="uid://c5i3l0txfmla1"]
 
-[ext_resource type="Texture2D" uid="uid://c1b4och55uc8q" path="res://sprites/character.png" id="1_1pdg6"]
+[ext_resource type="Texture2D" uid="uid://c1b4och55uc8q" path="res://sprites/Carrot/character.png" id="1_1pdg6"]
 [ext_resource type="Script" path="res://script/player.gd" id="1_byvo4"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_b1l44"]

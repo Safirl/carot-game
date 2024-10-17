@@ -1,9 +1,24 @@
+@tool
 class_name PickableObject extends RigidBody3D
 
 var original_rotation: Basis
 var camera_forward: Vector3
+@export var texture_selected: Texture2D
+
+##in meters
+@export var collisionShapeSize: Vector3 = Vector3(1,1,1):
+	set(new_collision):
+		collisionShapeSize = new_collision
+		_refresh_collision()
+
+@export var base_texture: Texture2D:
+	set(new_texture):
+		base_texture = new_texture
+		_refresh_texture()
 
 func _ready() -> void:
+	if Engine.is_editor_hint():
+		return
 	# Conservez la rotation originale à l'initialisation
 	original_rotation = global_transform.basis
 
@@ -13,6 +28,8 @@ func _ready() -> void:
 		camera_forward = camera.global_transform.basis.z.normalized()  # Vecteur avant de la caméra
 
 func _physics_process(delta: float) -> void:
+	if Engine.is_editor_hint():
+		return
 	# Conservez la direction vers l'avant de la caméra
 	var up_vector = Vector3.UP  # Garder l'axe vertical (Y) aligné avec l'axe UP global
 	var right_vector = Vector3.RIGHT  # L'axe droit par défaut
@@ -25,10 +42,14 @@ func _physics_process(delta: float) -> void:
 
 # Fonction pour geler ou dégeler l'objet
 func setFreeze(bfreeze: bool):
+	if Engine.is_editor_hint():
+		return
 	freeze = bfreeze
 
 # Fonction pour mettre en évidence l'objet avec une couleur rouge lorsqu'il est sélectionné
 func highlight(bhighlight):
+	if Engine.is_editor_hint():
+		return
 	if bhighlight:
 		$Sprite3D.modulate = Color(1, 0, 0, 1)  # Couleur rouge si l'objet est en surbrillance
 	else:
@@ -36,4 +57,15 @@ func highlight(bhighlight):
 
 # Fonction pour lancer l'objet avec une force d'impulsion
 func throw(impulse: Vector3):
+	if Engine.is_editor_hint():
+		return
 	apply_central_impulse(impulse)
+
+func _refresh_texture():
+	if Engine.is_editor_hint():
+		get_node("Sprite3D").texture = base_texture
+
+func _refresh_collision():
+	if Engine.is_editor_hint():
+		print("hi")
+		get_node("CollisionShape3D").shape.size = collisionShapeSize

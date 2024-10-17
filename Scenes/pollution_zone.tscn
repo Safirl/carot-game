@@ -1,44 +1,100 @@
-[gd_scene load_steps=6 format=3 uid="uid://bdnfxab00ytr2"]
+[gd_scene load_steps=15 format=3 uid="uid://bdnfxab00ytr2"]
 
 [ext_resource type="Script" path="res://Scenes/collisionStop.gd" id="1_d2wmd"]
-[ext_resource type="Texture2D" uid="uid://bq4r3l6wyoro" path="res://sprites/arrosage/Arrosage-2.png" id="2_yuqbs"]
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_wv64m"]
-size = Vector3(10.3042, 3.77521, 12.3387)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_t2cl8"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("2_yuqbs")
-}],
-"loop": true,
-"name": &"newWatering",
-"speed": 5.0
-}]
+[ext_resource type="Texture2D" uid="uid://cld4b6g33865p" path="res://sprites/arrosage/Arrosage-fixe.png" id="3_fw7og"]
+[ext_resource type="Texture2D" uid="uid://dt5htcw2en07e" path="res://sprites/arrosage/anim/Arrosage-1.png" id="3_qy5q2"]
+[ext_resource type="Texture2D" uid="uid://br4h54c7eadd6" path="res://sprites/arrosage/anim/Arrosage-2.png" id="4_yyuml"]
+[ext_resource type="Texture2D" uid="uid://cef6b5hdqlh41" path="res://sprites/arrosage/anim/Arrosage-3.png" id="5_3yoaf"]
+[ext_resource type="Texture2D" uid="uid://bsm35nsnqc8o1" path="res://sprites/arrosage/anim/Arrosage-4.png" id="6_3aafl"]
+[ext_resource type="Texture2D" uid="uid://dyh80vpbshdhu" path="res://sprites/arrosage/anim/Arrosage-5.png" id="7_x8b8m"]
+[ext_resource type="Texture2D" uid="uid://cow3pphw1t55w" path="res://sprites/arrosage/anim/Arrosage-6.png" id="8_12u5t"]
+[ext_resource type="Texture2D" uid="uid://7fteayw4axfi" path="res://sprites/arrosage/anim/Arrosage-7.png" id="9_l5i8p"]
+[ext_resource type="Texture2D" uid="uid://duq2kri2kjft3" path="res://sprites/arrosage/anim/Arrosage-8.png" id="10_oyj0p"]
 
 [sub_resource type="FogMaterial" id="FogMaterial_sxabb"]
 albedo = Color(0.639216, 0.607843, 0.905882, 1)
 height_falloff = 2.80959
 edge_fade = 0.237841
 
+[sub_resource type="SpriteFrames" id="SpriteFrames_87nnf"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_qy5q2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_yyuml")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_3yoaf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_3aafl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_x8b8m")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_12u5t")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_l5i8p")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_oyj0p")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_l5i8p")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_12u5t")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_x8b8m")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_3aafl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_3yoaf")
+}],
+"loop": true,
+"name": &"anim",
+"speed": 15.0
+}]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ydlx8"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_5tamv"]
+size = Vector3(0.500977, 1, 0.385162)
+
 [node name="Area3D" type="Area3D"]
 collision_layer = 7
 collision_mask = 7
 script = ExtResource("1_d2wmd")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-physics_interpolation_mode = 1
-shape = SubResource("BoxShape3D_wv64m")
+[node name="FogVolume" type="FogVolume" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.128599, 0, 0.297255)
+size = Vector3(5.02033, 2, 4.53327)
+material = SubResource("FogMaterial_sxabb")
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0.508483, 0)
+texture = ExtResource("3_fw7og")
 
 [node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.15149, 0)
-sprite_frames = SubResource("SpriteFrames_t2cl8")
-animation = &"newWatering"
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0.508483, 0)
+sprite_frames = SubResource("SpriteFrames_87nnf")
+animation = &"anim"
+frame_progress = 0.477223
 
-[node name="FogVolume" type="FogVolume" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00351715, 0, 0.0217743)
-size = Vector3(10.3799, 2, 12.334)
-material = SubResource("FogMaterial_sxabb")
+[node name="ShapeCast3D" type="ShapeCast3D" parent="."]
+transform = Transform3D(4.195, 0, 0, 0, 2.35, 0, 0, 0, 3.485, 0, 0, 0)
+shape = SubResource("BoxShape3D_ydlx8")
+target_position = Vector3(0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00927734, 0.479632, 0.0235748)
+shape = SubResource("BoxShape3D_5tamv")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
