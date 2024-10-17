@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://bdnfxab00ytr2"]
+[gd_scene load_steps=16 format=3 uid="uid://bdnfxab00ytr2"]
 
 [ext_resource type="Script" path="res://Scenes/collisionStop.gd" id="1_d2wmd"]
 [ext_resource type="Texture2D" uid="uid://cld4b6g33865p" path="res://sprites/arrosage/Arrosage-fixe.png" id="3_fw7og"]
@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://cow3pphw1t55w" path="res://sprites/arrosage/anim/Arrosage-6.png" id="8_12u5t"]
 [ext_resource type="Texture2D" uid="uid://7fteayw4axfi" path="res://sprites/arrosage/anim/Arrosage-7.png" id="9_l5i8p"]
 [ext_resource type="Texture2D" uid="uid://duq2kri2kjft3" path="res://sprites/arrosage/anim/Arrosage-8.png" id="10_oyj0p"]
+[ext_resource type="Script" path="res://script/pollution_shape_cast.gd" id="11_mp1xu"]
 
 [sub_resource type="FogMaterial" id="FogMaterial_sxabb"]
 albedo = Color(0.639216, 0.607843, 0.905882, 1)
@@ -69,12 +70,11 @@ animations = [{
 size = Vector3(0.500977, 1, 0.385162)
 
 [node name="Area3D" type="Area3D"]
-collision_layer = 7
-collision_mask = 7
+collision_mask = 6
 script = ExtResource("1_d2wmd")
 
 [node name="FogVolume" type="FogVolume" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.128599, 1.49616, 0.297255)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.128599, 0.904538, 0.297255)
 size = Vector3(5.02033, 2, 4.53327)
 material = SubResource("FogMaterial_sxabb")
 
@@ -89,9 +89,11 @@ animation = &"anim"
 frame_progress = 0.477223
 
 [node name="ShapeCast3D" type="ShapeCast3D" parent="."]
-transform = Transform3D(4.195, 0, 0, 0, 2.35, 0, 0, 0, 3.485, 0, 0.941207, 0)
+transform = Transform3D(4.195, 0, 0, 0, 2.35, 0, 0, 0, 3.485, 0, 0.349585, 0)
 shape = SubResource("BoxShape3D_ydlx8")
 target_position = Vector3(0, 0, 0)
+collision_mask = 6
+script = ExtResource("11_mp1xu")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00927734, 0.479632, 0.0235748)

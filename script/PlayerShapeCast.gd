@@ -23,7 +23,7 @@ func _getClosestObject(hitResult):
 	var closestObject = null
 	for hit in hitResult:
 		var object = hit.collider
-		if !object || (!object.has_node("PickableObjectComponent") && !object.has_node("AnimationButtonComponent")):
+		if !object || !object.has_node("PickableObjectComponent"):
 			continue
 		if !closestObject:
 			closestObject = object
@@ -45,6 +45,7 @@ func _checkObjectReachability(object) -> bool:
 	raycast.global_transform.origin = global_transform.origin
 	var direction = (object.global_transform.origin - global_transform.origin)
 	raycast.target_position = direction * 100
+	raycast.collision_mask = 4
 	raycast.enabled = true
 	raycast.force_raycast_update()
 	

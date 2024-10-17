@@ -14,7 +14,6 @@ func _process(delta: float) -> void:
 	else:
 		$AnimatedSprite3D.stop()
 
-
 func _on_body_entered(body: Node3D) -> void: 
 	if body.name == "Player":
 		body.hit()

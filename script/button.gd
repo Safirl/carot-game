@@ -37,7 +37,6 @@ func activate():
 		on_button_activated.emit()
 		isActivated = true
 		$CollisionShape3D.queue_free()
-		print($CollisionShape3D.disabled)
 
 	# Dupliquer le matériau avant de le modifier
 	var material = $MeshInstance3D.mesh.surface_get_material(0).duplicate()

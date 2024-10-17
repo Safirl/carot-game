@@ -6,19 +6,20 @@
 load_path = "res://.godot/imported/Serre-porte-cassee-1.png-7f5c8c1777ab901b8fe2a30fdf6f7b33.s3tc.ctex"
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_7ox3u"]
-size = Vector3(0.995, 2.855, 3.045)
+size = Vector3(0.3, 5, 4)
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_agbva"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hppjc"]
 transparency = 4
 shading_mode = 0
 albedo_texture = SubResource("CompressedTexture2D_qedwv")
 
-[sub_resource type="PlaneMesh" id="PlaneMesh_hg6tj"]
-material = SubResource("StandardMaterial3D_agbva")
+[sub_resource type="PlaneMesh" id="PlaneMesh_qq1uu"]
+material = SubResource("StandardMaterial3D_hppjc")
 
 [node name="Button" type="RigidBody3D"]
-collision_layer = 7
-collision_mask = 5
+collision_layer = 6
+collision_mask = 4
+gravity_scale = 0.0
 freeze = true
 freeze_mode = 1
 contact_monitor = true
@@ -32,6 +33,6 @@ shape = SubResource("BoxShape3D_7ox3u")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 transform = Transform3D(-8.74228e-08, 2, -8.74228e-08, 0, -8.74228e-08, -2, -2, -8.74228e-08, 3.82137e-15, 0, 0, 0)
-mesh = SubResource("PlaneMesh_hg6tj")
+mesh = SubResource("PlaneMesh_qq1uu")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
