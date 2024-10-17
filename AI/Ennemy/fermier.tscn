@@ -1,8 +1,9 @@
-[gd_scene load_steps=55 format=3 uid="uid://ioa2pcdgle2y"]
+[gd_scene load_steps=56 format=3 uid="uid://ioa2pcdgle2y"]
 
 [ext_resource type="PackedScene" uid="uid://bhr635oauf4nk" path="res://Scenes/player.tscn" id="1_a1yr3"]
 [ext_resource type="MeshLibrary" uid="uid://dtuvmf0ihiyh2" path="res://TileMap/baseMeshLibrary.tres" id="2_5eb5s"]
 [ext_resource type="Script" path="res://AI/Carot/CarotAIController.gd" id="3_7kqpg"]
+[ext_resource type="PackedScene" uid="uid://byepc6q4d58ep" path="res://AI/Ennemy/farmerAI.tscn" id="4_3dmwx"]
 [ext_resource type="Script" path="res://Scenes/camera_3d.gd" id="5_jddgn"]
 [ext_resource type="Texture2D" uid="uid://c1b4och55uc8q" path="res://sprites/character.png" id="6_8q0o1"]
 [ext_resource type="Texture2D" uid="uid://cfqmvelourrw1" path="res://sprites/coteG1.png" id="7_tfkfs"]
@@ -589,5 +590,8 @@ script = ExtResource("64_eod4v")
 transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0, 0)
 sprite_frames = SubResource("SpriteFrames_fp31w")
 animation = &"underground"
+
+[node name="FarmerAI" parent="." instance=ExtResource("4_3dmwx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.75695, 1.75291, 0)
 
 [connection signal="body_entered" from="Area3D" to="Area3D" method="_on_body_entered"]

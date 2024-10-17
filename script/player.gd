@@ -8,7 +8,7 @@ var last_direction : String = "idle"
 @export var carrotsNumber = 0 
 var direction : Vector3 = Vector3.ZERO
 var is_shaking : bool = false
-var original_position = Vector3(global_transform.origin.x, global_transform.origin.y +2,global_transform.origin.z)
+var original_position = Vector3(global_transform.origin.x, global_transform.origin.y +1.7,global_transform.origin.z)
 var durt_particles
 @export var gravity = 9.8
 

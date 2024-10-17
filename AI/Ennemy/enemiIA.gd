@@ -3,6 +3,8 @@ extends CharacterBody3D
 signal on_farmer_attacked(sender)
 var spawn_position: Vector3
 
+var durt_particles
+
 enum States { IDLE, CHASING, ATTACKING }
 var current_state = States.IDLE
 var state : String = "idle"
@@ -20,6 +22,8 @@ var accel = 1.
 @onready var ShapeCast = $ShapeCast3D
 
 func _ready() -> void:
+	durt_particles = $durt
+	durt_particles.emitting = false
 	spawn_position = global_position
 
 # Cette fonction est appelée chaque frame pour déplacer l'IA
@@ -74,6 +78,7 @@ func _physics_process(delta):
 						anim_player.play("DefaultLeft")
 
 func _chasing():
+
 	var current_target = ShapeCast.has_target()
 	if !current_target:
 		current_state = States.IDLE
@@ -89,6 +94,7 @@ func _chasing():
 		move_and_slide()
  
 func _idle():
+	durt_particles.emitting = false
 	if ShapeCast.has_target():
 		current_state = States.CHASING
 		return
@@ -102,14 +108,15 @@ func _attacking():
 	if anim_player.animation_finished.is_connected(_on_attack_finished):
 		return
 	anim_player.animation_finished.connect(_on_attack_finished)
+	durt_particles.emitting = false
 	if last_direction == "walkdown" || last_direction == "walkright":
 		anim_player.play("AttackRight")
 	else:
 		anim_player.play("AttackLeft")
 
 func _on_attack_finished():
+	durt_particles.emitting = true
 	anim_player.animation_finished.disconnect(_on_attack_finished)
-	
 	current_state = States.CHASING
 	on_farmer_attacked.emit(self)
 	if $ShapeCast3D.has_target() && global_transform.origin.distance_to($ShapeCast3D.target.global_position) < hit_distance:

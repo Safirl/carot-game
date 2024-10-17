@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=3 uid="uid://byepc6q4d58ep"]
+[gd_scene load_steps=34 format=3 uid="uid://byepc6q4d58ep"]
 
 [ext_resource type="Script" path="res://AI/Ennemy/enemiIA.gd" id="1_wkvh3"]
 [ext_resource type="Texture2D" uid="uid://c5yjwnsdwpqgf" path="res://sprites/fermier/attackLeft/jambes-1.png" id="2_dqswp"]
@@ -26,6 +26,7 @@
 [ext_resource type="Texture2D" uid="uid://da5yfu4su81rj" path="res://sprites/fermier/walkdown/jambes-2 7.png" id="12_cypj4"]
 [ext_resource type="Texture2D" uid="uid://damjenye2marn" path="res://sprites/fermier/walkdown/jambes-3 7.png" id="13_8nyc5"]
 [ext_resource type="PackedScene" path="res://Scenes/flash_component.tscn" id="26_gary6"]
+[ext_resource type="Texture2D" uid="uid://cubb3xl0xyldf" path="res://TileMap/Textures/Soil/Tuiles_1-2_07.png" id="27_pra2v"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_jptb6"]
 radius = 0.152998
@@ -222,6 +223,20 @@ animations = [{
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_h2t0n"]
 
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_jwil2"]
+angle_min = -311.0
+angle_max = 69.1
+spread = 180.0
+initial_velocity_max = 77.11
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fxe8c"]
+albedo_texture = ExtResource("27_pra2v")
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_o43tb"]
+material = SubResource("StandardMaterial3D_fxe8c")
+radius = 0.075
+height = 0.15
+
 [node name="FarmerAI" type="CharacterBody3D"]
 collision_layer = 4
 collision_mask = 3
@@ -249,3 +264,15 @@ collision_mask = 6
 script = ExtResource("8_skymh")
 
 [node name="FlashComponent" parent="." instance=ExtResource("26_gary6")]
+
+[node name="durt" type="GPUParticles3D" parent="."]
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0, 0)
+amount = 24
+lifetime = 0.35
+preprocess = 0.5
+speed_scale = 0.69
+explosiveness = 1.0
+randomness = 0.11
+fixed_fps = 60
+process_material = SubResource("ParticleProcessMaterial_jwil2")
+draw_pass_1 = SubResource("CapsuleMesh_o43tb")
