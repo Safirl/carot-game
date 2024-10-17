@@ -45,13 +45,13 @@ shader_parameter/softness = 1.195
 [sub_resource type="BoxShape3D" id="BoxShape3D_7ox3u"]
 size = Vector3(0.995, 2.855, 3.045)
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ahec7"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_51t7k"]
 transparency = 4
 shading_mode = 0
 albedo_texture = ExtResource("3_jxkak")
 
-[sub_resource type="PlaneMesh" id="PlaneMesh_65cna"]
-material = SubResource("StandardMaterial3D_ahec7")
+[sub_resource type="PlaneMesh" id="PlaneMesh_rwl8k"]
+material = SubResource("StandardMaterial3D_51t7k")
 
 [node name="Node3D" type="Node3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.8933, -0.0296888, -0.441497)
@@ -124,7 +124,7 @@ shape = SubResource("BoxShape3D_7ox3u")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Button"]
 transform = Transform3D(-8.74228e-08, 2, -8.74228e-08, 0, -8.74228e-08, -2, -2, -8.74228e-08, 3.82137e-15, 0.0629163, 0, 0)
-mesh = SubResource("PlaneMesh_65cna")
+mesh = SubResource("PlaneMesh_rwl8k")
 
 [node name="CarotAI" parent="." instance=ExtResource("10_gr6s8")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -28.4321, 1.04626, 5.40042)
