@@ -1,0 +1,35 @@
+[gd_scene load_steps=5 format=3 uid="uid://do4qfosrigo8v"]
+
+[ext_resource type="Script" path="res://Scenes/rotation.gd" id="1_2ygxo"]
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_4q1n5"]
+angle_min = -720.0
+angle_max = -389.8
+spread = 16.089
+flatness = 0.268
+initial_velocity_max = 224.0
+gravity = Vector3(0, -1000, 0)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bww68"]
+albedo_color = Color(0.32549, 0, 0.752941, 1)
+emission_enabled = true
+emission = Color(0.27451, 0, 0.541176, 1)
+
+[sub_resource type="SphereMesh" id="SphereMesh_trvaj"]
+material = SubResource("StandardMaterial3D_bww68")
+radius = 0.1
+height = 0.3
+
+[node name="Node3D" type="Node3D"]
+
+[node name="GPUParticles3D" type="GPUParticles3D" parent="."]
+amount = 7
+lifetime = 0.03
+interp_to_end = 0.04
+preprocess = 0.39
+speed_scale = 0.1
+fixed_fps = 60
+trail_lifetime = 0.01
+process_material = SubResource("ParticleProcessMaterial_4q1n5")
+draw_pass_1 = SubResource("SphereMesh_trvaj")
+script = ExtResource("1_2ygxo")
