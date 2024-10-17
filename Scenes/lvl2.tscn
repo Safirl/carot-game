@@ -1,9 +1,9 @@
 [gd_scene load_steps=17 format=3 uid="uid://ciapeobbliorq"]
 
-[ext_resource type="MeshLibrary" uid="uid://vv3ml06gqx8h" path="res://TileMap/baseMeshLibrary.tres" id="1_6ytwj"]
-[ext_resource type="PackedScene" uid="uid://bmrg8qrbxslf" path="res://Scenes/button.tscn" id="2_4fr55"]
+[ext_resource type="MeshLibrary" uid="uid://gq4fld82vs" path="res://TileMap/baseMeshLibrary.tres" id="1_6ytwj"]
+[ext_resource type="PackedScene" path="res://Scenes/button.tscn" id="2_4fr55"]
 [ext_resource type="Texture2D" uid="uid://u2pl7enk543j" path="res://sprites/Objects/Statue/Statue.png" id="3_1cwra"]
-[ext_resource type="PackedScene" uid="uid://b8r5lwoi0v86g" path="res://Scenes/animation_button_component.tscn" id="3_lnbv7"]
+[ext_resource type="PackedScene" path="res://Scenes/animation_button_component.tscn" id="3_lnbv7"]
 [ext_resource type="Script" path="res://script/button/animation_button_verriere.gd" id="4_uh1ij"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_g05fc"]
