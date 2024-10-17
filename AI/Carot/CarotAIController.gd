@@ -9,7 +9,11 @@ var spawn_position: Vector3
 var impulse_direction: Vector3
 var impulse: float = 3
 @export var gravity = 9.8
+var is_shaking : bool = false
 
+var shake_amount: float = 0.1  # L'amplitude du tremblement
+var shake_duration: float = 0.5  # La durée du tremblement en secondes
+var shake_timer: float = 0.0
 @export var default_speed: float = 1.
 var speed
 var accel = 1.
@@ -20,12 +24,15 @@ var isMapLoadded: bool
 var _is_bumped
 var _is_holding
 var player
+var original_position = Vector3(global_transform.origin.x, global_transform.origin.y +2,global_transform.origin.z)
+var has_target : bool = false
 
 func _ready() -> void:
 	target._on_holding_state_changed.connect(_on_player_holding_state_changed)
 	player = target
 	speed = default_speed
 	spawn_position = global_position
+	state = "underground"
 
 # Cette fonction est appelée chaque frame pour déplacer l'IA
 func _physics_process(delta):
@@ -46,6 +53,7 @@ func _physics_process(delta):
 			_underground()
 		States.THROWN:
 			_thrown()
+		 
 			
 	if not is_on_floor():
 		velocity.y -= gravity * delta
@@ -102,7 +110,22 @@ func _chasing():
 						anim_player.play("DefaultRight")
 					"walkleft":
 						anim_player.play("DefaultLeft")
+						
+	elif state == "dead":
+		_dead()
+		
+		
+	elif state == "underground":
+		direction.x = 0
+		direction.y = 0
+		direction.z = 0
+		velocity = direction
+		anim_player.play("underground")
+		is_shaking = true
+		apply_shake(delta)
+		_underground()
 	else:
+		
 		match state:
 			"walkdown":
 				anim_player.play("portaitDown")
@@ -128,9 +151,14 @@ func _holded():
 	velocity = Vector3.ZERO
 
 func _dead():
-	pass
+	anim_player.play("dead")
+	has_target = false
 
 func _underground():
+	pass
+	
+	
+	
 	pass
 
 func _holding():
@@ -174,14 +202,18 @@ func _thrown():
 		impulse_direction = Vector3.ZERO
 
 func hit() -> void:
+	state= "dead"
 	$FlashComponent.start_flash(.1)
+	_dead()
 
 func _on_farmer_ai_on_farmer_attacked(sender) -> void:
 	if global_transform.origin.distance_to(sender.global_position) < 5:
 		_is_bumped = true
-		#print("bumped")
+		
 
 func _on_player_holding_state_changed(bisHolding: Variant) -> void:
+	digUp()
+	
 	if bisHolding == true && (current_state != States.UNDERGROUND || current_state != States.DEAD):
 		_is_holding = true
 		if owner.name != "Player":
@@ -191,3 +223,29 @@ func _on_player_holding_state_changed(bisHolding: Variant) -> void:
 		_is_holding = false
 		target = owner.get_node("Player")
 		speed = default_speed
+
+
+func apply_shake(delta: float) -> void:
+	print('is in shaking')
+	if shake_timer > 0:
+		shake_timer -= delta
+		
+		# Générer un offset aléatoire autour de la position initiale
+		var shake_offset = Vector3(
+			randf_range(-shake_amount, shake_amount), # Tremblement sur l'axe X
+			randf_range(-shake_amount, shake_amount), # Tremblement sur l'axe Y
+			randf_range(-shake_amount, shake_amount)  # Tremblement sur l'axe Z
+		)
+		
+		# Appliquer le tremblement par rapport à la position initiale
+		global_transform.origin = original_position + shake_offset
+	else:
+		# Arrêter le tremblement et revenir à la position initiale
+		is_shaking = false
+		global_transform.origin = original_position
+
+
+func digUp():
+	has_target = true
+	state = "idle"
+	anim_player.play("DefaultDown")

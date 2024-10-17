@@ -822,6 +822,8 @@ script = ExtResource("2_f21bd")
 texture = ExtResource("1_yd4vq")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="baseMesh2"]
+collision_layer = 3
+collision_mask = 3
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="baseMesh2/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00012207, -0.0957611, -0.00219727)
@@ -834,6 +836,7 @@ script = ExtResource("2_f21bd")
 texture = ExtResource("3_nyl7s")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="baseMesh6"]
+collision_layer = 3
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="baseMesh6/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00012207, -0.0957611, -0.00219727)
@@ -846,6 +849,8 @@ script = ExtResource("2_f21bd")
 texture = ExtResource("4_585l3")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="baseMesh7"]
+collision_layer = 3
+collision_mask = 3
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="baseMesh7/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00012207, -0.0957611, -0.00219727)
@@ -858,6 +863,7 @@ script = ExtResource("2_f21bd")
 texture = ExtResource("5_tktx4")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="baseMesh12"]
+collision_layer = 3
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="baseMesh12/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00012207, -0.0957611, -0.00219727)
@@ -870,6 +876,7 @@ script = ExtResource("2_f21bd")
 texture = ExtResource("6_k6mg2")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="baseMesh17"]
+collision_layer = 3
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="baseMesh17/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00012207, -0.0957611, -0.00219727)
@@ -882,6 +889,7 @@ script = ExtResource("2_f21bd")
 texture = ExtResource("7_lqtk4")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="baseMesh22"]
+collision_layer = 3
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="baseMesh22/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00012207, -0.0957611, -0.00219727)
@@ -894,6 +902,7 @@ script = ExtResource("2_f21bd")
 texture = ExtResource("8_p176n")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="baseMesh27"]
+collision_layer = 3
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="baseMesh27/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00012207, -0.0957611, -0.00219727)
@@ -906,6 +915,7 @@ script = ExtResource("2_f21bd")
 texture = ExtResource("9_0e8i5")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="baseMesh32"]
+collision_layer = 3
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="baseMesh32/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00012207, -0.0957611, -0.00219727)
@@ -918,6 +928,7 @@ script = ExtResource("2_f21bd")
 texture = ExtResource("10_p24lh")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="baseMesh37"]
+collision_layer = 3
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="baseMesh37/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00012207, -0.0957611, -0.00219727)
@@ -930,6 +941,7 @@ script = ExtResource("2_f21bd")
 texture = ExtResource("11_l6s3l")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="baseMesh42"]
+collision_layer = 3
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="baseMesh42/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00012207, -0.0957611, -0.00219727)
@@ -942,6 +954,7 @@ script = ExtResource("2_f21bd")
 texture = ExtResource("12_73073")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="baseMesh47"]
+collision_layer = 3
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="baseMesh47/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00012207, -0.0957611, -0.00219727)
@@ -954,6 +967,7 @@ script = ExtResource("2_f21bd")
 texture = ExtResource("13_4h1c0")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="baseMesh52"]
+collision_layer = 3
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="baseMesh52/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00012207, -0.0957611, -0.00219727)
@@ -966,6 +980,7 @@ script = ExtResource("2_f21bd")
 texture = ExtResource("14_prbyp")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="baseMesh57"]
+collision_layer = 3
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="baseMesh57/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00012207, -0.0957611, -0.00219727)
@@ -978,6 +993,7 @@ script = ExtResource("2_f21bd")
 texture = ExtResource("15_4h2p7")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="baseMesh62"]
+collision_layer = 3
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="baseMesh62/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00012207, -0.0957611, -0.00219727)
@@ -994,6 +1010,7 @@ script = ExtResource("2_f21bd")
 texture = ExtResource("16_wu2m3")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="baseMesh67"]
+collision_layer = 3
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="baseMesh67/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00012207, -0.0957611, -0.00219727)
@@ -1010,6 +1027,7 @@ script = ExtResource("2_f21bd")
 texture = ExtResource("17_rt8p5")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="baseMesh72"]
+collision_layer = 3
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="baseMesh72/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00012207, -0.0957611, -0.00219727)
@@ -1043,6 +1061,7 @@ script = ExtResource("2_f21bd")
 texture = ExtResource("19_ae1cp")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="baseMesh78"]
+collision_layer = 3
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="baseMesh78/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00012207, -0.0957611, -0.00219727)
@@ -1059,6 +1078,7 @@ script = ExtResource("2_f21bd")
 texture = ExtResource("20_fivyc")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="baseMesh79"]
+collision_layer = 3
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="baseMesh79/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00012207, -0.0957611, -0.00219727)
@@ -1075,6 +1095,7 @@ script = ExtResource("2_f21bd")
 texture = ExtResource("21_fwh0e")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="baseMesh80"]
+collision_layer = 3
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="baseMesh80/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00012207, -0.0957611, -0.00219727)
@@ -1091,6 +1112,7 @@ script = ExtResource("2_f21bd")
 texture = ExtResource("22_t6gan")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="baseMesh81"]
+collision_layer = 3
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="baseMesh81/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00012207, -0.0957611, -0.00219727)
@@ -1107,6 +1129,7 @@ script = ExtResource("2_f21bd")
 texture = ExtResource("23_vu5fp")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="baseMesh73"]
+collision_layer = 3
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="baseMesh73/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00012207, -0.0957611, -0.00219727)
@@ -1123,6 +1146,7 @@ script = ExtResource("2_f21bd")
 texture = ExtResource("24_fvys7")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="baseMesh74"]
+collision_layer = 3
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="baseMesh74/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00012207, -0.0957611, -0.00219727)
@@ -1139,6 +1163,7 @@ script = ExtResource("2_f21bd")
 texture = ExtResource("25_exdcn")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="baseMesh75"]
+collision_layer = 3
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="baseMesh75/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00012207, -0.0957611, -0.00219727)
@@ -1155,6 +1180,7 @@ script = ExtResource("2_f21bd")
 texture = ExtResource("26_ocvk5")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="baseMesh76"]
+collision_layer = 3
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="baseMesh76/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00012207, -0.0957611, -0.00219727)
@@ -1171,6 +1197,7 @@ script = ExtResource("2_f21bd")
 texture = ExtResource("27_qk0lb")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="baseMesh68"]
+collision_layer = 3
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="baseMesh68/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00012207, -0.0957611, -0.00219727)
@@ -1187,6 +1214,7 @@ script = ExtResource("2_f21bd")
 texture = ExtResource("28_kb225")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="baseMesh69"]
+collision_layer = 3
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="baseMesh69/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00012207, -0.0957611, -0.00219727)
@@ -1203,6 +1231,7 @@ script = ExtResource("2_f21bd")
 texture = ExtResource("29_qmxs3")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="baseMesh70"]
+collision_layer = 3
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="baseMesh70/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00012207, -0.0957611, -0.00219727)
@@ -1219,6 +1248,7 @@ script = ExtResource("2_f21bd")
 texture = ExtResource("30_hef6b")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="baseMesh71"]
+collision_layer = 3
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="baseMesh71/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00012207, -0.0957611, -0.00219727)
@@ -1235,6 +1265,7 @@ script = ExtResource("2_f21bd")
 texture = ExtResource("31_0spdf")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="baseMesh63"]
+collision_layer = 3
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="baseMesh63/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00012207, -0.0957611, -0.00219727)
@@ -1247,6 +1278,7 @@ script = ExtResource("2_f21bd")
 texture = ExtResource("32_sn8j6")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="baseMesh64"]
+collision_layer = 3
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="baseMesh64/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00012207, -0.0957611, -0.00219727)
@@ -1259,6 +1291,7 @@ script = ExtResource("2_f21bd")
 texture = ExtResource("33_ylnkw")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="baseMesh65"]
+collision_layer = 3
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="baseMesh65/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00012207, -0.0957611, -0.00219727)
@@ -1271,6 +1304,7 @@ script = ExtResource("2_f21bd")
 texture = ExtResource("34_1kgeu")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="baseMesh66"]
+collision_layer = 3
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="baseMesh66/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00012207, -0.0957611, -0.00219727)
@@ -1283,6 +1317,7 @@ script = ExtResource("2_f21bd")
 texture = ExtResource("35_8ljsu")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="baseMesh58"]
+collision_layer = 3
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="baseMesh58/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00012207, -0.0957611, -0.00219727)
@@ -1295,6 +1330,7 @@ script = ExtResource("2_f21bd")
 texture = ExtResource("36_3aeka")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="baseMesh59"]
+collision_layer = 3
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="baseMesh59/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00012207, -0.0957611, -0.00219727)
@@ -1307,6 +1343,7 @@ script = ExtResource("2_f21bd")
 texture = ExtResource("37_h0uoc")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="baseMesh60"]
+collision_layer = 3
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="baseMesh60/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00012207, -0.0957611, -0.00219727)
@@ -1319,6 +1356,7 @@ script = ExtResource("2_f21bd")
 texture = ExtResource("38_dxbhs")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="baseMesh61"]
+collision_layer = 3
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="baseMesh61/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00012207, -0.0957611, -0.00219727)
@@ -1331,6 +1369,7 @@ script = ExtResource("2_f21bd")
 texture = ExtResource("14_odh7i")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="baseMesh53"]
+collision_layer = 3
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="baseMesh53/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00012207, -0.0957611, -0.00219727)
@@ -1343,6 +1382,7 @@ script = ExtResource("2_f21bd")
 texture = ExtResource("15_3ys6r")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="baseMesh54"]
+collision_layer = 3
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="baseMesh54/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00012207, -0.0957611, -0.00219727)
@@ -1355,6 +1395,7 @@ script = ExtResource("2_f21bd")
 texture = ExtResource("16_ml7in")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="baseMesh55"]
+collision_layer = 3
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="baseMesh55/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00012207, -0.0957611, -0.00219727)
@@ -1367,6 +1408,7 @@ script = ExtResource("2_f21bd")
 texture = ExtResource("17_l4tvn")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="baseMesh56"]
+collision_layer = 3
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="baseMesh56/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00012207, -0.0957611, -0.00219727)
@@ -1379,6 +1421,7 @@ script = ExtResource("2_f21bd")
 texture = ExtResource("18_mq10f")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="baseMesh48"]
+collision_layer = 3
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="baseMesh48/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00012207, -0.0957611, -0.00219727)
@@ -1391,6 +1434,7 @@ script = ExtResource("2_f21bd")
 texture = ExtResource("19_f7vai")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="baseMesh49"]
+collision_layer = 3
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="baseMesh49/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00012207, -0.0957611, -0.00219727)
@@ -1403,6 +1447,7 @@ script = ExtResource("2_f21bd")
 texture = ExtResource("20_lubs0")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="baseMesh50"]
+collision_layer = 3
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="baseMesh50/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00012207, -0.0957611, -0.00219727)
@@ -1415,6 +1460,7 @@ script = ExtResource("2_f21bd")
 texture = ExtResource("21_ydhwq")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="baseMesh51"]
+collision_layer = 3
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="baseMesh51/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00012207, -0.0957611, -0.00219727)
@@ -1427,6 +1473,7 @@ script = ExtResource("2_f21bd")
 texture = ExtResource("22_g41ro")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="baseMesh43"]
+collision_layer = 3
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="baseMesh43/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00012207, -0.0957611, -0.00219727)
@@ -1439,6 +1486,7 @@ script = ExtResource("2_f21bd")
 texture = ExtResource("23_3jhu5")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="baseMesh44"]
+collision_layer = 3
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="baseMesh44/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00012207, -0.0957611, -0.00219727)
@@ -1451,6 +1499,7 @@ script = ExtResource("2_f21bd")
 texture = ExtResource("24_krg7s")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="baseMesh45"]
+collision_layer = 3
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="baseMesh45/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00012207, -0.0957611, -0.00219727)
@@ -1463,6 +1512,7 @@ script = ExtResource("2_f21bd")
 texture = ExtResource("25_dp8vj")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="baseMesh46"]
+collision_layer = 3
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="baseMesh46/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00012207, -0.0957611, -0.00219727)
@@ -1475,6 +1525,7 @@ script = ExtResource("2_f21bd")
 texture = ExtResource("26_lxsx1")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="baseMesh38"]
+collision_layer = 3
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="baseMesh38/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00012207, -0.0957611, -0.00219727)
@@ -1487,6 +1538,7 @@ script = ExtResource("2_f21bd")
 texture = ExtResource("27_oona5")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="baseMesh39"]
+collision_layer = 3
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="baseMesh39/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00012207, -0.0957611, -0.00219727)
@@ -1499,6 +1551,7 @@ script = ExtResource("2_f21bd")
 texture = ExtResource("28_0ogbi")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="baseMesh40"]
+collision_layer = 3
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="baseMesh40/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00012207, -0.0957611, -0.00219727)
@@ -1511,6 +1564,7 @@ script = ExtResource("2_f21bd")
 texture = ExtResource("29_6eg2d")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="baseMesh41"]
+collision_layer = 3
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="baseMesh41/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00012207, -0.0957611, -0.00219727)
@@ -1523,6 +1577,7 @@ script = ExtResource("2_f21bd")
 texture = ExtResource("30_adf8f")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="baseMesh33"]
+collision_layer = 3
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="baseMesh33/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00012207, -0.0957611, -0.00219727)
@@ -1535,6 +1590,7 @@ script = ExtResource("2_f21bd")
 texture = ExtResource("31_ranuk")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="baseMesh34"]
+collision_layer = 3
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="baseMesh34/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00012207, -0.0957611, -0.00219727)
@@ -1547,6 +1603,7 @@ script = ExtResource("2_f21bd")
 texture = ExtResource("32_efrwa")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="baseMesh35"]
+collision_layer = 3
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="baseMesh35/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00012207, -0.0957611, -0.00219727)
@@ -1559,6 +1616,7 @@ script = ExtResource("2_f21bd")
 texture = ExtResource("33_7k8ny")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="baseMesh36"]
+collision_layer = 3
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="baseMesh36/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00012207, -0.0957611, -0.00219727)
@@ -1571,6 +1629,7 @@ script = ExtResource("2_f21bd")
 texture = ExtResource("34_qeu5u")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="baseMesh28"]
+collision_layer = 3
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="baseMesh28/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00012207, -0.0957611, -0.00219727)
@@ -1583,6 +1642,7 @@ script = ExtResource("2_f21bd")
 texture = ExtResource("35_ytt7l")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="baseMesh29"]
+collision_layer = 3
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="baseMesh29/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00012207, -0.0957611, -0.00219727)
@@ -1595,6 +1655,7 @@ script = ExtResource("2_f21bd")
 texture = ExtResource("36_beof3")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="baseMesh30"]
+collision_layer = 3
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="baseMesh30/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00012207, -0.0957611, -0.00219727)
@@ -1607,6 +1668,7 @@ script = ExtResource("2_f21bd")
 texture = ExtResource("37_ipq3y")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="baseMesh31"]
+collision_layer = 3
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="baseMesh31/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00012207, -0.0957611, -0.00219727)
@@ -1619,6 +1681,7 @@ script = ExtResource("2_f21bd")
 texture = ExtResource("38_7ey34")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="baseMesh23"]
+collision_layer = 3
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="baseMesh23/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00012207, -0.0957611, -0.00219727)
@@ -1631,6 +1694,7 @@ script = ExtResource("2_f21bd")
 texture = ExtResource("39_ebxud")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="baseMesh24"]
+collision_layer = 3
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="baseMesh24/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00012207, -0.0957611, -0.00219727)
@@ -1643,6 +1707,7 @@ script = ExtResource("2_f21bd")
 texture = ExtResource("40_idik5")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="baseMesh25"]
+collision_layer = 3
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="baseMesh25/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00012207, -0.0957611, -0.00219727)
@@ -1655,6 +1720,7 @@ script = ExtResource("2_f21bd")
 texture = ExtResource("41_68a8f")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="baseMesh26"]
+collision_layer = 3
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="baseMesh26/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00012207, -0.0957611, -0.00219727)
@@ -1667,6 +1733,7 @@ script = ExtResource("2_f21bd")
 texture = ExtResource("42_bcaua")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="baseMesh18"]
+collision_layer = 3
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="baseMesh18/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00012207, -0.0957611, -0.00219727)
@@ -1679,6 +1746,7 @@ script = ExtResource("2_f21bd")
 texture = ExtResource("50_hpysi")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="baseMesh19"]
+collision_layer = 3
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="baseMesh19/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00012207, -0.0957611, -0.00219727)
@@ -1691,6 +1759,7 @@ script = ExtResource("2_f21bd")
 texture = ExtResource("44_cljkm")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="baseMesh20"]
+collision_layer = 3
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="baseMesh20/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00012207, -0.0957611, -0.00219727)
@@ -1703,6 +1772,7 @@ script = ExtResource("2_f21bd")
 texture = ExtResource("45_nosmk")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="baseMesh21"]
+collision_layer = 3
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="baseMesh21/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00012207, -0.0957611, -0.00219727)
@@ -1715,6 +1785,7 @@ script = ExtResource("2_f21bd")
 texture = ExtResource("46_mvs8a")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="baseMesh13"]
+collision_layer = 3
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="baseMesh13/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00012207, -0.0957611, -0.00219727)
@@ -1727,6 +1798,7 @@ script = ExtResource("2_f21bd")
 texture = ExtResource("47_o43e8")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="baseMesh14"]
+collision_layer = 3
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="baseMesh14/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00012207, -0.0957611, -0.00219727)
@@ -1739,6 +1811,7 @@ script = ExtResource("2_f21bd")
 texture = ExtResource("48_x08t7")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="baseMesh15"]
+collision_layer = 3
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="baseMesh15/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00012207, -0.0957611, -0.00219727)
@@ -1751,6 +1824,7 @@ script = ExtResource("2_f21bd")
 texture = ExtResource("49_6mrvf")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="baseMesh16"]
+collision_layer = 3
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="baseMesh16/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00012207, -0.0957611, -0.00219727)
@@ -1763,6 +1837,7 @@ script = ExtResource("2_f21bd")
 texture = ExtResource("50_hpysi")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="baseMesh8"]
+collision_layer = 3
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="baseMesh8/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00012207, -0.0957611, -0.00219727)
@@ -1775,6 +1850,7 @@ script = ExtResource("2_f21bd")
 texture = ExtResource("51_qgt8d")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="baseMesh9"]
+collision_layer = 3
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="baseMesh9/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00012207, -0.0957611, -0.00219727)
@@ -1787,6 +1863,7 @@ script = ExtResource("2_f21bd")
 texture = ExtResource("52_5gh7x")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="baseMesh10"]
+collision_layer = 3
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="baseMesh10/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00012207, -0.0957611, -0.00219727)
@@ -1799,6 +1876,7 @@ script = ExtResource("2_f21bd")
 texture = ExtResource("53_abg66")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="baseMesh11"]
+collision_layer = 3
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="baseMesh11/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00012207, -0.0957611, -0.00219727)
@@ -1811,6 +1889,7 @@ script = ExtResource("2_f21bd")
 texture = ExtResource("54_qi7sf")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="baseMesh3"]
+collision_layer = 3
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="baseMesh3/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00012207, -0.0957611, -0.00219727)
@@ -1823,6 +1902,7 @@ script = ExtResource("2_f21bd")
 texture = ExtResource("1_afuxq")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="baseMesh4"]
+collision_layer = 3
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="baseMesh4/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00012207, -0.0957611, -0.00219727)
@@ -1835,6 +1915,7 @@ script = ExtResource("2_f21bd")
 texture = ExtResource("56_7wxp5")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="baseMesh5"]
+collision_layer = 3
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="baseMesh5/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00012207, -0.0957611, -0.00219727)
@@ -1847,6 +1928,7 @@ script = ExtResource("2_f21bd")
 texture = ExtResource("82_10oxr")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="baseMesh82"]
+collision_layer = 3
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="baseMesh82/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00012207, -0.0957611, -0.00219727)
@@ -1859,6 +1941,7 @@ script = ExtResource("2_f21bd")
 texture = ExtResource("83_xs6ek")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="baseMesh83"]
+collision_layer = 3
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="baseMesh83/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00012207, -0.0957611, -0.00219727)
@@ -1871,6 +1954,7 @@ script = ExtResource("2_f21bd")
 texture = ExtResource("84_h53fc")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="baseMesh84"]
+collision_layer = 3
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="baseMesh84/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00012207, -0.0957611, -0.00219727)
@@ -1883,6 +1967,7 @@ script = ExtResource("2_f21bd")
 texture = ExtResource("84_8d72j")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="baseMesh91"]
+collision_layer = 3
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="baseMesh91/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00012207, -0.0957611, -0.00219727)
@@ -1895,6 +1980,7 @@ script = ExtResource("2_f21bd")
 texture = ExtResource("85_tgx2s")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="baseMesh85"]
+collision_layer = 3
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="baseMesh85/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00012207, -0.0957611, -0.00219727)
@@ -1907,6 +1993,7 @@ script = ExtResource("2_f21bd")
 texture = ExtResource("86_372ii")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="baseMesh86"]
+collision_layer = 3
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="baseMesh86/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00012207, -0.0957611, -0.00219727)
@@ -1919,6 +2006,7 @@ script = ExtResource("2_f21bd")
 texture = ExtResource("87_8kw5n")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="baseMesh87"]
+collision_layer = 3
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="baseMesh87/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00012207, -0.0957611, -0.00219727)
@@ -1931,6 +2019,7 @@ script = ExtResource("2_f21bd")
 texture = ExtResource("88_5nhqb")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="baseMesh88"]
+collision_layer = 3
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="baseMesh88/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00012207, -0.0957611, -0.00219727)
@@ -1943,6 +2032,7 @@ script = ExtResource("2_f21bd")
 texture = ExtResource("89_kc7q6")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="baseMesh89"]
+collision_layer = 3
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="baseMesh89/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00012207, -0.0957611, -0.00219727)
@@ -1955,6 +2045,7 @@ script = ExtResource("2_f21bd")
 texture = ExtResource("90_atqxl")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="baseMesh90"]
+collision_layer = 3
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="baseMesh90/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00012207, -0.0957611, -0.00219727)

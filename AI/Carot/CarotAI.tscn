@@ -1,8 +1,10 @@
-[gd_scene load_steps=45 format=3 uid="uid://dua2oubaha4yv"]
+[gd_scene load_steps=46 format=3 uid="uid://dua2oubaha4yv"]
 
 [ext_resource type="Script" path="res://AI/Carot/CarotAIController.gd" id="1_veyp6"]
+[ext_resource type="Script" path="res://script/PickableObjectComponent.gd" id="2_cprcl"]
 [ext_resource type="Texture2D" uid="uid://c1b4och55uc8q" path="res://sprites/character.png" id="2_lt835"]
 [ext_resource type="Texture2D" uid="uid://cfqmvelourrw1" path="res://sprites/coteG1.png" id="3_0vlpx"]
+[ext_resource type="Script" path="res://script/flash_hit.gd" id="3_eprs2"]
 [ext_resource type="Texture2D" uid="uid://djrk1r1whjhhn" path="res://sprites/dos7.png" id="5_eee4e"]
 [ext_resource type="Texture2D" uid="uid://ft6ba0pictj7" path="res://sprites/portait/portant-face-2.png" id="6_den53"]
 [ext_resource type="Texture2D" uid="uid://bvk1tujaq72l8" path="res://sprites/portait/portant-face-3.png" id="7_d8ti2"]
@@ -13,6 +15,7 @@
 [ext_resource type="Texture2D" uid="uid://cd4ty1373tc7t" path="res://sprites/portait/portant-droite-1.png" id="10_6pk0e"]
 [ext_resource type="Texture2D" uid="uid://bkwkkuq5wkp0q" path="res://sprites/portait/portant-droite-3.png" id="11_1dcn5"]
 [ext_resource type="Texture2D" uid="uid://x7fwhyeikftv" path="res://sprites/portait/portant-droite-4.png" id="12_06j87"]
+[ext_resource type="Texture2D" uid="uid://b461x2bm83fee" path="res://sprites/écrasée.png" id="12_vhoul"]
 [ext_resource type="Texture2D" uid="uid://ctmi46cgy2ohc" path="res://sprites/portait/portant-droite-5.png" id="13_ljkuw"]
 [ext_resource type="Texture2D" uid="uid://cd476jcp0ppus" path="res://sprites/luc1.png" id="14_xf0pr"]
 [ext_resource type="Texture2D" uid="uid://bypa2bhgctgtl" path="res://sprites/portait/Carrot_-_Luc_-_Portant-2.png" id="15_qyn3g"]
@@ -35,11 +38,10 @@
 [ext_resource type="Texture2D" uid="uid://cgfvdjuew28y5" path="res://sprites/coteD5.png" id="25_ip16f"]
 [ext_resource type="Texture2D" uid="uid://do3v534gkjme6" path="res://sprites/portait/portant-dos-5.png" id="25_xwwa3"]
 [ext_resource type="Texture2D" uid="uid://bskvjb8olkwrw" path="res://sprites/dos6.png" id="26_fjhaf"]
+[ext_resource type="Texture2D" uid="uid://boojlt733hsj6" path="res://sprites/underground.png" id="26_gg753"]
 [ext_resource type="Texture2D" uid="uid://ba1bnmeadt4n7" path="res://sprites/dos8.png" id="27_2g0pn"]
 [ext_resource type="Texture2D" uid="uid://keywqrxc7tpm" path="res://sprites/dos9.png" id="28_uj7nl"]
 [ext_resource type="Texture2D" uid="uid://brvxiyymkchx7" path="res://sprites/dos10.png" id="29_87pjq"]
-[ext_resource type="PackedScene" uid="uid://ciiqcf5oeyq8s" path="res://Scenes/pickable_object_component.tscn" id="30_f7tjw"]
-[ext_resource type="PackedScene" path="res://Scenes/flash_component.tscn" id="31_qiker"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_jm4ql"]
 resource_local_to_scene = true
@@ -49,8 +51,6 @@ height = 0.798531
 [sub_resource type="AtlasTexture" id="AtlasTexture_jvwik"]
 atlas = ExtResource("2_lt835")
 region = Rect2(0, 10, 422, 830)
-
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_vv71c"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_tf6gy"]
 resource_local_to_scene = true
@@ -117,6 +117,14 @@ animations = [{
 }],
 "loop": true,
 "name": &"DefaultUp",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("12_vhoul")
+}],
+"loop": true,
+"name": &"dead",
 "speed": 5.0
 }, {
 "frames": [{
@@ -189,7 +197,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("CompressedTexture2D_vv71c")
+"texture": ExtResource("26_gg753")
 }],
 "loop": true,
 "name": &"underground",

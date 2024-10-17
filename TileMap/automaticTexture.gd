@@ -13,7 +13,8 @@ func _ready():
 
 # Fonction qui met à jour le matériau en utilisant la texture définie
 func _update_material():
-
+	var staticBody: StaticBody3D = get_node("StaticBody3D")
+	staticBody.set_collision_layer_value(2, true)
 	if not Engine.is_editor_hint():
 		return
 	# Si une texture est assignée, on crée ou met à jour le matériau

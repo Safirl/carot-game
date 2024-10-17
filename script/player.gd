@@ -10,6 +10,7 @@ var direction : Vector3 = Vector3.ZERO
 var is_shaking : bool = false
 var original_position = Vector3(global_transform.origin.x, global_transform.origin.y +2,global_transform.origin.z)
 var durt_particles
+@export var gravity = 9.8
 
 var shake_amount: float = 0.1  # L'amplitude du tremblement
 var shake_duration: float = 0.5  # La durée du tremblement en secondes
@@ -19,6 +20,7 @@ var impulse_direction: Vector3
 var _is_dead : bool = false
 var _is_shaking = false
 var interaction_counter : int = 0
+var jump_strength : float = 10.0 
 
 #Holding input
 var holding_time = 0.0
@@ -121,6 +123,8 @@ func _physics_process(delta):
 		velocity = velocity.lerp(direction * move_speed, accel * delta)
 	else : 
 		velocity = Vector3.ZERO
+	if not is_on_floor():
+		velocity.y -= gravity * delta
 	move_and_slide()
 
 func _on_area_3d_body_entered(body: Node3D) -> void:
@@ -185,6 +189,8 @@ func interact():
 			state = "walkdown"
 			anim_player.play("walkDown")
 			interaction_counter = 0
+			littleJump()
+			
 		
 			
 			
@@ -254,3 +260,12 @@ func apply_shake(delta: float) -> void:
 		is_shaking = false
 		durt_particles.emitting = false
 		global_transform.origin = original_position
+
+
+func littleJump():
+	print(velocity)
+	print(direction.y)
+	if direction.y == 0:
+		velocity.y =+ jump_strength
+	
+	
