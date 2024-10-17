@@ -49,11 +49,33 @@ func setFreeze(bfreeze: bool):
 # Fonction pour mettre en évidence l'objet avec une couleur rouge lorsqu'il est sélectionné
 func highlight(bhighlight):
 	if Engine.is_editor_hint():
-		return
+			return
+	# Récupérer le chemin de la texture actuelle
+	var current_texture_path = $Sprite3D.texture.get_path()
+	
 	if bhighlight:
-		$Sprite3D.modulate = Color(1, 0, 0, 1)  # Couleur rouge si l'objet est en surbrillance
+		# Construire le chemin de la texture highlight (en ajoutant "-selec" avant l'extension du fichier)
+		var highlight_texture_path = current_texture_path.replace(".png", "-selec.png")
+		
+		# Charger la nouvelle texture highlight
+		if ResourceLoader.exists(highlight_texture_path):
+			var highlight_texture = ResourceLoader.load(highlight_texture_path) as Texture
+			$Sprite3D.texture = highlight_texture
+		else:
+			print("Erreur : Texture de surbrillance non trouvée pour ", highlight_texture_path)
 	else:
-		$Sprite3D.modulate = Color(1, 1, 1, 1)  # Couleur blanche par défaut
+		# Remettre la texture par défaut (en enlevant "-selec" du nom si c'était une texture highlight)
+		if current_texture_path.ends_with("-selec.png"):
+			var default_texture_path = current_texture_path.replace("-selec.png", ".png")
+			
+			# Charger la texture par défaut
+			if ResourceLoader.exists(default_texture_path):
+				var default_texture = ResourceLoader.load(default_texture_path) as Texture
+				$Sprite3D.texture = default_texture
+			else:
+				print("Erreur : Texture par défaut non trouvée pour ", default_texture_path)
+		else:
+			$Sprite3D.modulate = Color(1, 1, 1, 1)
 
 # Fonction pour lancer l'objet avec une force d'impulsion
 func throw(impulse: Vector3):
@@ -67,5 +89,4 @@ func _refresh_texture():
 
 func _refresh_collision():
 	if Engine.is_editor_hint():
-		print("hi")
 		get_node("CollisionShape3D").shape.size = collisionShapeSize

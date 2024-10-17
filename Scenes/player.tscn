@@ -277,7 +277,7 @@ animations = [{
 
 [node name="Player" type="CharacterBody3D"]
 collision_layer = 2
-collision_mask = 2
+collision_mask = 3
 script = ExtResource("1_byvo4")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
@@ -293,7 +293,7 @@ animation = &"DefaultDown"
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
 shape = SubResource("SphereShape3D_beqvw")
 target_position = Vector3(0, 0, 0)
-collision_mask = 4
+collision_mask = 6
 script = ExtResource("30_3e68u")
 
 [node name="FlashComponent" parent="." instance=ExtResource("40_64264")]

@@ -8,13 +8,13 @@ load_path = "res://.godot/imported/Serre-porte-cassee-1.png-7f5c8c1777ab901b8fe2
 [sub_resource type="BoxShape3D" id="BoxShape3D_7ox3u"]
 size = Vector3(0.995, 2.855, 3.045)
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_668hl"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fam40"]
 transparency = 4
 shading_mode = 0
 albedo_texture = SubResource("CompressedTexture2D_qedwv")
 
-[sub_resource type="PlaneMesh" id="PlaneMesh_jyngg"]
-material = SubResource("StandardMaterial3D_668hl")
+[sub_resource type="PlaneMesh" id="PlaneMesh_xwfwd"]
+material = SubResource("StandardMaterial3D_fam40")
 
 [node name="Button" type="RigidBody3D"]
 collision_layer = 7
@@ -32,6 +32,6 @@ shape = SubResource("BoxShape3D_7ox3u")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 transform = Transform3D(-8.74228e-08, 2, -8.74228e-08, 0, -8.74228e-08, -2, -2, -8.74228e-08, 3.82137e-15, 0, 0, 0)
-mesh = SubResource("PlaneMesh_jyngg")
+mesh = SubResource("PlaneMesh_xwfwd")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

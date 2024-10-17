@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://raghvv2anqjp"]
+[gd_scene load_steps=24 format=3 uid="uid://raghvv2anqjp"]
 
 [ext_resource type="Script" path="res://Scenes/camera_3d.gd" id="1_u7fxj"]
 [ext_resource type="PackedScene" uid="uid://bhr635oauf4nk" path="res://Scenes/player.tscn" id="2_5qt3q"]
@@ -6,9 +6,11 @@
 [ext_resource type="Texture2D" uid="uid://cbgpb8sur6nak" path="res://sprites/Serre/Serre-porte-cassee-2.png" id="3_jxkak"]
 [ext_resource type="Shader" path="res://script/Vignette.gdshader" id="4_keinb"]
 [ext_resource type="Texture2D" uid="uid://cy1ug108nhrjy" path="res://sprites/Serre/Serre-porte-cassee-3.png" id="4_xadb3"]
-[ext_resource type="PackedScene" uid="uid://d4qbm4vesv64" path="res://Scenes/pickable_object.tscn" id="5_6xdsi"]
+[ext_resource type="Script" path="res://script/pickable_object.gd" id="6_wuxo4"]
+[ext_resource type="Texture2D" uid="uid://cownada7qhc1x" path="res://sprites/Objects/Cailloux/Cailloux.png" id="7_av8nj"]
 [ext_resource type="PackedScene" uid="uid://c7wgfrwfcaf7t" path="res://Scenes/lvl1.tscn" id="7_nix1k"]
 [ext_resource type="Script" path="res://script/button.gd" id="7_v7p4h"]
+[ext_resource type="PackedScene" uid="uid://ciiqcf5oeyq8s" path="res://Scenes/pickable_object_component.tscn" id="8_ipvyc"]
 [ext_resource type="PackedScene" uid="uid://dua2oubaha4yv" path="res://AI/Carot/CarotAI.tscn" id="10_gr6s8"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_w8j3g"]
@@ -42,16 +44,24 @@ shader_parameter/color = Color(0, 0, 0, 1)
 shader_parameter/multiplier = 0.04
 shader_parameter/softness = 1.195
 
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_fdf1o"]
+friction = 100.0
+rough = true
+bounce = 0.31
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_bol70"]
+size = Vector3(0.2, 0.2, 0.2)
+
 [sub_resource type="BoxShape3D" id="BoxShape3D_7ox3u"]
 size = Vector3(0.995, 2.855, 3.045)
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_51t7k"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6yht1"]
 transparency = 4
 shading_mode = 0
 albedo_texture = ExtResource("3_jxkak")
 
-[sub_resource type="PlaneMesh" id="PlaneMesh_rwl8k"]
-material = SubResource("StandardMaterial3D_51t7k")
+[sub_resource type="PlaneMesh" id="PlaneMesh_ukqnw"]
+material = SubResource("StandardMaterial3D_6yht1")
 
 [node name="Node3D" type="Node3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.8933, -0.0296888, -0.441497)
@@ -100,11 +110,26 @@ size = 0.495
 script = ExtResource("1_u7fxj")
 offset = Vector3(0, 2, -3)
 
-[node name="PickableObject" parent="." instance=ExtResource("5_6xdsi")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -26.6841, 2.7491, -12.2044)
+[node name="PickableObject" type="RigidBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -26.6841, 2.7491, -9.82133)
 collision_layer = 7
 collision_mask = 7
+physics_material_override = SubResource("PhysicsMaterial_fdf1o")
+max_contacts_reported = 5
+constant_force = Vector3(0, -1, 0)
+script = ExtResource("6_wuxo4")
+texture_selected = ExtResource("7_av8nj")
 collisionShapeSize = Vector3(0.2, 0.2, 0.2)
+base_texture = ExtResource("7_av8nj")
+
+[node name="Sprite3D" type="Sprite3D" parent="PickableObject"]
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, -2.22744, 0)
+texture = ExtResource("7_av8nj")
+
+[node name="PickableObjectComponent" parent="PickableObject" instance=ExtResource("8_ipvyc")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="PickableObject"]
+shape = SubResource("BoxShape3D_bol70")
 
 [node name="Button" type="RigidBody3D" parent="."]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -25.8847, 2.09655, -7.12498)
@@ -124,9 +149,9 @@ shape = SubResource("BoxShape3D_7ox3u")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Button"]
 transform = Transform3D(-8.74228e-08, 2, -8.74228e-08, 0, -8.74228e-08, -2, -2, -8.74228e-08, 3.82137e-15, 0.0629163, 0, 0)
-mesh = SubResource("PlaneMesh_rwl8k")
+mesh = SubResource("PlaneMesh_ukqnw")
 
 [node name="CarotAI" parent="." instance=ExtResource("10_gr6s8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -28.4321, 1.04626, 5.40042)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -33.5005, 1.04626, -1.10785)
 
 [connection signal="body_entered" from="Button" to="Button" method="_on_body_entered"]
