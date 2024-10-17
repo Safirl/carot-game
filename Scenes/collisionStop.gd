@@ -9,13 +9,17 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	pass
+	if life > 0:
+		$AnimatedSprite3D.play("anim")
+	else:
+		$AnimatedSprite3D.stop()
 
 
 func _on_body_entered(body: Node3D) -> void:
 	if life < 1:
 		return
 	if body.has_node("PickableObjectComponent"):
+		$FlashComponent.start_flash(.2)
 		life -= 1
 	if life < 1:
 		$Sprite3D.texture = broken_texture
