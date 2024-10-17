@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://dua2oubaha4yv" path="res://AI/Carot/CarotAI.tscn" id="3_61gqv"]
 [ext_resource type="PackedScene" uid="uid://byepc6q4d58ep" path="res://AI/Ennemy/farmerAI.tscn" id="4_3dmwx"]
 [ext_resource type="Script" path="res://Scenes/camera_3d.gd" id="5_jddgn"]
-[ext_resource type="Texture2D" uid="uid://ueo2atd2f82t" path="res://sprites/deadZone.png" id="20_a54fw"]
+[ext_resource type="Texture2D" path="res://sprites/deadZone.png" id="20_a54fw"]
 [ext_resource type="Script" path="res://Scenes/collisionStop.gd" id="21_lp13t"]
 
 [sub_resource type="NavigationMesh" id="NavigationMesh_dgft6"]
@@ -18,7 +18,7 @@ size = Vector3(10.3042, 3.77521, 12.3387)
 [node name="Node3D" type="Node3D"]
 
 [node name="CarotAI" parent="." instance=ExtResource("3_61gqv")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.68574, 1.41024, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.68574, 3.63048, -3.97138)
 
 [node name="Player" parent="." instance=ExtResource("1_a1yr3")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.20433, 2.15888, -11.389)
@@ -54,11 +54,14 @@ shape = SubResource("BoxShape3D_wv64m")
 [node name="Sprite3D" type="Sprite3D" parent="Area3D"]
 transform = Transform3D(-0.0141884, -0.499121, 0.000127845, 0.00408112, -0.000141561, -1.98364, 0.51404, -0.0137755, 0.0157523, 16.0339, 1.54256, 5.98549)
 layers = 6
+texture = ExtResource("20_a54fw")
 
 [node name="FarmerAI" parent="." instance=ExtResource("4_3dmwx")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.34217, 1.75291, -8.99676)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.8592, 1.75291, -8.99676)
+collision_layer = 1
+collision_mask = 1
 
 [node name="CarotAI2" parent="." instance=ExtResource("3_61gqv")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.35918, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.93835, -4.83098)
 
 [connection signal="body_entered" from="Area3D" to="Area3D" method="_on_body_entered"]

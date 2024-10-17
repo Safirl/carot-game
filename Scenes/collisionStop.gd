@@ -9,10 +9,8 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	if life > 0:
-		$AnimatedSprite3D.play("anim")
-	else:
-		$AnimatedSprite3D.stop()
+	pass
+
 
 func _on_body_entered(body: Node3D) -> void:
 	if life < 1:

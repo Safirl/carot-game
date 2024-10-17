@@ -28,15 +28,20 @@ var original_position : Vector3
 var has_target : bool = false
 
 func _ready() -> void:
+	
+	print('target', target)
 	target._on_holding_state_changed.connect(_on_player_holding_state_changed)
+	
 	player = target
 	speed = default_speed
 	spawn_position = global_position
 	state = "underground"
 	original_position = global_transform.origin
+	has_target = false
 
 # Cette fonction est appelée chaque frame pour déplacer l'IA
 func _physics_process(delta):
+	print(state)
 	if !target || !isMapLoadded:
 		isMapLoadded = true
 		return
@@ -62,6 +67,8 @@ func _physics_process(delta):
 			
 func _chasing():
 	var direction: Vector3
+	if !has_target : 
+		return
 	if !global_transform.origin.distance_to(NavigationAgent.target_position) > NavigationAgent.target_desired_distance:
 		direction = Vector3.ZERO
 		velocity = Vector3.ZERO
@@ -117,12 +124,9 @@ func _chasing():
 		
 		
 	elif state == "underground":
-		direction.x = 0
-		direction.y = 0
-		direction.z = 0
-		velocity = direction
+		print('is underground')
+		has_target = false
 		anim_player.play("underground")
-
 		_underground()
 	else:
 		
@@ -151,6 +155,7 @@ func _holded():
 	velocity = Vector3.ZERO
 
 func _dead():
+	print('dead')
 	has_target = false
 	anim_player.play("dead")
 	$AnimatedSprite3D.animation_finished.connect(_on_death_anim_finished)
@@ -166,7 +171,13 @@ func _on_death_anim_finished():
 
 
 func _underground():
-	pass
+	
+	if !has_target : 
+		print('is underground')
+		velocity = Vector3.ZERO
+		anim_player.play('underground')
+		
+	
 	
 	
 	
