@@ -13,8 +13,11 @@ func _ready():
 
 # Fonction qui met à jour le matériau en utilisant la texture définie
 func _update_material():
-	var staticBody: StaticBody3D = get_node("StaticBody3D")
-	staticBody.set_collision_layer_value(2, true)
+	var staticBody: StaticBody3D
+	if has_node("StaticBody3D"):
+		staticBody = get_node("StaticBody3D")
+	if staticBody:
+		staticBody.set_collision_layer_value(2, true)
 	if not Engine.is_editor_hint():
 		return
 	# Si une texture est assignée, on crée ou met à jour le matériau
@@ -23,7 +26,7 @@ func _update_material():
 		var material = StandardMaterial3D.new()
 		print("new Material")
 		material.shading_mode = BaseMaterial3D.SHADING_MODE_UNSHADED
-		material.transparency = BaseMaterial3D.TRANSPARENCY_ALPHA_DEPTH_PRE_PASS
+		material.transparency = BaseMaterial3D.TRANSPARENCY_ALPHA_SCISSOR
 		material.albedo_texture = texture
 		mesh = mesh.duplicate()
 		mesh.surface_set_material(0, material)

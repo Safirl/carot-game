@@ -1,7 +1,7 @@
 [gd_scene load_steps=66 format=3 uid="uid://c7wgfrwfcaf7t"]
 
-[ext_resource type="MeshLibrary" uid="uid://vv3ml06gqx8h" path="res://TileMap/baseMeshLibrary.tres" id="1_gybam"]
-[ext_resource type="Script" path="res://TileMap/automaticTexture.gd" id="4_ahfd8"]
+[ext_resource type="MeshLibrary" uid="uid://gq4fld82vs" path="res://TileMap/baseMeshLibrary.tres" id="1_gybam"]
+[ext_resource type="Script" path="res://Scenes/wall_transparency.gd" id="4_xexuf"]
 [ext_resource type="Texture2D" uid="uid://bvea1sfy1ikjc" path="res://sprites/Serre/Serre-cote.png" id="5_3bjuk"]
 [ext_resource type="PackedScene" uid="uid://btufm8e7hd54k" path="res://Scenes/fade_zone.tscn" id="8_a570e"]
 
@@ -10,213 +10,213 @@
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_wda3k"]
 points = PackedVector3Array(0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5)
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gfed0"]
-transparency = 4
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4jst7"]
+transparency = 1
 shading_mode = 0
 albedo_texture = ExtResource("5_3bjuk")
 
-[sub_resource type="PlaneMesh" id="PlaneMesh_k1il5"]
-material = SubResource("StandardMaterial3D_gfed0")
+[sub_resource type="PlaneMesh" id="PlaneMesh_j1v5k"]
+material = SubResource("StandardMaterial3D_4jst7")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pv72y"]
-transparency = 4
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mqjin"]
+transparency = 1
 shading_mode = 0
 albedo_texture = ExtResource("5_3bjuk")
 
-[sub_resource type="PlaneMesh" id="PlaneMesh_qqn1h"]
-material = SubResource("StandardMaterial3D_pv72y")
+[sub_resource type="PlaneMesh" id="PlaneMesh_n1i2b"]
+material = SubResource("StandardMaterial3D_mqjin")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ugnxu"]
-transparency = 4
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_yrbyv"]
+transparency = 1
 shading_mode = 0
 albedo_texture = ExtResource("5_3bjuk")
 
-[sub_resource type="PlaneMesh" id="PlaneMesh_hibhe"]
-material = SubResource("StandardMaterial3D_ugnxu")
+[sub_resource type="PlaneMesh" id="PlaneMesh_u401b"]
+material = SubResource("StandardMaterial3D_yrbyv")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_j3tbj"]
-transparency = 4
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_teyuh"]
+transparency = 1
 shading_mode = 0
 albedo_texture = ExtResource("5_3bjuk")
 
-[sub_resource type="PlaneMesh" id="PlaneMesh_bhcvb"]
-material = SubResource("StandardMaterial3D_j3tbj")
+[sub_resource type="PlaneMesh" id="PlaneMesh_r0weu"]
+material = SubResource("StandardMaterial3D_teyuh")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fvfgt"]
-transparency = 4
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5kq4m"]
+transparency = 1
 shading_mode = 0
 albedo_texture = ExtResource("5_3bjuk")
 
-[sub_resource type="PlaneMesh" id="PlaneMesh_2pom3"]
-material = SubResource("StandardMaterial3D_fvfgt")
+[sub_resource type="PlaneMesh" id="PlaneMesh_q8377"]
+material = SubResource("StandardMaterial3D_5kq4m")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qri7d"]
-transparency = 4
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gmuf6"]
+transparency = 1
 shading_mode = 0
 albedo_texture = ExtResource("5_3bjuk")
 
-[sub_resource type="PlaneMesh" id="PlaneMesh_a70pk"]
-material = SubResource("StandardMaterial3D_qri7d")
+[sub_resource type="PlaneMesh" id="PlaneMesh_vwps8"]
+material = SubResource("StandardMaterial3D_gmuf6")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4s8jw"]
-transparency = 4
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0i174"]
+transparency = 1
 shading_mode = 0
 albedo_texture = ExtResource("5_3bjuk")
 
-[sub_resource type="PlaneMesh" id="PlaneMesh_bcs26"]
-material = SubResource("StandardMaterial3D_4s8jw")
+[sub_resource type="PlaneMesh" id="PlaneMesh_3ih4r"]
+material = SubResource("StandardMaterial3D_0i174")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2hyc5"]
-transparency = 4
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_biuv0"]
+transparency = 1
 shading_mode = 0
 albedo_texture = ExtResource("5_3bjuk")
 
-[sub_resource type="PlaneMesh" id="PlaneMesh_ap1c5"]
-material = SubResource("StandardMaterial3D_2hyc5")
+[sub_resource type="PlaneMesh" id="PlaneMesh_0l0bs"]
+material = SubResource("StandardMaterial3D_biuv0")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pafa3"]
-transparency = 4
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6o2rv"]
+transparency = 1
 shading_mode = 0
 albedo_texture = ExtResource("5_3bjuk")
 
-[sub_resource type="PlaneMesh" id="PlaneMesh_fd2uy"]
-material = SubResource("StandardMaterial3D_pafa3")
+[sub_resource type="PlaneMesh" id="PlaneMesh_nnbs0"]
+material = SubResource("StandardMaterial3D_6o2rv")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tkkrm"]
-transparency = 4
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7neoq"]
+transparency = 1
 shading_mode = 0
 albedo_texture = ExtResource("5_3bjuk")
 
-[sub_resource type="PlaneMesh" id="PlaneMesh_5eli4"]
-material = SubResource("StandardMaterial3D_tkkrm")
+[sub_resource type="PlaneMesh" id="PlaneMesh_d2fxa"]
+material = SubResource("StandardMaterial3D_7neoq")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_lgdjk"]
-transparency = 4
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_i6pcr"]
+transparency = 1
 shading_mode = 0
 albedo_texture = ExtResource("5_3bjuk")
 
-[sub_resource type="PlaneMesh" id="PlaneMesh_b5n6j"]
-material = SubResource("StandardMaterial3D_lgdjk")
+[sub_resource type="PlaneMesh" id="PlaneMesh_solvk"]
+material = SubResource("StandardMaterial3D_i6pcr")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dqqdu"]
-transparency = 4
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_atrwt"]
+transparency = 1
 shading_mode = 0
 albedo_texture = ExtResource("5_3bjuk")
 
-[sub_resource type="PlaneMesh" id="PlaneMesh_jedbt"]
-material = SubResource("StandardMaterial3D_dqqdu")
+[sub_resource type="PlaneMesh" id="PlaneMesh_ih2dd"]
+material = SubResource("StandardMaterial3D_atrwt")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_w8x4e"]
-transparency = 4
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hm50r"]
+transparency = 1
 shading_mode = 0
 albedo_texture = ExtResource("5_3bjuk")
 
-[sub_resource type="PlaneMesh" id="PlaneMesh_0dj8t"]
-material = SubResource("StandardMaterial3D_w8x4e")
+[sub_resource type="PlaneMesh" id="PlaneMesh_m2ou4"]
+material = SubResource("StandardMaterial3D_hm50r")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4qb40"]
-transparency = 4
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qausv"]
+transparency = 1
 shading_mode = 0
 albedo_texture = ExtResource("5_3bjuk")
 
-[sub_resource type="PlaneMesh" id="PlaneMesh_3ca8b"]
-material = SubResource("StandardMaterial3D_4qb40")
+[sub_resource type="PlaneMesh" id="PlaneMesh_6a66d"]
+material = SubResource("StandardMaterial3D_qausv")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_e81wf"]
-transparency = 4
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7g0x1"]
+transparency = 1
 shading_mode = 0
 albedo_texture = ExtResource("5_3bjuk")
 
-[sub_resource type="PlaneMesh" id="PlaneMesh_3r0j6"]
-material = SubResource("StandardMaterial3D_e81wf")
+[sub_resource type="PlaneMesh" id="PlaneMesh_bi5at"]
+material = SubResource("StandardMaterial3D_7g0x1")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hq0nj"]
-transparency = 4
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ndode"]
+transparency = 1
 shading_mode = 0
 albedo_texture = ExtResource("5_3bjuk")
 
-[sub_resource type="PlaneMesh" id="PlaneMesh_4bdpx"]
-material = SubResource("StandardMaterial3D_hq0nj")
+[sub_resource type="PlaneMesh" id="PlaneMesh_xv1xp"]
+material = SubResource("StandardMaterial3D_ndode")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4xhd1"]
-transparency = 4
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ngl0f"]
+transparency = 1
 shading_mode = 0
 albedo_texture = ExtResource("5_3bjuk")
 
-[sub_resource type="PlaneMesh" id="PlaneMesh_l8yyr"]
-material = SubResource("StandardMaterial3D_4xhd1")
+[sub_resource type="PlaneMesh" id="PlaneMesh_nxv0s"]
+material = SubResource("StandardMaterial3D_ngl0f")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_sgvrd"]
-transparency = 4
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2evmy"]
+transparency = 1
 shading_mode = 0
 albedo_texture = ExtResource("5_3bjuk")
 
-[sub_resource type="PlaneMesh" id="PlaneMesh_anu2f"]
-material = SubResource("StandardMaterial3D_sgvrd")
+[sub_resource type="PlaneMesh" id="PlaneMesh_3dnga"]
+material = SubResource("StandardMaterial3D_2evmy")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0k3oq"]
-transparency = 4
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_njfc0"]
+transparency = 1
 shading_mode = 0
 albedo_texture = ExtResource("5_3bjuk")
 
-[sub_resource type="PlaneMesh" id="PlaneMesh_t0u2f"]
-material = SubResource("StandardMaterial3D_0k3oq")
+[sub_resource type="PlaneMesh" id="PlaneMesh_prpib"]
+material = SubResource("StandardMaterial3D_njfc0")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_p4jp1"]
-transparency = 4
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mfs6a"]
+transparency = 1
 shading_mode = 0
 albedo_texture = ExtResource("5_3bjuk")
 
-[sub_resource type="PlaneMesh" id="PlaneMesh_1oib3"]
-material = SubResource("StandardMaterial3D_p4jp1")
+[sub_resource type="PlaneMesh" id="PlaneMesh_68bfy"]
+material = SubResource("StandardMaterial3D_mfs6a")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_evq55"]
-transparency = 4
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_eujnr"]
+transparency = 1
 shading_mode = 0
 albedo_texture = ExtResource("5_3bjuk")
 
-[sub_resource type="PlaneMesh" id="PlaneMesh_lexox"]
-material = SubResource("StandardMaterial3D_evq55")
+[sub_resource type="PlaneMesh" id="PlaneMesh_8sxla"]
+material = SubResource("StandardMaterial3D_eujnr")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6xfjh"]
-transparency = 4
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2tx0k"]
+transparency = 1
 shading_mode = 0
 albedo_texture = ExtResource("5_3bjuk")
 
-[sub_resource type="PlaneMesh" id="PlaneMesh_kk8wb"]
-material = SubResource("StandardMaterial3D_6xfjh")
+[sub_resource type="PlaneMesh" id="PlaneMesh_ofx8d"]
+material = SubResource("StandardMaterial3D_2tx0k")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cratx"]
-transparency = 4
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xupc6"]
+transparency = 1
 shading_mode = 0
 albedo_texture = ExtResource("5_3bjuk")
 
-[sub_resource type="PlaneMesh" id="PlaneMesh_kkgrt"]
-material = SubResource("StandardMaterial3D_cratx")
+[sub_resource type="PlaneMesh" id="PlaneMesh_iihhm"]
+material = SubResource("StandardMaterial3D_xupc6")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_828wt"]
-transparency = 4
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vcwgi"]
+transparency = 1
 shading_mode = 0
 albedo_texture = ExtResource("5_3bjuk")
 
-[sub_resource type="PlaneMesh" id="PlaneMesh_g653x"]
-material = SubResource("StandardMaterial3D_828wt")
+[sub_resource type="PlaneMesh" id="PlaneMesh_iunwf"]
+material = SubResource("StandardMaterial3D_vcwgi")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_25gsj"]
-transparency = 4
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fs6cc"]
+transparency = 1
 shading_mode = 0
 albedo_texture = ExtResource("5_3bjuk")
 
-[sub_resource type="PlaneMesh" id="PlaneMesh_skldw"]
-material = SubResource("StandardMaterial3D_25gsj")
+[sub_resource type="PlaneMesh" id="PlaneMesh_465x3"]
+material = SubResource("StandardMaterial3D_fs6cc")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vmwnr"]
-transparency = 4
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_u7s8r"]
+transparency = 1
 shading_mode = 0
 albedo_texture = ExtResource("5_3bjuk")
 
-[sub_resource type="PlaneMesh" id="PlaneMesh_w72nj"]
-material = SubResource("StandardMaterial3D_vmwnr")
+[sub_resource type="PlaneMesh" id="PlaneMesh_w5vnm"]
+material = SubResource("StandardMaterial3D_u7s8r")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_46l06"]
 size = Vector3(19.1664, 5.03467, 1)
@@ -245,7 +245,7 @@ size = Vector3(0.793687, 5.03467, 8.20751)
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 0)
 mesh_library = ExtResource("1_gybam")
 data = {
-"cells": PackedInt32Array(1, 1, 77, 1, 0, 77, 1, 65535, 77, 65534, 1, 77, 65534, 0, 77, 65534, 65535, 77, 65534, 65534, 78, 0, 65534, 78, 1, 65534, 77, 1, 2, 77, 0, 2, 77, 65535, 2, 77, 65533, 2, 78, 65533, 1, 77, 65533, 0, 78, 65533, 65535, 78, 65533, 65534, 77, 65533, 65533, 79, 65533, 65532, 79, 65533, 65531, 78, 65533, 65530, 77, 65534, 65530, 77, 65535, 65530, 77, 0, 65530, 77, 1, 65530, 77, 1, 65533, 77, 0, 65533, 79, 65535, 65533, 0, 65534, 65533, 78, 65534, 65532, 1, 65534, 65531, 78, 65535, 65531, 79, 0, 65531, 0, 1, 65531, 77, 1, 65532, 77, 0, 65532, 1, 65535, 65532, 79, 65535, 65534, 78, 0, 0, 77, 0, 65535, 77, 65535, 65535, 77, 65535, 1, 77, 0, 1, 77, 65535, 0, 77, 65534, 2, 77, 2, 2, 77, 2, 1, 77, 2, 0, 77, 2, 65530, 77, 2, 65531, 77, 2, 65532, 77, 2, 65533, 77, 2, 65534, 77, 2, 65535, 77, 3, 1, 77, 3, 2, 77, 3, 0, 77, 3, 65535, 77, 3, 65534, 77, 3, 65533, 77, 3, 65532, 77, 3, 65531, 77, 3, 65530, 77, 65532, 65530, 77, 65531, 65530, 77, 65531, 65531, 77, 65532, 65531, 77, 65531, 65532, 77, 65532, 65532, 77, 65532, 65533, 77, 65532, 65534, 77, 65532, 65535, 77, 65532, 0, 77, 65532, 1, 77, 65532, 2, 77, 65531, 2, 77, 65531, 1, 77, 65531, 0, 77, 65531, 65535, 77, 65531, 65534, 77, 65531, 65533, 77, 0, 65529, 0, 65535, 65529, 0, 65534, 65529, 0, 0, 65528, 0, 65535, 65528, 0, 65534, 65528, 0, 65535, 65526, 87, 65534, 65526, 81, 65534, 65525, 82, 65535, 65525, 86, 65535, 65527, 88, 0, 65527, 89, 0, 65526, 90, 0, 65525, 91, 65534, 65527, 80, 65533, 65528, 0, 65533, 65527, 0, 65533, 65526, 0, 65533, 65525, 0, 3, 65529, 0, 2, 65529, 0, 1, 65529, 0, 4, 65529, 0, 3, 65528, 0, 2, 65528, 0, 1, 65528, 0, 5, 65529, 0, 5, 65530, 0, 4, 65530, 0, 4, 65528, 0, 5, 65528, 0)
+"cells": PackedInt32Array(1, 1, 77, 1, 0, 77, 1, 65535, 77, 65534, 1, 77, 65534, 0, 77, 65534, 65535, 77, 65534, 65534, 78, 0, 65534, 78, 1, 65534, 77, 1, 2, 77, 0, 2, 77, 65535, 2, 77, 65533, 2, 78, 65533, 1, 77, 65533, 0, 78, 65533, 65535, 78, 65533, 65534, 77, 65533, 65533, 79, 65533, 65532, 79, 65533, 65531, 78, 65533, 65530, 77, 65534, 65530, 77, 65535, 65530, 77, 0, 65530, 77, 1, 65530, 77, 1, 65533, 77, 0, 65533, 79, 65535, 65533, 0, 65534, 65533, 78, 65534, 65532, 1, 65534, 65531, 78, 65535, 65531, 79, 0, 65531, 0, 1, 65531, 77, 1, 65532, 77, 0, 65532, 1, 65535, 65532, 79, 65535, 65534, 78, 0, 0, 77, 0, 65535, 77, 65535, 65535, 77, 65535, 1, 77, 0, 1, 77, 65535, 0, 77, 65534, 2, 77, 2, 2, 77, 2, 1, 77, 2, 0, 77, 2, 65530, 77, 2, 65531, 77, 2, 65532, 77, 2, 65533, 77, 2, 65534, 77, 2, 65535, 77, 3, 1, 77, 3, 2, 77, 3, 0, 77, 3, 65535, 77, 3, 65534, 77, 3, 65533, 77, 3, 65532, 77, 3, 65531, 77, 65532, 65530, 77, 65531, 65530, 77, 65531, 65531, 77, 65532, 65531, 77, 65531, 65532, 77, 65532, 65532, 77, 65532, 65533, 77, 65532, 65534, 77, 65532, 65535, 77, 65532, 0, 77, 65532, 1, 77, 65532, 2, 77, 65531, 2, 77, 65531, 1, 77, 65531, 0, 77, 65531, 65535, 77, 65531, 65534, 77, 65531, 65533, 77, 65535, 65526, 1441879, 65534, 65526, 1441880, 65534, 65525, 1441872, 65535, 65525, 1441873, 0, 65526, 1441878, 0, 65525, 1441874, 65533, 65526, 1441792, 65533, 65525, 1441792, 3, 65530, 1441792, 3, 65529, 1441792, 2, 65529, 1441792, 1, 65529, 1441792, 0, 65529, 1441792, 65535, 65529, 1441792, 65534, 65529, 1441792, 65533, 65529, 1441792, 65532, 65529, 1441792, 65531, 65529, 1441792, 65531, 65528, 1441792, 65532, 65528, 1441792, 65534, 65528, 1441792, 4, 65529, 1441792, 3, 65528, 1441792, 2, 65528, 1441792, 1, 65528, 1441792, 0, 65528, 1441792, 65535, 65528, 1441792, 65533, 65528, 1441792, 65530, 65528, 1441792, 65529, 65528, 1441792, 65528, 65528, 1441792, 65528, 65529, 1441792, 65529, 65529, 1441792, 65530, 65529, 1441792, 65530, 65530, 1441792, 65535, 65527, 1441882, 65534, 65527, 1441881, 0, 65527, 1441883, 65533, 65527, 1441792, 65532, 65527, 1441792, 65531, 65527, 1441792, 65530, 65527, 1441792, 65529, 65527, 1441792, 65528, 65527, 1441792, 65527, 65527, 1441792, 65529, 65526, 1441792, 65530, 65526, 1441792, 65531, 65526, 1441792, 65532, 65526, 1441792, 1, 65526, 1441792, 2, 65526, 1441792, 3, 65526, 1441792, 3, 65527, 1441792, 2, 65527, 1441792, 1, 65527, 1441792, 4, 65528, 1441792, 5, 65528, 1441792, 5, 65529, 1441792, 4, 65530, 1441792, 4, 65531, 1441792, 5, 65531, 1441792, 5, 65532, 1441792, 5, 65533, 1441792, 5, 65534, 1441792, 5, 65535, 1441792, 5, 0, 1441792, 5, 1, 1441792, 5, 2, 1441792, 4, 2, 1441792, 4, 1, 1441792, 4, 0, 1441792, 4, 65535, 1441792, 4, 65534, 1441792, 4, 65533, 1441792, 4, 65532, 1441792, 5, 65530, 1441792, 5, 65527, 1441792, 5, 65526, 1441792, 4, 65526, 1441792, 4, 65527, 1441792, 6, 65526, 1441792, 6, 65527, 1441792, 6, 65528, 1441792, 6, 65529, 1441792, 6, 65530, 1441792, 6, 65531, 1441792, 6, 65532, 1441792, 6, 65533, 1441792, 6, 65534, 1441792, 6, 65535, 1441792, 6, 0, 1441792, 6, 1, 1441792, 6, 2, 1441792, 7, 65526, 1441792, 7, 65527, 1441792, 7, 65528, 1441792, 7, 65529, 1441792, 7, 65530, 1441792, 7, 65531, 1441792, 7, 65532, 1441792, 7, 65533, 1441792, 7, 65534, 1441792, 7, 65535, 1441792, 7, 0, 1441792, 7, 1, 1441792, 7, 2, 1441792, 8, 65526, 1441792, 8, 65527, 1441792, 8, 65528, 1441792, 8, 65529, 1441792, 8, 65530, 1441792, 8, 65531, 1441792, 8, 65532, 1441792, 8, 65533, 1441792, 8, 65534, 1441792, 8, 65535, 1441792, 8, 0, 1441792, 8, 1, 1441792, 8, 2, 1441792, 9, 65526, 1441792, 9, 65527, 1441792, 9, 65528, 1441792, 9, 65529, 1441792, 9, 65530, 1441792, 9, 65531, 1441792, 9, 65532, 1441792, 9, 65533, 1441792, 9, 65534, 1441792, 9, 65535, 1441792, 9, 0, 1441792, 9, 1, 1441792, 9, 2, 1441792, 10, 65526, 1441792, 10, 65527, 1441792, 10, 65528, 1441792, 10, 65529, 1441792, 10, 65530, 1441792, 10, 65531, 1441792, 10, 65532, 1441792, 10, 65533, 1441792, 10, 65534, 1441792, 10, 65535, 1441792, 10, 0, 1441792, 10, 1, 1441792, 10, 2, 1441792, 11, 65526, 1441792, 11, 65527, 1441792, 11, 65528, 1441792, 11, 65529, 1441792, 11, 65530, 1441792, 11, 65531, 1441792, 11, 65532, 1441792, 11, 65533, 1441792, 11, 65534, 1441792, 11, 65535, 1441792, 11, 0, 1441792, 11, 1, 1441792, 11, 2, 1441792, 12, 65526, 1441792, 12, 65527, 1441792, 12, 65528, 1441792, 12, 65529, 1441792, 12, 65530, 1441792, 12, 65531, 1441792, 12, 65532, 1441792, 12, 65533, 1441792, 12, 65534, 1441792, 12, 65535, 1441792, 12, 0, 1441792, 12, 1, 1441792, 12, 2, 1441792, 13, 65526, 1441792, 13, 65527, 1441792, 13, 65528, 1441792, 13, 65529, 1441792, 13, 65530, 1441792, 13, 65531, 1441792, 13, 65532, 1441792, 13, 65533, 1441792, 13, 65534, 1441792, 13, 65535, 1441792, 13, 0, 1441792, 13, 1, 1441792, 13, 2, 1441792, 14, 65526, 1441792, 14, 65527, 1441792, 14, 65528, 1441792, 14, 65529, 1441792, 14, 65530, 1441792, 14, 65531, 1441792, 14, 65532, 1441792, 14, 65533, 1441792, 14, 65534, 1441792, 14, 65535, 1441792, 14, 0, 1441792, 14, 1, 1441792, 14, 2, 1441792, 15, 65526, 1441792, 15, 65527, 1441792, 15, 65528, 1441792, 15, 65529, 1441792, 15, 65530, 1441792, 15, 65531, 1441792, 15, 65532, 1441792, 15, 65533, 1441792, 15, 65534, 1441792, 15, 65535, 1441792, 15, 0, 1441792, 15, 1, 1441792, 15, 2, 1441792, 16, 65526, 1441792, 16, 65527, 1441792, 16, 65528, 1441792, 16, 65529, 1441792, 16, 65530, 1441792, 16, 65531, 1441792, 16, 65532, 1441792, 16, 65533, 1441792, 16, 65534, 1441792, 16, 65535, 1441792, 16, 0, 1441792, 16, 1, 1441792, 16, 2, 1441792, 65528, 65520, 1441792, 65528, 65521, 1441792, 65528, 65522, 1441792, 65528, 65523, 1441792, 65528, 65524, 1441792, 65528, 65525, 1441792, 65529, 65520, 1441792, 65529, 65521, 1441792, 65529, 65522, 1441792, 65529, 65523, 1441792, 65529, 65524, 1441792, 65529, 65525, 1441792, 65530, 65520, 1441792, 65530, 65521, 1441792, 65530, 65522, 1441792, 65530, 65523, 1441792, 65530, 65524, 1441792, 65530, 65525, 1441792, 65531, 65520, 1441792, 65531, 65521, 1441792, 65531, 65522, 1441792, 65531, 65523, 1441792, 65531, 65524, 1441792, 65531, 65525, 1441792, 65532, 65520, 1441792, 65532, 65521, 1441792, 65532, 65522, 1441792, 65532, 65523, 1441792, 65532, 65524, 1441792, 65532, 65525, 1441792, 65533, 65520, 1441792, 65533, 65521, 1441792, 65533, 65522, 1441792, 65533, 65523, 1441792, 65533, 65524, 1441792, 65534, 65520, 1441792, 65534, 65521, 1441792, 65534, 65522, 1441792, 65534, 65523, 1441792, 65534, 65524, 1441792, 65535, 65520, 1441792, 65535, 65521, 1441792, 65535, 65522, 1441792, 65535, 65523, 1441792, 65535, 65524, 1441792, 0, 65520, 1441792, 0, 65521, 1441792, 0, 65522, 1441792, 0, 65523, 1441792, 0, 65524, 1441792, 1, 65520, 1441792, 1, 65521, 1441792, 1, 65522, 1441792, 1, 65523, 1441792, 1, 65524, 1441792, 1, 65525, 1441792, 2, 65520, 1441792, 2, 65521, 1441792, 2, 65522, 1441792, 2, 65523, 1441792, 2, 65524, 1441792, 2, 65525, 1441792, 3, 65520, 1441792, 3, 65521, 1441792, 3, 65522, 1441792, 3, 65523, 1441792, 3, 65524, 1441792, 3, 65525, 1441792, 4, 65520, 1441792, 4, 65521, 1441792, 4, 65522, 1441792, 4, 65523, 1441792, 4, 65524, 1441792, 4, 65525, 1441792, 5, 65520, 1441792, 5, 65521, 1441792, 5, 65522, 1441792, 5, 65523, 1441792, 5, 65524, 1441792, 5, 65525, 1441792, 6, 65520, 1441792, 6, 65521, 1441792, 6, 65522, 1441792, 6, 65523, 1441792, 6, 65524, 1441792, 6, 65525, 1441792, 7, 65520, 1441792, 7, 65521, 1441792, 7, 65522, 1441792, 7, 65523, 1441792, 7, 65524, 1441792, 7, 65525, 1441792, 8, 65520, 1441792, 8, 65521, 1441792, 8, 65522, 1441792, 8, 65523, 1441792, 8, 65524, 1441792, 8, 65525, 1441792, 65525, 65520, 1441792, 65525, 65521, 1441792, 65525, 65522, 1441792, 65525, 65523, 1441792, 65525, 65524, 1441792, 65525, 65525, 1441792, 65525, 65526, 1441792, 65525, 65527, 1441792, 65525, 65528, 1441792, 65525, 65529, 1441792, 65525, 65530, 1441792, 65525, 65531, 1441792, 65525, 65532, 1441792, 65525, 65533, 1441792, 65525, 65534, 1441792, 65525, 65535, 1441792, 65525, 0, 1441792, 65525, 1, 1441792, 65525, 2, 1441792, 65526, 65520, 1441792, 65526, 65521, 1441792, 65526, 65522, 1441792, 65526, 65523, 1441792, 65526, 65524, 1441792, 65526, 65525, 1441792, 65526, 65526, 1441792, 65526, 65527, 1441792, 65526, 65528, 1441792, 65526, 65529, 1441792, 65526, 65530, 1441792, 65526, 65531, 1441792, 65526, 65532, 1441792, 65526, 65533, 1441792, 65526, 65534, 1441792, 65526, 65535, 1441792, 65526, 0, 1441792, 65526, 1, 1441792, 65526, 2, 1441792, 65527, 65520, 1441792, 65527, 65521, 1441792, 65527, 65522, 1441792, 65527, 65523, 1441792, 65527, 65524, 1441792, 65527, 65525, 1441792, 65527, 65526, 1441792, 65527, 65528, 1441792, 65527, 65529, 1441792, 65527, 65530, 1441792, 65527, 65531, 1441792, 65527, 65532, 1441792, 65527, 65533, 1441792, 65527, 65534, 1441792, 65527, 65535, 1441792, 65527, 0, 1441792, 65527, 1, 1441792, 65527, 2, 1441792, 65528, 65526, 1441792, 65528, 65530, 1441792, 65528, 65531, 1441792, 65528, 65532, 1441792, 65528, 65533, 1441792, 65528, 65534, 1441792, 65528, 65535, 1441792, 65528, 0, 1441792, 65528, 1, 1441792, 65528, 2, 1441792, 65529, 65530, 1441792, 65529, 65531, 1441792, 65529, 65532, 1441792, 65529, 65533, 1441792, 65529, 65534, 1441792, 65529, 65535, 1441792, 65529, 0, 1441792, 65529, 1, 1441792, 65529, 2, 1441792, 65530, 65531, 1441792, 65530, 65532, 1441792, 65530, 65533, 1441792, 65530, 65534, 1441792, 65530, 65535, 1441792, 65530, 0, 1441792, 65530, 1, 1441792, 65530, 2, 1441792)
 }
 metadata/_editor_floor_ = Vector3(0, 0, 0)
 
@@ -299,158 +299,158 @@ transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 
 
 [node name="MeshInstance3D3" type="MeshInstance3D" parent="Walls"]
 transform = Transform3D(-8.74228e-08, -2, 8.74228e-08, 0, -8.74228e-08, -2, 2, -8.74228e-08, 3.82137e-15, 1.90988, 2.79935, -15.8304)
-mesh = SubResource("PlaneMesh_k1il5")
-script = ExtResource("4_ahfd8")
+mesh = SubResource("PlaneMesh_j1v5k")
+script = ExtResource("4_xexuf")
 texture = ExtResource("5_3bjuk")
 
 [node name="MeshInstance3D5" type="MeshInstance3D" parent="Walls"]
 transform = Transform3D(-8.74228e-08, -2, 8.74228e-08, 0, -8.74228e-08, -2, 2, -8.74228e-08, 3.82137e-15, 1.90988, 2.79935, -14.3306)
-mesh = SubResource("PlaneMesh_qqn1h")
-script = ExtResource("4_ahfd8")
+mesh = SubResource("PlaneMesh_n1i2b")
+script = ExtResource("4_xexuf")
 texture = ExtResource("5_3bjuk")
 
 [node name="MeshInstance3D6" type="MeshInstance3D" parent="Walls"]
 transform = Transform3D(-2, 2.78182e-08, -5.59773e-15, 0, -8.74228e-08, -2, -2.78182e-08, -2, 8.74228e-08, -3.8433, 2.79935, -13.9173)
-mesh = SubResource("PlaneMesh_hibhe")
-script = ExtResource("4_ahfd8")
+mesh = SubResource("PlaneMesh_u401b")
+script = ExtResource("4_xexuf")
 texture = ExtResource("5_3bjuk")
 
 [node name="MeshInstance3D4" type="MeshInstance3D" parent="Walls"]
 transform = Transform3D(-8.74228e-08, -2, 8.74228e-08, 0, -8.74228e-08, -2, 2, -8.74228e-08, 3.82137e-15, 1.90988, 2.79935, -19.624)
-mesh = SubResource("PlaneMesh_bhcvb")
-script = ExtResource("4_ahfd8")
+mesh = SubResource("PlaneMesh_r0weu")
+script = ExtResource("4_xexuf")
 texture = ExtResource("5_3bjuk")
 
 [node name="MeshInstance3D11" type="MeshInstance3D" parent="Walls"]
 transform = Transform3D(-8.74228e-08, -2, 8.74228e-08, 0, -8.74228e-08, -2, 2, -8.74228e-08, 3.82137e-15, 7.90988, 2.79935, -6.83044)
-mesh = SubResource("PlaneMesh_2pom3")
-script = ExtResource("4_ahfd8")
+mesh = SubResource("PlaneMesh_q8377")
+script = ExtResource("4_xexuf")
 texture = ExtResource("5_3bjuk")
 
 [node name="MeshInstance3D12" type="MeshInstance3D" parent="Walls"]
 transform = Transform3D(-8.74228e-08, -2, 8.74228e-08, 0, -8.74228e-08, -2, 2, -8.74228e-08, 3.82137e-15, 7.90988, 2.79935, -10.624)
-mesh = SubResource("PlaneMesh_a70pk")
-script = ExtResource("4_ahfd8")
+mesh = SubResource("PlaneMesh_vwps8")
+script = ExtResource("4_xexuf")
 texture = ExtResource("5_3bjuk")
 
 [node name="MeshInstance3D25" type="MeshInstance3D" parent="Walls"]
 transform = Transform3D(-2, 1.74846e-07, -7.64274e-15, 0, -8.74228e-08, -2, -1.74846e-07, -2, 8.74228e-08, 3.71936, 2.79935, -12.483)
-mesh = SubResource("PlaneMesh_bcs26")
-script = ExtResource("4_ahfd8")
+mesh = SubResource("PlaneMesh_3ih4r")
+script = ExtResource("4_xexuf")
 texture = ExtResource("5_3bjuk")
 
 [node name="MeshInstance3D26" type="MeshInstance3D" parent="Walls"]
 transform = Transform3D(-2, 1.74846e-07, -7.64274e-15, 0, -8.74228e-08, -2, -1.74846e-07, -2, 8.74228e-08, 5.8221, 2.79935, -12.4782)
-mesh = SubResource("PlaneMesh_ap1c5")
-script = ExtResource("4_ahfd8")
+mesh = SubResource("PlaneMesh_0l0bs")
+script = ExtResource("4_xexuf")
 texture = ExtResource("5_3bjuk")
 
 [node name="MeshInstance3D13" type="MeshInstance3D" parent="Walls"]
 transform = Transform3D(-8.74228e-08, -2, 8.74228e-08, 0, -8.74228e-08, -2, 2, -8.74228e-08, 3.82137e-15, 7.90988, 2.79935, 4.16956)
-mesh = SubResource("PlaneMesh_fd2uy")
-script = ExtResource("4_ahfd8")
+mesh = SubResource("PlaneMesh_nnbs0")
+script = ExtResource("4_xexuf")
 texture = ExtResource("5_3bjuk")
 
 [node name="MeshInstance3D21" type="MeshInstance3D" parent="Walls"]
 transform = Transform3D(-2, 1.74846e-07, -7.64274e-15, 0, -8.74228e-08, -2, -1.74846e-07, -2, 8.74228e-08, 6.02862, 2.73727, 6.0799)
-mesh = SubResource("PlaneMesh_5eli4")
-script = ExtResource("4_ahfd8")
+mesh = SubResource("PlaneMesh_d2fxa")
+script = ExtResource("4_xexuf")
 texture = ExtResource("5_3bjuk")
 
 [node name="MeshInstance3D22" type="MeshInstance3D" parent="Walls"]
 transform = Transform3D(-2, 1.74846e-07, -7.64274e-15, 0, -8.74228e-08, -2, -1.74846e-07, -2, 8.74228e-08, -1.70671, 2.73727, 6.0799)
-mesh = SubResource("PlaneMesh_b5n6j")
-script = ExtResource("4_ahfd8")
+mesh = SubResource("PlaneMesh_solvk")
+script = ExtResource("4_xexuf")
 texture = ExtResource("5_3bjuk")
 
 [node name="MeshInstance3D23" type="MeshInstance3D" parent="Walls"]
 transform = Transform3D(-2, 1.74846e-07, -7.64274e-15, 0, -8.74228e-08, -2, -1.74846e-07, -2, 8.74228e-08, -5.50528, 2.73727, 6.0799)
-mesh = SubResource("PlaneMesh_jedbt")
-script = ExtResource("4_ahfd8")
+mesh = SubResource("PlaneMesh_ih2dd")
+script = ExtResource("4_xexuf")
 texture = ExtResource("5_3bjuk")
 
 [node name="MeshInstance3D24" type="MeshInstance3D" parent="Walls"]
 transform = Transform3D(-2, 1.74846e-07, -7.64274e-15, 0, -8.74228e-08, -2, -1.74846e-07, -2, 8.74228e-08, -8.35751, 2.73727, 6.0799)
-mesh = SubResource("PlaneMesh_0dj8t")
-script = ExtResource("4_ahfd8")
+mesh = SubResource("PlaneMesh_m2ou4")
+script = ExtResource("4_xexuf")
 texture = ExtResource("5_3bjuk")
 
 [node name="MeshInstance3D14" type="MeshInstance3D" parent="Walls"]
 transform = Transform3D(-8.74228e-08, -2, 8.74228e-08, 0, -8.74228e-08, -2, 2, -8.74228e-08, 3.82137e-15, 7.90988, 2.79935, 0.376042)
-mesh = SubResource("PlaneMesh_3ca8b")
-script = ExtResource("4_ahfd8")
+mesh = SubResource("PlaneMesh_6a66d")
+script = ExtResource("4_xexuf")
 texture = ExtResource("5_3bjuk")
 
 [node name="MeshInstance3D15" type="MeshInstance3D" parent="Walls"]
 transform = Transform3D(-8.74228e-08, -2, 8.74228e-08, 0, -8.74228e-08, -2, 2, -8.74228e-08, 3.82137e-15, 7.90988, 2.79935, -3.02564)
-mesh = SubResource("PlaneMesh_3r0j6")
-script = ExtResource("4_ahfd8")
+mesh = SubResource("PlaneMesh_bi5at")
+script = ExtResource("4_xexuf")
 texture = ExtResource("5_3bjuk")
 
 [node name="MeshInstance3D16" type="MeshInstance3D" parent="Walls"]
 transform = Transform3D(2.62268e-07, 2, -8.74228e-08, 0, -8.74228e-08, -2, -2, 2.62268e-07, -1.14641e-14, -10.1947, 2.79935, 0.361542)
-mesh = SubResource("PlaneMesh_4bdpx")
-script = ExtResource("4_ahfd8")
+mesh = SubResource("PlaneMesh_xv1xp")
+script = ExtResource("4_xexuf")
 texture = ExtResource("5_3bjuk")
 
 [node name="MeshInstance3D17" type="MeshInstance3D" parent="Walls"]
 transform = Transform3D(2.62268e-07, 2, -8.74228e-08, 0, -8.74228e-08, -2, -2, 2.62268e-07, -1.14641e-14, -10.1947, 2.79935, 4.15506)
-mesh = SubResource("PlaneMesh_l8yyr")
-script = ExtResource("4_ahfd8")
+mesh = SubResource("PlaneMesh_nxv0s")
+script = ExtResource("4_xexuf")
 texture = ExtResource("5_3bjuk")
 
 [node name="MeshInstance3D18" type="MeshInstance3D" parent="Walls"]
 transform = Transform3D(2.62268e-07, 2, -8.74228e-08, 0, -8.74228e-08, -2, -2, 2.62268e-07, -1.14641e-14, -10.1947, 2.79935, -10.6385)
-mesh = SubResource("PlaneMesh_anu2f")
-script = ExtResource("4_ahfd8")
+mesh = SubResource("PlaneMesh_3dnga")
+script = ExtResource("4_xexuf")
 texture = ExtResource("5_3bjuk")
 
 [node name="MeshInstance3D19" type="MeshInstance3D" parent="Walls"]
 transform = Transform3D(2.62268e-07, 2, -8.74228e-08, 0, -8.74228e-08, -2, -2, 2.62268e-07, -1.14641e-14, -10.1947, 2.79935, -6.84494)
-mesh = SubResource("PlaneMesh_t0u2f")
-script = ExtResource("4_ahfd8")
+mesh = SubResource("PlaneMesh_prpib")
+script = ExtResource("4_xexuf")
 texture = ExtResource("5_3bjuk")
 
 [node name="MeshInstance3D27" type="MeshInstance3D" parent="Walls"]
 transform = Transform3D(-2, 1.74845e-07, -7.64273e-15, 0, -8.74228e-08, -2, -1.74845e-07, -2, 8.74228e-08, -8.21048, 2.79935, -11.9853)
-mesh = SubResource("PlaneMesh_1oib3")
-script = ExtResource("4_ahfd8")
+mesh = SubResource("PlaneMesh_68bfy")
+script = ExtResource("4_xexuf")
 texture = ExtResource("5_3bjuk")
 
 [node name="MeshInstance3D28" type="MeshInstance3D" parent="Walls"]
 transform = Transform3D(-0.00994819, 1.99998, -8.74217e-08, 0, -8.74228e-08, -2, -1.99998, -0.00994819, 4.34849e-10, -6.16069, 2.79935, -12.2558)
-mesh = SubResource("PlaneMesh_lexox")
-script = ExtResource("4_ahfd8")
+mesh = SubResource("PlaneMesh_8sxla")
+script = ExtResource("4_xexuf")
 texture = ExtResource("5_3bjuk")
 
 [node name="MeshInstance3D20" type="MeshInstance3D" parent="Walls"]
 transform = Transform3D(2.62268e-07, 2, -8.74228e-08, 0, -8.74228e-08, -2, -2, 2.62268e-07, -1.14641e-14, -10.1947, 2.79935, -3.44326)
-mesh = SubResource("PlaneMesh_kk8wb")
-script = ExtResource("4_ahfd8")
+mesh = SubResource("PlaneMesh_ofx8d")
+script = ExtResource("4_xexuf")
 texture = ExtResource("5_3bjuk")
 
 [node name="MeshInstance3D7" type="MeshInstance3D" parent="Walls"]
 transform = Transform3D(-2, -1.74846e-07, 7.64274e-15, 0, -8.74228e-08, -2, 1.74846e-07, -2, 8.74228e-08, -3.6126, 2.79935, -21.6203)
-mesh = SubResource("PlaneMesh_kkgrt")
-script = ExtResource("4_ahfd8")
+mesh = SubResource("PlaneMesh_iihhm")
+script = ExtResource("4_xexuf")
 texture = ExtResource("5_3bjuk")
 
 [node name="MeshInstance3D8" type="MeshInstance3D" parent="Walls"]
 transform = Transform3D(-2, -1.74846e-07, 7.64274e-15, 0, -8.74228e-08, -2, 1.74846e-07, -2, 8.74228e-08, -0.0379529, 2.79935, -21.6203)
-mesh = SubResource("PlaneMesh_g653x")
-script = ExtResource("4_ahfd8")
+mesh = SubResource("PlaneMesh_iunwf")
+script = ExtResource("4_xexuf")
 texture = ExtResource("5_3bjuk")
 
 [node name="MeshInstance3D9" type="MeshInstance3D" parent="Walls"]
 transform = Transform3D(-8.74228e-08, 2, -8.74228e-08, 0, -8.74228e-08, -2, -2, -8.74228e-08, 3.82137e-15, -5.58746, 2.79935, -19.7063)
-mesh = SubResource("PlaneMesh_skldw")
-script = ExtResource("4_ahfd8")
+mesh = SubResource("PlaneMesh_465x3")
+script = ExtResource("4_xexuf")
 texture = ExtResource("5_3bjuk")
 
 [node name="MeshInstance3D10" type="MeshInstance3D" parent="Walls"]
 transform = Transform3D(-8.74228e-08, 2, -8.74228e-08, 0, -8.74228e-08, -2, -2, -8.74228e-08, 3.82137e-15, -5.58746, 2.79935, -15.9081)
-mesh = SubResource("PlaneMesh_w72nj")
-script = ExtResource("4_ahfd8")
+mesh = SubResource("PlaneMesh_w5vnm")
+script = ExtResource("4_xexuf")
 texture = ExtResource("5_3bjuk")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="."]

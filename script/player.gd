@@ -8,7 +8,6 @@ var last_direction : String = "idle"
 @export var carrotsNumber = 0 
 var direction : Vector3 = Vector3.ZERO
 var is_shaking : bool = false
-var original_position = Vector3(global_transform.origin.x, global_transform.origin.y +1.7,global_transform.origin.z)
 var durt_particles
 @export var gravity = 9.8
 
@@ -140,7 +139,8 @@ func isActiveMecanism():
 func pickObject():
 	if $ShapeCast3D.OldClosestObject.get_node("PickableObjectComponent").weight <= carrotsNumber:
 		$ShapeCast3D.OldClosestObject.get_node("PickableObjectComponent").isPicked = true
-		$ShapeCast3D.OldClosestObject.digUp()
+		if $ShapeCast3D.OldClosestObject.has_method("digUp"):
+			$ShapeCast3D.OldClosestObject.digUp()
 		interactionState = "holding"
 		state="holding"
 		_on_holding_state_changed.emit(true)
@@ -218,16 +218,20 @@ func _onRelease():
 					throwObject()
 
 func hit() -> void:
+	if _is_dead:
+		return
 	_is_dead = true
 	interactionState = "dead"
+	$FlashComponent.start_flash(.2)
 	anim_player.play("dead")
 	$AnimatedSprite3D.animation_finished.connect(_on_death_anim_finished)
-	$FlashComponent.start_flash(.2)
+
 func _on_death_anim_finished():
-	$AnimatedSprite3D.animation_finished.disconnect(_on_death_anim_finished)
 	global_transform.origin = spawn_position
 	interactionState = "underground"
 	_is_dead = false
+	anim_player.play("underground")
+	$AnimatedSprite3D.animation_finished.disconnect(_on_death_anim_finished)
 	
 
 	
@@ -253,14 +257,13 @@ func apply_shake(delta: float) -> void:
 			randf_range(-shake_amount, shake_amount), # Tremblement sur l'axe Y
 			randf_range(-shake_amount, shake_amount)  # Tremblement sur l'axe Z
 		)
-		
 		# Appliquer le tremblement par rapport à la position initiale
-		global_transform.origin = original_position + shake_offset
+		global_transform.origin = spawn_position + shake_offset
 	else:
 		# Arrêter le tremblement et revenir à la position initiale
 		is_shaking = false
 		durt_particles.emitting = false
-		global_transform.origin = original_position
+		global_transform.origin = spawn_position
 
 
 func littleJump():

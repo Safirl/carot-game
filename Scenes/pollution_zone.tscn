@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://bdnfxab00ytr2"]
+[gd_scene load_steps=17 format=3 uid="uid://bdnfxab00ytr2"]
 
 [ext_resource type="Script" path="res://Scenes/collisionStop.gd" id="1_d2wmd"]
 [ext_resource type="Texture2D" uid="uid://cld4b6g33865p" path="res://sprites/arrosage/Arrosage-fixe.png" id="3_fw7og"]
@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://cow3pphw1t55w" path="res://sprites/arrosage/anim/Arrosage-6.png" id="8_12u5t"]
 [ext_resource type="Texture2D" uid="uid://7fteayw4axfi" path="res://sprites/arrosage/anim/Arrosage-7.png" id="9_l5i8p"]
 [ext_resource type="Texture2D" uid="uid://duq2kri2kjft3" path="res://sprites/arrosage/anim/Arrosage-8.png" id="10_oyj0p"]
+[ext_resource type="Texture2D" uid="uid://d30is7wu6fy3t" path="res://sprites/arrosage/Arrosage-casse-2.png" id="11_el63h"]
 [ext_resource type="Script" path="res://script/pollution_shape_cast.gd" id="11_mp1xu"]
 
 [sub_resource type="FogMaterial" id="FogMaterial_sxabb"]
@@ -67,11 +68,12 @@ animations = [{
 [sub_resource type="BoxShape3D" id="BoxShape3D_ydlx8"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_5tamv"]
-size = Vector3(0.500977, 1, 0.385162)
+size = Vector3(1.77905, 1, 1.66959)
 
-[node name="Area3D" type="Area3D"]
+[node name="PollutionZone" type="Area3D"]
 collision_mask = 6
 script = ExtResource("1_d2wmd")
+broken_texture = ExtResource("11_el63h")
 
 [node name="FogVolume" type="FogVolume" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.128599, 0.904538, 0.297255)
@@ -86,7 +88,6 @@ texture = ExtResource("3_fw7og")
 transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0.508483, 0)
 sprite_frames = SubResource("SpriteFrames_87nnf")
 animation = &"anim"
-frame_progress = 0.477223
 
 [node name="ShapeCast3D" type="ShapeCast3D" parent="."]
 transform = Transform3D(4.195, 0, 0, 0, 2.35, 0, 0, 0, 3.485, 0, 0.349585, 0)
@@ -96,7 +97,7 @@ collision_mask = 6
 script = ExtResource("11_mp1xu")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00927734, 0.479632, 0.0235748)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0423585, 0.479632, -0.00738907)
 shape = SubResource("BoxShape3D_5tamv")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
