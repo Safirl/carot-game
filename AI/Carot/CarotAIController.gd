@@ -26,6 +26,7 @@ var _is_holding
 var player
 var original_position : Vector3
 var has_target : bool = false
+var is_selected = false
 
 func _ready() -> void:
 	
@@ -97,27 +98,34 @@ func _chasing():
 		last_direction = state  # Met à jour la dernière direction
 	else:
 		state = "idle"
+		
+	var selected
+	if is_selected:
+		selected = "selected"
+	else:
+		selected = ""
+		
 	if !_is_holding:
 		match state:
 			"walkdown":
-				anim_player.play("walkDown")
+				anim_player.play(selected + "walkDown")
 			"walkup":
-				anim_player.play("walkUp")
+				anim_player.play(selected + "walkUp")
 			"walkright":
-				anim_player.play("walkRight")
+				anim_player.play(selected + "walkRight")
 			"walkleft":
-				anim_player.play("walkLeft")
+				anim_player.play(selected + "walkLeft")
 			"idle":
 				# Choisir l'animation idle en fonction de la dernière direction de mouvement
 				match last_direction:
 					"walkdown":
-						anim_player.play("DefaultDown")
+						anim_player.play(selected + "DefaultDown")
 					"walkup":
-						anim_player.play("DefaultUp")
+						anim_player.play(selected + "DefaultUp")
 					"walkright":
-						anim_player.play("DefaultRight")
+						anim_player.play(selected + "DefaultRight")
 					"walkleft":
-						anim_player.play("DefaultLeft")
+						anim_player.play(selected + "DefaultLeft")
 						
 	elif state == "dead":
 		_dead()
@@ -132,24 +140,24 @@ func _chasing():
 		
 		match state:
 			"walkdown":
-				anim_player.play("portaitDown")
+				anim_player.play(selected + "portaitDown")
 			"walkup":
-				anim_player.play("portaitUp")
+				anim_player.play(selected + "portaitUp")
 			"walkright":
-				anim_player.play("portaitRight")
+				anim_player.play(selected + "portaitRight")
 			"walkleft":
-				anim_player.play("portaitLeft")
+				anim_player.play(selected + "portaitLeft")
 			"idle":
 		
 				match last_direction:
 					"walkdown":
-						anim_player.play("DefaultPortaitDown")
+						anim_player.play(selected + "DefaultPortaitDown")
 					"walkup":
-						anim_player.play("DefaultPortaitUp")
+						anim_player.play(selected + "DefaultPortaitUp")
 					"walkright":
-						anim_player.play("DefaultPortaitRight")
+						anim_player.play(selected + "DefaultPortaitRight")
 					"walkleft":
-						anim_player.play("DefaultPortaitLeft")
+						anim_player.play(selected + "DefaultPortaitLeft")
 
 func _holded():
 	velocity = Vector3.ZERO
@@ -206,9 +214,9 @@ func setFreeze(bfreeze: bool):
 
 func highlight(bhighlight: bool):
 	if bhighlight:
-		$AnimatedSprite3D.modulate = Color(1, 0, 0, 1)
+		is_selected = true
 	else:
-		$AnimatedSprite3D.modulate = Color(1, 1, 1, 1)
+		is_selected = false
 	
 #called when object is throw
 func throw(impulse = Vector3(0, 0, 0)):
