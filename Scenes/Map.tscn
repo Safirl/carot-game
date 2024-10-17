@@ -1,10 +1,12 @@
-[gd_scene load_steps=29 format=3 uid="uid://raghvv2anqjp"]
+[gd_scene load_steps=31 format=3 uid="uid://raghvv2anqjp"]
 
 [ext_resource type="Script" path="res://Scenes/camera_3d.gd" id="1_u7fxj"]
 [ext_resource type="PackedScene" uid="uid://bhr635oauf4nk" path="res://Scenes/player.tscn" id="2_5qt3q"]
 [ext_resource type="PackedScene" uid="uid://bdnfxab00ytr2" path="res://Scenes/pollution_zone.tscn" id="2_7ufsd"]
 [ext_resource type="PackedScene" uid="uid://ciapeobbliorq" path="res://Scenes/lvl2.tscn" id="2_n4eqx"]
+[ext_resource type="PackedScene" uid="uid://dmgg362jopmyu" path="res://Scenes/lvl3.tscn" id="3_32g33"]
 [ext_resource type="Texture2D" uid="uid://cbgpb8sur6nak" path="res://sprites/Serre/Serre-porte-cassee-2.png" id="3_jxkak"]
+[ext_resource type="PackedScene" uid="uid://cdi6o7fglb3th" path="res://Scenes/lvl4.tscn" id="4_f7j5t"]
 [ext_resource type="Shader" path="res://script/Vignette.gdshader" id="4_keinb"]
 [ext_resource type="Texture2D" uid="uid://cy1ug108nhrjy" path="res://sprites/Serre/Serre-porte-cassee-3.png" id="4_xadb3"]
 [ext_resource type="Script" path="res://script/pickable_object.gd" id="6_wuxo4"]
@@ -66,13 +68,13 @@ load_path = "res://.godot/imported/Serre-porte-cassee-3.png-9baa6586a2ef107b1712
 [sub_resource type="BoxShape3D" id="BoxShape3D_7ox3u"]
 size = Vector3(0.3, 5, 4)
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5ixyh"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3pmhh"]
 transparency = 4
 shading_mode = 0
 albedo_texture = SubResource("CompressedTexture2D_wss1h")
 
-[sub_resource type="PlaneMesh" id="PlaneMesh_41paa"]
-material = SubResource("StandardMaterial3D_5ixyh")
+[sub_resource type="PlaneMesh" id="PlaneMesh_w3ah4"]
+material = SubResource("StandardMaterial3D_3pmhh")
 
 [node name="Node3D" type="Node3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.8933, -0.0296888, -0.441497)
@@ -98,6 +100,11 @@ navigation_mesh = SubResource("NavigationMesh_tma6c")
 [node name="lvl1" parent="NavigationRegion3D" instance=ExtResource("7_nix1k")]
 
 [node name="lvl2" parent="NavigationRegion3D" instance=ExtResource("2_n4eqx")]
+
+[node name="lvl3" parent="NavigationRegion3D" instance=ExtResource("3_32g33")]
+transform = Transform3D(1, 0, 7.10543e-15, 0, 1, 0, -7.10543e-15, 0, 1, -0.777246, 0.733, 2.05848)
+
+[node name="lvl4" parent="NavigationRegion3D" instance=ExtResource("4_f7j5t")]
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 follow_viewport_enabled = true
@@ -165,7 +172,7 @@ shape = SubResource("BoxShape3D_7ox3u")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Button2"]
 transform = Transform3D(-8.74228e-08, 2, -8.74228e-08, 0, -8.74228e-08, -2, -2, -8.74228e-08, 3.82137e-15, 0, 0, 0)
-mesh = SubResource("PlaneMesh_41paa")
+mesh = SubResource("PlaneMesh_w3ah4")
 
 [node name="Area3D" parent="." instance=ExtResource("2_7ufsd")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -32.8177, 0.273228, -0.331724)
