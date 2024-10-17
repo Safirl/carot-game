@@ -151,6 +151,7 @@ func _holded():
 	velocity = Vector3.ZERO
 
 func _dead():
+	print('is dead')
 	anim_player.play("dead")
 	has_target = false
 
@@ -209,11 +210,8 @@ func hit() -> void:
 func _on_farmer_ai_on_farmer_attacked(sender) -> void:
 	if global_transform.origin.distance_to(sender.global_position) < 5:
 		_is_bumped = true
-		
-
-func _on_player_holding_state_changed(bisHolding: Variant) -> void:
-	digUp()
 	
+func _on_player_holding_state_changed(bisHolding: Variant) -> void:
 	if bisHolding == true && (current_state != States.UNDERGROUND || current_state != States.DEAD):
 		_is_holding = true
 		if owner.name != "Player":
@@ -243,7 +241,6 @@ func apply_shake(delta: float) -> void:
 		# Arrêter le tremblement et revenir à la position initiale
 		is_shaking = false
 		global_transform.origin = original_position
-
 
 func digUp():
 	has_target = true

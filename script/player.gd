@@ -140,6 +140,7 @@ func isActiveMecanism():
 func pickObject():
 	if $ShapeCast3D.OldClosestObject.get_node("PickableObjectComponent").weight <= carrotsNumber:
 		$ShapeCast3D.OldClosestObject.get_node("PickableObjectComponent").isPicked = true
+		$ShapeCast3D.OldClosestObject.digUp()
 		interactionState = "holding"
 		state="holding"
 		_on_holding_state_changed.emit(true)
