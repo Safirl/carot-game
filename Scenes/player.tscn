@@ -38,7 +38,7 @@
 [ext_resource type="Texture2D" uid="uid://ba1bnmeadt4n7" path="res://sprites/Carrot/dos8.png" id="16_sy2d4"]
 [ext_resource type="Texture2D" uid="uid://keywqrxc7tpm" path="res://sprites/Carrot/dos9.png" id="17_725kt"]
 [ext_resource type="Texture2D" uid="uid://do3v534gkjme6" path="res://sprites/portait/portant-dos-5.png" id="17_xwm82"]
-[ext_resource type="Texture2D" uid="uid://brvxiyymkchx7" path="res://sprites/dos10.png" id="18_a57a0"]
+[ext_resource type="Texture2D" uid="uid://brvxiyymkchx7" path="res://sprites/Carrot/dos10.png" id="18_a57a0"]
 [ext_resource type="Texture2D" uid="uid://boojlt733hsj6" path="res://sprites/underground.png" id="25_hed68"]
 [ext_resource type="Script" path="res://script/PlayerShapeCast.gd" id="30_3e68u"]
 [ext_resource type="PackedScene" path="res://Scenes/flash_component.tscn" id="40_64264"]

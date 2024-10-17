@@ -14,7 +14,7 @@ material = SubResource("StandardMaterial3D_oktgw")
 radius = 0.25
 height = 1.0
 
-[node name="Node3D" type="Node3D"]
+[node name="Node3D2" type="Node3D"]
 
 [node name="durt" type="GPUParticles3D" parent="."]
 amount = 24
