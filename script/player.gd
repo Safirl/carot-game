@@ -9,7 +9,7 @@ var last_direction : String = "idle"
 var direction : Vector3 = Vector3.ZERO
 var is_shaking : bool = false
 var original_position = Vector3(global_transform.origin.x, global_transform.origin.y +2,global_transform.origin.z)
-var durt_particles 
+var durt_particles
 
 var shake_amount: float = 0.1  # L'amplitude du tremblement
 var shake_duration: float = 0.5  # La durée du tremblement en secondes
@@ -18,6 +18,7 @@ var shake_timer: float = 0.0
 var impulse_direction: Vector3
 var _is_dead : bool = false
 var _is_shaking = false
+var interaction_counter : int = 0
 
 #Holding input
 var holding_time = 0.0
@@ -88,6 +89,10 @@ func _physics_process(delta):
 	elif interactionState == "dead":
 		pass
 	elif interactionState == "underground":
+		direction.x = 0
+		direction.y = 0
+		direction.z = 0
+		velocity = direction
 		anim_player.play("underground")
 		
 	else:
@@ -144,7 +149,6 @@ func throwObject():
 	var throw_direction
 	match last_direction:
 		"walkdown":
-			
 			throw_direction = self.global_transform.basis.z.normalized() * -1
 		"walkup":
 			throw_direction = self.global_transform.basis.z.normalized() * 1
@@ -171,9 +175,19 @@ func _input(event: InputEvent) -> void:
 		_onRelease()
 
 func interact():
-	print(interactionState)
+	
 	if interactionState == "underground":
-		control_underground()
+		if interaction_counter < 3: # Vérifier que l'on n'a pas atteint la limite
+			control_underground()
+			interaction_counter += 1 # Incrémenter le compteur à chaque appel
+		else: 
+			interactionState = "none"
+			state = "walkdown"
+			anim_player.play("walkDown")
+			interaction_counter = 0
+		
+			
+			
 	if $ShapeCast3D.OldClosestObject != null:
 		match interactionState:
 				"none":
@@ -211,11 +225,13 @@ func _on_death_anim_finished():
 
 	
 func control_underground() -> void:
-	# Activer le tremblement
 	is_shaking = true
-	shake_timer = 0.5 # Remet à zéro le timer de tremblement
+	direction = Vector3.ZERO
+	direction.x = 0
+	direction.y = 0
+	velocity = direction
+	shake_timer = 0.5 
 	durt_particles.emitting = true
-	# On peut appeler move_and_slide pour les autres mouvements
 	move_and_slide()
 
 

@@ -23,5 +23,3 @@ explosiveness = 1.0
 fixed_fps = 60
 process_material = SubResource("ParticleProcessMaterial_puhto")
 draw_pass_1 = SubResource("CapsuleMesh_v7yj7")
-
-[node name="CPUParticles3D" type="CPUParticles3D" parent="."]
