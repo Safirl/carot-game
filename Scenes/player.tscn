@@ -41,7 +41,7 @@
 [ext_resource type="Texture2D" uid="uid://brvxiyymkchx7" path="res://sprites/Carrot/dos10.png" id="18_a57a0"]
 [ext_resource type="Texture2D" uid="uid://boojlt733hsj6" path="res://sprites/underground.png" id="25_hed68"]
 [ext_resource type="Script" path="res://script/PlayerShapeCast.gd" id="30_3e68u"]
-[ext_resource type="PackedScene" path="res://Scenes/flash_component.tscn" id="40_64264"]
+[ext_resource type="PackedScene" uid="uid://c6ml33d2tpcwk" path="res://Scenes/flash_component.tscn" id="40_64264"]
 [ext_resource type="Texture2D" uid="uid://cubb3xl0xyldf" path="res://TileMap/Textures/Soil/Tuiles_1-2_07.png" id="43_daqof"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_60v5n"]

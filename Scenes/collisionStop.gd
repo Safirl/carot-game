@@ -21,3 +21,4 @@ func _on_body_entered(body: Node3D) -> void:
 		$Sprite3D.texture = broken_texture
 		$FogVolume.queue_free()
 		$ShapeCast3D.queue_free()
+		$GPUParticles3D.queue_free()
