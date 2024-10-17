@@ -1,102 +1,29 @@
-[gd_scene load_steps=27 format=3 uid="uid://ioa2pcdgle2y"]
+[gd_scene load_steps=10 format=3 uid="uid://ioa2pcdgle2y"]
 
 [ext_resource type="PackedScene" uid="uid://bhr635oauf4nk" path="res://Scenes/player.tscn" id="1_a1yr3"]
-[ext_resource type="MeshLibrary" uid="uid://vv3ml06gqx8h" path="res://TileMap/baseMeshLibrary.tres" id="2_5eb5s"]
+[ext_resource type="MeshLibrary" uid="uid://dtuvmf0ihiyh2" path="res://TileMap/baseMeshLibrary.tres" id="2_5eb5s"]
 [ext_resource type="PackedScene" uid="uid://dua2oubaha4yv" path="res://AI/Carot/CarotAI.tscn" id="3_61gqv"]
 [ext_resource type="PackedScene" uid="uid://byepc6q4d58ep" path="res://AI/Ennemy/farmerAI.tscn" id="4_3dmwx"]
 [ext_resource type="Script" path="res://Scenes/camera_3d.gd" id="5_jddgn"]
-[ext_resource type="Texture2D" uid="uid://dnkpyw6hyan8a" path="res://sprites/dog/chien-4.png" id="6_c7e0n"]
-[ext_resource type="Texture2D" uid="uid://chy5y75wadhe5" path="res://sprites/dog/chien-5.png" id="7_d0pcd"]
-[ext_resource type="Texture2D" uid="uid://c7c7aw7e8eite" path="res://sprites/dog/chien-6.png" id="8_yetek"]
-[ext_resource type="Texture2D" uid="uid://bx3o0njowf5dp" path="res://sprites/dog/chien-3.png" id="9_clt0q"]
-[ext_resource type="Texture2D" uid="uid://b1mpop2klmd6n" path="res://sprites/dog/chien-2(1).png" id="10_qeh5b"]
-[ext_resource type="Texture2D" uid="uid://bdggykgt4r4oc" path="res://sprites/dog/chien-1.png" id="11_rbaw3"]
-[ext_resource type="Texture2D" uid="uid://bhj3wtqd3ibdy" path="res://sprites/dog/chien-1(1).png" id="12_nr5fe"]
-[ext_resource type="Texture2D" uid="uid://dabyl7xuauqvq" path="res://sprites/dog/chien-2.png" id="13_2r3dr"]
-[ext_resource type="Texture2D" uid="uid://c7hpe561twow7" path="res://sprites/dog/chien-3(1).png" id="14_hlfb6"]
-[ext_resource type="Texture2D" uid="uid://bn3wqidgel2bn" path="res://sprites/dog/chien-7.png" id="15_o3wx5"]
-[ext_resource type="Texture2D" uid="uid://bkar1onnk541w" path="res://sprites/dog/chien-8.png" id="16_rnojg"]
-[ext_resource type="Texture2D" uid="uid://k20qy1fibhuo" path="res://sprites/dog/chien-9.png" id="17_v2wdy"]
-[ext_resource type="Script" path="res://AI/Ennemy/enemiIA.gd" id="18_h5of1"]
-[ext_resource type="Script" path="res://AI/Ennemy/shape_cast_3d.gd" id="19_3mr8r"]
-[ext_resource type="PackedScene" uid="uid://d4qbm4vesv64" path="res://Scenes/pickable_object.tscn" id="21_0xn63"]
+[ext_resource type="Texture2D" uid="uid://ueo2atd2f82t" path="res://sprites/deadZone.png" id="20_a54fw"]
 [ext_resource type="Script" path="res://Scenes/collisionStop.gd" id="21_lp13t"]
 
 [sub_resource type="NavigationMesh" id="NavigationMesh_dgft6"]
 vertices = PackedVector3Array(-25.5, 1.5, -13.5, -25.5, 1.5, -10.5, -23.5, 1.5, -10.25, -11.75, 1.5, -13.5, -21.5, 1.5, -4.25, -21.5, 1.5, -0.5, -19.75, 1.5, -0.5, -15.75, 1.5, 1.5, -15.5, 1.5, 3.5, -12, 1.5, 3.5, -19.5, 1.5, 1.5, -23.5, 1.5, -4.5, -9.75, 1.5, 3.5, -9.5, 1.5, 5.5, 3.5, 1.5, 5.5, 3.75, 1.5, 3.5, 5.75, 1.5, -13.5, 5.75, 1.5, 3.5, 16.25, 1.5, 3.5, 16.5, 1.5, 5.5, 17.5, 1.5, 5.5, 17.5, 1.5, -13.5)
 polygons = [PackedInt32Array(1, 0, 2), PackedInt32Array(2, 0, 3), PackedInt32Array(6, 5, 4), PackedInt32Array(9, 8, 7), PackedInt32Array(7, 10, 6), PackedInt32Array(4, 11, 2), PackedInt32Array(4, 7, 6), PackedInt32Array(7, 4, 9), PackedInt32Array(9, 4, 2), PackedInt32Array(9, 2, 3), PackedInt32Array(13, 12, 14), PackedInt32Array(14, 12, 15), PackedInt32Array(15, 12, 3), PackedInt32Array(15, 3, 16), PackedInt32Array(12, 9, 3), PackedInt32Array(16, 17, 15), PackedInt32Array(19, 18, 20), PackedInt32Array(20, 18, 21), PackedInt32Array(17, 16, 18), PackedInt32Array(18, 16, 21)]
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_g4ru4"]
-size = Vector3(1.61938, 2.62549, 1)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_601bt"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("9_clt0q")
-}, {
-"duration": 1.0,
-"texture": ExtResource("10_qeh5b")
-}, {
-"duration": 1.0,
-"texture": ExtResource("11_rbaw3")
-}],
-"loop": true,
-"name": &"walkLeft",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("6_c7e0n")
-}, {
-"duration": 1.0,
-"texture": ExtResource("7_d0pcd")
-}, {
-"duration": 1.0,
-"texture": ExtResource("8_yetek")
-}],
-"loop": true,
-"name": &"walkingDown",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("12_nr5fe")
-}, {
-"duration": 1.0,
-"texture": ExtResource("13_2r3dr")
-}, {
-"duration": 1.0,
-"texture": ExtResource("14_hlfb6")
-}],
-"loop": true,
-"name": &"walkingRight",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("15_o3wx5")
-}, {
-"duration": 1.0,
-"texture": ExtResource("16_rnojg")
-}, {
-"duration": 1.0,
-"texture": ExtResource("17_v2wdy")
-}],
-"loop": true,
-"name": &"walkingUp",
-"speed": 5.0
-}]
-
-[sub_resource type="SphereShape3D" id="SphereShape3D_4dog2"]
-
 [sub_resource type="BoxShape3D" id="BoxShape3D_wv64m"]
 size = Vector3(10.3042, 3.77521, 12.3387)
 
 [node name="Node3D" type="Node3D"]
 
+[node name="CarotAI" parent="." instance=ExtResource("3_61gqv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.68574, 1.41024, 0)
+
 [node name="Player" parent="." instance=ExtResource("1_a1yr3")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.20433, 1.9555, -11.389)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.20433, 2.15888, -11.389)
+collision_layer = 3
+collision_mask = 3
 
 [node name="NavigationRegion3D" type="NavigationRegion3D" parent="."]
 navigation_mesh = SubResource("NavigationMesh_dgft6")
@@ -107,40 +34,11 @@ data = {
 "cells": PackedInt32Array(65535, 1, 77, 65535, 0, 77, 0, 0, 77, 0, 65535, 77, 1, 65535, 77, 1, 65534, 77, 0, 65534, 77, 0, 65533, 77, 65535, 65533, 77, 65534, 65533, 77, 65534, 65534, 77, 65533, 65534, 77, 65535, 65532, 77, 0, 65532, 77, 1, 65532, 77, 1, 65533, 77, 2, 65533, 77, 2, 65532, 77, 2, 65531, 77, 1, 65530, 77, 1, 65529, 77, 65531, 65529, 77, 65535, 65529, 77, 65534, 65529, 77, 65533, 65529, 77, 65533, 65530, 77, 65533, 65531, 77, 65534, 65530, 77, 65535, 65530, 77, 0, 65530, 77, 2, 65530, 77, 3, 65530, 77, 65534, 65531, 77, 65534, 65532, 77, 65533, 65532, 77, 1, 0, 77, 1, 1, 77, 1, 2, 77, 2, 65535, 77, 2, 65534, 77, 3, 65532, 77, 3, 65531, 77, 3, 65529, 77, 5, 65529, 77, 5, 65530, 77, 4, 65531, 77, 4, 65532, 77, 4, 65533, 77, 3, 65533, 77, 3, 65534, 77, 3, 65535, 77, 2, 0, 77, 2, 1, 77, 3, 0, 77, 4, 65534, 77, 5, 65532, 77, 5, 65531, 77, 6, 65530, 77, 6, 65529, 77, 6, 65531, 77, 5, 65533, 77, 4, 65535, 77, 4, 0, 77, 65523, 65529, 77, 65523, 65530, 77, 65524, 65531, 77, 65524, 65532, 77, 65524, 65533, 77, 65525, 65533, 77, 65525, 65534, 77, 65525, 65535, 77, 65526, 65535, 77, 65526, 0, 77, 65527, 0, 77, 65528, 0, 77, 65528, 1, 77, 65529, 1, 77, 65530, 1, 77, 65531, 2, 77, 65532, 2, 77, 65533, 2, 77, 65534, 2, 77, 65535, 2, 77, 0, 2, 77, 0, 1, 77, 3, 1, 77, 4, 1, 77, 5, 1, 77, 6, 1, 77, 7, 1, 77, 8, 2, 77, 65535, 65535, 77, 65534, 65535, 77, 65535, 65534, 77, 65534, 0, 77, 65533, 0, 77, 65533, 1, 77, 65534, 1, 77, 65532, 1, 77, 65531, 1, 77, 65529, 0, 77, 65527, 65535, 77, 65526, 65534, 77, 65524, 65530, 77, 65524, 65529, 77, 65532, 65529, 77, 65532, 65530, 77, 65532, 65531, 77, 65532, 65532, 77, 65532, 65533, 77, 65532, 65534, 77, 65532, 65535, 77, 65532, 0, 77, 65533, 65535, 77, 65533, 65533, 77, 65531, 0, 77, 65531, 65535, 77, 65531, 65534, 77, 65531, 65533, 77, 65531, 65532, 77, 65531, 65531, 77, 65531, 65530, 77, 65530, 65529, 77, 65530, 65530, 77, 65530, 65531, 77, 65530, 65532, 77, 65530, 65533, 77, 65530, 65534, 77, 65530, 65535, 77, 65530, 0, 77, 65529, 65535, 77, 65529, 65534, 77, 65529, 65533, 77, 65529, 65532, 77, 65529, 65531, 77, 65529, 65530, 77, 65529, 65529, 77, 65528, 65529, 77, 65528, 65530, 77, 65528, 65531, 77, 65528, 65532, 77, 65528, 65533, 77, 65528, 65534, 77, 65528, 65535, 77, 65526, 65533, 77, 65526, 65532, 77, 65526, 65531, 77, 65526, 65530, 77, 65526, 65529, 77, 65527, 65529, 77, 65527, 65530, 77, 65527, 65531, 77, 65527, 65532, 77, 65527, 65533, 77, 65527, 65534, 77, 65525, 65532, 77, 65525, 65531, 77, 65525, 65530, 77, 65525, 65529, 77, 5, 0, 77, 6, 0, 77, 7, 0, 77, 8, 0, 77, 8, 1, 77, 6, 65535, 77, 5, 65535, 77, 5, 65534, 77, 6, 65534, 77, 7, 65534, 77, 8, 65534, 77, 7, 65535, 77, 8, 65533, 77, 7, 65533, 77, 8, 65535, 77, 6, 65533, 77, 6, 65532, 77, 7, 65532, 77, 7, 65531, 77, 7, 65530, 77, 7, 65529, 77, 8, 65529, 77, 8, 65530, 77, 4, 65530, 77, 4, 65529, 77, 2, 65529, 77, 65535, 65531, 77, 0, 65531, 77, 0, 65529, 77, 1, 65531, 77, 8, 65531, 77, 8, 65532, 77)
 }
 
-[node name="CarotAI" parent="." instance=ExtResource("3_61gqv")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.46173, 2.69411, -13.7197)
-
-[node name="FarmerAI" parent="." instance=ExtResource("4_3dmwx")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.89925, 1.83348, -8.08273)
-hit_distance = 1.5
-
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(-1, 2.99004e-08, -8.21505e-08, 0, 0.939693, 0.34202, 8.74228e-08, 0.34202, -0.939693, 0, 3.79875, -4.83042)
 size = 0.495
 script = ExtResource("5_jddgn")
 offset = Vector3(0, 1, -3)
-
-[node name="dogAI" type="CharacterBody3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.37262, 0)
-script = ExtResource("18_h5of1")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="dogAI"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00866699, -0.0769043, 0.172575)
-shape = SubResource("BoxShape3D_g4ru4")
-
-[node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="dogAI"]
-transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0, 0, 0)
-layers = 4
-sprite_frames = SubResource("SpriteFrames_601bt")
-animation = &"walkingUp"
-
-[node name="NavigationAgent3D" type="NavigationAgent3D" parent="dogAI"]
-
-[node name="ShapeCast3D" type="ShapeCast3D" parent="dogAI"]
-transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, 0, 0)
-shape = SubResource("SphereShape3D_4dog2")
-target_position = Vector3(0, 0, -0.5)
-script = ExtResource("19_3mr8r")
 
 [node name="Area3D" type="Area3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0481853, 0, -13.6657)
@@ -157,10 +55,10 @@ shape = SubResource("BoxShape3D_wv64m")
 transform = Transform3D(-0.0141884, -0.499121, 0.000127845, 0.00408112, -0.000141561, -1.98364, 0.51404, -0.0137755, 0.0157523, 16.0339, 1.54256, 5.98549)
 layers = 6
 
-[node name="PickableObject" parent="." instance=ExtResource("21_0xn63")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.75102, 1.95385, -10.3964)
+[node name="FarmerAI" parent="." instance=ExtResource("4_3dmwx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.34217, 1.75291, -8.99676)
 
-[connection signal="_on_holding_state_changed" from="Player" to="CarotAI" method="_on_player_holding_state_changed"]
-[connection signal="on_farmer_attacked" from="FarmerAI" to="CarotAI" method="_on_farmer_ai_on_farmer_attacked"]
-[connection signal="on_farmer_attacked" from="FarmerAI" to="Camera3D" method="_on_farmer_ai_on_farmer_attacked"]
+[node name="CarotAI2" parent="." instance=ExtResource("3_61gqv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.35918, 0)
+
 [connection signal="body_entered" from="Area3D" to="Area3D" method="_on_body_entered"]

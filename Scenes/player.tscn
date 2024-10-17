@@ -1,4 +1,4 @@
-[gd_scene load_steps=46 format=3 uid="uid://bhr635oauf4nk"]
+[gd_scene load_steps=51 format=3 uid="uid://bhr635oauf4nk"]
 
 [ext_resource type="Texture2D" uid="uid://c1b4och55uc8q" path="res://sprites/Carrot/character.png" id="1_1pdg6"]
 [ext_resource type="Script" path="res://script/player.gd" id="1_byvo4"]
@@ -38,9 +38,11 @@
 [ext_resource type="Texture2D" uid="uid://ba1bnmeadt4n7" path="res://sprites/Carrot/dos8.png" id="16_sy2d4"]
 [ext_resource type="Texture2D" uid="uid://keywqrxc7tpm" path="res://sprites/Carrot/dos9.png" id="17_725kt"]
 [ext_resource type="Texture2D" uid="uid://do3v534gkjme6" path="res://sprites/portait/portant-dos-5.png" id="17_xwm82"]
-[ext_resource type="Texture2D" uid="uid://brvxiyymkchx7" path="res://sprites/Carrot/dos10.png" id="18_a57a0"]
+[ext_resource type="Texture2D" uid="uid://brvxiyymkchx7" path="res://sprites/dos10.png" id="18_a57a0"]
+[ext_resource type="Texture2D" uid="uid://boojlt733hsj6" path="res://sprites/underground.png" id="25_hed68"]
 [ext_resource type="Script" path="res://script/PlayerShapeCast.gd" id="30_3e68u"]
-[ext_resource type="PackedScene" uid="uid://c6ml33d2tpcwk" path="res://Scenes/flash_component.tscn" id="40_64264"]
+[ext_resource type="PackedScene" path="res://Scenes/flash_component.tscn" id="40_64264"]
+[ext_resource type="Texture2D" uid="uid://cubb3xl0xyldf" path="res://TileMap/Textures/Soil/Tuiles_1-2_07.png" id="43_daqof"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_60v5n"]
 radius = 1.09686
@@ -206,6 +208,14 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": ExtResource("25_hed68")
+}],
+"loop": true,
+"name": &"underground",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": ExtResource("3_megag")
 }, {
 "duration": 1.0,
@@ -275,18 +285,30 @@ animations = [{
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_beqvw"]
 
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_4v82v"]
+spread = 180.0
+initial_velocity_max = 77.11
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_aopsp"]
+albedo_texture = ExtResource("43_daqof")
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_5qe5k"]
+material = SubResource("StandardMaterial3D_aopsp")
+radius = 0.05
+height = 0.1
+
 [node name="Player" type="CharacterBody3D"]
 collision_layer = 2
 script = ExtResource("1_byvo4")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0, 0)
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, -0.301972, 0)
 shape = SubResource("CapsuleShape3D_60v5n")
 
 [node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="."]
 transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0, 0)
 sprite_frames = SubResource("SpriteFrames_g6r7p")
-animation = &"DefaultDown"
+animation = &"underground"
 
 [node name="ShapeCast3D" type="ShapeCast3D" parent="."]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
@@ -296,3 +318,12 @@ collision_mask = 6
 script = ExtResource("30_3e68u")
 
 [node name="FlashComponent" parent="." instance=ExtResource("40_64264")]
+
+[node name="durt" type="GPUParticles3D" parent="."]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, -0.713907, 0)
+amount = 24
+lifetime = 0.5
+explosiveness = 1.0
+fixed_fps = 60
+process_material = SubResource("ParticleProcessMaterial_4v82v")
+draw_pass_1 = SubResource("CapsuleMesh_5qe5k")
