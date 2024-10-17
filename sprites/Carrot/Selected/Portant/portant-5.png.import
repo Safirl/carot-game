@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bvk1tujaq72l8"
-path.s3tc="res://.godot/imported/portant-face-3.png-dcd3f6f8440b371a6c45286c535a8d70.s3tc.ctex"
+uid="uid://cixoac775txke"
+path.s3tc="res://.godot/imported/portant-5.png-95a565571d41efabe9822b20162be05d.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://sprites/portait/portant-face-3.png"
-dest_files=["res://.godot/imported/portant-face-3.png-dcd3f6f8440b371a6c45286c535a8d70.s3tc.ctex"]
+source_file="res://sprites/Carrot/Selected/Portant/portant-5.png"
+dest_files=["res://.godot/imported/portant-5.png-95a565571d41efabe9822b20162be05d.s3tc.ctex"]
 
 [params]
 

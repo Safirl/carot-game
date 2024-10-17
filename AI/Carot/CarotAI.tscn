@@ -1,4 +1,4 @@
-[gd_scene load_steps=46 format=3 uid="uid://dua2oubaha4yv"]
+[gd_scene load_steps=51 format=3 uid="uid://dua2oubaha4yv"]
 
 [ext_resource type="Script" path="res://AI/Carot/CarotAIController.gd" id="1_veyp6"]
 [ext_resource type="Script" path="res://script/PickableObjectComponent.gd" id="2_cprcl"]
@@ -40,8 +40,13 @@
 [ext_resource type="Texture2D" uid="uid://bskvjb8olkwrw" path="res://sprites/Carrot/dos6.png" id="26_fjhaf"]
 [ext_resource type="Texture2D" uid="uid://boojlt733hsj6" path="res://sprites/underground.png" id="26_gg753"]
 [ext_resource type="Texture2D" uid="uid://ba1bnmeadt4n7" path="res://sprites/Carrot/dos8.png" id="27_2g0pn"]
+[ext_resource type="Texture2D" uid="uid://nke3lfxl5rq0" path="res://sprites/Carrot/Selected/Portant/portant-1.png" id="27_dlyjv"]
+[ext_resource type="Texture2D" uid="uid://oo2md8qu50lk" path="res://sprites/Carrot/Selected/Portant/portant-2.png" id="28_0y7y4"]
 [ext_resource type="Texture2D" uid="uid://keywqrxc7tpm" path="res://sprites/Carrot/dos9.png" id="28_uj7nl"]
 [ext_resource type="Texture2D" uid="uid://brvxiyymkchx7" path="res://sprites/Carrot/dos10.png" id="29_87pjq"]
+[ext_resource type="Texture2D" uid="uid://bg2wq1xo3db0c" path="res://sprites/Carrot/Selected/Portant/portant-3.png" id="29_d2uen"]
+[ext_resource type="Texture2D" uid="uid://qm38i22mitco" path="res://sprites/Carrot/Selected/Portant/portant-4.png" id="30_ad2gf"]
+[ext_resource type="Texture2D" uid="uid://cixoac775txke" path="res://sprites/Carrot/Selected/Portant/portant-5.png" id="31_xn33p"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_jm4ql"]
 resource_local_to_scene = true
@@ -207,6 +212,61 @@ animations = [{
 "name": &"portaitUp",
 "speed": 5.0
 }, {
+"frames": [],
+"loop": true,
+"name": &"selectedDown",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"selectedLeft",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("27_dlyjv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_0y7y4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("29_d2uen")
+}, {
+"duration": 1.0,
+"texture": ExtResource("30_ad2gf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("31_xn33p")
+}],
+"loop": true,
+"name": &"selectedPortantDown",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"selectedPortantLeft",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"selectedPortantRight",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"selectedPortantUp",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"selectedRight",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"selectedUp",
+"speed": 5.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": ExtResource("26_gg753")
@@ -303,4 +363,5 @@ script = ExtResource("3_eprs2")
 [node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="."]
 transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0, 0)
 sprite_frames = SubResource("SpriteFrames_tf6gy")
-animation = &"underground"
+animation = &"portaitDown"
+frame_progress = 0.407807
