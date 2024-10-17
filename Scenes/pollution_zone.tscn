@@ -13,7 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://d30is7wu6fy3t" path="res://sprites/arrosage/Arrosage-casse-2.png" id="11_el63h"]
 [ext_resource type="Script" path="res://script/pollution_shape_cast.gd" id="11_mp1xu"]
 [ext_resource type="Script" path="res://Scenes/rotation.gd" id="13_exuvx"]
-[ext_resource type="PackedScene" uid="uid://c6ml33d2tpcwk" path="res://Scenes/flash_component.tscn" id="14_2wb2v"]
+[ext_resource type="PackedScene" path="res://Scenes/flash_component.tscn" id="14_2wb2v"]
 
 [sub_resource type="FogMaterial" id="FogMaterial_sxabb"]
 albedo = Color(0.639216, 0.607843, 0.905882, 1)
