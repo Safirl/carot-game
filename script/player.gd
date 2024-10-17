@@ -270,3 +270,6 @@ func littleJump():
 		velocity.y =+ jump_strength
 	
 	
+
+func get_state():
+	return state

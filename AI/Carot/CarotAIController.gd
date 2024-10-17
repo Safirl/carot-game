@@ -24,7 +24,7 @@ var isMapLoadded: bool
 var _is_bumped
 var _is_holding
 var player
-var original_position = Vector3(global_transform.origin.x, global_transform.origin.y +2,global_transform.origin.z)
+var original_position : Vector3
 var has_target : bool = false
 
 func _ready() -> void:
@@ -33,6 +33,7 @@ func _ready() -> void:
 	speed = default_speed
 	spawn_position = global_position
 	state = "underground"
+	original_position = global_transform.origin
 
 # Cette fonction est appelée chaque frame pour déplacer l'IA
 func _physics_process(delta):
@@ -121,8 +122,7 @@ func _chasing():
 		direction.z = 0
 		velocity = direction
 		anim_player.play("underground")
-		is_shaking = true
-		apply_shake(delta)
+
 		_underground()
 	else:
 		
@@ -151,9 +151,19 @@ func _holded():
 	velocity = Vector3.ZERO
 
 func _dead():
-	print('is dead')
-	anim_player.play("dead")
 	has_target = false
+	anim_player.play("dead")
+	$AnimatedSprite3D.animation_finished.connect(_on_death_anim_finished)
+
+	
+func _on_death_anim_finished():
+	$AnimatedSprite3D.animation_finished.disconnect(_on_death_anim_finished)
+	anim_player.play("underground")
+	global_transform.origin = original_position
+	
+	
+
+
 
 func _underground():
 	pass
@@ -223,26 +233,13 @@ func _on_player_holding_state_changed(bisHolding: Variant) -> void:
 		speed = default_speed
 
 
-func apply_shake(delta: float) -> void:
-	print('is in shaking')
-	if shake_timer > 0:
-		shake_timer -= delta
-		
-		# Générer un offset aléatoire autour de la position initiale
-		var shake_offset = Vector3(
-			randf_range(-shake_amount, shake_amount), # Tremblement sur l'axe X
-			randf_range(-shake_amount, shake_amount), # Tremblement sur l'axe Y
-			randf_range(-shake_amount, shake_amount)  # Tremblement sur l'axe Z
-		)
-		
-		# Appliquer le tremblement par rapport à la position initiale
-		global_transform.origin = original_position + shake_offset
-	else:
-		# Arrêter le tremblement et revenir à la position initiale
-		is_shaking = false
-		global_transform.origin = original_position
+
 
 func digUp():
 	has_target = true
 	state = "idle"
 	anim_player.play("DefaultDown")
+	
+
+func get_state():
+	return  

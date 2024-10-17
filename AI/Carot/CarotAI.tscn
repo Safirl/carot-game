@@ -122,8 +122,20 @@ animations = [{
 "frames": [{
 "duration": 1.0,
 "texture": ExtResource("12_vhoul")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_vhoul")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_vhoul")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_vhoul")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_vhoul")
 }],
-"loop": true,
+"loop": false,
 "name": &"dead",
 "speed": 5.0
 }, {
