@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://it7a34aab5dp"
-path="res://.godot/imported/Rateau.png-80e66ff3b565b0c68769dd8423614e50.ctex"
+path="res://.godot/imported/rateau.png-8e7f0e58b84060b1690b375159c78826.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/Objects/Rateau/Rateau.png"
-dest_files=["res://.godot/imported/Rateau.png-80e66ff3b565b0c68769dd8423614e50.ctex"]
+source_file="res://sprites/Objects/Rateau/rateau.png"
+dest_files=["res://.godot/imported/rateau.png-8e7f0e58b84060b1690b375159c78826.ctex"]
 
 [params]
 

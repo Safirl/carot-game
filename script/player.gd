@@ -135,7 +135,7 @@ func throwObject():
 			throw_direction = self.global_transform.basis.x.normalized() * 1
 		"walkleft":
 			throw_direction = self.global_transform.basis.x.normalized() * -1
-	var throw_force = 5.0
+	var throw_force = 2.0
 	throw_direction.y = 1
 	$ShapeCast3D.OldClosestObject.throw(throw_direction * throw_force)
 	_on_holding_state_changed.emit(false)

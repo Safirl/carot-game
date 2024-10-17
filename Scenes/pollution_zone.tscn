@@ -74,7 +74,7 @@ collision_mask = 7
 script = ExtResource("1_d2wmd")
 
 [node name="FogVolume" type="FogVolume" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.128599, 0, 0.297255)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.128599, 1.49616, 0.297255)
 size = Vector3(5.02033, 2, 4.53327)
 material = SubResource("FogMaterial_sxabb")
 
@@ -89,7 +89,7 @@ animation = &"anim"
 frame_progress = 0.477223
 
 [node name="ShapeCast3D" type="ShapeCast3D" parent="."]
-transform = Transform3D(4.195, 0, 0, 0, 2.35, 0, 0, 0, 3.485, 0, 0, 0)
+transform = Transform3D(4.195, 0, 0, 0, 2.35, 0, 0, 0, 3.485, 0, 0.941207, 0)
 shape = SubResource("BoxShape3D_ydlx8")
 target_position = Vector3(0, 0, 0)
 
