@@ -229,6 +229,8 @@ func _thrown():
 		impulse_direction = Vector3.ZERO
 
 func hit() -> void:
+	if state == "underground" || state == "dead":
+		return
 	state= "dead"
 	on_died.emit()
 	$FlashComponent.start_flash(.1)
