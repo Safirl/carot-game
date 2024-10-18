@@ -1,10 +1,6 @@
-[gd_scene load_steps=16 format=3 uid="uid://dmgg362jopmyu"]
+[gd_scene load_steps=11 format=3 uid="uid://dmgg362jopmyu"]
 
 [ext_resource type="MeshLibrary" uid="uid://gq4fld82vs" path="res://TileMap/baseMeshLibrary.tres" id="1_dcilo"]
-[ext_resource type="Texture2D" uid="uid://u2pl7enk543j" path="res://sprites/Objects/Statue/Statue.png" id="2_sv65i"]
-[ext_resource type="PackedScene" uid="uid://bmrg8qrbxslf" path="res://Scenes/button.tscn" id="3_60qpm"]
-[ext_resource type="PackedScene" uid="uid://b8r5lwoi0v86g" path="res://Scenes/animation_button_component.tscn" id="4_y5h54"]
-[ext_resource type="Script" path="res://script/button/animation_button_verriere.gd" id="5_gn2bg"]
 [ext_resource type="Script" path="res://script/music/music_layer.gd" id="6_eoe7f"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_g05fc"]
@@ -24,9 +20,6 @@ size = Vector3(1, 6.18457, 12)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_f2xbr"]
 size = Vector3(1, 7.35449, 40)
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_ecqej"]
-size = Vector3(1, 7.35449, 4.199)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_lbsgh"]
 size = Vector3(1, 7.35449, 28)
@@ -161,20 +154,9 @@ collision_mask = 3
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.243462, 3.17725, -21.0742)
 shape = SubResource("BoxShape3D_f2xbr")
 
-[node name="Door" type="CollisionShape3D" parent="Door"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.243465, 3.17725, 0.601962)
-shape = SubResource("BoxShape3D_ecqej")
-
 [node name="CollisionShape3D3" type="CollisionShape3D" parent="Door"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.243465, 3.17725, 16.474)
 shape = SubResource("BoxShape3D_lbsgh")
-
-[node name="ButtonVerriere" parent="." instance=ExtResource("3_60qpm")]
-transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 42.1002, 2.17972, -4.748)
-texture = ExtResource("2_sv65i")
-
-[node name="AnimationButtonComponent" parent="ButtonVerriere" instance=ExtResource("4_y5h54")]
-script = ExtResource("5_gn2bg")
 
 [node name="MusicLayerZone" type="Area3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 37, 1, 0)
