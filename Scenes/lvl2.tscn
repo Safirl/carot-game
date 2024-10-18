@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://ciapeobbliorq"]
+[gd_scene load_steps=29 format=3 uid="uid://ciapeobbliorq"]
 
 [ext_resource type="MeshLibrary" uid="uid://gq4fld82vs" path="res://TileMap/baseMeshLibrary.tres" id="1_6ytwj"]
 [ext_resource type="Texture2D" uid="uid://4qtyey6iqjhg" path="res://sprites/flowers/fleur1.png" id="2_lpkkp"]
@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://v3vstyitbo67" path="res://sprites/barriere/Barriere-2.png" id="9_57vyk"]
 [ext_resource type="Texture2D" uid="uid://b8s6cuss63wk7" path="res://sprites/décors/Tree 3.png" id="9_nno4a"]
 [ext_resource type="Texture2D" uid="uid://yvje3c0aq6u7" path="res://sprites/barriere/Barriere-3.png" id="10_pcxnt"]
+[ext_resource type="Script" path="res://script/music/music_layer.gd" id="11_0i17b"]
 [ext_resource type="Texture2D" uid="uid://c8qbg8qm1bv4m" path="res://sprites/flowers/fleur2.png" id="11_nbs8r"]
 
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_wda3k"]
@@ -46,13 +47,22 @@ size = Vector3(1, 7, 10)
 [sub_resource type="BoxShape3D" id="BoxShape3D_7ox3u"]
 size = Vector3(0.3, 5, 4)
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3yhj2"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_aford"]
 transparency = 4
 shading_mode = 0
 albedo_texture = ExtResource("9_57vyk")
 
-[sub_resource type="PlaneMesh" id="PlaneMesh_yo3bn"]
-material = SubResource("StandardMaterial3D_3yhj2")
+[sub_resource type="PlaneMesh" id="PlaneMesh_fo3sc"]
+material = SubResource("StandardMaterial3D_aford")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_t37w2"]
+size = Vector3(28, 5, 73)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_s6eig"]
+size = Vector3(42, 6, 37)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_8xq4n"]
+size = Vector3(48, 6, 48)
 
 [node name="lvl2" type="Node3D"]
 
@@ -624,6 +634,57 @@ shape = SubResource("BoxShape3D_7ox3u")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Button"]
 transform = Transform3D(-1.31134e-07, 3, -1.31134e-07, 0, -1.31134e-07, -3, -3, -1.31134e-07, 5.73206e-15, 0, 1.1026, 0)
-mesh = SubResource("PlaneMesh_yo3bn")
+mesh = SubResource("PlaneMesh_fo3sc")
+
+[node name="MusicLayerZone" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18, 1, 1)
+collision_layer = 2
+collision_mask = 2
+script = ExtResource("11_0i17b")
+pathToRessource = "res://Musics/Nature.mp3"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MusicLayerZone"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0.5)
+shape = SubResource("BoxShape3D_t37w2")
+
+[node name="MusicLayerZone4" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18, 1, 1)
+collision_layer = 2
+collision_mask = 2
+script = ExtResource("11_0i17b")
+pathToRessource = "res://Musics/Ambiances/Ambiance Nature Loop.mp3"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MusicLayerZone4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0.5)
+shape = SubResource("BoxShape3D_t37w2")
+
+[node name="MusicLayerZone2" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21, 1, 52)
+collision_layer = 2
+collision_mask = 2
+script = ExtResource("11_0i17b")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MusicLayerZone2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 1.5, 4.5)
+shape = SubResource("BoxShape3D_s6eig")
+
+[node name="MusicLayerZone3" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21, 1, 44)
+collision_layer = 2
+collision_mask = 2
+script = ExtResource("11_0i17b")
+pathToRessource = "res://Musics/Ambiances/Ambiance Lac.mp3"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MusicLayerZone3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 1.5, 10.5)
+shape = SubResource("BoxShape3D_8xq4n")
 
 [connection signal="body_entered" from="Button" to="Button" method="_on_body_entered"]
+[connection signal="body_entered" from="MusicLayerZone" to="MusicLayerZone" method="_on_body_entered"]
+[connection signal="body_exited" from="MusicLayerZone" to="MusicLayerZone" method="_on_body_exited"]
+[connection signal="body_entered" from="MusicLayerZone4" to="MusicLayerZone4" method="_on_body_entered"]
+[connection signal="body_exited" from="MusicLayerZone4" to="MusicLayerZone4" method="_on_body_exited"]
+[connection signal="body_entered" from="MusicLayerZone2" to="MusicLayerZone2" method="_on_body_entered"]
+[connection signal="body_exited" from="MusicLayerZone2" to="MusicLayerZone2" method="_on_body_exited"]
+[connection signal="body_entered" from="MusicLayerZone3" to="MusicLayerZone3" method="_on_body_entered"]
+[connection signal="body_exited" from="MusicLayerZone3" to="MusicLayerZone3" method="_on_body_exited"]

@@ -1,6 +1,7 @@
-[gd_scene load_steps=11 format=3 uid="uid://cdi6o7fglb3th"]
+[gd_scene load_steps=13 format=3 uid="uid://cdi6o7fglb3th"]
 
-[ext_resource type="MeshLibrary" uid="uid://vv3ml06gqx8h" path="res://TileMap/baseMeshLibrary.tres" id="1_vjrg5"]
+[ext_resource type="MeshLibrary" uid="uid://gq4fld82vs" path="res://TileMap/baseMeshLibrary.tres" id="1_vjrg5"]
+[ext_resource type="Script" path="res://script/music/music_layer.gd" id="2_mcv0u"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_g05fc"]
 lightmap_size_hint = Vector2i(14, 21)
@@ -30,6 +31,9 @@ size = Vector3(1, 6.58545, 20)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_71njv"]
 size = Vector3(1, 6.18457, 20)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_8xq4n"]
+size = Vector3(23, 6, 38)
 
 [node name="lvl3" type="Node3D"]
 
@@ -192,3 +196,17 @@ collision_mask = 3
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D4"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.243465, 2.59228, 0.716331)
 shape = SubResource("BoxShape3D_71njv")
+
+[node name="MusicLayerZone" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 53, 4, 0)
+collision_layer = 2
+collision_mask = 2
+script = ExtResource("2_mcv0u")
+pathToRessource = "res://Musics/Boss.mp3"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MusicLayerZone"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, -1, 0)
+shape = SubResource("BoxShape3D_8xq4n")
+
+[connection signal="body_entered" from="MusicLayerZone" to="MusicLayerZone" method="_on_body_entered"]
+[connection signal="body_exited" from="MusicLayerZone" to="MusicLayerZone" method="_on_body_exited"]

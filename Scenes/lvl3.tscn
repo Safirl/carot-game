@@ -1,10 +1,11 @@
-[gd_scene load_steps=16 format=3 uid="uid://dmgg362jopmyu"]
+[gd_scene load_steps=18 format=3 uid="uid://dmgg362jopmyu"]
 
-[ext_resource type="MeshLibrary" uid="uid://vv3ml06gqx8h" path="res://TileMap/baseMeshLibrary.tres" id="1_dcilo"]
+[ext_resource type="MeshLibrary" uid="uid://gq4fld82vs" path="res://TileMap/baseMeshLibrary.tres" id="1_dcilo"]
 [ext_resource type="Texture2D" uid="uid://u2pl7enk543j" path="res://sprites/Objects/Statue/Statue.png" id="2_sv65i"]
 [ext_resource type="PackedScene" uid="uid://bmrg8qrbxslf" path="res://Scenes/button.tscn" id="3_60qpm"]
 [ext_resource type="PackedScene" uid="uid://b8r5lwoi0v86g" path="res://Scenes/animation_button_component.tscn" id="4_y5h54"]
 [ext_resource type="Script" path="res://script/button/animation_button_verriere.gd" id="5_gn2bg"]
+[ext_resource type="Script" path="res://script/music/music_layer.gd" id="6_eoe7f"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_g05fc"]
 
@@ -35,6 +36,9 @@ size = Vector3(1, 7.35449, 4.199)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_lbsgh"]
 size = Vector3(1, 7.35449, 28)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_8xq4n"]
+size = Vector3(48, 6, 72)
 
 [node name="lvl3" type="Node3D"]
 
@@ -185,3 +189,30 @@ texture = ExtResource("2_sv65i")
 
 [node name="AnimationButtonComponent" parent="ButtonVerriere" instance=ExtResource("4_y5h54")]
 script = ExtResource("5_gn2bg")
+
+[node name="MusicLayerZone" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 37, 1, 0)
+collision_layer = 2
+collision_mask = 2
+script = ExtResource("6_eoe7f")
+pathToRessource = "res://Musics/Nature.mp3"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MusicLayerZone"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 1)
+shape = SubResource("BoxShape3D_8xq4n")
+
+[node name="MusicLayerZone2" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 37, 1, 0)
+collision_layer = 2
+collision_mask = 2
+script = ExtResource("6_eoe7f")
+pathToRessource = "res://Musics/Ambiances/Ambiance Nature Loop.mp3"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MusicLayerZone2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 1)
+shape = SubResource("BoxShape3D_8xq4n")
+
+[connection signal="body_entered" from="MusicLayerZone" to="MusicLayerZone" method="_on_body_entered"]
+[connection signal="body_exited" from="MusicLayerZone" to="MusicLayerZone" method="_on_body_exited"]
+[connection signal="body_entered" from="MusicLayerZone2" to="MusicLayerZone2" method="_on_body_entered"]
+[connection signal="body_exited" from="MusicLayerZone2" to="MusicLayerZone2" method="_on_body_exited"]

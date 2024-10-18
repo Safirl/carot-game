@@ -3,7 +3,7 @@ extends Node3D
 var queued_audio_streams: Array[AudioStreamPlayer]
 var audio_streams_to_remove: Array[AudioStreamPlayer]
 @export var current_audio_streams: Array[AudioStreamPlayer]
-var default_stream_path = "res://Musics/Carrot.mp3"
+var default_stream_path = "res://Musics/Carottes.mp3"
 var DefaultAudioStream: AudioStreamPlayer
 
 func add_audio_stream_to_queue(pathToRes: String) -> AudioStreamPlayer:

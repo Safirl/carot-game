@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://dm7d8tnmrusvf"
+path="res://.godot/imported/Maison fermier reverb Loop.mp3-4de6225ee31e43968d2c15b2b75af488.mp3str"
+
+[deps]
+
+source_file="res://Musics/Maison fermier reverb Loop.mp3"
+dest_files=["res://.godot/imported/Maison fermier reverb Loop.mp3-4de6225ee31e43968d2c15b2b75af488.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://cfhadtru5lcrj"
+path="res://.godot/imported/Bateau Lac.mp3-2b76fa883c71298b0af80ffa09aafda9.mp3str"
+
+[deps]
+
+source_file="res://Musics/Bateau Lac.mp3"
+dest_files=["res://.godot/imported/Bateau Lac.mp3-2b76fa883c71298b0af80ffa09aafda9.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
