@@ -105,43 +105,43 @@ load_path = "res://.godot/imported/Serre-porte-cassee-3.png-9baa6586a2ef107b1712
 [sub_resource type="BoxShape3D" id="BoxShape3D_7ox3u"]
 size = Vector3(0.3, 8, 23)
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cxova"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_y31ld"]
 transparency = 4
 shading_mode = 0
 albedo_texture = SubResource("CompressedTexture2D_rfu6s")
 
-[sub_resource type="PlaneMesh" id="PlaneMesh_turf6"]
-material = SubResource("StandardMaterial3D_cxova")
+[sub_resource type="PlaneMesh" id="PlaneMesh_24nl3"]
+material = SubResource("StandardMaterial3D_y31ld")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_qtqd4"]
 size = Vector3(0.3, 5, 4)
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8to57"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_huxug"]
 transparency = 4
 shading_mode = 0
 albedo_texture = ExtResource("8_rca1d")
 
-[sub_resource type="PlaneMesh" id="PlaneMesh_jlfj5"]
-material = SubResource("StandardMaterial3D_8to57")
+[sub_resource type="PlaneMesh" id="PlaneMesh_g07yc"]
+material = SubResource("StandardMaterial3D_huxug")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_w0j8w"]
 size = Vector3(1.5167, 5, 4)
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hq5v6"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_sgoyb"]
 transparency = 4
 shading_mode = 0
 albedo_texture = ExtResource("6_4q6hh")
 
-[sub_resource type="PlaneMesh" id="PlaneMesh_nghb3"]
-material = SubResource("StandardMaterial3D_hq5v6")
+[sub_resource type="PlaneMesh" id="PlaneMesh_gudcr"]
+material = SubResource("StandardMaterial3D_sgoyb")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3k6no"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6m3fr"]
 transparency = 4
 shading_mode = 0
 albedo_texture = ExtResource("6_4q6hh")
 
-[sub_resource type="PlaneMesh" id="PlaneMesh_syy63"]
-material = SubResource("StandardMaterial3D_3k6no")
+[sub_resource type="PlaneMesh" id="PlaneMesh_dbwjp"]
+material = SubResource("StandardMaterial3D_6m3fr")
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_jptb6"]
 radius = 0.152998
@@ -823,7 +823,7 @@ shape = SubResource("BoxShape3D_7ox3u")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Button"]
 transform = Transform3D(-8.74228e-08, 2, -8.74228e-08, 0, -8.74228e-08, -2, -2, -8.74228e-08, 3.82137e-15, 0, 0, 0)
-mesh = SubResource("PlaneMesh_turf6")
+mesh = SubResource("PlaneMesh_24nl3")
 
 [node name="Button5" type="RigidBody3D" parent="."]
 transform = Transform3D(1, 0, 1.06581e-14, 0, 1, 0, -1.06581e-14, 0, 1, -63.9145, 2.02947, 27.6056)
@@ -866,7 +866,7 @@ shape = SubResource("BoxShape3D_qtqd4")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Button2"]
 transform = Transform3D(-8.74228e-08, 2, -8.74228e-08, 0, -8.74228e-08, -2, -2, -8.74228e-08, 3.82137e-15, 0, 0, 0)
-mesh = SubResource("PlaneMesh_jlfj5")
+mesh = SubResource("PlaneMesh_g07yc")
 
 [node name="Button3" type="RigidBody3D" parent="."]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -39.2114, 2.73842, 37.3147)
@@ -888,7 +888,7 @@ shape = SubResource("BoxShape3D_w0j8w")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Button3"]
 transform = Transform3D(-1.09278e-07, 2.5, -1.09278e-07, 0, -1.09278e-07, -2.5, -2.5, -1.09278e-07, 4.77671e-15, 0, 0, 0)
-mesh = SubResource("PlaneMesh_nghb3")
+mesh = SubResource("PlaneMesh_gudcr")
 
 [node name="Button4" type="RigidBody3D" parent="."]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -23.2376, 2.73842, 48.86)
@@ -910,13 +910,13 @@ shape = SubResource("BoxShape3D_w0j8w")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Button4"]
 transform = Transform3D(-1.09278e-07, 2.5, -1.09278e-07, 0, -1.09278e-07, -2.5, -2.5, -1.09278e-07, 4.77671e-15, 0, 0, 1.64721)
-mesh = SubResource("PlaneMesh_syy63")
+mesh = SubResource("PlaneMesh_dbwjp")
 
 [node name="Area3D" parent="." instance=ExtResource("2_7ufsd")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -32.8177, 0.273228, -0.331724)
 
 [node name="CarotAI" parent="." instance=ExtResource("14_8t6w1")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -34, 0.799174, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -34, 0.369171, 0)
 
 [node name="FarmerAI" type="CharacterBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -39.8848, 0.760081, 27.4799)
