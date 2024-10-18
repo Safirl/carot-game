@@ -1,20 +1,17 @@
-[gd_scene load_steps=70 format=3 uid="uid://raghvv2anqjp"]
+[gd_scene load_steps=72 format=3 uid="uid://raghvv2anqjp"]
 
 [ext_resource type="Script" path="res://Scenes/camera_3d.gd" id="1_u7fxj"]
 [ext_resource type="PackedScene" uid="uid://bhr635oauf4nk" path="res://Scenes/player.tscn" id="2_5qt3q"]
 [ext_resource type="PackedScene" uid="uid://bdnfxab00ytr2" path="res://Scenes/pollution_zone.tscn" id="2_7ufsd"]
 [ext_resource type="PackedScene" uid="uid://ciapeobbliorq" path="res://Scenes/lvl2.tscn" id="2_n4eqx"]
 [ext_resource type="PackedScene" uid="uid://dmgg362jopmyu" path="res://Scenes/lvl3.tscn" id="3_32g33"]
-[ext_resource type="Texture2D" uid="uid://cbgpb8sur6nak" path="res://sprites/Serre/Serre-porte-cassee-2.png" id="3_jxkak"]
 [ext_resource type="PackedScene" uid="uid://cdi6o7fglb3th" path="res://Scenes/lvl4.tscn" id="4_f7j5t"]
 [ext_resource type="Shader" path="res://script/Vignette.gdshader" id="4_keinb"]
-[ext_resource type="Texture2D" uid="uid://cy1ug108nhrjy" path="res://sprites/Serre/Serre-porte-cassee-3.png" id="4_xadb3"]
 [ext_resource type="Texture2D" uid="uid://osi4lbddnjt7" path="res://sprites/barriere/Barriere-4.png" id="6_4q6hh"]
 [ext_resource type="Script" path="res://script/pickable_object.gd" id="6_wuxo4"]
 [ext_resource type="PackedScene" uid="uid://c7wgfrwfcaf7t" path="res://Scenes/lvl1.tscn" id="7_nix1k"]
 [ext_resource type="Script" path="res://script/button.gd" id="7_v7p4h"]
 [ext_resource type="PackedScene" uid="uid://ciiqcf5oeyq8s" path="res://Scenes/pickable_object_component.tscn" id="8_ipvyc"]
-[ext_resource type="PackedScene" uid="uid://bmrg8qrbxslf" path="res://Scenes/button.tscn" id="10_mfcpo"]
 [ext_resource type="Texture2D" uid="uid://bkp63punbahwv" path="res://sprites/Objects/Cailloux/Cailloux3.png" id="10_qv8ig"]
 [ext_resource type="PackedScene" uid="uid://dua2oubaha4yv" path="res://AI/Carot/CarotAI.tscn" id="14_8t6w1"]
 [ext_resource type="PackedScene" uid="uid://byepc6q4d58ep" path="res://AI/Ennemy/farmerAI.tscn" id="17_6jqi7"]
@@ -74,6 +71,23 @@ bounce = 0.31
 [sub_resource type="BoxShape3D" id="BoxShape3D_bol70"]
 size = Vector3(0.2, 0.2, 0.2)
 
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_rfu6s"]
+load_path = "res://.godot/imported/Serre-porte-cassee-2.png-2aaef9b90cdac6501f6bdd69cd3e4ba5.s3tc.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_apsry"]
+load_path = "res://.godot/imported/Serre-porte-cassee-3.png-9baa6586a2ef107b1712ee6790695114.ctex"
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_7ox3u"]
+size = Vector3(0.3, 5, 4)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_v3max"]
+transparency = 4
+shading_mode = 0
+albedo_texture = SubResource("CompressedTexture2D_rfu6s")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_w4pc5"]
+material = SubResource("StandardMaterial3D_v3max")
+
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_wss1h"]
 load_path = "res://.godot/imported/Serre-porte-cassee-1.png-7f5c8c1777ab901b8fe2a30fdf6f7b33.s3tc.ctex"
 
@@ -83,27 +97,27 @@ load_path = "res://.godot/imported/Serre-porte-cassee-2.png-2aaef9b90cdac6501f6b
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_d5ffh"]
 load_path = "res://.godot/imported/Serre-porte-cassee-3.png-9baa6586a2ef107b1712ee6790695114.s3tc.ctex"
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_7ox3u"]
+[sub_resource type="BoxShape3D" id="BoxShape3D_qtqd4"]
 size = Vector3(0.3, 5, 4)
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tkmru"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_myptn"]
 transparency = 4
 shading_mode = 0
 albedo_texture = SubResource("CompressedTexture2D_wss1h")
 
-[sub_resource type="PlaneMesh" id="PlaneMesh_j8opw"]
-material = SubResource("StandardMaterial3D_tkmru")
+[sub_resource type="PlaneMesh" id="PlaneMesh_uoy7f"]
+material = SubResource("StandardMaterial3D_myptn")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_w0j8w"]
 size = Vector3(1.5167, 5, 4)
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3sla1"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_l5xxo"]
 transparency = 4
 shading_mode = 0
 albedo_texture = ExtResource("6_4q6hh")
 
-[sub_resource type="PlaneMesh" id="PlaneMesh_17erl"]
-material = SubResource("StandardMaterial3D_3sla1")
+[sub_resource type="PlaneMesh" id="PlaneMesh_v6f0f"]
+material = SubResource("StandardMaterial3D_l5xxo")
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_xxnpv"]
 load_path = "res://.godot/imported/Arrosage-casse-2.png-811334d51d75efeff8c54815e66cf04e.s3tc.ctex"
@@ -333,15 +347,28 @@ texture = ExtResource("10_qv8ig")
 shape = SubResource("BoxShape3D_bol70")
 
 [node name="Player" parent="." instance=ExtResource("2_5qt3q")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -35.3642, 1.07344, 26.6683)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -26.9593, 1.07344, -12.0728)
 
-[node name="Button" parent="." instance=ExtResource("10_mfcpo")]
+[node name="Button" type="RigidBody3D" parent="."]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -25.9576, 2.02947, -7.20203)
 collision_layer = 5
 collision_mask = 6
+gravity_scale = 0.0
+freeze = true
+freeze_mode = 1
+contact_monitor = true
 max_contacts_reported = 10000000
-texture = ExtResource("3_jxkak")
-texture_1 = ExtResource("4_xadb3")
+script = ExtResource("7_v7p4h")
+collisionShapeSize = Vector3(0.3, 5, 4)
+texture = SubResource("CompressedTexture2D_rfu6s")
+texture_1 = SubResource("CompressedTexture2D_apsry")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Button"]
+shape = SubResource("BoxShape3D_7ox3u")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Button"]
+transform = Transform3D(-8.74228e-08, 2, -8.74228e-08, 0, -8.74228e-08, -2, -2, -8.74228e-08, 3.82137e-15, 0, 0, 0)
+mesh = SubResource("PlaneMesh_w4pc5")
 
 [node name="Button2" type="RigidBody3D" parent="."]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -23.7645, 2.02947, 12.8511)
@@ -361,11 +388,11 @@ texture_2 = SubResource("CompressedTexture2D_d5ffh")
 activation_threshold = 2
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Button2"]
-shape = SubResource("BoxShape3D_7ox3u")
+shape = SubResource("BoxShape3D_qtqd4")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Button2"]
 transform = Transform3D(-8.74228e-08, 2, -8.74228e-08, 0, -8.74228e-08, -2, -2, -8.74228e-08, 3.82137e-15, 0, 0, 0)
-mesh = SubResource("PlaneMesh_j8opw")
+mesh = SubResource("PlaneMesh_uoy7f")
 
 [node name="Button3" type="RigidBody3D" parent="."]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -39.2114, 2.73842, 37.3147)
@@ -387,7 +414,7 @@ shape = SubResource("BoxShape3D_w0j8w")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Button3"]
 transform = Transform3D(-1.09278e-07, 2.5, -1.09278e-07, 0, -1.09278e-07, -2.5, -2.5, -1.09278e-07, 4.77671e-15, 0, 0, 0)
-mesh = SubResource("PlaneMesh_17erl")
+mesh = SubResource("PlaneMesh_v6f0f")
 
 [node name="Area3D" parent="." instance=ExtResource("2_7ufsd")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -32.8177, 0.273228, -0.331724)
@@ -574,6 +601,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20.8514, 0.273229, 25.2758)
 [node name="PickableObject12" parent="." instance=ExtResource("34_7gcjq")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -26.7382, 0.273231, 30.06)
 
+[connection signal="body_entered" from="Button" to="Button" method="_on_body_entered"]
 [connection signal="body_entered" from="Button2" to="Button2" method="_on_body_entered"]
 [connection signal="body_entered" from="Button3" to="Button3" method="_on_body_entered"]
 [connection signal="body_entered" from="PollutionZone" to="PollutionZone" method="_on_body_entered"]
