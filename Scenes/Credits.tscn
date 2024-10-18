@@ -1,0 +1,61 @@
+[gd_scene load_steps=6 format=3 uid="uid://bncfnnljegqjh"]
+
+[ext_resource type="Script" path="res://Scenes/credits.gd" id="1_133g4"]
+[ext_resource type="FontFile" uid="uid://q3k6jx07udsu" path="res://font/Coming_Soon/ComingSoon-Regular.ttf" id="2_j0kb3"]
+[ext_resource type="Texture2D" uid="uid://di0fb3qf4878r" path="res://Scenes/credits.png" id="3_1d632"]
+
+[sub_resource type="Theme" id="Theme_p8iuv"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_cj35t"]
+
+[node name="Credits" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_133g4")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+top_level = true
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -190.0
+offset_top = 41.0
+offset_right = -40.0
+offset_bottom = 158.0
+grow_horizontal = 0
+theme = SubResource("Theme_p8iuv")
+
+[node name="MenuButton" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_focus_color = Color(0.831373, 0.427451, 0.282353, 1)
+theme_override_fonts/font = ExtResource("2_j0kb3")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_cj35t")
+text = "Retour au menu"
+
+[node name="QuitButton" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_focus_color = Color(0.831373, 0.427451, 0.282353, 1)
+theme_override_fonts/font = ExtResource("2_j0kb3")
+text = "Quitter"
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -24.0
+offset_top = -72.0
+offset_right = 12010.0
+offset_bottom = 7984.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.0922594, 0.0922594)
+texture = ExtResource("3_1d632")
+
+[connection signal="pressed" from="VBoxContainer/MenuButton" to="." method="_on_menu_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/QuitButton" to="." method="_on_quit_button_pressed"]
