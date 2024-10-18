@@ -11,13 +11,17 @@ config_version=5
 [application]
 
 config/name="CarotGame"
-run/main_scene="res://Scenes/Map.tscn"
+run/main_scene="res://Scenes/Menu.tscn"
 config/features=PackedStringArray("4.3", "GL Compatibility")
 config/icon="res://icon.svg"
 
 [autoload]
 
 AudioStreamManager="*res://script/music/audio_stream_manager.gd"
+
+[display]
+
+window/stretch/mode="canvas_items"
 
 [dotnet]
 
