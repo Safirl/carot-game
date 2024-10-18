@@ -1,4 +1,4 @@
-[gd_scene load_steps=64 format=3 uid="uid://raghvv2anqjp"]
+[gd_scene load_steps=70 format=3 uid="uid://raghvv2anqjp"]
 
 [ext_resource type="Script" path="res://Scenes/camera_3d.gd" id="1_u7fxj"]
 [ext_resource type="PackedScene" uid="uid://bhr635oauf4nk" path="res://Scenes/player.tscn" id="2_5qt3q"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://cdi6o7fglb3th" path="res://Scenes/lvl4.tscn" id="4_f7j5t"]
 [ext_resource type="Shader" path="res://script/Vignette.gdshader" id="4_keinb"]
 [ext_resource type="Texture2D" uid="uid://cy1ug108nhrjy" path="res://sprites/Serre/Serre-porte-cassee-3.png" id="4_xadb3"]
+[ext_resource type="Texture2D" uid="uid://osi4lbddnjt7" path="res://sprites/barriere/Barriere-4.png" id="6_4q6hh"]
 [ext_resource type="Script" path="res://script/pickable_object.gd" id="6_wuxo4"]
 [ext_resource type="PackedScene" uid="uid://c7wgfrwfcaf7t" path="res://Scenes/lvl1.tscn" id="7_nix1k"]
 [ext_resource type="Script" path="res://script/button.gd" id="7_v7p4h"]
@@ -32,6 +33,7 @@
 [ext_resource type="PackedScene" uid="uid://c6ml33d2tpcwk" path="res://Scenes/flash_component.tscn" id="30_nlooc"]
 [ext_resource type="Texture2D" uid="uid://d30is7wu6fy3t" path="res://sprites/arrosage/Arrosage-casse-2.png" id="31_1yp2t"]
 [ext_resource type="Texture2D" uid="uid://dtg68d2myheci" path="res://sprites/Objects/Cailloux/Cailloux2.png" id="32_1isru"]
+[ext_resource type="PackedScene" uid="uid://d4qbm4vesv64" path="res://Scenes/pickable_object.tscn" id="34_7gcjq"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_w8j3g"]
 sky_top_color = Color(0.572549, 0.729412, 0.988235, 1)
@@ -84,13 +86,24 @@ load_path = "res://.godot/imported/Serre-porte-cassee-3.png-9baa6586a2ef107b1712
 [sub_resource type="BoxShape3D" id="BoxShape3D_7ox3u"]
 size = Vector3(0.3, 5, 4)
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tj1eb"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tkmru"]
 transparency = 4
 shading_mode = 0
 albedo_texture = SubResource("CompressedTexture2D_wss1h")
 
-[sub_resource type="PlaneMesh" id="PlaneMesh_euo10"]
-material = SubResource("StandardMaterial3D_tj1eb")
+[sub_resource type="PlaneMesh" id="PlaneMesh_j8opw"]
+material = SubResource("StandardMaterial3D_tkmru")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_w0j8w"]
+size = Vector3(1.5167, 5, 4)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3sla1"]
+transparency = 4
+shading_mode = 0
+albedo_texture = ExtResource("6_4q6hh")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_17erl"]
+material = SubResource("StandardMaterial3D_3sla1")
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_xxnpv"]
 load_path = "res://.godot/imported/Arrosage-casse-2.png-811334d51d75efeff8c54815e66cf04e.s3tc.ctex"
@@ -170,10 +183,13 @@ material = SubResource("StandardMaterial3D_pw82k")
 radius = 0.09
 height = 0.05
 
-[sub_resource type="FogMaterial" id="FogMaterial_iuknn"]
+[sub_resource type="FogMaterial" id="FogMaterial_mtmcx"]
 albedo = Color(0.639216, 0.607843, 0.905882, 1)
 height_falloff = 2.80959
 edge_fade = 0.237841
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_ilh2g"]
+load_path = "res://.godot/imported/Arrosage-fixe.png-36131d86af31374b7ca1ef87e7b9b5a6.s3tc.ctex"
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_5bqk0"]
 animations = [{
@@ -222,9 +238,9 @@ animations = [{
 "speed": 15.0
 }]
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_3rbtv"]
+[sub_resource type="BoxShape3D" id="BoxShape3D_303d7"]
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_m5j50"]
+[sub_resource type="BoxShape3D" id="BoxShape3D_kn5si"]
 size = Vector3(3.45941, 1, 3.43437)
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_4eeoa"]
@@ -279,7 +295,7 @@ navigation_mesh = SubResource("NavigationMesh_tma6c")
 [node name="lvl2" parent="NavigationRegion3D" instance=ExtResource("2_n4eqx")]
 
 [node name="lvl3" parent="NavigationRegion3D" instance=ExtResource("3_32g33")]
-transform = Transform3D(1, 0, 7.10543e-15, 0, 1, 0, -7.10543e-15, 0, 1, -0.777246, 0.733, 2.05848)
+transform = Transform3D(1, 0, 7.10543e-15, 0, 1, 0, -7.10543e-15, 0, 1, -0.777, 0, 2.058)
 
 [node name="lvl4" parent="NavigationRegion3D" instance=ExtResource("4_f7j5t")]
 
@@ -317,7 +333,7 @@ texture = ExtResource("10_qv8ig")
 shape = SubResource("BoxShape3D_bol70")
 
 [node name="Player" parent="." instance=ExtResource("2_5qt3q")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -26.9704, 1.07344, -12.196)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -35.3642, 1.07344, 26.6683)
 
 [node name="Button" parent="." instance=ExtResource("10_mfcpo")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -25.9576, 2.02947, -7.20203)
@@ -349,7 +365,29 @@ shape = SubResource("BoxShape3D_7ox3u")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Button2"]
 transform = Transform3D(-8.74228e-08, 2, -8.74228e-08, 0, -8.74228e-08, -2, -2, -8.74228e-08, 3.82137e-15, 0, 0, 0)
-mesh = SubResource("PlaneMesh_euo10")
+mesh = SubResource("PlaneMesh_j8opw")
+
+[node name="Button3" type="RigidBody3D" parent="."]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -39.2114, 2.73842, 37.3147)
+collision_layer = 5
+collision_mask = 6
+gravity_scale = 0.0
+freeze = true
+freeze_mode = 1
+contact_monitor = true
+max_contacts_reported = 10000000
+script = ExtResource("7_v7p4h")
+collisionShapeSize = Vector3(0.3, 5, 4)
+texture = ExtResource("6_4q6hh")
+activation_threshold = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Button3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.608349, 0, 0)
+shape = SubResource("BoxShape3D_w0j8w")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Button3"]
+transform = Transform3D(-1.09278e-07, 2.5, -1.09278e-07, 0, -1.09278e-07, -2.5, -2.5, -1.09278e-07, 4.77671e-15, 0, 0, 0)
+mesh = SubResource("PlaneMesh_17erl")
 
 [node name="Area3D" parent="." instance=ExtResource("2_7ufsd")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -32.8177, 0.273228, -0.331724)
@@ -420,7 +458,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.35769, 0.656208, 28.3986)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.07492, 0.683428, 27.0421)
 
 [node name="PollutionZone2" parent="." instance=ExtResource("2_7ufsd")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -49.0456, 1.00623, 43.5246)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -49.0456, 0.248311, 43.5246)
 
 [node name="PollutionZone3" type="Area3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -25.8528, 0.42072, 58.7317)
@@ -431,11 +469,11 @@ broken_texture = ExtResource("31_1yp2t")
 [node name="FogVolume" type="FogVolume" parent="PollutionZone3"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.25575, 1.64972, 0.172199)
 size = Vector3(9.17972, 3.49036, 7.98639)
-material = SubResource("FogMaterial_iuknn")
+material = SubResource("FogMaterial_mtmcx")
 
 [node name="Sprite3D" type="Sprite3D" parent="PollutionZone3"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.47146, 0)
-texture = ExtResource("19_pkput")
+texture = SubResource("CompressedTexture2D_ilh2g")
 
 [node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="PollutionZone3"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.47146, 0)
@@ -444,14 +482,14 @@ animation = &"anim"
 
 [node name="ShapeCast3D" type="ShapeCast3D" parent="PollutionZone3"]
 transform = Transform3D(4.195, 0, 0, 0, 2.35, 0, 0, 0, 3.485, 0, 0.349585, 0)
-shape = SubResource("BoxShape3D_3rbtv")
+shape = SubResource("BoxShape3D_303d7")
 target_position = Vector3(0, 0, 0)
 collision_mask = 6
 script = ExtResource("28_wdqda")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="PollutionZone3"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.153167, 0.479632, 0.0667267)
-shape = SubResource("BoxShape3D_m5j50")
+shape = SubResource("BoxShape3D_kn5si")
 
 [node name="GPUParticles3D" type="GPUParticles3D" parent="PollutionZone3"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.810508, 0)
@@ -469,10 +507,10 @@ script = ExtResource("29_tuer1")
 [node name="FlashComponent" parent="PollutionZone3" instance=ExtResource("30_nlooc")]
 
 [node name="CarotAI4" parent="." instance=ExtResource("14_8t6w1")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -48.2891, 1.37192, 44.9961)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -48.2891, 0.693939, 44.9961)
 
 [node name="CarotAI5" parent="." instance=ExtResource("14_8t6w1")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -50.7674, 1.37838, 43.4328)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -50.7674, 0.700399, 43.4328)
 
 [node name="PickableObject2" type="RigidBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -21.7563, 1.2167, 7.02651)
@@ -509,6 +547,34 @@ texture = ExtResource("10_qv8ig")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="PickableObject3"]
 shape = SubResource("BoxShape3D_cbylq")
 
+[node name="PickableObject4" parent="." instance=ExtResource("34_7gcjq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.4521, 0.273227, 25.9255)
+
+[node name="PickableObject5" parent="." instance=ExtResource("34_7gcjq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -25.1753, 0.273231, 25.4003)
+
+[node name="PickableObject6" parent="." instance=ExtResource("34_7gcjq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -54.4708, 0.273229, 28.4398)
+
+[node name="PickableObject7" parent="." instance=ExtResource("34_7gcjq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20.3636, 0.273229, 20.1919)
+
+[node name="PickableObject8" parent="." instance=ExtResource("34_7gcjq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.0075, 0.273227, 20.6148)
+
+[node name="PickableObject9" parent="." instance=ExtResource("34_7gcjq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.30592, 0.273229, 27.1494)
+
+[node name="PickableObject10" parent="." instance=ExtResource("34_7gcjq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.4667, 0.273229, 28.2346)
+
+[node name="PickableObject11" parent="." instance=ExtResource("34_7gcjq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20.8514, 0.273229, 25.2758)
+
+[node name="PickableObject12" parent="." instance=ExtResource("34_7gcjq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -26.7382, 0.273231, 30.06)
+
 [connection signal="body_entered" from="Button2" to="Button2" method="_on_body_entered"]
+[connection signal="body_entered" from="Button3" to="Button3" method="_on_body_entered"]
 [connection signal="body_entered" from="PollutionZone" to="PollutionZone" method="_on_body_entered"]
 [connection signal="body_entered" from="PollutionZone3" to="PollutionZone3" method="_on_body_entered"]

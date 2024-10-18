@@ -42,9 +42,15 @@ func activate():
 	var material = $MeshInstance3D.mesh.surface_get_material(0).duplicate()
 	match interaction_number:
 		1:
-			material.albedo_texture = texture_1
+			if texture_1:
+				material.albedo_texture = texture_1
+			else:
+				queue_free()
 		2:
-			material.albedo_texture = texture_2
+			if texture_2:
+				material.albedo_texture = texture_2
+			else:
+				queue_free()
 	$MeshInstance3D.mesh.surface_set_material(0, material)
 
 func highlight(bhighlight):

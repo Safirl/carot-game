@@ -70,7 +70,7 @@ animations = [{
 [sub_resource type="BoxShape3D" id="BoxShape3D_3rbtv"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_m5j50"]
-size = Vector3(3.45941, 1, 3.43437)
+size = Vector3(1.22728, 1, 1.4853)
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_4eeoa"]
 angle_min = -720.0
@@ -96,8 +96,8 @@ script = ExtResource("1_d2wmd")
 broken_texture = ExtResource("11_el63h")
 
 [node name="FogVolume" type="FogVolume" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.128599, 0.904538, 0.297255)
-size = Vector3(5.02033, 2, 4.53327)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0663165, 0.904538, 0.073858)
+size = Vector3(3.65227, 2, 3.23781)
 material = SubResource("FogMaterial_iuknn")
 
 [node name="Sprite3D" type="Sprite3D" parent="."]
@@ -110,14 +110,14 @@ sprite_frames = SubResource("SpriteFrames_5bqk0")
 animation = &"anim"
 
 [node name="ShapeCast3D" type="ShapeCast3D" parent="."]
-transform = Transform3D(4.195, 0, 0, 0, 2.35, 0, 0, 0, 3.485, 0, 0.349585, 0)
+transform = Transform3D(3.505, 0, 0, 0, 1.963, 0, 0, 0, 2.912, 0, 0.349585, 0)
 shape = SubResource("BoxShape3D_3rbtv")
 target_position = Vector3(0, 0, 0)
 collision_mask = 6
 script = ExtResource("11_mp1xu")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0423585, 0.479632, -0.00738907)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.146004, 0.479632, 0.0453703)
 shape = SubResource("BoxShape3D_m5j50")
 
 [node name="GPUParticles3D" type="GPUParticles3D" parent="."]
