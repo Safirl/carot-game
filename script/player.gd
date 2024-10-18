@@ -30,6 +30,7 @@ var spawn_position: Vector3
 
 @onready var anim_player = $AnimatedSprite3D
 
+signal on_pickObject()
 signal _on_holding_state_changed(bisHolding)
 
 func _ready():
@@ -148,6 +149,7 @@ func pickObject():
 		interactionState = "holding"
 		state="holding"
 		_on_holding_state_changed.emit(true)
+		on_pickObject.emit()
 		
 	
 func throwObject():

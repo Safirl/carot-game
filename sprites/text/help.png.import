@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dh5bj57b2cve1"
-path.s3tc="res://.godot/imported/Carotte-enterrée.png-ff8a2c11394c8b248c92f264f4b11090.s3tc.ctex"
+uid="uid://dqdrkdd8o6huf"
+path.s3tc="res://.godot/imported/help.png-71948601061c88c2c047ea440f963d25.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://sprites/Carrot/Selected/Carotte-enterrée.png"
-dest_files=["res://.godot/imported/Carotte-enterrée.png-ff8a2c11394c8b248c92f264f4b11090.s3tc.ctex"]
+source_file="res://sprites/text/help.png"
+dest_files=["res://.godot/imported/help.png-71948601061c88c2c047ea440f963d25.s3tc.ctex"]
 
 [params]
 
