@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://ciapeobbliorq"]
+[gd_scene load_steps=21 format=3 uid="uid://ciapeobbliorq"]
 
 [ext_resource type="MeshLibrary" uid="uid://gq4fld82vs" path="res://TileMap/baseMeshLibrary.tres" id="1_6ytwj"]
 [ext_resource type="Texture2D" uid="uid://4qtyey6iqjhg" path="res://sprites/flowers/fleur1.png" id="2_lpkkp"]
@@ -11,12 +11,6 @@
 
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_wda3k"]
 points = PackedVector3Array(0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5)
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vhgiw"]
-emission_enabled = true
-emission = Color(0.517846, 0.20081, 0.664901, 1)
-
-[sub_resource type="BoxMesh" id="BoxMesh_g05fc"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_f2xbr"]
 size = Vector3(1, 7.35449, 45.3602)
@@ -125,35 +119,8 @@ texture = ExtResource("2_lpkkp")
 transform = Transform3D(1, 0, 0, 0, 1, 0, -3.55271e-15, 0, 1, 0, 0, 0)
 shape = SubResource("ConvexPolygonShape3D_wda3k")
 
-[node name="Pulverisateur" type="MeshInstance3D" parent="."]
-transform = Transform3D(-1.74846e-07, 0, 4, 0, 3, 0, -4, 0, -1.74846e-07, 22.0266, 2.5, 17.886)
-layers = 3
-material_override = SubResource("StandardMaterial3D_vhgiw")
-mesh = SubResource("BoxMesh_g05fc")
-
-[node name="StaticBody3D" type="StaticBody3D" parent="Pulverisateur"]
-collision_layer = 3
-collision_mask = 3
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Pulverisateur/StaticBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, -3.55271e-15, 0, 1, 0, 0, 0)
-shape = SubResource("ConvexPolygonShape3D_wda3k")
-
-[node name="Fermier" type="MeshInstance3D" parent="."]
-transform = Transform3D(-1.85493, 0, -1.19209e-07, 0, 1, 0, -8.9407e-08, 0, -2.64313, 14.2154, 1.5, -19.9488)
-layers = 3
-mesh = SubResource("BoxMesh_g05fc")
-
-[node name="StaticBody3D" type="StaticBody3D" parent="Fermier"]
-collision_layer = 3
-collision_mask = 3
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Fermier/StaticBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, -3.55271e-15, 0, 1, 0, 0, 0)
-shape = SubResource("ConvexPolygonShape3D_wda3k")
-
 [node name="Statue" type="MeshInstance3D" parent="."]
-transform = Transform3D(2, -1.99322e-21, 3.01992e-07, 0, 1, 2.64009e-14, -3.01992e-07, -1.32005e-14, 2, 10.2154, 1.5, -26.9488)
+transform = Transform3D(2, -1.99322e-21, 3.01992e-07, 0, 1, 2.64009e-14, -3.01992e-07, -1.32005e-14, 2, 18.7914, 1.5, 1.94111)
 layers = 3
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Statue"]
@@ -161,7 +128,7 @@ collision_layer = 3
 collision_mask = 3
 
 [node name="Sprite3D" type="Sprite3D" parent="Statue/StaticBody3D"]
-transform = Transform3D(0.0504094, 2.21105e-14, -0.912043, -1.09928e-14, 0.843605, 2.13395e-14, 0.416378, 1.95951e-14, 0.110418, -0.484446, 0.793984, 0)
+transform = Transform3D(-1.83334e-08, 0, -0.918703, 0, 0.843605, 0, 0.419418, 0, -4.01578e-08, -0.484446, 0.793984, 0)
 texture = ExtResource("3_bscw6")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Statue/StaticBody3D"]
@@ -196,7 +163,7 @@ collision_layer = 3
 collision_mask = 3
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D5"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.243465, 2.99017, -1.54812)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.4809, 2.99017, -1.54812)
 shape = SubResource("BoxShape3D_omqm8")
 
 [node name="StaticBody3D3" type="StaticBody3D" parent="."]
