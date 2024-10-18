@@ -83,13 +83,13 @@ load_path = "res://.godot/imported/Serre-porte-cassee-3.png-9baa6586a2ef107b1712
 [sub_resource type="BoxShape3D" id="BoxShape3D_7ox3u"]
 size = Vector3(0.3, 5, 4)
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1gryh"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rjs8n"]
 transparency = 4
 shading_mode = 0
 albedo_texture = SubResource("CompressedTexture2D_wss1h")
 
-[sub_resource type="PlaneMesh" id="PlaneMesh_yjjpk"]
-material = SubResource("StandardMaterial3D_1gryh")
+[sub_resource type="PlaneMesh" id="PlaneMesh_llnuu"]
+material = SubResource("StandardMaterial3D_rjs8n")
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_xxnpv"]
 load_path = "res://.godot/imported/Arrosage-casse-2.png-811334d51d75efeff8c54815e66cf04e.s3tc.ctex"
@@ -273,7 +273,7 @@ shape = SubResource("BoxShape3D_7ox3u")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Button2"]
 transform = Transform3D(-8.74228e-08, 2, -8.74228e-08, 0, -8.74228e-08, -2, -2, -8.74228e-08, 3.82137e-15, 0, 0, 0)
-mesh = SubResource("PlaneMesh_yjjpk")
+mesh = SubResource("PlaneMesh_llnuu")
 
 [node name="Area3D" parent="." instance=ExtResource("2_7ufsd")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -32.8177, 0.273228, -0.331724)

@@ -96,7 +96,7 @@ func _chasing():
 			elif direction.x < 0:
 				state = "walkleft"							
 		last_direction = state  # Met à jour la dernière direction
-	else:
+	elif state != "underground":
 		state = "idle"
 		
 	var selected
@@ -130,7 +130,7 @@ func _chasing():
 				_dead()
 			"underground":
 				has_target = false
-				anim_player.play("underground")
+				anim_player.play(selected + "underground")
 				_underground()
 	else:
 		match state:
@@ -160,28 +160,16 @@ func _dead():
 	has_target = false
 	anim_player.play("dead")
 	$AnimatedSprite3D.animation_finished.connect(_on_death_anim_finished)
-
 	
 func _on_death_anim_finished():
 	$AnimatedSprite3D.animation_finished.disconnect(_on_death_anim_finished)
 	anim_player.play("underground")
 	global_transform.origin = original_position
-	
-	
-
-
 
 func _underground():
-	
 	if !has_target : 
 		velocity = Vector3.ZERO
 		anim_player.play('underground')
-		
-	
-	
-	
-	
-	pass
 
 func _holding():
 	pass
@@ -242,9 +230,6 @@ func _on_player_holding_state_changed(bisHolding: Variant) -> void:
 		_is_holding = false
 		target = owner.get_node("Player")
 		speed = default_speed
-
-
-
 
 func digUp():
 	has_target = true

@@ -46,14 +46,13 @@ size = Vector3(1, 7, 10)
 [sub_resource type="BoxShape3D" id="BoxShape3D_7ox3u"]
 size = Vector3(0.3, 5, 4)
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dyw55"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3yhj2"]
 transparency = 4
 shading_mode = 0
-albedo_color = Color(0.63648, 0.63648, 0.63648, 1)
 albedo_texture = ExtResource("9_57vyk")
 
-[sub_resource type="PlaneMesh" id="PlaneMesh_n0mn3"]
-material = SubResource("StandardMaterial3D_dyw55")
+[sub_resource type="PlaneMesh" id="PlaneMesh_yo3bn"]
+material = SubResource("StandardMaterial3D_3yhj2")
 
 [node name="lvl2" type="Node3D"]
 
@@ -625,6 +624,6 @@ shape = SubResource("BoxShape3D_7ox3u")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Button"]
 transform = Transform3D(-1.31134e-07, 3, -1.31134e-07, 0, -1.31134e-07, -3, -3, -1.31134e-07, 5.73206e-15, 0, 1.1026, 0)
-mesh = SubResource("PlaneMesh_n0mn3")
+mesh = SubResource("PlaneMesh_yo3bn")
 
 [connection signal="body_entered" from="Button" to="Button" method="_on_body_entered"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=86 format=3 uid="uid://dua2oubaha4yv"]
+[gd_scene load_steps=87 format=3 uid="uid://dua2oubaha4yv"]
 
 [ext_resource type="Script" path="res://AI/Carot/CarotAIController.gd" id="1_veyp6"]
 [ext_resource type="Script" path="res://script/PickableObjectComponent.gd" id="2_cprcl"]
@@ -67,6 +67,7 @@
 [ext_resource type="Texture2D" uid="uid://d4h1f4k7xhs6y" path="res://sprites/Carrot/Selected/Portant/portant-dos4.png" id="45_on3rn"]
 [ext_resource type="Texture2D" uid="uid://dn72236u7ykr7" path="res://sprites/Carrot/Selected/Portant/portant-dos5.png" id="46_84h18"]
 [ext_resource type="Texture2D" uid="uid://dlurjjlas7g4v" path="res://sprites/Carrot/Selected/neutral/Carrot_-_Luc_-_Neutre-2.png" id="51_bdpwu"]
+[ext_resource type="Texture2D" uid="uid://dh5bj57b2cve1" path="res://sprites/Carrot/Selected/Carotte-enterrée.png" id="51_om4l0"]
 [ext_resource type="Texture2D" uid="uid://wdv2aa73tnhn" path="res://sprites/Carrot/Selected/neutral/Carrot_-_Luc_-_Neutre-3.png" id="52_xkmcs"]
 [ext_resource type="Texture2D" uid="uid://5kks3vw6tc77" path="res://sprites/Carrot/Selected/neutral/Carrot_-_Luc_-_Neutre-4.png" id="53_ii572"]
 [ext_resource type="Texture2D" uid="uid://bgmxn0i5be3sw" path="res://sprites/Carrot/Selected/neutral/Carrot_-_Luc_-_Neutre-5.png" id="54_j6xwu"]
@@ -389,6 +390,14 @@ animations = [{
 }],
 "loop": true,
 "name": &"selectedportraitUp",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("51_om4l0")
+}],
+"loop": true,
+"name": &"selectedunderground",
 "speed": 5.0
 }, {
 "frames": [{
