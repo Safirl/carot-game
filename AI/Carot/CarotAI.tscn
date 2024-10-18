@@ -1,4 +1,4 @@
-[gd_scene load_steps=87 format=3 uid="uid://dua2oubaha4yv"]
+[gd_scene load_steps=86 format=3 uid="uid://dua2oubaha4yv"]
 
 [ext_resource type="Script" path="res://AI/Carot/CarotAIController.gd" id="1_veyp6"]
 [ext_resource type="Script" path="res://script/PickableObjectComponent.gd" id="2_cprcl"]
@@ -67,7 +67,6 @@
 [ext_resource type="Texture2D" uid="uid://d4h1f4k7xhs6y" path="res://sprites/Carrot/Selected/Portant/portant-dos4.png" id="45_on3rn"]
 [ext_resource type="Texture2D" uid="uid://dn72236u7ykr7" path="res://sprites/Carrot/Selected/Portant/portant-dos5.png" id="46_84h18"]
 [ext_resource type="Texture2D" uid="uid://dlurjjlas7g4v" path="res://sprites/Carrot/Selected/neutral/Carrot_-_Luc_-_Neutre-2.png" id="51_bdpwu"]
-[ext_resource type="Texture2D" uid="uid://dh5bj57b2cve1" path="res://sprites/Carrot/Selected/Carotte-enterrée.png" id="51_om4l0"]
 [ext_resource type="Texture2D" uid="uid://wdv2aa73tnhn" path="res://sprites/Carrot/Selected/neutral/Carrot_-_Luc_-_Neutre-3.png" id="52_xkmcs"]
 [ext_resource type="Texture2D" uid="uid://5kks3vw6tc77" path="res://sprites/Carrot/Selected/neutral/Carrot_-_Luc_-_Neutre-4.png" id="53_ii572"]
 [ext_resource type="Texture2D" uid="uid://bgmxn0i5be3sw" path="res://sprites/Carrot/Selected/neutral/Carrot_-_Luc_-_Neutre-5.png" id="54_j6xwu"]
@@ -86,8 +85,8 @@
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_jm4ql"]
 resource_local_to_scene = true
-radius = 0.152998
-height = 0.798531
+radius = 0.371276
+height = 1.51749
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_jvwik"]
 atlas = ExtResource("2_lt835")
@@ -394,7 +393,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("51_om4l0")
+"texture": null
 }],
 "loop": true,
 "name": &"selectedunderground",
@@ -551,10 +550,10 @@ collision_layer = 4
 script = ExtResource("1_veyp6")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(0.999968, -0.00799352, 0, 0.00799352, 0.999968, 0, 0, 0, 1, 0, 0.220122, 0)
 shape = SubResource("CapsuleShape3D_jm4ql")
 
 [node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
-navigation_layers = 15
 
 [node name="PickableObjectComponent" type="Node3D" parent="."]
 script = ExtResource("2_cprcl")
@@ -563,6 +562,6 @@ script = ExtResource("2_cprcl")
 script = ExtResource("3_eprs2")
 
 [node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="."]
-transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0, 0)
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0, 0.767251, 0)
 sprite_frames = SubResource("SpriteFrames_tf6gy")
 animation = &"underground"
