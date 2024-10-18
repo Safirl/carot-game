@@ -3,18 +3,12 @@ class_name PickableObject extends RigidBody3D
 
 var original_rotation: Basis
 var camera_forward: Vector3
-@export var texture_selected: Texture2D
 
 ##in meters
 @export var collisionShapeSize: Vector3 = Vector3(1,1,1):
 	set(new_collision):
 		collisionShapeSize = new_collision
 		_refresh_collision()
-
-@export var base_texture: Texture2D:
-	set(new_texture):
-		base_texture = new_texture
-		_refresh_texture()
 
 func _ready() -> void:
 	if Engine.is_editor_hint():
@@ -82,10 +76,6 @@ func throw(impulse: Vector3):
 	if Engine.is_editor_hint():
 		return
 	apply_central_impulse(impulse)
-
-func _refresh_texture():
-	if Engine.is_editor_hint():
-		get_node("Sprite3D").texture = base_texture
 
 func _refresh_collision():
 	if Engine.is_editor_hint():

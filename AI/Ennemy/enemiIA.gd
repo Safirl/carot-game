@@ -139,5 +139,5 @@ func choose_random_destination() -> Vector3:
 		0, 
 		randf_range(-1.0, 1.0)
 	).normalized()
-	random_destination = NavigationServer3D.map_get_random_point(NavigationAgent.get_navigation_map(), 1, false)
+	random_destination = NavigationServer3D.map_get_random_point(NavigationAgent.get_navigation_map(), NavigationAgent.navigation_layers, false)
 	return random_destination

@@ -18,7 +18,7 @@ func _process(delta: float) -> void:
 func _on_body_entered(body: Node3D) -> void:
 	if life < 1:
 		return
-	if body.has_node("PickableObjectComponent"):
+	if body.has_node("PickableObjectComponent") && body.name != "boat":
 		$FlashComponent.start_flash(.2)
 		life -= 1
 	if life < 1:

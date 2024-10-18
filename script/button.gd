@@ -26,6 +26,9 @@ signal on_button_activated
 var interaction_number = 0
 
 func _on_body_entered(body: Node) -> void:
+	if body.name == "boat":
+		print("end")
+		get_tree().change_scene_to_file("")
 	if body.has_node("PickableObjectComponent") && body.get_node("PickableObjectComponent").weight >= weight_treshold:
 		activate()
 

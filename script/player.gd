@@ -235,9 +235,7 @@ func _on_death_anim_finished():
 	_is_dead = false
 	anim_player.play("underground")
 	$AnimatedSprite3D.animation_finished.disconnect(_on_death_anim_finished)
-	
 
-	
 func control_underground() -> void:
 	is_shaking = true
 	direction = Vector3.ZERO
@@ -247,7 +245,6 @@ func control_underground() -> void:
 	shake_timer = 0.5 
 	durt_particles.emitting = true
 	move_and_slide()
-
 
 
 func apply_shake(delta: float) -> void:
@@ -270,11 +267,8 @@ func apply_shake(delta: float) -> void:
 
 
 func littleJump():
-	print(velocity)
-	print(direction.y)
 	if direction.y == 0:
 		velocity.y =+ jump_strength
-	
 	
 
 func get_state():
