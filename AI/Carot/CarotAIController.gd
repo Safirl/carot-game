@@ -2,7 +2,7 @@ extends CharacterBody3D
 
 enum States { IDLE, CHASING, HOLDED, DEAD, UNDERGROUND, THROWN }
 var current_state = States.CHASING
-var state : String = "underground"
+var anim_state : String = "underground"
 var last_direction : String = "idle"
 var spawn_position: Vector3
 
@@ -24,15 +24,12 @@ var isMapLoadded: bool
 var _is_bumped
 var _is_holding
 var player
-var original_position : Vector3
-var has_target : bool = false
 var is_selected = false
 
 signal on_digged_up
 signal on_died
 
 func _ready() -> void:
-	print('state', state)
 	target._on_holding_state_changed.connect(_on_player_holding_state_changed)
 	for child in owner.get_children():
 		if child.has_signal("on_farmer_attacked"):
@@ -40,12 +37,7 @@ func _ready() -> void:
 	player = target
 	speed = default_speed
 	spawn_position = global_position
-	state = "underground"
-	original_position = global_transform.origin
-	has_target = false
-	if !has_target:
-		target = null
-	
+	current_state = States.UNDERGROUND
 
 # Cette fonction est appelée chaque frame pour déplacer l'IA
 func _physics_process(delta):
@@ -75,8 +67,6 @@ func _physics_process(delta):
 			
 func _chasing():
 	var direction: Vector3
-	if !has_target : 
-		return
 	if !global_transform.origin.distance_to(NavigationAgent.target_position) > NavigationAgent.target_desired_distance:
 		direction = Vector3.ZERO
 		velocity = Vector3.ZERO
@@ -94,17 +84,17 @@ func _chasing():
 	if direction != Vector3.ZERO:
 		if abs(direction.x) < abs(direction.z):
 			if direction.z > 0:
-				state = "walkup"
+				anim_state = "walkup"
 			elif direction.z < 0:
-				state = "walkdown"
+				anim_state = "walkdown"
 		else:
 			if direction.x > 0:
-				state = "walkright"
+				anim_state = "walkright"
 			elif direction.x < 0:
-				state = "walkleft"							
-		last_direction = state  # Met à jour la dernière direction
-	elif state != "underground":
-		state = "idle"
+				anim_state = "walkleft"							
+		last_direction = anim_state  # Met à jour la dernière direction
+	else:
+		anim_state = "idle"
 		
 	var selected
 	if is_selected:
@@ -113,7 +103,7 @@ func _chasing():
 		selected = ""
 		
 	if !_is_holding:
-		match state:
+		match anim_state:
 			"walkdown":
 				anim_player.play(selected + "walkDown")
 			"walkup":
@@ -133,13 +123,8 @@ func _chasing():
 						anim_player.play(selected + "DefaultRight")
 					"walkleft":
 						anim_player.play(selected + "DefaultLeft")
-			"dead":
-				_dead()
-			"underground":
-				
-				_underground()
 	else:
-		match state:
+		match anim_state:
 			"walkdown":
 				anim_player.play(selected + "portaitDown")
 			"walkup":
@@ -163,29 +148,21 @@ func _holded():
 	velocity = Vector3.ZERO
 
 func _dead():
-	has_target = false
 	anim_player.play("dead")
-	state = "underground"
-	print('underground ?', state ) 
-	print('dead')
 	$AnimatedSprite3D.animation_finished.connect(_on_death_anim_finished)
 	
 func _on_death_anim_finished():
 	$AnimatedSprite3D.animation_finished.disconnect(_on_death_anim_finished)
-	state = "underground"
-	_underground()
-	global_transform.origin = original_position
+	current_state = States.UNDERGROUND
+	global_transform.origin = spawn_position
 	
 
 func _underground():
 	anim_player.play("underground")
 	if is_selected:
 		anim_player.play("selectedunderground")
-	print('underground')
-	has_target = false		
 	var direction = Vector3.ZERO
 	velocity = direction
-		
 
 func _holding():
 	pass
@@ -197,8 +174,8 @@ func _idle():
 		impulse_direction = Vector3.ZERO
 		impulse_direction.y += 2
 		velocity = impulse_direction * 2
-		print('passe par la')
 		_is_bumped = false
+
 #pickable object interface to implement
 func setFreeze(bfreeze: bool):
 	if bfreeze:
@@ -207,19 +184,20 @@ func setFreeze(bfreeze: bool):
 	else:
 		gravity = 9.8
 		current_state = States.THROWN
-	
 
+##called by its pickable component when the player is nearby
 func highlight(bhighlight: bool):
 	if bhighlight:
 		is_selected = true
 	else:
 		is_selected = false
 	
-#called when object is throw
+#called when object is thrown
 func throw(impulse = Vector3(0, 0, 0)):
 	impulse_direction = impulse
 	current_state = States.THROWN
-	
+
+##thrown physics
 func _thrown():
 	velocity = velocity.lerp(impulse_direction * impulse, get_physics_process_delta_time())
 	impulse_direction.y -= .2
@@ -229,13 +207,14 @@ func _thrown():
 		impulse_direction = Vector3.ZERO
 
 func hit() -> void:
-	if state == "underground" || state == "dead":
+	## if we are dead we don't want to be hit
+	if current_state == States.UNDERGROUND || current_state == States.DEAD:
 		return
-	state= "dead"
 	on_died.emit()
 	$FlashComponent.start_flash(.1)
-	_dead()
+	current_state = States.DEAD
 
+##when a nearby farmer is attacking, it bumps up the carrot
 func _on_farmer_ai_on_farmer_attacked(sender) -> void:
 	if global_transform.origin.distance_to(sender.global_position) < 5:
 		_is_bumped = true
@@ -252,9 +231,8 @@ func _on_player_holding_state_changed(bisHolding: Variant) -> void:
 		speed = default_speed
 
 func digUp():
-	has_target = true
-	state = "idle"
 	anim_player.play("DefaultDown")
+	current_state = States.IDLE
 	on_digged_up.emit()
 
 func get_state():

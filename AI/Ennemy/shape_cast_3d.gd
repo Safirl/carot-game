@@ -24,6 +24,8 @@ func _getClosestObject(hitResult):
 		var object = hit.collider
 		if !object || (!object.name == "Player" && !object.is_in_group("Carrot")):
 			continue
+		if object.is_in_group("Carrot") && !(object.current_state == object.States.UNDERGROUND || object.current_state == object.States.DEAD): 
+			return
 		if !closestObject:
 			closestObject = object
 			continue

@@ -78,7 +78,6 @@ func _physics_process(delta):
 						anim_player.play("DefaultLeft")
 
 func _chasing():
-	
 	var current_target = ShapeCast.has_target()
 	
 	if !current_target:

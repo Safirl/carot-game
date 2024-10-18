@@ -302,13 +302,19 @@ radius = 0.05
 height = 0.1
 
 [node name="Player" type="CharacterBody3D"]
-collision_layer = 2
+collision_layer = 258
+platform_wall_layers = 256
 script = ExtResource("1_byvo4")
 
 [node name="text" type="Sprite3D" parent="."]
 transform = Transform3D(-0.5, -2.26437e-08, 3.73892e-08, 0, 0.427682, 0.259014, -4.37114e-08, 0.259014, -0.427682, 0.00344592, 1.70851, 0)
 texture = ExtResource("44_ichs1")
 script = ExtResource("3_gqnxb")
+
+[node name="moreCarot" type="Sprite3D" parent="."]
+transform = Transform3D(-0.5, -2.26437e-08, 3.73892e-08, 0, 0.427682, 0.259014, -4.37114e-08, 0.259014, -0.427682, 0.00344592, 1.70851, 0)
+texture = ExtResource("46_lwyth")
+script = ExtResource("47_j7a05")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, -0.301972, 0)
@@ -337,10 +343,4 @@ fixed_fps = 60
 process_material = SubResource("ParticleProcessMaterial_4v82v")
 draw_pass_1 = SubResource("CapsuleMesh_5qe5k")
 
-[node name="moreCarot" type="Sprite3D" parent="."]
-transform = Transform3D(-0.5, -2.26437e-08, 3.73892e-08, 0, 0.427682, 0.259014, -4.37114e-08, 0.259014, -0.427682, 0.00344592, 1.70851, 0)
-texture = ExtResource("46_lwyth")
-script = ExtResource("47_j7a05")
-
 [connection signal="objectToHeavy" from="." to="moreCarot" method="_on_player_object_to_heavy"]
-[connection signal="on_pickObject" from="." to="text" method="_on_player_on_pick_object"]

@@ -4,7 +4,7 @@ var move_speed : float = 3.0
 var accel = 5
 var state : String = "idle"
 var interactionState = "underground"
-var last_direction : String = "idle"
+var last_direction : String = "walkdown"
 @export var carrotsNumber = 0 
 var direction : Vector3 = Vector3.ZERO
 var is_shaking : bool = false
@@ -30,7 +30,7 @@ var spawn_position: Vector3
 
 @onready var anim_player = $AnimatedSprite3D
 
-signal on_pickObject()
+signal on_pick_object()
 signal _on_holding_state_changed(bisHolding)
 signal objectToHeavy()
 
@@ -82,7 +82,6 @@ func _physics_process(delta):
 				anim_player.play("walkRight")
 			"walkleft":
 				anim_player.play("walkLeft")
-				
 			"idle":
 				match last_direction:
 					"walkdown":
@@ -101,7 +100,6 @@ func _physics_process(delta):
 		direction.z = 0
 		velocity = direction
 		anim_player.play("underground")
-		
 	else:
 		match state:
 			"walkdown":
@@ -142,7 +140,7 @@ func activeMecanism():
 func isActiveMecanism():
 	return actived
 
-func pickObject():
+func pick_object():
 	if $ShapeCast3D.OldClosestObject.get_node("PickableObjectComponent").weight <= carrotsNumber:
 		$ShapeCast3D.OldClosestObject.get_node("PickableObjectComponent").isPicked = true
 		if $ShapeCast3D.OldClosestObject.has_method("digUp"):
@@ -150,7 +148,7 @@ func pickObject():
 		interactionState = "holding"
 		state="holding"
 		_on_holding_state_changed.emit(true)
-		on_pickObject.emit()
+		on_pick_object.emit()
 	else:
 		objectToHeavy.emit()
 		
@@ -189,22 +187,19 @@ func _input(event: InputEvent) -> void:
 		_onRelease()
 
 func interact():
-	
 	if interactionState == "underground":
 		if interaction_counter < 3: # Vérifier que l'on n'a pas atteint la limite
 			control_underground()
 			interaction_counter += 1 # Incrémenter le compteur à chaque appel
 		else: 
 			interactionState = "none"
-			state = "walkdown"
-			anim_player.play("walkDown")
 			interaction_counter = 0
 			littleJump()
 			
 	if $ShapeCast3D.OldClosestObject != null:
 		match interactionState:
 				"none":
-					pickObject()
+					pick_object()
 				"holding":
 					if is_holding_input == false:
 						is_holding_input = true
