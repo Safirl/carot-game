@@ -14,6 +14,11 @@ var original_position: Vector3 = Vector3.ZERO
 # Facteur de lissage (valeur proche de 0 = plus lent, proche de 1 = plus rapide)
 var smooth_speed : float = 0.2
 
+func _ready() -> void:
+	for child in owner.get_children():
+		if child.has_signal("on_farmer_attacked"):
+			child.on_farmer_attacked.connect(_on_farmer_ai_on_farmer_attacked)
+
 # Appelée chaque frame
 func _physics_process(delta: float) -> void:
 	var target_position : Vector3

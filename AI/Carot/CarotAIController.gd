@@ -31,7 +31,9 @@ var is_selected = false
 func _ready() -> void:
 	
 	target._on_holding_state_changed.connect(_on_player_holding_state_changed)
-	
+	for child in owner.get_children():
+		if child.has_signal("on_farmer_attacked"):
+			child.on_farmer_attacked.connect(_on_farmer_ai_on_farmer_attacked)
 	player = target
 	speed = default_speed
 	spawn_position = global_position

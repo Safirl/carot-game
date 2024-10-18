@@ -25,7 +25,7 @@
 [ext_resource type="Texture2D" uid="uid://lt5aj6ayyocd" path="res://sprites/fermier/walkdown/jambes-1 7.png" id="11_yu1ih"]
 [ext_resource type="Texture2D" uid="uid://da5yfu4su81rj" path="res://sprites/fermier/walkdown/jambes-2 7.png" id="12_cypj4"]
 [ext_resource type="Texture2D" uid="uid://damjenye2marn" path="res://sprites/fermier/walkdown/jambes-3 7.png" id="13_8nyc5"]
-[ext_resource type="PackedScene" path="res://Scenes/flash_component.tscn" id="26_gary6"]
+[ext_resource type="PackedScene" uid="uid://c6ml33d2tpcwk" path="res://Scenes/flash_component.tscn" id="26_gary6"]
 [ext_resource type="Texture2D" uid="uid://cubb3xl0xyldf" path="res://TileMap/Textures/Soil/Tuiles_1-2_07.png" id="27_pra2v"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_jptb6"]
