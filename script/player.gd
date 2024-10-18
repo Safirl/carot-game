@@ -32,6 +32,7 @@ var spawn_position: Vector3
 
 signal on_pickObject()
 signal _on_holding_state_changed(bisHolding)
+signal objectToHeavy()
 
 func _ready():
 	for child in owner.get_children():
@@ -150,6 +151,8 @@ func pickObject():
 		state="holding"
 		_on_holding_state_changed.emit(true)
 		on_pickObject.emit()
+	else:
+		objectToHeavy.emit()
 		
 	
 func throwObject():
