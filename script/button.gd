@@ -1,6 +1,7 @@
 @tool
 class_name base_button extends RigidBody3D
 
+@export var weight_treshold: int
 #You must have an animation_component with methods : play_interacted_animation and play_activated_animation to use this component.
 #This component is used to trigger events and animations.
 
@@ -16,7 +17,6 @@ class_name base_button extends RigidBody3D
 		_editor_update_material()
 
 @export var texture_1: Texture
-
 @export var texture_2: Texture
 
 var isActivated = false
@@ -26,7 +26,7 @@ signal on_button_activated
 var interaction_number = 0
 
 func _on_body_entered(body: Node) -> void:
-	if body.has_node("PickableObjectComponent"):
+	if body.has_node("PickableObjectComponent") && body.get_node("PickableObjectComponent").weight >= weight_treshold:
 		activate()
 
 func activate():

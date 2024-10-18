@@ -28,6 +28,9 @@ var original_position : Vector3
 var has_target : bool = false
 var is_selected = false
 
+signal on_digged_up
+signal on_died
+
 func _ready() -> void:
 	
 	target._on_holding_state_changed.connect(_on_player_holding_state_changed)
@@ -213,6 +216,7 @@ func _thrown():
 
 func hit() -> void:
 	state= "dead"
+	on_died.emit()
 	$FlashComponent.start_flash(.1)
 	_dead()
 
@@ -235,7 +239,7 @@ func digUp():
 	has_target = true
 	state = "idle"
 	anim_player.play("DefaultDown")
-	
+	on_digged_up.emit()
 
 func get_state():
 	return  

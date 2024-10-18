@@ -33,6 +33,10 @@ var spawn_position: Vector3
 signal _on_holding_state_changed(bisHolding)
 
 func _ready():
+	for child in owner.get_children():
+		if child && child.name.contains("CarotAI"):
+			child.on_digged_up.connect(_add_carrot)
+			child.on_died.connect(_remove_carrot)
 	spawn_position = global_position
 	durt_particles = $durt
 	durt_particles.emitting = false # Désactiver l'émission au départ
@@ -192,9 +196,6 @@ func interact():
 			interaction_counter = 0
 			littleJump()
 			
-		
-			
-			
 	if $ShapeCast3D.OldClosestObject != null:
 		match interactionState:
 				"none":
@@ -221,6 +222,8 @@ func hit() -> void:
 	if _is_dead:
 		return
 	_is_dead = true
+	if interactionState == "holding":
+		dropObject()
 	interactionState = "dead"
 	$FlashComponent.start_flash(.2)
 	anim_player.play("dead")
@@ -276,3 +279,11 @@ func littleJump():
 
 func get_state():
 	return state
+
+func _add_carrot():
+	print(carrotsNumber)
+	carrotsNumber += 1
+
+func _remove_carrot():
+	print(carrotsNumber)
+	carrotsNumber -= 1
