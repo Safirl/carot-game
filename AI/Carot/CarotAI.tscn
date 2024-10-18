@@ -67,7 +67,7 @@
 [ext_resource type="Texture2D" uid="uid://d4h1f4k7xhs6y" path="res://sprites/Carrot/Selected/Portant/portant-dos4.png" id="45_on3rn"]
 [ext_resource type="Texture2D" uid="uid://dn72236u7ykr7" path="res://sprites/Carrot/Selected/Portant/portant-dos5.png" id="46_84h18"]
 [ext_resource type="Texture2D" uid="uid://dlurjjlas7g4v" path="res://sprites/Carrot/Selected/neutral/Carrot_-_Luc_-_Neutre-2.png" id="51_bdpwu"]
-[ext_resource type="Texture2D" uid="uid://dh5bj57b2cve1" path="res://sprites/Carrot/Selected/Carotte-enterrée.png" id="51_om4l0"]
+[ext_resource type="Texture2D" uid="uid://dh5bj57b2cve1" path="res://sprites/Carrot/Selected/Carotte-enterrée.png" id="51_om4l0"]
 [ext_resource type="Texture2D" uid="uid://wdv2aa73tnhn" path="res://sprites/Carrot/Selected/neutral/Carrot_-_Luc_-_Neutre-3.png" id="52_xkmcs"]
 [ext_resource type="Texture2D" uid="uid://5kks3vw6tc77" path="res://sprites/Carrot/Selected/neutral/Carrot_-_Luc_-_Neutre-4.png" id="53_ii572"]
 [ext_resource type="Texture2D" uid="uid://bgmxn0i5be3sw" path="res://sprites/Carrot/Selected/neutral/Carrot_-_Luc_-_Neutre-5.png" id="54_j6xwu"]
@@ -546,6 +546,7 @@ animations = [{
 }]
 
 [node name="CarotAI" type="CharacterBody3D" groups=["Carrot"]]
+transform = Transform3D(1.1, 0, 0, 0, 1.1, 0, 0, 0, 1.1, 0, 0, 0)
 collision_layer = 4
 script = ExtResource("1_veyp6")
 

@@ -32,7 +32,7 @@ signal on_digged_up
 signal on_died
 
 func _ready() -> void:
-	
+	print('state', state)
 	target._on_holding_state_changed.connect(_on_player_holding_state_changed)
 	for child in owner.get_children():
 		if child.has_signal("on_farmer_attacked"):
@@ -43,6 +43,9 @@ func _ready() -> void:
 	state = "underground"
 	original_position = global_transform.origin
 	has_target = false
+	if !has_target:
+		target = null
+	
 
 # Cette fonction est appelée chaque frame pour déplacer l'IA
 func _physics_process(delta):
@@ -67,6 +70,7 @@ func _physics_process(delta):
 			
 	if not is_on_floor():
 		velocity.y -= gravity * delta
+
 	move_and_slide()
 			
 func _chasing():
@@ -132,8 +136,7 @@ func _chasing():
 			"dead":
 				_dead()
 			"underground":
-				has_target = false
-				anim_player.play(selected + "underground")
+				
 				_underground()
 	else:
 		match state:
@@ -162,17 +165,27 @@ func _holded():
 func _dead():
 	has_target = false
 	anim_player.play("dead")
+	state = "underground"
+	print('underground ?', state ) 
+	print('dead')
 	$AnimatedSprite3D.animation_finished.connect(_on_death_anim_finished)
 	
 func _on_death_anim_finished():
 	$AnimatedSprite3D.animation_finished.disconnect(_on_death_anim_finished)
-	anim_player.play("underground")
+	state = "underground"
+	_underground()
 	global_transform.origin = original_position
+	
 
 func _underground():
-	if !has_target : 
-		velocity = Vector3.ZERO
-		anim_player.play('underground')
+	anim_player.play("underground")
+	if is_selected:
+		anim_player.play("selectedunderground")
+	print('underground')
+	has_target = false		
+	var direction = Vector3.ZERO
+	velocity = direction
+		
 
 func _holding():
 	pass
@@ -184,6 +197,7 @@ func _idle():
 		impulse_direction = Vector3.ZERO
 		impulse_direction.y += 2
 		velocity = impulse_direction * 2
+		print('passe par la')
 		_is_bumped = false
 #pickable object interface to implement
 func setFreeze(bfreeze: bool):
